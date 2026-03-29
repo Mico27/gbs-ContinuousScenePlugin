@@ -1,0 +1,864 @@
+#pragma bank 255
+
+#include "scroll.h"
+
+#include <string.h>
+
+#include "system.h"
+#include "actor.h"
+#include "camera.h"
+#include "data_manager.h"
+#include "game_time.h"
+#include "math.h"
+#include "fade_manager.h"
+#include "parallax.h"
+#include "palette.h"
+#include "continuous_scene.h"
+#include "data/game_globals.h"
+#include "vm.h"
+#include "macro.h"
+
+// put submap of a large map to screen
+void set_bkg_submap(UINT8 x, UINT8 y, UINT8 w, UINT8 h, const unsigned char *map, UINT8 map_w) OLDCALL;
+
+void scroll_queue_row(UBYTE x, UBYTE y);
+void scroll_queue_col(UBYTE x, UBYTE y);
+void scroll_load_pending_row(void);
+void scroll_load_pending_col(void);
+void scroll_load_row(UBYTE x, UBYTE y);
+void scroll_load_col(UBYTE x, UBYTE y, UBYTE height);
+UBYTE scroll_viewport(parallax_row_t * port);
+
+INT16 scroll_x;
+INT16 scroll_y;
+INT16 draw_scroll_x;
+INT16 draw_scroll_y;
+UBYTE bkg_scroll_x;
+UBYTE bkg_scroll_y;
+BYTE scroll_offset_x;
+BYTE scroll_offset_y;
+BYTE bkg_offset_x;
+BYTE bkg_offset_y;
+UBYTE pending_h_x, pending_h_y;
+UBYTE pending_h_i;
+UBYTE pending_w_x, pending_w_y;
+UBYTE pending_w_i;
+UBYTE current_row, new_row;
+UBYTE current_col, new_col;
+
+UBYTE scroll_render_disabled;
+
+UWORD bkg_address_offset;
+
+static FASTUBYTE _save_bank;
+
+void scroll_init(void) BANKED {
+    draw_scroll_x   = 0;
+    draw_scroll_y   = 0;
+    scroll_offset_x = 0;
+    scroll_offset_y = 0;
+	bkg_offset_x = 0;
+	bkg_offset_y = 0;
+	bkg_scroll_x = 0;
+	bkg_scroll_y = 0;
+	scroll_render_disabled = 0;
+    scroll_reset();
+}
+
+void scroll_reset(void) BANKED {
+    pending_w_i     = 0;
+    pending_h_i     = 0;
+    if (!is_transitioning_scene){
+        scroll_x = 0x400;
+		scroll_y = 0x400;	
+		bkg_offset_x = 0;
+		bkg_offset_y = 0;			
+	}
+}
+
+void scroll_update(void) BANKED {
+    INT16 x, y;
+    UBYTE render = FALSE;
+
+    x = SUBPX_TO_PX(camera_x) - (SCREENWIDTH >> 1);
+    y = SUBPX_TO_PX(camera_y) - (SCREENHEIGHT >> 1);
+
+    current_col = PX_TO_TILE(scroll_x);
+    current_row = PX_TO_TILE(scroll_y);
+    new_col = PX_TO_TILE(x);
+    new_row = PX_TO_TILE(y);
+
+    scroll_x = x;
+    scroll_y = y;
+    draw_scroll_x = x + scroll_offset_x;
+    draw_scroll_y = y + scroll_offset_y;
+	bkg_scroll_x = (draw_scroll_x + TILE_TO_PX(bkg_offset_x));
+	bkg_scroll_y = (draw_scroll_y + TILE_TO_PX(bkg_offset_y));
+	
+    if (scroll_viewport(parallax_rows)) return;
+    if (scroll_viewport(parallax_rows + 1)) return;
+    scroll_viewport(parallax_rows + 2);
+}
+
+UBYTE scroll_viewport(parallax_row_t * port) {
+    if (port->next_y) {
+        // one of upper parallax slices
+        UINT16 shift_scroll_x;
+        if (port->shift == 127) {
+            shift_scroll_x = 0;
+        } else if (port->shift < 0) {
+            shift_scroll_x = draw_scroll_x << (-port->shift);
+        } else {
+            shift_scroll_x = draw_scroll_x >> port->shift;
+        }
+
+        port->shadow_scx = shift_scroll_x;        
+        UBYTE shift_col = PX_TO_TILE(shift_scroll_x);
+
+        // If column is +/- 1 just render next column
+        if (current_col == (UBYTE)(new_col - 1)) {
+            // Render right column
+            UBYTE x = shift_col - SCREEN_PAD_LEFT + SCREEN_TILE_REFRES_W - 1;
+            scroll_load_col(x, port->start_tile, port->tile_height);
+        } else if (current_col == (UBYTE)(new_col + 1)) {
+            // Render left column
+            UBYTE x = MAX(0, shift_col - SCREEN_PAD_LEFT);
+            scroll_load_col(x, port->start_tile, port->tile_height);
+        } else if (current_col != new_col) {
+            // If column differs by more than 1 render entire viewport
+            scroll_render_rows(shift_scroll_x, 0, port->start_tile, port->tile_height);
+        }  
+        return FALSE;   
+    } else {
+        // last parallax slice OR no parallax
+        port->shadow_scx = draw_scroll_x;
+
+        // If column is +/- 1 just render next column
+        if (current_col == (UBYTE)(new_col - 1)) {
+            // Queue right column
+            UBYTE x = new_col - SCREEN_PAD_LEFT + SCREEN_TILE_REFRES_W - 1;
+            UBYTE y = new_row - SCREEN_PAD_TOP;//MAX((new_row - SCREEN_PAD_TOP), port->start_tile);
+            UBYTE full_y = (new_row - SCREEN_PAD_TOP);
+            scroll_queue_col(x, y);
+            activate_actors_in_col(x, full_y);
+        } else if (current_col == (UBYTE)(new_col + 1)) {
+            // Queue left column
+            UBYTE x = new_col - SCREEN_PAD_LEFT;
+            UBYTE y = new_row - SCREEN_PAD_TOP;//MAX((new_row - SCREEN_PAD_TOP), port->start_tile);
+            UBYTE full_y = (new_row - SCREEN_PAD_TOP);
+            scroll_queue_col(x, y);
+            activate_actors_in_col(x, full_y);
+        } else if (current_col != new_col) {
+            script_memory[0] = current_col;
+            script_memory[1] = new_col;
+            // If column differs by more than 1 render entire screen            
+            scroll_render_rows(draw_scroll_x, draw_scroll_y, ((scene_LCD_type == LCD_parallax) ? port->start_tile : -SCREEN_PAD_TOP), SCREEN_TILE_REFRES_H);
+            return TRUE;
+        } else if (pending_h_i) {
+            scroll_load_pending_col();
+        }
+
+        // If row is +/- 1 just render next row
+        if (current_row == (UBYTE)(new_row - 1)) {
+            // Queue bottom row
+            UBYTE x = new_col - SCREEN_PAD_LEFT;
+            UBYTE y = new_row - SCREEN_PAD_TOP + SCREEN_TILE_REFRES_H - 1;
+            scroll_queue_row(x, y);
+            activate_actors_in_row(x, y);
+        } else if (current_row == (UBYTE)(new_row + 1)) {
+            // Queue top row
+            UBYTE x = new_col - SCREEN_PAD_LEFT;
+            UBYTE y = new_row - SCREEN_PAD_TOP;//MAX(port->start_tile, new_row - SCREEN_PAD_TOP);
+            scroll_queue_row(x, y);
+            activate_actors_in_row(x, y);
+        } else if (current_row != new_row) {			
+            script_memory[2] = current_row;
+            script_memory[3] = new_row;
+            // If row differs by more than 1 render entire screen
+            scroll_render_rows(draw_scroll_x, draw_scroll_y, ((scene_LCD_type == LCD_parallax) ? port->start_tile : -SCREEN_PAD_TOP), SCREEN_TILE_REFRES_H);
+            return TRUE;
+        } else if (pending_w_i) {
+            scroll_load_pending_row();
+        }
+
+        return TRUE;
+    }
+}
+
+void scroll_repaint(void) BANKED {
+    scroll_reset();
+    scroll_update();
+}
+
+void scroll_render_rows(INT16 scroll_x, INT16 scroll_y, BYTE row_offset, BYTE n_rows) BANKED {
+    // Clear pending rows/ columns
+    pending_w_i = 0;
+    pending_h_i = 0;
+	
+	if (scroll_render_disabled) return;
+
+    UBYTE x = PX_TO_TILE(scroll_x) - SCREEN_PAD_LEFT;
+    UBYTE y = PX_TO_TILE(scroll_y) + row_offset;
+
+    for (BYTE i = 0; i != n_rows; ++i, y++) {        
+        scroll_load_row(x, y);
+        activate_actors_in_row(x, y);
+    }	
+}
+
+void scroll_render_cols(INT16 scroll_x, INT16 scroll_y, BYTE col_offset, BYTE n_cols) BANKED {
+    // Clear pending rows/ columns
+    pending_w_i = 0;
+    pending_h_i = 0;
+	
+	if (scroll_render_disabled) return;
+
+    UBYTE x = PX_TO_TILE(scroll_x) + col_offset;
+    UBYTE y = PX_TO_TILE(scroll_y) - SCREEN_PAD_TOP;
+    UBYTE height = SCREEN_TILE_REFRES_H;
+    
+    for (BYTE i = 0; i != n_cols; ++i, x++) {
+        scroll_load_col(x, y, height);
+        activate_actors_in_col(x, y);
+    }	
+}
+
+void scroll_queue_row(UBYTE x, UBYTE y) {
+    
+	while (pending_w_i) {
+        // If previous row wasn't fully rendered
+        // render it now before starting next row        
+        scroll_load_pending_row();
+    }
+	
+	if (scroll_render_disabled) return;
+		
+    pending_w_x = x;
+    pending_w_y = y;
+    pending_w_i = SCREEN_TILE_REFRES_W;	
+	
+	scroll_load_pending_row();
+}
+
+void scroll_queue_col(UBYTE x, UBYTE y) {
+    
+	while (pending_h_i) {
+        // If previous column wasn't fully rendered
+        // render it now before starting next column
+        scroll_load_pending_col();
+    }
+	
+	if (scroll_render_disabled) return;
+	
+    pending_h_x = x;
+    pending_h_y = y;
+    pending_h_i = SCREEN_TILE_REFRES_H;	
+	scroll_load_pending_col();
+}
+
+void load_tile_row(const unsigned char * from, UBYTE x, UBYTE y, UBYTE width, UBYTE source_width, UBYTE bank) NONBANKED {
+	_save_bank = CURRENT_BANK;
+	SWITCH_ROM(bank);
+    UWORD y_offset = (y * (UWORD)source_width); 
+	width = width + x;
+    for (x; x != width; x++) {
+		set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), *(from + y_offset + x));
+		bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
+	}
+	SWITCH_ROM(_save_bank);		
+}
+
+void load_tile_col(const unsigned char * from, UBYTE x, UWORD y, UWORD height, UBYTE source_width, UBYTE bank) NONBANKED {
+	_save_bank = CURRENT_BANK;    
+	SWITCH_ROM(bank);
+    UWORD tile_offset = (y * (UINT16)source_width) + x; 
+    height = height * (UINT16)source_width;
+	for (y = 0; y != height; y += (UINT16)source_width) {
+		set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), *(from + tile_offset + y));
+		bkg_address_offset = (bkg_address_offset + 32) & 1023;
+	}
+	SWITCH_ROM(_save_bank);		
+}
+
+void fill_tile_row(UBYTE width) {
+    for (UBYTE x = 0; x != width; x++) {
+		set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), fill_tile_id);
+		bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
+	}
+}
+
+void fill_tile_col(UBYTE height) {
+    for (UBYTE y = 0; y != height; y++) {
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), fill_tile_id);
+        bkg_address_offset = (bkg_address_offset + 32) & 1023;
+    }
+}
+
+void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
+    // Used for continuous scene row rendering to adjust for different scene sizes and offsets
+    bkg_address_offset = ((UWORD)get_bkg_xy_addr((x + bkg_offset_x), (y + bkg_offset_y))) - 0x9800;
+    continuous_scene_t* continuous_scene;
+    UBYTE section_width;
+    if (x > SCREEN_OOB_LEFT){
+        section_width = MIN(width, (0 - x));        
+        if (y > SCREEN_OOB_TOP) {            
+            //bkg_address_offset = (bkg_address_offset + 32) & 1023;
+            continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
+                load_tile_row(continuous_scene->tilemap.ptr, 
+                    continuous_scene->tile_width + x, 
+                    continuous_scene->tile_height + y, 
+                    section_width,
+                    continuous_scene->tile_width,
+                    continuous_scene->tilemap.bank);
+            } else {
+                fill_tile_row(section_width);
+            }            
+        } else if (y < image_tile_height) {
+            continuous_scene = &continuous_scenes[DIRECTION_LEFT];          
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
+                load_tile_row(continuous_scene->tilemap.ptr, 
+                    continuous_scene->tile_width + x, 
+                    y, 
+                    section_width,
+                    continuous_scene->tile_width,
+                    continuous_scene->tilemap.bank);
+            } else {
+                fill_tile_row(section_width);
+            }
+        } else {
+            continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
+                load_tile_row(continuous_scene->tilemap.ptr, 
+                    continuous_scene->tile_width + x, 
+                    (y - image_tile_height), 
+                    section_width, 
+                    continuous_scene->tile_width,
+                    continuous_scene->tilemap.bank);
+            } else {
+                fill_tile_row(section_width);
+            }
+        }        
+        width -= section_width;
+        x += section_width;
+        if (!width) return;
+    }
+    if (x < image_tile_width) {
+        section_width = MIN(width, (image_tile_width - x));
+        if (y > SCREEN_OOB_TOP) {
+            //bkg_address_offset = (bkg_address_offset + 32) & 1023;
+            continuous_scene = &continuous_scenes[DIRECTION_TOP];
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
+                load_tile_row(continuous_scene->tilemap.ptr, 
+                    x, 
+                    continuous_scene->tile_height + y, 
+                    section_width, 
+                    continuous_scene->tile_width,
+                    continuous_scene->tilemap.bank);
+            } else {
+                fill_tile_row(section_width);
+            }
+        } else if (y < image_tile_height) {
+            // use current scene        
+            load_tile_row(image_ptr, x, y, section_width, image_tile_width, image_bank);
+        } else {
+            continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
+                load_tile_row(continuous_scene->tilemap.ptr, 
+                    x, 
+                    (y - image_tile_height), 
+                    section_width, 
+                    continuous_scene->tile_width,
+                    continuous_scene->tilemap.bank);
+            } else {
+                fill_tile_row(section_width);
+            }
+        }
+        width -= section_width;
+        x += section_width;
+        if (!width) return;       
+    }
+    if (y > SCREEN_OOB_TOP) {
+        //bkg_address_offset = (bkg_address_offset + 32) & 1023;
+        continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];                        
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
+            load_tile_row(continuous_scene->tilemap.ptr, 
+                (x - image_tile_width), 
+                continuous_scene->tile_height + y, 
+                width, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);
+        } else {
+            fill_tile_row(width);
+        }        
+    } else if (y < image_tile_height) {
+        continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){     
+            load_tile_row(continuous_scene->tilemap.ptr, 
+                (x - image_tile_width), 
+                y, 
+                width, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);
+        } else {
+            fill_tile_row(width);
+        }
+    } else {
+        continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];          
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
+            load_tile_row(continuous_scene->tilemap.ptr, 
+                (x - image_tile_width), 
+                (y - image_tile_height), 
+                width, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);
+        } else {
+            fill_tile_row(width);
+        }
+    }
+}
+
+void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
+    // Used for continuous scene row rendering to adjust for different scene sizes and offsets
+    bkg_address_offset = ((UWORD)get_bkg_xy_addr((x + bkg_offset_x), (y + bkg_offset_y))) - 0x9800;
+    continuous_scene_t* continuous_scene;
+    UBYTE section_height; 
+    if (y > SCREEN_OOB_TOP){
+        section_height = MIN(height, (0 - y));             
+        if (x > SCREEN_OOB_LEFT) {
+            continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->tilemap.ptr, 
+                continuous_scene->tile_width + x, 
+                (UBYTE)(continuous_scene->tile_height + y), 
+                section_height, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);  
+            } else {
+                fill_tile_col(section_height);
+            }          
+        } else if (x < image_tile_width) {            
+            continuous_scene = &continuous_scenes[DIRECTION_TOP];          
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->tilemap.ptr, 
+                x, 
+                (UBYTE)(continuous_scene->tile_height + y),  
+                section_height, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);
+            } else {
+                fill_tile_col(section_height);
+            }
+        } else {
+            continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];          
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->tilemap.ptr, 
+                (x - image_tile_width), 
+                (UBYTE)(continuous_scene->tile_height + y), 
+                section_height, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);
+            } else {
+                fill_tile_col(section_height);
+            }
+        }        
+        height -= section_height;
+        y += section_height;
+        if (!height) return;
+    }
+    if (y < image_tile_height) {
+        section_height = MIN(height, (image_tile_height - y));
+        if (x > SCREEN_OOB_LEFT) {
+            continuous_scene = &continuous_scenes[DIRECTION_LEFT];                        
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->tilemap.ptr, 
+                continuous_scene->tile_width + x, 
+                y, 
+                section_height, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);
+            } else {
+                fill_tile_col(section_height);
+            }            
+        } else if (x < image_tile_width) {
+            // use current scene        
+            load_tile_col(image_ptr, x, y, section_height, image_tile_width, image_bank);
+        } else {
+            continuous_scene = &continuous_scenes[DIRECTION_RIGHT];          
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->tilemap.ptr, 
+                (x - image_tile_width), 
+                y, 
+                section_height, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);
+            } else {
+                fill_tile_col(section_height);
+            }
+        }
+        height -= section_height;
+        y += section_height;
+        if (!height) return;       
+    }
+    if (x > SCREEN_OOB_LEFT) {
+        continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];                        
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->tilemap.ptr, 
+                continuous_scene->tile_width + x, 
+                (y - image_tile_height), 
+            height, 
+            continuous_scene->tile_width,
+            continuous_scene->tilemap.bank);
+        } else {
+            fill_tile_col(height);
+        }        
+    } else if (x < image_tile_width) {
+        continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];          
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->tilemap.ptr, 
+                x, 
+                (y - image_tile_height), 
+                height, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);
+        } else {
+            fill_tile_col(height);
+        }
+    } else {
+        continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];          
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->tilemap.ptr, 
+                (x - image_tile_width), 
+                (y - image_tile_height), 
+                height, 
+                continuous_scene->tile_width,
+                continuous_scene->tilemap.bank);
+        } else {
+            fill_tile_col(height);
+        }
+    }
+}
+
+#ifdef CGB
+void fill_tile_attribute_row(UBYTE width) {
+    for (UBYTE x = 0; x != width; x++) {
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset + 0x400), fill_tile_attr);
+        bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
+    }
+}
+
+void fill_tile_attribute_col(UBYTE height) {
+    for (UBYTE y = 0; y != height; y++) {
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset + 0x400), fill_tile_attr);
+        bkg_address_offset = (bkg_address_offset + 32) & 1023;
+    }
+}
+
+void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {    
+    // Used for continuous scene row rendering to adjust for different scene sizes and offsets
+    bkg_address_offset = ((UWORD)get_bkg_xy_addr((x + bkg_offset_x), (y + bkg_offset_y))) - 0x9800;
+    continuous_scene_t* continuous_scene;
+    UBYTE section_width;
+    if (x > SCREEN_OOB_LEFT){
+        section_width = MIN(width, (0 - x));        
+        if (y > SCREEN_OOB_TOP) {            
+            //bkg_address_offset = (bkg_address_offset + 32) & 1023;
+            continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                 
+            load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
+                continuous_scene->tile_width + x, 
+                continuous_scene->tile_height + y, 
+                section_width,
+                continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);
+            } else {
+                fill_tile_attribute_row(section_width);
+            }            
+        } else if (y < image_tile_height) {
+            continuous_scene = &continuous_scenes[DIRECTION_LEFT];          
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+                load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
+                    continuous_scene->tile_width + x, 
+                    y, 
+                    section_width,
+                    continuous_scene->tile_width,
+                    continuous_scene->cgb_tilemap_attr.bank);
+            } else {
+                fill_tile_attribute_row(section_width);
+            }
+        } else {
+            continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+                load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
+                    continuous_scene->tile_width + x, 
+                    (y - image_tile_height), 
+                    section_width, 
+                    continuous_scene->tile_width,
+                    continuous_scene->cgb_tilemap_attr.bank);
+            } else {
+                fill_tile_attribute_row(section_width);
+            }
+        }        
+        width -= section_width;
+        x += section_width;
+        if (!width) return;
+    }
+    if (x < image_tile_width) {
+        section_width = MIN(width, (image_tile_width - x));
+        if (y > SCREEN_OOB_TOP) {
+            //bkg_address_offset = (bkg_address_offset + 32) & 1023;
+            continuous_scene = &continuous_scenes[DIRECTION_TOP];   
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                 
+                load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
+                    x, 
+                    continuous_scene->tile_height + y, 
+                    section_width, 
+                    continuous_scene->tile_width,
+                    continuous_scene->cgb_tilemap_attr.bank);
+            } else {
+                fill_tile_attribute_row(section_width);
+            }
+        } else if (y < image_tile_height) {
+            // use current scene        
+            load_tile_row(image_attr_ptr, x, y, section_width, image_tile_width, image_attr_bank);
+        } else {
+            continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];          
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+                load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
+                    x, 
+                    (y - image_tile_height), 
+                    section_width, 
+                    continuous_scene->tile_width,
+                    continuous_scene->cgb_tilemap_attr.bank);
+            } else {
+                fill_tile_attribute_row(section_width);
+            }
+        }
+        width -= section_width;
+        x += section_width;
+        if (!width) return;       
+    }
+    if (y > SCREEN_OOB_TOP) {
+        //bkg_address_offset = (bkg_address_offset + 32) & 1023;
+        continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];                        
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
+                (x - image_tile_width), 
+                continuous_scene->tile_height + y, 
+                width, 
+                continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);
+        } else {
+            fill_tile_attribute_row(width);
+        }
+    } else if (y < image_tile_height) {
+        continuous_scene = &continuous_scenes[DIRECTION_RIGHT];          
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
+                (x - image_tile_width), 
+                y, 
+                width, 
+                continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);
+        } else {
+            fill_tile_attribute_row(width);
+        }
+    } else {
+        continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];          
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
+                (x - image_tile_width), 
+                (y - image_tile_height), 
+                width, 
+                continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);
+        } else {
+            fill_tile_attribute_row(width);
+        }
+    }
+}
+
+void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
+    // Used for continuous scene row rendering to adjust for different scene sizes and offsets
+    bkg_address_offset = ((UWORD)get_bkg_xy_addr((x + bkg_offset_x), (y + bkg_offset_y))) - 0x9800;
+    continuous_scene_t* continuous_scene;
+    UBYTE section_height; 
+    if (y > SCREEN_OOB_TOP){
+        section_height = MIN(height, (0 - y));             
+        if (x > SCREEN_OOB_LEFT) {
+            continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+                load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
+                    continuous_scene->tile_width + x, 
+                    (UBYTE)(continuous_scene->tile_height + y), 
+                    section_height, 
+                    continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);   
+            } else {
+                fill_tile_attribute_col(section_height);
+            }         
+        } else if (x < image_tile_width) {            
+            continuous_scene = &continuous_scenes[DIRECTION_TOP];          
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+                load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
+                    x, 
+                    (UBYTE)(continuous_scene->tile_height + y),  
+                    section_height, 
+                    continuous_scene->tile_width,
+                    continuous_scene->cgb_tilemap_attr.bank);
+            } else {
+                fill_tile_attribute_col(section_height);
+            }
+        } else {
+            continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT]; 
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){         
+            load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
+                (x - image_tile_width), 
+                (UBYTE)(continuous_scene->tile_height + y), 
+                section_height, 
+                continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);
+            } else {
+                fill_tile_attribute_col(section_height);
+            }
+        }        
+        height -= section_height;
+        y += section_height;
+        if (!height) return;
+    }
+    if (y < image_tile_height) {
+        section_height = MIN(height, (image_tile_height - y));
+        if (x > SCREEN_OOB_LEFT) {
+            continuous_scene = &continuous_scenes[DIRECTION_LEFT];                        
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+                load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
+                    continuous_scene->tile_width + x, 
+                    y, 
+                    section_height, 
+                    continuous_scene->tile_width,
+                    continuous_scene->cgb_tilemap_attr.bank);
+            } else {
+                fill_tile_attribute_col(section_height);
+            }
+        } else if (x < image_tile_width) {
+            // use current scene        
+            load_tile_col(image_attr_ptr, x, y, section_height, image_tile_width, image_attr_bank);
+        } else {
+            continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
+            if (continuous_scene->scene.ptr && continuous_scene->scene.bank){          
+            load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
+                (x - image_tile_width), 
+                y, 
+                section_height, 
+                continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);
+            } else {
+                fill_tile_attribute_col(section_height);
+            }
+        }
+        height -= section_height;
+        y += section_height;
+        if (!height) return;       
+    }
+    if (x > SCREEN_OOB_LEFT) {
+        continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];                        
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
+                continuous_scene->tile_width + x, 
+                (y - image_tile_height), 
+                height, 
+                continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);
+        } else {
+            fill_tile_attribute_col(height);
+        }
+        
+    } else if (x < image_tile_width) {
+        continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];          
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
+                x, 
+                (y - image_tile_height), 
+                height, 
+                continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);
+        } else {
+            fill_tile_attribute_col(height);
+        }
+    } else {
+        continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];          
+        if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
+            load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
+                (x - image_tile_width), 
+                (y - image_tile_height), 
+                height, 
+                continuous_scene->tile_width,
+                continuous_scene->cgb_tilemap_attr.bank);
+        } else {
+            fill_tile_attribute_col(height);
+        }
+    }
+}
+#endif
+
+void scroll_load_row(UBYTE x, UBYTE y) {
+    UBYTE width = SCREEN_TILE_REFRES_W;	
+    // DMG Row Load	
+    load_tile_row_continuous(x, y, width);
+#ifdef CGB
+    if (_is_CGB) {  // Color Row Load
+        VBK_REG = 1;
+        load_tile_attribute_row_continuous(x, y, width);
+        VBK_REG = 0;
+    }
+#endif
+    
+}
+
+/* Update pending (up to 5) rows */
+void scroll_load_pending_row(void) {    
+    UBYTE width = MIN(pending_w_i, PENDING_BATCH_SIZE);	
+    // DMG Row Load	
+    load_tile_row_continuous(pending_w_x, pending_w_y, width);
+#ifdef CGB
+    if (_is_CGB) {  // Color Row Load
+        VBK_REG = 1;
+        load_tile_attribute_row_continuous(pending_w_x, pending_w_y, width);
+        VBK_REG = 0;
+    }
+#endif
+    
+    pending_w_x += width;
+    pending_w_i -= width;
+}
+
+
+void scroll_load_col(UBYTE x, UBYTE y, UBYTE height) {	
+    // DMG Column Load
+    load_tile_col_continuous(x, y, height);
+#ifdef CGB
+    if (_is_CGB) {  // Color Column Load
+        VBK_REG = 1;
+        load_tile_attribute_col_continuous(x, y, height);
+        VBK_REG = 0;
+    }
+#endif
+    
+}
+
+void scroll_load_pending_col(void) {
+    UBYTE height = MIN(pending_h_i, PENDING_BATCH_SIZE);	
+    // DMG Column Load
+    load_tile_col_continuous(pending_h_x, pending_h_y, height);
+#ifdef CGB
+    if (_is_CGB) {  // Color Column Load
+        VBK_REG = 1;
+        load_tile_attribute_col_continuous(pending_h_x, pending_h_y, height);
+        VBK_REG = 0;
+    }
+#endif
+    
+    pending_h_y += height;
+    pending_h_i -= height;
+}
+

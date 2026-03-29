@@ -1,0 +1,52 @@
+{
+    "version": "4.2.2-e1",
+    "fields": [        
+        {
+            "key": "DISABLE_PLAYER_SPRITE_LOAD_ON_TRANSITION",
+            "label": "Disable player sprite loading on scene scroll",
+            "description": "Disable player sprite loading on scene scroll",
+            "group": "Screen Scroll",
+            "type": "checkbox",
+            "cType": "define",
+            "defaultValue": 1
+        },
+        {
+            "key": "DISABLE_TILESET_LOAD_ON_TRANSITION",
+            "label": "Disable tileset loading on scene scroll",
+            "description": "Disable tileset loading on scene scroll",
+            "group": "Screen Scroll",
+            "type": "checkbox",
+            "cType": "define",
+            "defaultValue": 0
+        },
+        {
+            "key": "DISABLE_UI_TILESET_LOAD",
+            "label": "Disable loading ui tileset on scene load",
+            "description": "Disable loading ui tileset on scene load",
+            "group": "Screen Scroll",
+            "type": "checkbox",
+            "cType": "define",
+            "defaultValue": 0
+        },
+        {
+        "key": "bkg_offset_x",
+        "label": "Scene scroll offset X",
+        "description": "X offset of the screen viewport due to scene transition",
+        "group": "Screen Scroll",
+        "type": "number",
+        "cType": "UBYTE",
+        "defaultValue": 0,
+        "runtimeOnly": true
+        },
+        {
+        "key": "bkg_offset_y",
+        "label": "Scene scroll offset Y",
+        "description": "Y offset of the screen viewport due to scene transition",
+        "group": "Screen Scroll",
+        "type": "number",
+        "cType": "UBYTE",
+        "defaultValue": 0,
+        "runtimeOnly": true
+        }
+    ]
+}
