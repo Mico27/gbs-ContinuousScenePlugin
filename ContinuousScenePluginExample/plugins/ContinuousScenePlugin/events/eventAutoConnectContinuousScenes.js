@@ -71,29 +71,29 @@ export const compile = (input, helpers) => {
             const other_scene_right = other_scene_left + other_scene.width;
             const other_scene_top = other_scene.y >> 3;
             const other_scene_bottom = other_scene_top + other_scene.height;
-            if (scene_right === other_scene_left && ((scene_top >= other_scene_top && scene_top < other_scene_bottom) || (scene_bottom > other_scene_top && scene_bottom <= other_scene_bottom))) {
+            if (scene_right === other_scene_left && scene_top < other_scene_bottom && scene_bottom > other_scene_top) {
                 connections.push({
                     scene_symbol: other_scene.symbol,
                     direction: 1, //right
-                    offset: other_scene_top - scene_top,
+                    offset: scene_top - other_scene_top,
                 });
-            } else if (scene_left === other_scene_right && ((scene_top >= other_scene_top && scene_top < other_scene_bottom) || (scene_bottom > other_scene_top && scene_bottom <= other_scene_bottom))) {
+            } else if (scene_left === other_scene_right && scene_top < other_scene_bottom && scene_bottom > other_scene_top) {
                 connections.push({
                     scene_symbol: other_scene.symbol,
                     direction: 3, //left
-                    offset: other_scene_top - scene_top,
+                    offset: scene_top - other_scene_top,
                 });
-            } else if (scene_bottom === other_scene_top && ((scene_left >= other_scene_left && scene_left < other_scene_right) || (scene_right > other_scene_left && scene_right <= other_scene_right))) {
+            } else if (scene_bottom === other_scene_top && scene_left < other_scene_right && scene_right > other_scene_left) {
                 connections.push({
                     scene_symbol: other_scene.symbol,
                     direction: 2, //bottom
-                    offset: other_scene_left - scene_left,
+                    offset: scene_left - other_scene_left,
                 });
-            } else if (scene_top === other_scene_bottom && ((scene_left >= other_scene_left && scene_left < other_scene_right) || (scene_right > other_scene_left && scene_right <= other_scene_right))) {
+            } else if (scene_top === other_scene_bottom && scene_left < other_scene_right && scene_right > other_scene_left) {
                 connections.push({
                     scene_symbol: other_scene.symbol,
                     direction: 0, //top
-                    offset: other_scene_left - scene_left,
+                    offset: scene_left - other_scene_left,
                 });
             } else if (scene_right === other_scene_left && scene_bottom === other_scene_top) {
                 connections.push({
@@ -142,12 +142,12 @@ export const compile = (input, helpers) => {
                     scene_connections.find((s) => s.scene_symbol === left_scene.symbol).connections.push({
                         scene_symbol: right_scene.symbol,
                         direction: 3, //left
-                        offset,
+                        offset: -offset,
                     });
                     scene_connections.find((s) => s.scene_symbol === right_scene.symbol).connections.push({
                         scene_symbol: left_scene.symbol,
                         direction: 1, //right
-                        offset: -offset,
+                        offset,
                     });
                 } else if (left_scene_top === right_scene_bottom) {
                     scene_connections.find((s) => s.scene_symbol === left_scene.symbol).connections.push({
@@ -190,12 +190,12 @@ export const compile = (input, helpers) => {
                     scene_connections.find((s) => s.scene_symbol === top_scene.symbol).connections.push({
                         scene_symbol: bottom_scene.symbol,
                         direction: 0, //top
-                        offset,
+                        offset: -offset,
                     });
                     scene_connections.find((s) => s.scene_symbol === bottom_scene.symbol).connections.push({
                         scene_symbol: top_scene.symbol,
                         direction: 2, //bottom
-                        offset: -offset,
+                        offset,
                     });
                 } else if (top_scene_left === bottom_scene_right) {
                     scene_connections.find((s) => s.scene_symbol === top_scene.symbol).connections.push({

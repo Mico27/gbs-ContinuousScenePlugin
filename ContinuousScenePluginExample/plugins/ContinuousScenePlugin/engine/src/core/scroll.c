@@ -151,6 +151,8 @@ UBYTE scroll_viewport(parallax_row_t * port) {
         } else if (current_col != new_col) {
             script_memory[0] = current_col;
             script_memory[1] = new_col;
+            script_memory[2] = camera_x;
+            script_memory[3] = scroll_x;
             // If column differs by more than 1 render entire screen            
             scroll_render_rows(draw_scroll_x, draw_scroll_y, ((scene_LCD_type == LCD_parallax) ? port->start_tile : -SCREEN_PAD_TOP), SCREEN_TILE_REFRES_H);
             return TRUE;
@@ -298,16 +300,19 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
     // Used for continuous scene row rendering to adjust for different scene sizes and offsets
     bkg_address_offset = ((UWORD)get_bkg_xy_addr((x + bkg_offset_x), (y + bkg_offset_y))) - 0x9800;
     continuous_scene_t* continuous_scene;
+    BYTE top_x_offset = (continuous_scene_enabled & DIRECTION_TOP_FLAG) ? continuous_scenes[DIRECTION_TOP].offset : 0;
+    BYTE left_y_offset = (continuous_scene_enabled & DIRECTION_LEFT_FLAG) ? continuous_scenes[DIRECTION_LEFT].offset : 0;
+    BYTE bottom_x_offset = (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG) ? continuous_scenes[DIRECTION_BOTTOM].offset : 0;
+    BYTE right_y_offset = (continuous_scene_enabled & DIRECTION_RIGHT_FLAG) ? continuous_scenes[DIRECTION_RIGHT].offset : 0;
     UBYTE section_width;
     if (x > SCREEN_OOB_LEFT){
         section_width = MIN(width, (0 - x));        
         if (y > SCREEN_OOB_TOP) {            
-            //bkg_address_offset = (bkg_address_offset + 32) & 1023;
             continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
                 load_tile_row(continuous_scene->tilemap.ptr, 
-                    continuous_scene->tile_width + x, 
-                    continuous_scene->tile_height + y, 
+                    continuous_scene->tile_width + x + top_x_offset, 
+                    continuous_scene->tile_height + y + left_y_offset, 
                     section_width,
                     continuous_scene->tile_width,
                     continuous_scene->tilemap.bank);
@@ -319,7 +324,7 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
                 load_tile_row(continuous_scene->tilemap.ptr, 
                     continuous_scene->tile_width + x, 
-                    y, 
+                    y + left_y_offset, 
                     section_width,
                     continuous_scene->tile_width,
                     continuous_scene->tilemap.bank);
@@ -330,8 +335,8 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
                 load_tile_row(continuous_scene->tilemap.ptr, 
-                    continuous_scene->tile_width + x, 
-                    (y - image_tile_height), 
+                    continuous_scene->tile_width + x + bottom_x_offset, 
+                    (y - image_tile_height) + left_y_offset, 
                     section_width, 
                     continuous_scene->tile_width,
                     continuous_scene->tilemap.bank);
@@ -346,11 +351,10 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
     if (x < image_tile_width) {
         section_width = MIN(width, (image_tile_width - x));
         if (y > SCREEN_OOB_TOP) {
-            //bkg_address_offset = (bkg_address_offset + 32) & 1023;
             continuous_scene = &continuous_scenes[DIRECTION_TOP];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
                 load_tile_row(continuous_scene->tilemap.ptr, 
-                    x, 
+                    x + top_x_offset, 
                     continuous_scene->tile_height + y, 
                     section_width, 
                     continuous_scene->tile_width,
@@ -365,7 +369,7 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
                 load_tile_row(continuous_scene->tilemap.ptr, 
-                    x, 
+                    x + bottom_x_offset, 
                     (y - image_tile_height), 
                     section_width, 
                     continuous_scene->tile_width,
@@ -379,12 +383,11 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         if (!width) return;       
     }
     if (y > SCREEN_OOB_TOP) {
-        //bkg_address_offset = (bkg_address_offset + 32) & 1023;
         continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];                        
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
             load_tile_row(continuous_scene->tilemap.ptr, 
-                (x - image_tile_width), 
-                continuous_scene->tile_height + y, 
+                (x - image_tile_width) + top_x_offset, 
+                continuous_scene->tile_height + y + right_y_offset, 
                 width, 
                 continuous_scene->tile_width,
                 continuous_scene->tilemap.bank);
@@ -396,7 +399,7 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){     
             load_tile_row(continuous_scene->tilemap.ptr, 
                 (x - image_tile_width), 
-                y, 
+                y + right_y_offset, 
                 width, 
                 continuous_scene->tile_width,
                 continuous_scene->tilemap.bank);
@@ -407,8 +410,8 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];          
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                        
             load_tile_row(continuous_scene->tilemap.ptr, 
-                (x - image_tile_width), 
-                (y - image_tile_height), 
+                (x - image_tile_width) + bottom_x_offset, 
+                (y - image_tile_height) + right_y_offset, 
                 width, 
                 continuous_scene->tile_width,
                 continuous_scene->tilemap.bank);
@@ -422,6 +425,10 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
     // Used for continuous scene row rendering to adjust for different scene sizes and offsets
     bkg_address_offset = ((UWORD)get_bkg_xy_addr((x + bkg_offset_x), (y + bkg_offset_y))) - 0x9800;
     continuous_scene_t* continuous_scene;
+    BYTE top_x_offset = (continuous_scene_enabled & DIRECTION_TOP_FLAG) ? continuous_scenes[DIRECTION_TOP].offset : 0;
+    BYTE left_y_offset = (continuous_scene_enabled & DIRECTION_LEFT_FLAG) ? continuous_scenes[DIRECTION_LEFT].offset : 0;
+    BYTE bottom_x_offset = (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG) ? continuous_scenes[DIRECTION_BOTTOM].offset : 0;
+    BYTE right_y_offset = (continuous_scene_enabled & DIRECTION_RIGHT_FLAG) ? continuous_scenes[DIRECTION_RIGHT].offset : 0;
     UBYTE section_height; 
     if (y > SCREEN_OOB_TOP){
         section_height = MIN(height, (0 - y));             
@@ -429,8 +436,8 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->tilemap.ptr, 
-                continuous_scene->tile_width + x, 
-                (UBYTE)(continuous_scene->tile_height + y), 
+                continuous_scene->tile_width + x + top_x_offset, 
+                (UBYTE)(continuous_scene->tile_height + y + left_y_offset), 
                 section_height, 
                 continuous_scene->tile_width,
                 continuous_scene->tilemap.bank);  
@@ -441,7 +448,7 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP];          
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->tilemap.ptr, 
-                x, 
+                x + top_x_offset, 
                 (UBYTE)(continuous_scene->tile_height + y),  
                 section_height, 
                 continuous_scene->tile_width,
@@ -453,8 +460,8 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];          
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->tilemap.ptr, 
-                (x - image_tile_width), 
-                (UBYTE)(continuous_scene->tile_height + y), 
+                (x - image_tile_width) + top_x_offset, 
+                (UBYTE)(continuous_scene->tile_height + y + right_y_offset), 
                 section_height, 
                 continuous_scene->tile_width,
                 continuous_scene->tilemap.bank);
@@ -473,7 +480,7 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->tilemap.ptr, 
                 continuous_scene->tile_width + x, 
-                y, 
+                y + left_y_offset, 
                 section_height, 
                 continuous_scene->tile_width,
                 continuous_scene->tilemap.bank);
@@ -488,7 +495,7 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->tilemap.ptr, 
                 (x - image_tile_width), 
-                y, 
+                y + right_y_offset, 
                 section_height, 
                 continuous_scene->tile_width,
                 continuous_scene->tilemap.bank);
@@ -504,8 +511,8 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];                        
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->tilemap.ptr, 
-                continuous_scene->tile_width + x, 
-                (y - image_tile_height), 
+                continuous_scene->tile_width + x + bottom_x_offset, 
+                (y - image_tile_height) + left_y_offset, 
             height, 
             continuous_scene->tile_width,
             continuous_scene->tilemap.bank);
@@ -516,7 +523,7 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];          
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->tilemap.ptr, 
-                x, 
+                x + bottom_x_offset, 
                 (y - image_tile_height), 
                 height, 
                 continuous_scene->tile_width,
@@ -528,8 +535,8 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];          
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->tilemap.ptr, 
-                (x - image_tile_width), 
-                (y - image_tile_height), 
+                (x - image_tile_width) + bottom_x_offset, 
+                (y - image_tile_height) + right_y_offset, 
                 height, 
                 continuous_scene->tile_width,
                 continuous_scene->tilemap.bank);
@@ -558,6 +565,10 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
     // Used for continuous scene row rendering to adjust for different scene sizes and offsets
     bkg_address_offset = ((UWORD)get_bkg_xy_addr((x + bkg_offset_x), (y + bkg_offset_y))) - 0x9800;
     continuous_scene_t* continuous_scene;
+    BYTE top_x_offset = (continuous_scene_enabled & DIRECTION_TOP_FLAG) ? continuous_scenes[DIRECTION_TOP].offset : 0;
+    BYTE left_y_offset = (continuous_scene_enabled & DIRECTION_LEFT_FLAG) ? continuous_scenes[DIRECTION_LEFT].offset : 0;
+    BYTE bottom_x_offset = (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG) ? continuous_scenes[DIRECTION_BOTTOM].offset : 0;
+    BYTE right_y_offset = (continuous_scene_enabled & DIRECTION_RIGHT_FLAG) ? continuous_scenes[DIRECTION_RIGHT].offset : 0;
     UBYTE section_width;
     if (x > SCREEN_OOB_LEFT){
         section_width = MIN(width, (0 - x));        
@@ -566,8 +577,8 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                 
             load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
-                continuous_scene->tile_width + x, 
-                continuous_scene->tile_height + y, 
+                continuous_scene->tile_width + x + top_x_offset, 
+                continuous_scene->tile_height + y + left_y_offset, 
                 section_width,
                 continuous_scene->tile_width,
                 continuous_scene->cgb_tilemap_attr.bank);
@@ -579,7 +590,7 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
                 load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
                     continuous_scene->tile_width + x, 
-                    y, 
+                    y + left_y_offset, 
                     section_width,
                     continuous_scene->tile_width,
                     continuous_scene->cgb_tilemap_attr.bank);
@@ -590,8 +601,8 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
                 load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
-                    continuous_scene->tile_width + x, 
-                    (y - image_tile_height), 
+                    continuous_scene->tile_width + x + bottom_x_offset, 
+                    (y - image_tile_height) + left_y_offset, 
                     section_width, 
                     continuous_scene->tile_width,
                     continuous_scene->cgb_tilemap_attr.bank);
@@ -610,7 +621,7 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP];   
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){                 
                 load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
-                    x, 
+                    x + top_x_offset, 
                     continuous_scene->tile_height + y, 
                     section_width, 
                     continuous_scene->tile_width,
@@ -625,7 +636,7 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];          
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
                 load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
-                    x, 
+                    x + bottom_x_offset, 
                     (y - image_tile_height), 
                     section_width, 
                     continuous_scene->tile_width,
@@ -643,8 +654,8 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];                        
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
-                (x - image_tile_width), 
-                continuous_scene->tile_height + y, 
+                (x - image_tile_width) + top_x_offset, 
+                continuous_scene->tile_height + y + right_y_offset, 
                 width, 
                 continuous_scene->tile_width,
                 continuous_scene->cgb_tilemap_attr.bank);
@@ -656,7 +667,7 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
                 (x - image_tile_width), 
-                y, 
+                y + right_y_offset, 
                 width, 
                 continuous_scene->tile_width,
                 continuous_scene->cgb_tilemap_attr.bank);
@@ -667,8 +678,8 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];          
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, 
-                (x - image_tile_width), 
-                (y - image_tile_height), 
+                (x - image_tile_width) + bottom_x_offset, 
+                (y - image_tile_height) + right_y_offset, 
                 width, 
                 continuous_scene->tile_width,
                 continuous_scene->cgb_tilemap_attr.bank);
@@ -682,6 +693,10 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
     // Used for continuous scene row rendering to adjust for different scene sizes and offsets
     bkg_address_offset = ((UWORD)get_bkg_xy_addr((x + bkg_offset_x), (y + bkg_offset_y))) - 0x9800;
     continuous_scene_t* continuous_scene;
+    BYTE top_x_offset = (continuous_scene_enabled & DIRECTION_TOP_FLAG) ? continuous_scenes[DIRECTION_TOP].offset : 0;
+    BYTE left_y_offset = (continuous_scene_enabled & DIRECTION_LEFT_FLAG) ? continuous_scenes[DIRECTION_LEFT].offset : 0;
+    BYTE bottom_x_offset = (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG) ? continuous_scenes[DIRECTION_BOTTOM].offset : 0;
+    BYTE right_y_offset = (continuous_scene_enabled & DIRECTION_RIGHT_FLAG) ? continuous_scenes[DIRECTION_RIGHT].offset : 0;
     UBYTE section_height; 
     if (y > SCREEN_OOB_TOP){
         section_height = MIN(height, (0 - y));             
@@ -689,8 +704,8 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
                 load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
-                    continuous_scene->tile_width + x, 
-                    (UBYTE)(continuous_scene->tile_height + y), 
+                    continuous_scene->tile_width + x + top_x_offset, 
+                    (UBYTE)(continuous_scene->tile_height + y + left_y_offset), 
                     section_height, 
                     continuous_scene->tile_width,
                 continuous_scene->cgb_tilemap_attr.bank);   
@@ -701,7 +716,7 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP];          
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
                 load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
-                    x, 
+                    x + top_x_offset, 
                     (UBYTE)(continuous_scene->tile_height + y),  
                     section_height, 
                     continuous_scene->tile_width,
@@ -713,8 +728,8 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT]; 
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){         
             load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
-                (x - image_tile_width), 
-                (UBYTE)(continuous_scene->tile_height + y), 
+                (x - image_tile_width) + top_x_offset, 
+                (UBYTE)(continuous_scene->tile_height + y + right_y_offset), 
                 section_height, 
                 continuous_scene->tile_width,
                 continuous_scene->cgb_tilemap_attr.bank);
@@ -733,7 +748,7 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
                 load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
                     continuous_scene->tile_width + x, 
-                    y, 
+                    y + left_y_offset, 
                     section_height, 
                     continuous_scene->tile_width,
                     continuous_scene->cgb_tilemap_attr.bank);
@@ -748,7 +763,7 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){          
             load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
                 (x - image_tile_width), 
-                y, 
+                y + right_y_offset, 
                 section_height, 
                 continuous_scene->tile_width,
                 continuous_scene->cgb_tilemap_attr.bank);
@@ -764,8 +779,8 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];                        
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
-                continuous_scene->tile_width + x, 
-                (y - image_tile_height), 
+                continuous_scene->tile_width + x + bottom_x_offset, 
+                (y - image_tile_height) + left_y_offset, 
                 height, 
                 continuous_scene->tile_width,
                 continuous_scene->cgb_tilemap_attr.bank);
@@ -777,7 +792,7 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];          
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
-                x, 
+                x + bottom_x_offset, 
                 (y - image_tile_height), 
                 height, 
                 continuous_scene->tile_width,
@@ -789,8 +804,8 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];          
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){ 
             load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, 
-                (x - image_tile_width), 
-                (y - image_tile_height), 
+                (x - image_tile_width) + bottom_x_offset, 
+                (y - image_tile_height) + right_y_offset, 
                 height, 
                 continuous_scene->tile_width,
                 continuous_scene->cgb_tilemap_attr.bank);

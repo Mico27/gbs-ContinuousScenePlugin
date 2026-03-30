@@ -22,9 +22,19 @@
       "args": {
         "scene_data_symbol_prefix": "ff_overworld",
         "loop_horizontally": true,
-        "loop_vertically": true
+        "loop_vertically": true,
+        "__comment": false
       },
       "id": "6085e16c-c7f2-4fd8-aaaf-cf0f5e418845"
+    },
+    {
+      "command": "EVENT_AUTO_CONNECT_CONTINUOUS_SCENE",
+      "args": {
+        "scene_data_symbol_prefix": "pkmn_overworld",
+        "loop_horizontally": false,
+        "loop_vertically": false
+      },
+      "id": "ee5170be-4cd5-4ac5-a10e-9fd82426e1a7"
     },
     {
       "command": "EVENT_SET_CONTINUOUS_SCENE",

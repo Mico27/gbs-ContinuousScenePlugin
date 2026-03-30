@@ -127,6 +127,7 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
     activate_shadow_OAM();
     wait_vbl_done();
     show_actors_on_overlay = tmp_show_actors_on_overlay;
+    WORD offset = continuous_scene->offset;
     switch (direction){
         case DIRECTION_RIGHT:
             camera_x -= image_width_subpx;
@@ -134,6 +135,13 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
             PLAYER.pos.x -= TILE_TO_SUBPX(image_tile_width);
             bkg_offset_x = (bkg_offset_x + image_tile_width) & 31;
             transitioning_player_pos_x = PLAYER.pos.x;
+            if (offset){
+                camera_y += (offset << 8);
+                scroll_y = SUBPX_TO_PX(camera_y) - (SCREENHEIGHT >> 1);
+                PLAYER.pos.y += (offset << 8);
+                bkg_offset_y = (bkg_offset_y - offset) & 31;
+                transitioning_player_pos_y = PLAYER.pos.y;
+            }
         break;
         case DIRECTION_BOTTOM:
             camera_y -= image_height_subpx;
@@ -141,6 +149,13 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
             PLAYER.pos.y -= TILE_TO_SUBPX(image_tile_height);
             bkg_offset_y = (bkg_offset_y + image_tile_height) & 31;
             transitioning_player_pos_y = PLAYER.pos.y;
+            if (offset){
+                camera_x += (offset << 8);
+                scroll_x = SUBPX_TO_PX(camera_x) - (SCREENWIDTH >> 1);
+                PLAYER.pos.x += (offset << 8);
+                bkg_offset_x = (bkg_offset_x - offset) & 31;
+                transitioning_player_pos_x = PLAYER.pos.x;
+            }
         break;
     }
     // kill all threads, but don't clear variables 
@@ -161,6 +176,13 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
             PLAYER.pos.x += TILE_TO_SUBPX(image_tile_width);
             bkg_offset_x = (bkg_offset_x - image_tile_width) & 31;
             transitioning_player_pos_x = PLAYER.pos.x;
+            if (offset){
+                camera_y += (offset << 8);
+                scroll_y = SUBPX_TO_PX(camera_y) - (SCREENHEIGHT >> 1);
+                PLAYER.pos.y += (offset << 8);
+                bkg_offset_y = (bkg_offset_y - offset) & 31;
+                transitioning_player_pos_y = PLAYER.pos.y;
+            }
         break;
         case DIRECTION_TOP:
             camera_y += image_height_subpx;
@@ -168,6 +190,13 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
             PLAYER.pos.y += TILE_TO_SUBPX(image_tile_height);
             bkg_offset_y = (bkg_offset_y - image_tile_height) & 31;
             transitioning_player_pos_y = PLAYER.pos.y;
+            if (offset){
+                camera_x += (offset << 8);
+                scroll_x = SUBPX_TO_PX(camera_x) - (SCREENWIDTH >> 1);
+                PLAYER.pos.x += (offset << 8);
+                bkg_offset_x = (bkg_offset_x - offset) & 31;
+                transitioning_player_pos_x = PLAYER.pos.x;
+            }
         break;
     }
 }

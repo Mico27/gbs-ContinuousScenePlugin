@@ -99,12 +99,16 @@ UBYTE tile_col_test_range_y(UBYTE tile_mask, UBYTE tx, UBYTE ty_start, UBYTE ty_
     }
     if ((continuous_scene_enabled & DIRECTION_LEFT_FLAG) && (tx > SCREEN_OOB_LEFT)){
         continuous_scene = &continuous_scenes[DIRECTION_LEFT];
-        tx = tx + continuous_scene->tile_width;        
+        tx = tx + continuous_scene->tile_width;   
+        ty_start += continuous_scene->offset;
+        ty_end += continuous_scene->offset;      
         return tile_col_test_range_y_impl(tile_mask, tx, ty_start, ty_end, continuous_scene->collision.ptr, continuous_scene->collision.bank, 
             continuous_scene->tile_width, continuous_scene->tile_height);
     } else if ((continuous_scene_enabled & DIRECTION_RIGHT_FLAG) && (tx >= image_tile_width) && (tx <= SCREEN_OOB_LEFT)) {
-        tx = tx - image_tile_width;
+        tx = tx - image_tile_width;        
         continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
+        ty_start += continuous_scene->offset;
+        ty_end += continuous_scene->offset; 
         return tile_col_test_range_y_impl(tile_mask, tx, ty_start, ty_end, continuous_scene->collision.ptr, continuous_scene->collision.bank, 
             continuous_scene->tile_width, continuous_scene->tile_height);
     }    
@@ -126,12 +130,16 @@ UBYTE tile_col_test_range_x(UBYTE tile_mask, UBYTE ty, UBYTE tx_start, UBYTE tx_
     }
     if ((continuous_scene_enabled & DIRECTION_TOP_FLAG) && (ty > SCREEN_OOB_TOP)){
         continuous_scene = &continuous_scenes[DIRECTION_TOP];
-        ty = ty + continuous_scene->tile_height;              
+        ty = ty + continuous_scene->tile_height;
+        tx_start += continuous_scene->offset;
+        tx_end += continuous_scene->offset;             
         return tile_col_test_range_x_impl(tile_mask, ty, tx_start, tx_end, continuous_scene->collision.ptr, continuous_scene->collision.bank, 
             continuous_scene->tile_width, continuous_scene->tile_height);
     } else if ((continuous_scene_enabled & DIRECTION_BOTTOM_FLAG) && (ty >= image_tile_height) && (ty <= SCREEN_OOB_TOP)) {
         ty = ty - image_tile_height;
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
+        tx_start += continuous_scene->offset;
+        tx_end += continuous_scene->offset; 
         return tile_col_test_range_x_impl(tile_mask, ty, tx_start, tx_end, continuous_scene->collision.ptr, continuous_scene->collision.bank, 
             continuous_scene->tile_width, continuous_scene->tile_height);
     }  
