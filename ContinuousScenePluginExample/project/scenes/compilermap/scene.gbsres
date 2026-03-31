@@ -1,0 +1,43 @@
+{
+  "_resourceType": "scene",
+  "id": "edefc81f-30e0-4013-a91b-d7403e32547e",
+  "_index": 0,
+  "name": "CompilerMap",
+  "backgroundId": "21ffa042-99a2-4b12-b58c-752af7184056",
+  "tilesetId": "",
+  "width": 20,
+  "height": 18,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "0f2+0010+0f4+0010+0f2+0034+0f4+0010+0f4+0010+0f4+0010+0f4+0032+0f4+0010+0f4+0010+0f4+0010+0f4+0032+0f2+0010+0f4+0010+0f2+",
+  "autoFadeSpeed": 1,
+  "symbol": "scene_77",
+  "x": 792,
+  "y": 480,
+  "script": [
+    {
+      "command": "EVENT_AUTO_CONNECT_CONTINUOUS_SCENE",
+      "args": {
+        "scene_data_symbol_prefix": "ff_overworld",
+        "loop_horizontally": true,
+        "loop_vertically": true,
+        "__comment": false
+      },
+      "id": "20b683e4-6891-433a-94e6-b6526f9bf82a"
+    },
+    {
+      "command": "EVENT_AUTO_CONNECT_CONTINUOUS_SCENE",
+      "args": {
+        "scene_data_symbol_prefix": "pkmn_overworld",
+        "loop_horizontally": false,
+        "loop_vertically": false
+      },
+      "id": "4ad85bcc-a065-443f-a5a3-f872216279f1"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

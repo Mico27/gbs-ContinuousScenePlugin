@@ -1,7 +1,7 @@
 {
   "_resourceType": "scene",
   "id": "b7a7a65c-f529-4647-b35d-b0e9c34a25a9",
-  "_index": 2,
+  "_index": 3,
   "name": "SmallMap",
   "backgroundId": "21ffa042-99a2-4b12-b58c-752af7184056",
   "tilesetId": "01f94c56-1fa6-4030-afb8-b6406e0c8b6e",
@@ -23,7 +23,7 @@
         "scene_data_symbol_prefix": "ff_overworld",
         "loop_horizontally": true,
         "loop_vertically": true,
-        "__comment": false
+        "__comment": true
       },
       "id": "6085e16c-c7f2-4fd8-aaaf-cf0f5e418845"
     },
@@ -32,7 +32,8 @@
       "args": {
         "scene_data_symbol_prefix": "pkmn_overworld",
         "loop_horizontally": false,
-        "loop_vertically": false
+        "loop_vertically": false,
+        "__comment": true
       },
       "id": "ee5170be-4cd5-4ac5-a10e-9fd82426e1a7"
     },
