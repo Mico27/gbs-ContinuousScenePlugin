@@ -43,7 +43,7 @@ void scene_transition_reset(void) BANKED {
     transitioning_player_pos_x = 0;
     transitioning_player_pos_y = 0;
     continuous_scene_enabled = 0;
-    camera_settings |= CAMERA_LOCK_FLAG;
+    //camera_settings |= CAMERA_LOCK_FLAG;
 }
 
 void check_transition_to_scene_collision(void) BANKED {	
@@ -74,6 +74,7 @@ void transition_to_scene_modal(UBYTE direction) BANKED {
     continuous_scene_t* continuous_scene = &continuous_scenes[direction];    
     if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
         is_transitioning_scene = 1;
+        UBYTE was_scroll_render_disabled = scroll_render_disabled;
         scroll_render_disabled = 1;
         transition_load_scene(continuous_scene, direction);
         do {
@@ -101,7 +102,7 @@ void transition_to_scene_modal(UBYTE direction) BANKED {
     }
 #endif
         is_transitioning_scene = 0;
-        scroll_render_disabled = 0;
+        scroll_render_disabled = was_scroll_render_disabled;
 
     }
 }
@@ -132,7 +133,7 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
         case DIRECTION_RIGHT:
             camera_x -= image_width_subpx;
             scroll_x -= (image_width + 8);
-            PLAYER.pos.x -= TILE_TO_SUBPX(image_tile_width);
+            PLAYER.pos.x -= image_width_subpx;
             bkg_offset_x = (bkg_offset_x + image_tile_width) & 31;
             transitioning_player_pos_x = PLAYER.pos.x;
             if (offset){
@@ -146,7 +147,7 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
         case DIRECTION_BOTTOM:
             camera_y -= image_height_subpx;
             scroll_y -= (image_height + 8);
-            PLAYER.pos.y -= TILE_TO_SUBPX(image_tile_height);
+            PLAYER.pos.y -= image_height_subpx;
             bkg_offset_y = (bkg_offset_y + image_tile_height) & 31;
             transitioning_player_pos_y = PLAYER.pos.y;
             if (offset){
@@ -173,7 +174,7 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
         case DIRECTION_LEFT:
             camera_x += image_width_subpx;
             scroll_x += (image_width + 8);
-            PLAYER.pos.x += TILE_TO_SUBPX(image_tile_width);
+            PLAYER.pos.x += image_width_subpx;
             bkg_offset_x = (bkg_offset_x - image_tile_width) & 31;
             transitioning_player_pos_x = PLAYER.pos.x;
             if (offset){
@@ -187,7 +188,7 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
         case DIRECTION_TOP:
             camera_y += image_height_subpx;
             scroll_y += (image_height + 8);
-            PLAYER.pos.y += TILE_TO_SUBPX(image_tile_height);
+            PLAYER.pos.y += image_height_subpx;
             bkg_offset_y = (bkg_offset_y - image_tile_height) & 31;
             transitioning_player_pos_y = PLAYER.pos.y;
             if (offset){

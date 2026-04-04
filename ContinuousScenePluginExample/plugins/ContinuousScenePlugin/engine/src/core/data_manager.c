@@ -232,6 +232,11 @@ UBYTE load_scene(const scene_t * scene, UBYTE bank, UBYTE init_data) BANKED {
         scene_LCD_type = LCD_parallax;
     }
 
+    scroll_x_min = scn.scroll_bounds.left;
+    scroll_x_max = scn.scroll_bounds.right;
+    scroll_y_min = scn.scroll_bounds.top;
+    scroll_y_max = scn.scroll_bounds.bottom;
+
     if (scene_type != SCENE_TYPE_LOGO) {
         // Load player
     #ifdef DISABLE_PLAYER_SPRITE_LOAD_ON_TRANSITION

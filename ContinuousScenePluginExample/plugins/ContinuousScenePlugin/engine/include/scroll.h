@@ -18,11 +18,17 @@
 #define PENDING_BATCH_SIZE 12
 #define SCREEN_OOB_LEFT (255 - SCREEN_TILE_REFRES_W)
 #define SCREEN_OOB_TOP (255 - SCREEN_TILE_REFRES_H)
+#define SCREEN_OOB_LEFT_PX TILE_TO_PX(255 - SCREEN_TILE_REFRES_W)
+#define SCREEN_OOB_TOP_PX TILE_TO_PX(255 - SCREEN_TILE_REFRES_H)
 
 extern INT16 scroll_x;
 extern INT16 scroll_y;
 extern INT16 draw_scroll_x;
 extern INT16 draw_scroll_y;
+extern UINT16 scroll_x_min;
+extern UINT16 scroll_y_min;
+extern UINT16 scroll_x_max;
+extern UINT16 scroll_y_max;
 extern BYTE scroll_offset_x;
 extern BYTE scroll_offset_y;
 extern UBYTE bkg_scroll_x;

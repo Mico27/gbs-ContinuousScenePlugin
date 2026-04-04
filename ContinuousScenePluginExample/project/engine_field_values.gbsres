@@ -15,23 +15,15 @@
     },
     {
       "id": "SHOOTER_MOVEMENT_TYPE",
-      "value": "MOVEMENT_TYPE_LOCK_PERPENDICULAR"
+      "value": "MOVEMENT_TYPE_FREE"
     },
     {
       "id": "SHOOTER_TRIGGER_ACTIVATION",
-      "value": "ON_PLAYER_COLLISION"
+      "value": "ON_SCREEN_ENTER"
     },
     {
       "id": "SHOOTER_WALL_COLLISION_GROUP",
       "value": "COLLISION_GROUP_NONE"
-    },
-    {
-      "id": "DISABLE_UI_TILESET_LOAD",
-      "value": 1
-    },
-    {
-      "id": "DISABLE_TILESET_LOAD_ON_TRANSITION",
-      "value": 0
     },
     {
       "id": "scroll_bottom_margin",
@@ -40,6 +32,30 @@
     {
       "id": "topdown_grid",
       "value": 16
+    },
+    {
+      "id": "shooter_scroll_speed",
+      "value": 32
+    },
+    {
+      "id": "adv_walk_vel",
+      "value": 12288
+    },
+    {
+      "id": "adv_dec",
+      "value": 204
+    },
+    {
+      "id": "adv_walk_acc",
+      "value": 409
+    },
+    {
+      "id": "adv_turn_acc",
+      "value": 409
+    },
+    {
+      "id": "DISABLE_UI_TILESET_LOAD",
+      "value": 1
     }
   ]
 }
