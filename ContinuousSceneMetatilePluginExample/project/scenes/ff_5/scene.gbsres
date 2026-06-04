@@ -1,0 +1,38 @@
+{
+  "_resourceType": "scene",
+  "id": "5cc0f056-20a0-4564-b301-7036fb39153f",
+  "_index": 49,
+  "name": "FF_5",
+  "backgroundId": "1477b0a0-8850-4822-b8dc-50fb5a8fb6ae",
+  "tilesetId": "ab5c57e8-8fd5-48f5-aa08-7fea71b2df7b",
+  "width": 128,
+  "height": 128,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [
+    "37629c92-f0e5-4fd9-8413-057e7537e1a6",
+    "0bd0d86a-2db8-47ff-87b2-098db14daf03",
+    "4bbf657a-e505-4767-aa32-6ec3baa8f807",
+    "204562e3-0569-4241-b48d-9ed8c1f7ea4a"
+  ],
+  "spritePaletteIds": [],
+  "collisions": "004000+",
+  "autoFadeSpeed": 1,
+  "symbol": "ff_overworld_1_0",
+  "x": 168,
+  "y": 2016,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "40e759ff-00d5-4e8c-ac7a-62aa089019d1",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "2864c107-0247-41ae-89a8-bac8565f5a52"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}
