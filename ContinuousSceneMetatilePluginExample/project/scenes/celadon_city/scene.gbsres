@@ -18,7 +18,24 @@
   "symbol": "pkmn_overworld_celadon_city",
   "x": 3696,
   "y": 7096,
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "0a1cd44b-0808-4b4e-b8de-3e0834181f66"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
+      },
+      "id": "3a3e843b-7b47-4d28-9954-0df6e4059ba8"
+    }
+  ],
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": []

@@ -1,7 +1,7 @@
 {
   "_resourceType": "scene",
   "id": "f533e499-251a-45bd-bd30-f490538e6a34",
-  "_index": 37,
+  "_index": 36,
   "name": "Route 18",
   "backgroundId": "01707ce6-b26b-42a7-b2e4-d0b15c733fd1",
   "tilesetId": "d4eb43d6-cc71-432a-ab0e-48e912e0233e",
@@ -18,7 +18,24 @@
   "symbol": "pkmn_overworld_route_18",
   "x": 3056,
   "y": 9816,
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "6cd2ae81-913f-442c-aa4e-9f4b0d7f53a2"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
+      },
+      "id": "cf53f312-92b9-4d7e-acdc-f5477cde71ec"
+    }
+  ],
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": []

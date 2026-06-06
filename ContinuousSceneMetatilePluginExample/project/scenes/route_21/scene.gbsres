@@ -1,7 +1,7 @@
 {
   "_resourceType": "scene",
   "id": "5cd56a63-48ac-4b79-8c4d-1326d0db4751",
-  "_index": 41,
+  "_index": 40,
   "name": "Route 21",
   "backgroundId": "41d3c6e4-7ff9-4fa6-a032-635f8ac7dfd5",
   "tilesetId": "d4eb43d6-cc71-432a-ab0e-48e912e0233e",
@@ -18,7 +18,24 @@
   "symbol": "pkmn_overworld_route_21",
   "x": 2096,
   "y": 9400,
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "890886b2-28b5-4454-b2f3-189332e0ce1c"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
+      },
+      "id": "067b24e7-ab1d-4138-9189-e02df03fdffd"
+    }
+  ],
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": []

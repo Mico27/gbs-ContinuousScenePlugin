@@ -20,12 +20,20 @@
   "y": 9112,
   "script": [
     {
-      "command": "EVENT_GBVM_SCRIPT",
+      "command": "EVENT_LOAD_META_TILES",
       "args": {
-        "references": [],
-        "script": "VM_SET_CONST_UINT8 _fill_tile_id, 82\nVM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 0"
+        "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
+        "matchColor": false,
+        "matchCollision": false
       },
-      "id": "d1a98820-1285-432d-82db-fea3344c2ada"
+      "id": "816f05ca-f292-43f7-af36-686888665dc1"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
+      },
+      "id": "746d3e4b-b2da-487d-89cd-3553f3c06031"
     }
   ],
   "playerHit1Script": [],

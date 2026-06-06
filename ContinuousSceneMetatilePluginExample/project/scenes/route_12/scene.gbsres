@@ -1,0 +1,42 @@
+{
+  "_resourceType": "scene",
+  "id": "61537168-1a7d-4ed3-a11d-e74a5309672e",
+  "_index": 28,
+  "name": "Route 12",
+  "backgroundId": "a2d9a151-b8c9-4bcb-afa8-35bad59cf3c2",
+  "tilesetId": "d4eb43d6-cc71-432a-ab0e-48e912e0233e",
+  "width": 40,
+  "height": 216,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [
+    "14d5d7eb-d80f-444c-847d-6bced622e2b9"
+  ],
+  "spritePaletteIds": [],
+  "collisions": "0010e0+",
+  "autoFadeSpeed": 1,
+  "symbol": "pkmn_overworld_route_12",
+  "x": 6416,
+  "y": 7512,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "37a93dda-1dd2-41b9-b977-5f310e67569a"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
+      },
+      "id": "11a98708-db39-46cb-9851-f704fc9b9ccc"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

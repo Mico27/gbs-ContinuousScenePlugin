@@ -4,7 +4,7 @@
   "_index": 14,
   "name": "Indigo Plateau",
   "backgroundId": "a184876a-bb84-40db-9af9-5da1e26a4894",
-  "tilesetId": "d4eb43d6-cc71-432a-ab0e-48e912e0233e",
+  "tilesetId": "014dde50-8e39-4d2b-99b7-40cba1e42898",
   "width": 40,
   "height": 36,
   "type": "TOPDOWN",
@@ -18,7 +18,17 @@
   "symbol": "pkmn_overworld_indigo_plate",
   "x": 1296,
   "y": 5496,
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "833113a4-fa67-47ba-9466-cc5194472f26",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "fa654844-f1da-4ccb-9366-97371250d337"
+    }
+  ],
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": []

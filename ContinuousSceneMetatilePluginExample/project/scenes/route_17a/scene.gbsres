@@ -1,7 +1,7 @@
 {
   "_resourceType": "scene",
   "id": "ba05180a-b0ed-48dd-96d3-0db9ac8393de",
-  "_index": 35,
+  "_index": 34,
   "name": "Route 17A",
   "backgroundId": "97550136-e1a6-4d06-beb6-260c7c3e13ad",
   "tilesetId": "d4eb43d6-cc71-432a-ab0e-48e912e0233e",
@@ -18,7 +18,24 @@
   "symbol": "pkmn_overworld_route_17a",
   "x": 3056,
   "y": 7512,
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "d8eb97e2-0fde-4add-b128-79b88c35ff17"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
+      },
+      "id": "074a7c1a-6ea5-4944-a415-94d1c02ee720"
+    }
+  ],
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": []

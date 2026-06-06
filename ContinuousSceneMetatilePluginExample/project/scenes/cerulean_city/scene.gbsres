@@ -18,7 +18,24 @@
   "symbol": "pkmn_overworld_cerulean_cit",
   "x": 4816,
   "y": 5944,
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "aa19385a-80fb-4efa-a57d-f9e9f299c143"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
+      },
+      "id": "d7b32b5d-56e3-4e22-8304-9cd7922e1ab7"
+    }
+  ],
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": []

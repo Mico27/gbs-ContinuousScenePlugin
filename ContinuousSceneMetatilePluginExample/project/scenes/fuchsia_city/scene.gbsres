@@ -1,7 +1,7 @@
 {
   "_resourceType": "scene",
   "id": "10bcdc30-2c2a-4dd5-98a4-8a3f5b25e2e4",
-  "_index": 33,
+  "_index": 32,
   "name": "Fuchsia City",
   "backgroundId": "b74aa576-910e-4809-ba06-a4ced9cb1e1c",
   "tilesetId": "d4eb43d6-cc71-432a-ab0e-48e912e0233e",
@@ -18,7 +18,24 @@
   "symbol": "pkmn_overworld_fuchsia_city",
   "x": 3856,
   "y": 9688,
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "6b053cbd-afd3-4d5c-a3f7-5949586e0957"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
+      },
+      "id": "9eef9b11-893b-40a6-bf5f-a8f36465fded"
+    }
+  ],
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": []

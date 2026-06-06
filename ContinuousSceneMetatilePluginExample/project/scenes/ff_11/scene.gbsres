@@ -1,0 +1,82 @@
+{
+  "_resourceType": "scene",
+  "id": "24812901-0b88-4685-b786-c0723980f649",
+  "_index": 54,
+  "name": "FF_11",
+  "backgroundId": "d5f3aebe-4e20-4fbf-bf0a-d1206bba76ab",
+  "tilesetId": "ab5c57e8-8fd5-48f5-aa08-7fea71b2df7b",
+  "width": 128,
+  "height": 128,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [
+    "37629c92-f0e5-4fd9-8413-057e7537e1a6",
+    "0bd0d86a-2db8-47ff-87b2-098db14daf03",
+    "4bbf657a-e505-4767-aa32-6ec3baa8f807",
+    "204562e3-0569-4241-b48d-9ed8c1f7ea4a"
+  ],
+  "spritePaletteIds": [],
+  "collisions": "004000+",
+  "autoFadeSpeed": 1,
+  "symbol": "ff_overworld_2_2",
+  "x": 2216,
+  "y": 3040,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "40e759ff-00d5-4e8c-ac7a-62aa089019d1",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "f6344ad9-b723-45f3-9f76-61e79c563421"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "b",
+          "a"
+        ],
+        "override": true,
+        "__scriptTabs": "press"
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_POSITION",
+            "args": {
+              "actorId": "$self$",
+              "vectorX": "0",
+              "vectorY": "1"
+            },
+            "id": "af509be0-a5da-4016-a236-8ed1a78f1484"
+          },
+          {
+            "command": "EVENT_REPLACE_META_TILE",
+            "args": {
+              "x": {
+                "type": "variable",
+                "value": "0"
+              },
+              "y": {
+                "type": "variable",
+                "value": "1"
+              },
+              "metatile_id": {
+                "type": "number",
+                "value": 83
+              },
+              "commit": true
+            },
+            "id": "48dcf82a-463f-4cd2-827d-b1090cbb79fe"
+          }
+        ]
+      },
+      "id": "f7f2ecde-9d5d-4276-8637-7ac0705a16f5"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

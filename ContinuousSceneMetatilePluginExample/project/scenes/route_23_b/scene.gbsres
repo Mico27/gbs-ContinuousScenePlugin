@@ -4,7 +4,7 @@
   "_index": 15,
   "name": "Route 23 B",
   "backgroundId": "cdd0e8e1-c0c5-4b14-9146-dddd9c353c6f",
-  "tilesetId": "d4eb43d6-cc71-432a-ab0e-48e912e0233e",
+  "tilesetId": "014dde50-8e39-4d2b-99b7-40cba1e42898",
   "width": 40,
   "height": 144,
   "type": "TOPDOWN",
@@ -18,7 +18,17 @@
   "symbol": "pkmn_overworld_route_23b",
   "x": 1296,
   "y": 6936,
-  "script": [],
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "833113a4-fa67-47ba-9466-cc5194472f26",
+        "matchColor": false,
+        "matchCollision": false
+      },
+      "id": "13f551a3-a44c-4b78-8633-3475004af35d"
+    }
+  ],
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": []

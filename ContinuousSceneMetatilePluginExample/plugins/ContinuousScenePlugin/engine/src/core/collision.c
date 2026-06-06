@@ -1,13 +1,30 @@
 #pragma bank 255
 
 #include "collision.h"
+#include "bankdata.h"
+#include "continuous_scene.h"
 #include "meta_tiles.h"
 #include "math.h"
+#include "scroll.h"
 #include "data/states_defines.h"
-#include "continuous_scene.h"
+#include "vm.h"
 
 UBYTE tile_hit_x = 0;
 UBYTE tile_hit_y = 0;
+
+// Reads the metatile ID for tile (tx, ty) from a neighbor scene's tilemap in ROM,
+// then returns the collision byte from the shared sram_collision_data table.
+static UBYTE get_neighbor_metatile_collision(continuous_scene_t* cs, UBYTE tx, UBYTE ty) {
+    if (!cs->tilemap.ptr || !cs->tilemap.bank) return COLLISION_ALL;
+    if (tx >= cs->tile_width || ty >= cs->tile_height) return COLLISION_ALL;
+#if METATILE_SIZE == METATILE_SIZE_16    
+    UBYTE metatile_id = ReadBankedUBYTE((const UBYTE*)cs->tilemap.ptr + ((UWORD)(ty >> 1) * (cs->tile_width >> 1) + (tx >> 1)), cs->tilemap.bank);
+    return sram_collision_data[TILE_MAP_OFFSET(metatile_id, tx, ty)];
+#else
+    UBYTE metatile_id = ReadBankedUBYTE((const UBYTE*)cs->tilemap.ptr + ((UWORD)ty * cs->tile_width + tx), cs->tilemap.bank);
+    return sram_collision_data[metatile_id];
+#endif
+}
 
 UBYTE legacy_tile_col_test_range_y(UBYTE tile_mask, UBYTE tx, UBYTE ty_start, UBYTE ty_end) NONBANKED {
     UBYTE _save = CURRENT_BANK;
@@ -44,11 +61,37 @@ UBYTE tile_col_test_range_y(UBYTE tile_mask, UBYTE tx, UBYTE ty_start, UBYTE ty_
     tile_hit_y = ty_start;
 
     if (tile_hit_x >= image_tile_width || tile_hit_y >= image_tile_height) {
-        if (continuous_scene_enabled) {
-            if (tile_hit_x >= image_tile_width && (continuous_scene_enabled & DIRECTION_RIGHT_FLAG)) return 0;
+        if (continuous_scene_enabled && metatile_collision_bank) {
+            continuous_scene_t* cs = NULL;
+            UBYTE neighbor_tx = tile_hit_x;
+            BYTE y_offset = 0;
+            if (tile_hit_x > SCREEN_OOB_LEFT && (continuous_scene_enabled & DIRECTION_LEFT_FLAG)) {
+                cs = &continuous_scenes[DIRECTION_LEFT];
+                neighbor_tx = tile_hit_x + cs->tile_width;
+                y_offset = cs->offset;
+            } else if (tile_hit_x >= image_tile_width && (continuous_scene_enabled & DIRECTION_RIGHT_FLAG)) {
+                cs = &continuous_scenes[DIRECTION_RIGHT];
+                neighbor_tx = tile_hit_x - image_tile_width;
+                y_offset = cs->offset;
+            }
+            if (cs) {
+                UBYTE inc = UBYTE_LESS_THAN(ty_start, ty_end);
+                UBYTE tile;
+                while (TRUE) {
+                    UBYTE neighbor_ty = tile_hit_y + y_offset;
+                    tile = get_neighbor_metatile_collision(cs, neighbor_tx, neighbor_ty);
+                    if (tile & tile_mask) return tile;
+                    if (tile_hit_y == ty_end) break;
+                    if (inc) tile_hit_y++;
+                    else tile_hit_y--;
+                }
+                return 0;
+            }
+        } else if (continuous_scene_enabled) {
             if (tile_hit_x > SCREEN_OOB_LEFT && (continuous_scene_enabled & DIRECTION_LEFT_FLAG)) return 0;
-            if (tile_hit_y >= image_tile_height && (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG)) return 0;
+            if (tile_hit_x >= image_tile_width && (continuous_scene_enabled & DIRECTION_RIGHT_FLAG)) return 0;
             if (tile_hit_y > SCREEN_OOB_TOP && (continuous_scene_enabled & DIRECTION_TOP_FLAG)) return 0;
+            if (tile_hit_y >= image_tile_height && (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG)) return 0;
         }
         return COLLISION_ALL & tile_mask ? COLLISION_ALL : 0;
     }
@@ -77,7 +120,7 @@ UBYTE tile_col_test_range_y(UBYTE tile_mask, UBYTE tx, UBYTE ty_start, UBYTE ty_
                 tile_hit_y--;
             }
             if (tile_hit_y >= image_tile_height) {
-                if (continuous_scene_enabled & (DIRECTION_BOTTOM_FLAG | DIRECTION_TOP_FLAG)) return 0;
+                if (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG) return 0;
                 return COLLISION_ALL & tile_mask ? COLLISION_ALL : 0;
             }
         }
@@ -120,11 +163,37 @@ UBYTE tile_col_test_range_x(UBYTE tile_mask, UBYTE ty, UBYTE tx_start, UBYTE tx_
     tile_hit_x = tx_start;
     tile_hit_y = ty;
     if (tile_hit_x >= image_tile_width || tile_hit_y >= image_tile_height) {
-        if (continuous_scene_enabled) {
-            if (tile_hit_x >= image_tile_width && (continuous_scene_enabled & DIRECTION_RIGHT_FLAG)) return 0;
-            if (tile_hit_x > SCREEN_OOB_LEFT && (continuous_scene_enabled & DIRECTION_LEFT_FLAG)) return 0;
-            if (tile_hit_y >= image_tile_height && (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG)) return 0;
+        if (continuous_scene_enabled && metatile_collision_bank) {
+            continuous_scene_t* cs = NULL;
+            UBYTE neighbor_ty = tile_hit_y;
+            BYTE x_offset = 0;
+            if (tile_hit_y > SCREEN_OOB_TOP && (continuous_scene_enabled & DIRECTION_TOP_FLAG)) {
+                cs = &continuous_scenes[DIRECTION_TOP];
+                neighbor_ty = tile_hit_y + cs->tile_height;
+                x_offset = cs->offset;
+            } else if (tile_hit_y >= image_tile_height && (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG)) {
+                cs = &continuous_scenes[DIRECTION_BOTTOM];
+                neighbor_ty = tile_hit_y - image_tile_height;
+                x_offset = cs->offset;
+            }
+            if (cs) {
+                UBYTE inc = UBYTE_LESS_THAN(tx_start, tx_end);
+                UBYTE tile;
+                while (TRUE) {
+                    UBYTE neighbor_tx = tile_hit_x + x_offset;
+                    tile = get_neighbor_metatile_collision(cs, neighbor_tx, neighbor_ty);
+                    if (tile & tile_mask) return tile;
+                    if (tile_hit_x == tx_end) break;
+                    if (inc) tile_hit_x++;
+                    else tile_hit_x--;
+                }
+                return 0;
+            }
+        } else if (continuous_scene_enabled) {
             if (tile_hit_y > SCREEN_OOB_TOP && (continuous_scene_enabled & DIRECTION_TOP_FLAG)) return 0;
+            if (tile_hit_y >= image_tile_height && (continuous_scene_enabled & DIRECTION_BOTTOM_FLAG)) return 0;
+            if (tile_hit_x > SCREEN_OOB_LEFT && (continuous_scene_enabled & DIRECTION_LEFT_FLAG)) return 0;
+            if (tile_hit_x >= image_tile_width && (continuous_scene_enabled & DIRECTION_RIGHT_FLAG)) return 0;
         }
         return COLLISION_ALL & tile_mask ? COLLISION_ALL : 0;
     }
@@ -153,7 +222,7 @@ UBYTE tile_col_test_range_x(UBYTE tile_mask, UBYTE ty, UBYTE tx_start, UBYTE tx_
                 tile_hit_x--;
             }
             if (tile_hit_x >= image_tile_width) {
-                if (continuous_scene_enabled & (DIRECTION_RIGHT_FLAG | DIRECTION_LEFT_FLAG)) return 0;
+                if (continuous_scene_enabled & DIRECTION_RIGHT_FLAG) return 0;
                 return COLLISION_ALL & tile_mask ? COLLISION_ALL : 0;
             }
         }
