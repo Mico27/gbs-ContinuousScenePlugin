@@ -10,7 +10,20 @@
     {
       "command": "EVENT_GBVM_SCRIPT",
       "args": {
-        "references": [],
+        "references": [
+          {
+            "type": "variable",
+            "id": "0"
+          },
+          {
+            "type": "variable",
+            "id": "1"
+          },
+          {
+            "type": "variable",
+            "id": "3"
+          }
+        ],
         "script": "VM_SET_CONST_UINT8 _fill_tile_id, 32\nVM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 0"
       },
       "id": "838d9911-0f34-48e6-93d1-f1bbb03caddb"
