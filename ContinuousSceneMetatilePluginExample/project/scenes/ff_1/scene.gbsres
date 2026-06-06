@@ -23,18 +23,12 @@
   "y": 992,
   "script": [
     {
-      "command": "EVENT_GBVM_SCRIPT",
-      "args": {
-        "script": "VM_SET_CONST_UINT8 _fill_tile_id, 23"
-      },
-      "id": "9a940e88-b48e-421a-95b3-e4f5ce34eefd"
-    },
-    {
       "command": "EVENT_LOAD_META_TILES",
       "args": {
         "sceneId": "40e759ff-00d5-4e8c-ac7a-62aa089019d1",
         "matchColor": false,
-        "matchCollision": false
+        "matchCollision": false,
+        "__comment": false
       },
       "id": "47d16181-285c-4de0-95eb-1ba9683334fd"
     }

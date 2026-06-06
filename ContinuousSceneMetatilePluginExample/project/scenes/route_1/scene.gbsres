@@ -24,9 +24,20 @@
       "args": {
         "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
         "matchColor": false,
-        "matchCollision": false
+        "matchCollision": false,
+        "__comment": false
       },
       "id": "e20468bc-89f9-4b04-a7fb-ce2d639cf551"
+    },
+    {
+      "command": "EVENT_SET_OOB_TILE",
+      "args": {
+        "tile_id": {
+          "type": "number",
+          "value": 32
+        }
+      },
+      "id": "ab879653-cb75-403d-b957-5f843bf0db41"
     },
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",

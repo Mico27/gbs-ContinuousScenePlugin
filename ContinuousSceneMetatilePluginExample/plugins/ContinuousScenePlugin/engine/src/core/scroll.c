@@ -174,8 +174,6 @@ UBYTE scroll_viewport(parallax_row_t * port) {
             activate_actors_in_col(x, full_y);
         } else if (current_col != new_col) {
             // If column differs by more than 1 render entire screen
-            script_memory[0] = current_col;
-            script_memory[1] = new_col;
             scroll_render_rows(draw_scroll_x, draw_scroll_y, ((scene_LCD_type == LCD_parallax) ? port->start_tile : -SCREEN_PAD_TOP), SCREEN_TILE_REFRES_H);
             return TRUE;
         } else if (pending_h_i) {
@@ -196,8 +194,6 @@ UBYTE scroll_viewport(parallax_row_t * port) {
             scroll_queue_row(x, y);
             activate_actors_in_row(x, y);
         } else if (current_row != new_row) {
-            script_memory[2] = current_row;
-            script_memory[3] = new_row;
             // If row differs by more than 1 render entire screen
             scroll_render_rows(draw_scroll_x, draw_scroll_y, ((scene_LCD_type == LCD_parallax) ? port->start_tile : -SCREEN_PAD_TOP), SCREEN_TILE_REFRES_H);
             return TRUE;
@@ -283,6 +279,63 @@ void scroll_queue_col(UBYTE x, UBYTE y) {
     scroll_load_pending_col();
 }
 
+// ============================================================
+// Non-metatile tile rendering — current scene
+// ============================================================
+
+// Render a row section from any banked ROM tilemap into VRAM.
+// Tiles outside the source bounds write oob_tile_id instead.
+void load_tile_row(const unsigned char * from, UBYTE x, UBYTE y, UBYTE width, UBYTE source_width, UBYTE source_height, UBYTE oob_tile_id, UBYTE bank) NONBANKED {
+    _save_bank = CURRENT_BANK;
+    SWITCH_ROM(bank);
+    UWORD y_offset = (y * (UWORD)source_width);
+    width = width + x;
+    for (x; x != width; x++) {
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), (x < source_width && y < source_height) ? *(from + y_offset + x) : oob_tile_id);
+        bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
+    }
+    SWITCH_ROM(_save_bank);
+}
+
+// Render a column section from any banked ROM tilemap into VRAM.
+void load_tile_col(const unsigned char * from, UBYTE x, UWORD y, UWORD height, UBYTE source_width, UBYTE source_height, UBYTE oob_tile_id, UBYTE bank) NONBANKED {
+    _save_bank = CURRENT_BANK;
+    SWITCH_ROM(bank);
+    UWORD tile_offset = (y * (UINT16)source_width) + x;
+    height = tile_offset + (height * (UINT16)source_width);
+    for (tile_offset; tile_offset != height; tile_offset += (UINT16)source_width) {
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), (x < source_width && y < source_height) ? *(from + tile_offset) : oob_tile_id);
+        bkg_address_offset = (bkg_address_offset + 32) & 1023;
+        y++;
+    }
+    SWITCH_ROM(_save_bank);
+}
+
+// ============================================================
+// Non-metatile fill — current scene
+// ============================================================
+
+// Fill a row section in VRAM with a constant raw tile ID.
+static void fill_tile_row_plain(UBYTE width, UBYTE tile_id) {
+    for (UBYTE x = 0; x != width; x++) {
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
+        bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
+    }
+}
+
+// Fill a column section in VRAM with a constant raw tile ID.
+static void fill_tile_col_plain(UBYTE height, UBYTE tile_id) {
+    for (UBYTE y = 0; y != height; y++) {
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
+        bkg_address_offset = (bkg_address_offset + 32) & 1023;
+    }
+}
+
+// ============================================================
+// Metatile tile rendering — current scene (SRAM lookup)
+// ============================================================
+
+// Render a row section using the current scene's SRAM metatile map and banked VRAM tile table.
 void load_metatile_row(const UBYTE* from, UBYTE x, UBYTE y, UBYTE width, UBYTE bank) NONBANKED {
     _save_bank = CURRENT_BANK;
     SWITCH_ROM(bank);
@@ -302,6 +355,7 @@ void load_metatile_row(const UBYTE* from, UBYTE x, UBYTE y, UBYTE width, UBYTE b
     SWITCH_ROM(_save_bank);
 }
 
+// Render a column section using the current scene's SRAM metatile map and banked VRAM tile table.
 void load_metatile_col(const UBYTE* from, UBYTE x, UBYTE y, UBYTE height, UBYTE bank) NONBANKED {
     _save_bank = CURRENT_BANK;
     SWITCH_ROM(bank);
@@ -321,82 +375,63 @@ void load_metatile_col(const UBYTE* from, UBYTE x, UBYTE y, UBYTE height, UBYTE 
     SWITCH_ROM(_save_bank);
 }
 
+// ============================================================
+// Metatile fill — current scene
+// ============================================================
 
-// Reads metatile IDs from a neighboring scene's tilemap in ROM,
-// then looks up the actual VRAM tile index via the shared metatile_ptr.
-// Used by continuous scene rendering when MetaTile is active.
-static void load_metatile_row_rom(const UBYTE* tilemap, UBYTE x, UBYTE y,
-                                  UBYTE width, UBYTE source_width, UBYTE source_height, UBYTE bank) {
+// Fill a row section by resolving a metatile ID through the current scene's VRAM tile table.
+static void fill_metatile_row(UBYTE x_offset, UBYTE y_offset, UBYTE width, UBYTE metatile_id) {
+    for (UBYTE x = 0; x != width; x++) {
 #if METATILE_SIZE == METATILE_SIZE_16
-    UBYTE metatile_src_w = source_width >> 1;
-    UWORD y_offset = ((UWORD)(y >> 1)) * metatile_src_w;
-    width = width + x;
-    for (x; x != width; x++) {
-        UBYTE tile_id;
-        if (x < source_width && y < source_height) {
-            UBYTE mid = ReadBankedUBYTE(tilemap + y_offset + (x >> 1), bank);
-            tile_id = ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(mid, x, y), metatile_bank);
-        } else {
-            tile_id = ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(fill_tile_id, x, y), metatile_bank);
-        }
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(metatile_id, x_offset + x, y_offset), metatile_bank));
+#else
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_ptr + metatile_id, metatile_bank));
+#endif
         bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
     }
-#else
-    UWORD y_offset = (y * (UWORD)source_width);
-    width = width + x;
-    for (x; x != width; x++) {
-        UBYTE tile_id;
-        if (x < source_width && y < source_height) {
-            UBYTE mid = ReadBankedUBYTE(tilemap + y_offset + x, bank);
-            tile_id = ReadBankedUBYTE(metatile_ptr + mid, metatile_bank);
-        } else {
-            tile_id = ReadBankedUBYTE(metatile_ptr + fill_tile_id, metatile_bank);
-        }
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
-        bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
-    }
-#endif
 }
 
-static void load_metatile_col_rom(const UBYTE* tilemap, UBYTE x, UWORD y,
-                                  UWORD height, UBYTE source_width, UBYTE source_height, UBYTE bank) {
+// Fill a column section by resolving a metatile ID through the current scene's VRAM tile table.
+static void fill_metatile_col(UBYTE x_offset, UBYTE y_offset, UBYTE height, UBYTE metatile_id) {
+    for (UBYTE y = 0; y != height; y++) {
 #if METATILE_SIZE == METATILE_SIZE_16
-    UBYTE metatile_src_w = source_width >> 1;
-    UBYTE metatile_x = x >> 1;
-    UWORD end_y = y + height;
-    for (y; y != end_y; y++) {
-        UBYTE tile_id;
-        if (x < source_width && y < source_height) {
-            UWORD rom_offset = ((UWORD)(y >> 1)) * metatile_src_w + metatile_x;
-            UBYTE mid = ReadBankedUBYTE(tilemap + rom_offset, bank);
-            tile_id = ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(mid, x, y), metatile_bank);
-        } else {
-            tile_id = ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(fill_tile_id, x, y), metatile_bank);
-        }
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
-        bkg_address_offset = (bkg_address_offset + 32) & 1023;
-    }
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(metatile_id, x_offset, y_offset + y), metatile_bank));
 #else
-    UWORD tile_offset = (y * (UINT16)source_width) + x;
-    height = tile_offset + (height * (UINT16)source_width);
-    for (tile_offset; tile_offset != height; tile_offset += (UINT16)source_width) {
-        UBYTE tile_id;
-        if (x < source_width && y < source_height) {
-            UBYTE mid = ReadBankedUBYTE(tilemap + tile_offset, bank);
-            tile_id = ReadBankedUBYTE(metatile_ptr + mid, metatile_bank);
-        } else {
-            tile_id = ReadBankedUBYTE(metatile_ptr + fill_tile_id, metatile_bank);
-        }
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
-        bkg_address_offset = (bkg_address_offset + 32) & 1023;
-        y++;
-    }
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_ptr + metatile_id, metatile_bank));
 #endif
+        bkg_address_offset = (bkg_address_offset + 32) & 1023;
+    }
 }
 
-// CGB attribute variants — read attrs from neighboring scene's cgb_tilemap_attr via metatile_attr_ptr lookup
-static void load_metatile_attr_row_rom(const UBYTE* tilemap, UBYTE x, UBYTE y,
+// ============================================================
+// Fill dispatch — current scene (metatile or plain)
+// ============================================================
+
+// Fill a row section with fill_tile_id; treats it as a metatile ID when MetaTile is active.
+void fill_tile_row(UBYTE x_offset, UBYTE y_offset, UBYTE width) {
+    if (metatile_bank) {
+        fill_metatile_row(x_offset, y_offset, width, fill_tile_id);
+    } else {
+        fill_tile_row_plain(width, fill_tile_id);
+    }
+}
+
+// Fill a column section with fill_tile_id; treats it as a metatile ID when MetaTile is active.
+void fill_tile_col(UBYTE x_offset, UBYTE y_offset, UBYTE height) {
+    if (metatile_bank) {
+        fill_metatile_col(x_offset, y_offset, height, fill_tile_id);
+    } else {
+        fill_tile_col_plain(height, fill_tile_id);
+    }
+}
+
+// ============================================================
+// Metatile tile rendering — neighbor scene (ROM tilemap lookup)
+// ============================================================
+
+// Render a row from a neighbor scene's ROM tilemap: reads the metatile ID via ReadBankedUBYTE,
+// then resolves the VRAM tile index through the shared metatile_ptr table.
+static void load_neighbor_metatile_row(const UBYTE* tilemap, UBYTE x, UBYTE y,
                                        UBYTE width, UBYTE source_width, UBYTE source_height, UBYTE bank) {
 #if METATILE_SIZE == METATILE_SIZE_16
     UBYTE metatile_src_w = source_width >> 1;
@@ -406,9 +441,9 @@ static void load_metatile_attr_row_rom(const UBYTE* tilemap, UBYTE x, UBYTE y,
         UBYTE tile_id;
         if (x < source_width && y < source_height) {
             UBYTE mid = ReadBankedUBYTE(tilemap + y_offset + (x >> 1), bank);
-            tile_id = ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(mid, x, y), metatile_attr_bank);
+            tile_id = ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(mid, x, y), metatile_bank);
         } else {
-            tile_id = ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(fill_tile_id, x, y), metatile_attr_bank);
+            tile_id = ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(fill_tile_id, x, y), metatile_bank);
         }
         set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
         bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
@@ -420,9 +455,9 @@ static void load_metatile_attr_row_rom(const UBYTE* tilemap, UBYTE x, UBYTE y,
         UBYTE tile_id;
         if (x < source_width && y < source_height) {
             UBYTE mid = ReadBankedUBYTE(tilemap + y_offset + x, bank);
-            tile_id = ReadBankedUBYTE(metatile_attr_ptr + mid, metatile_attr_bank);
+            tile_id = ReadBankedUBYTE(metatile_ptr + mid, metatile_bank);
         } else {
-            tile_id = ReadBankedUBYTE(metatile_attr_ptr + fill_tile_id, metatile_attr_bank);
+            tile_id = ReadBankedUBYTE(metatile_ptr + fill_tile_id, metatile_bank);
         }
         set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
         bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
@@ -430,7 +465,8 @@ static void load_metatile_attr_row_rom(const UBYTE* tilemap, UBYTE x, UBYTE y,
 #endif
 }
 
-static void load_metatile_attr_col_rom(const UBYTE* tilemap, UBYTE x, UWORD y,
+// Render a column from a neighbor scene's ROM tilemap via metatile lookup.
+static void load_neighbor_metatile_col(const UBYTE* tilemap, UBYTE x, UWORD y,
                                        UWORD height, UBYTE source_width, UBYTE source_height, UBYTE bank) {
 #if METATILE_SIZE == METATILE_SIZE_16
     UBYTE metatile_src_w = source_width >> 1;
@@ -441,9 +477,9 @@ static void load_metatile_attr_col_rom(const UBYTE* tilemap, UBYTE x, UWORD y,
         if (x < source_width && y < source_height) {
             UWORD rom_offset = ((UWORD)(y >> 1)) * metatile_src_w + metatile_x;
             UBYTE mid = ReadBankedUBYTE(tilemap + rom_offset, bank);
-            tile_id = ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(mid, x, y), metatile_attr_bank);
+            tile_id = ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(mid, x, y), metatile_bank);
         } else {
-            tile_id = ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(fill_tile_id, x, y), metatile_attr_bank);
+            tile_id = ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(fill_tile_id, x, y), metatile_bank);
         }
         set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
         bkg_address_offset = (bkg_address_offset + 32) & 1023;
@@ -455,9 +491,9 @@ static void load_metatile_attr_col_rom(const UBYTE* tilemap, UBYTE x, UWORD y,
         UBYTE tile_id;
         if (x < source_width && y < source_height) {
             UBYTE mid = ReadBankedUBYTE(tilemap + tile_offset, bank);
-            tile_id = ReadBankedUBYTE(metatile_attr_ptr + mid, metatile_attr_bank);
+            tile_id = ReadBankedUBYTE(metatile_ptr + mid, metatile_bank);
         } else {
-            tile_id = ReadBankedUBYTE(metatile_attr_ptr + fill_tile_id, metatile_attr_bank);
+            tile_id = ReadBankedUBYTE(metatile_ptr + fill_tile_id, metatile_bank);
         }
         set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
         bkg_address_offset = (bkg_address_offset + 32) & 1023;
@@ -466,96 +502,25 @@ static void load_metatile_attr_col_rom(const UBYTE* tilemap, UBYTE x, UWORD y,
 #endif
 }
 
-void load_tile_row(const unsigned char * from, UBYTE x, UBYTE y, UBYTE width, UBYTE source_width, UBYTE source_height, UBYTE oob_tile_id, UBYTE bank) NONBANKED {
-    _save_bank = CURRENT_BANK;
-    SWITCH_ROM(bank);
-    UWORD y_offset = (y * (UWORD)source_width);
-    width = width + x;
-    for (x; x != width; x++) {
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), (x < source_width && y < source_height) ? *(from + y_offset + x) : oob_tile_id);
-        bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
-    }
-    SWITCH_ROM(_save_bank);
-}
+// ============================================================
+// Tile rendering dispatch — neighbor scene
+// ============================================================
 
-void load_tile_col(const unsigned char * from, UBYTE x, UWORD y, UWORD height, UBYTE source_width, UBYTE source_height, UBYTE oob_tile_id, UBYTE bank) NONBANKED {
-    _save_bank = CURRENT_BANK;
-    SWITCH_ROM(bank);
-    UWORD tile_offset = (y * (UINT16)source_width) + x;
-    height = tile_offset + (height * (UINT16)source_width);
-    for (tile_offset; tile_offset != height; tile_offset += (UINT16)source_width) {
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), (x < source_width && y < source_height) ? *(from + tile_offset) : oob_tile_id);
-        bkg_address_offset = (bkg_address_offset + 32) & 1023;
-        y++;
-    }
-    SWITCH_ROM(_save_bank);
-}
-
-void impl_fill_tile_row(UBYTE width, UBYTE tile_id) {
-    for (UBYTE x = 0; x != width; x++) {
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
-        bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
-    }
-}
-
-void impl_fill_metatile_row(UBYTE y, UBYTE width, UBYTE metatile_id) {
-    for (UBYTE x = 0; x != width; x++) {
-#if METATILE_SIZE == METATILE_SIZE_16
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(metatile_id, x, y), metatile_bank));
-#else
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_ptr + metatile_id, metatile_bank));
-#endif
-        bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
-    }
-}
-
-void fill_tile_row(UBYTE y, UBYTE width) {
+// Render a row from a neighbor scene: uses metatile ROM lookup when MetaTile is active,
+// otherwise reads the tile directly from the neighbor's banked tilemap.
+static void neighbor_load_tile_row(continuous_scene_t* continuous_scene, UBYTE x, UBYTE y, UBYTE width) {
     if (metatile_bank) {
-        impl_fill_metatile_row(y, width, fill_tile_id);
-    } else {
-        impl_fill_tile_row(width, fill_tile_id);
-    }
-}
-
-void impl_fill_metatile_col(UBYTE x, UBYTE height, UBYTE metatile_id) {
-    for (UBYTE y = 0; y != height; y++) {
-#if METATILE_SIZE == METATILE_SIZE_16
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_ptr + TILE_MAP_OFFSET(metatile_id, x, y), metatile_bank));
-#else
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_ptr + metatile_id, metatile_bank));
-#endif
-        bkg_address_offset = (bkg_address_offset + 32) & 1023;
-    }
-}
-
-void impl_fill_tile_col(UBYTE height, UBYTE tile_id) {
-    for (UBYTE y = 0; y != height; y++) {
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
-        bkg_address_offset = (bkg_address_offset + 32) & 1023;
-    }
-}
-
-void fill_tile_col(UBYTE x, UBYTE height) {
-    if (metatile_bank) {
-        impl_fill_metatile_col(x, height, fill_tile_id);
-    } else {
-        impl_fill_tile_col(height, fill_tile_id);
-    }
-}
-
-// Helper: render a row from a neighboring scene's tilemap, dispatching to metatile
-// ROM lookup when MetaTile is active, otherwise direct tile copy.
-static void cs_load_tile_row(continuous_scene_t* continuous_scene, UBYTE x, UBYTE y, UBYTE width) {
-    if (metatile_bank) {
-        load_metatile_row_rom(continuous_scene->tilemap.ptr, x, y, width, continuous_scene->tile_width, continuous_scene->tile_height, continuous_scene->tilemap.bank);
+        load_neighbor_metatile_row(continuous_scene->tilemap.ptr, x, y, width, continuous_scene->tile_width, continuous_scene->tile_height, continuous_scene->tilemap.bank);
     } else {
         load_tile_row(continuous_scene->tilemap.ptr, x, y, width, continuous_scene->tile_width, continuous_scene->tile_height, fill_tile_id, continuous_scene->tilemap.bank);
     }
 }
 
-static void cs_load_tile_col(continuous_scene_t* continuous_scene, UBYTE x, UWORD y, UWORD height) {
+// Render a column from a neighbor scene: uses metatile ROM lookup when MetaTile is active,
+// otherwise reads the tile directly from the neighbor's banked tilemap.
+static void neighbor_load_tile_col(continuous_scene_t* continuous_scene, UBYTE x, UWORD y, UWORD height) {
     if (metatile_bank) {
-        load_metatile_col_rom(continuous_scene->tilemap.ptr, x, y, height, continuous_scene->tile_width, continuous_scene->tile_height, continuous_scene->tilemap.bank);
+        load_neighbor_metatile_col(continuous_scene->tilemap.ptr, x, y, height, continuous_scene->tile_width, continuous_scene->tile_height, continuous_scene->tilemap.bank);
     } else {
         load_tile_col(continuous_scene->tilemap.ptr, x, y, height, continuous_scene->tile_width, continuous_scene->tile_height, fill_tile_id, continuous_scene->tilemap.bank);
     }
@@ -576,74 +541,74 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             if (top_x_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_TOP];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_row(continuous_scene,
+                    neighbor_load_tile_row(continuous_scene,
                         x + top_x_offset,
                         continuous_scene->tile_height + y,
                         section_width);
                 } else {
-                    fill_tile_row(y, section_width);
+                    fill_tile_row(x, y, section_width);
                 }
             } else if (left_y_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_row(continuous_scene,
+                    neighbor_load_tile_row(continuous_scene,
                         continuous_scene->tile_width + x,
                         y + left_y_offset,
                         section_width);
                 } else {
-                    fill_tile_row(y, section_width);
+                    fill_tile_row(x, y, section_width);
                 }
             } else {
                 continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_row(continuous_scene,
+                    neighbor_load_tile_row(continuous_scene,
                         continuous_scene->tile_width + x + top_x_offset,
                         continuous_scene->tile_height + y + left_y_offset,
                         section_width);
                 } else {
-                    fill_tile_row(y, section_width);
+                    fill_tile_row(x, y, section_width);
                 }
             }
         } else if (y < image_tile_height) {
             continuous_scene = &continuous_scenes[DIRECTION_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_row(continuous_scene,
+                neighbor_load_tile_row(continuous_scene,
                     continuous_scene->tile_width + x,
                     y + left_y_offset,
                     section_width);
             } else {
-                fill_tile_row(y, section_width);
+                fill_tile_row(x, y, section_width);
             }
         } else {
             if (bottom_x_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_row(continuous_scene,
+                    neighbor_load_tile_row(continuous_scene,
                         x + bottom_x_offset,
                         (y - image_tile_height),
                         section_width);
                 } else {
-                    fill_tile_row(y, section_width);
+                    fill_tile_row(x, y, section_width);
                 }
             } else if ((left_y_offset + continuous_scenes[DIRECTION_LEFT].tile_height) > image_tile_height){
                 continuous_scene = &continuous_scenes[DIRECTION_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                     cs_load_tile_row(continuous_scene,
+                     neighbor_load_tile_row(continuous_scene,
                         continuous_scene->tile_width + x,
                         y + left_y_offset,
                         section_width);
                 } else {
-                    fill_tile_row(y, section_width);
+                    fill_tile_row(x, y, section_width);
                 }
             } else {
                 continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_row(continuous_scene,
+                    neighbor_load_tile_row(continuous_scene,
                         continuous_scene->tile_width + x + bottom_x_offset,
                         (y - image_tile_height) + left_y_offset,
                         section_width);
                 } else {
-                    fill_tile_row(y, section_width);
+                    fill_tile_row(x, y, section_width);
                 }
             }
         }
@@ -656,13 +621,13 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         if (y > SCREEN_OOB_TOP) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_row(continuous_scene,
+                neighbor_load_tile_row(continuous_scene,
                     x + top_x_offset,
                     continuous_scene->tile_height + y,
                     section_width);
 
             } else {
-                fill_tile_row(y, section_width);
+                fill_tile_row(x, y, section_width);
             }
         } else if (y < image_tile_height) {
             // use current scene
@@ -674,12 +639,12 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_row(continuous_scene,
+                neighbor_load_tile_row(continuous_scene,
                     x + bottom_x_offset,
                     (y - image_tile_height),
                     section_width);
             } else {
-                fill_tile_row(y, section_width);
+                fill_tile_row(x, y, section_width);
             }
         }
         width -= section_width;
@@ -690,74 +655,74 @@ void load_tile_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         if (top_x_offset + continuous_scenes[DIRECTION_TOP].tile_width > image_tile_width){
             continuous_scene = &continuous_scenes[DIRECTION_TOP];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_row(continuous_scene,
+                neighbor_load_tile_row(continuous_scene,
                     x + top_x_offset,
                     continuous_scene->tile_height + y,
                     width);
             } else {
-                fill_tile_row(y, width);
+                fill_tile_row(x, y, width);
             }
         } else if (right_y_offset > 0){
             continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_row(continuous_scene,
+                neighbor_load_tile_row(continuous_scene,
                     (x - image_tile_width),
                     y + right_y_offset,
                     width);
             } else {
-                fill_tile_row(y, width);
+                fill_tile_row(x, y, width);
             }
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_row(continuous_scene,
+                neighbor_load_tile_row(continuous_scene,
                     (x - image_tile_width) + top_x_offset,
                     continuous_scene->tile_height + y + right_y_offset,
                     width);
             } else {
-                fill_tile_row(y, width);
+                fill_tile_row(x, y, width);
             }
         }
     } else if (y < image_tile_height) {
         continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-            cs_load_tile_row(continuous_scene,
+            neighbor_load_tile_row(continuous_scene,
                 (x - image_tile_width),
                 y + right_y_offset,
                 width);
         } else {
-            fill_tile_row(y, width);
+            fill_tile_row(x, y, width);
         }
     } else {
         if (bottom_x_offset + continuous_scenes[DIRECTION_BOTTOM].tile_width > image_tile_width){
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_row(continuous_scene,
+                neighbor_load_tile_row(continuous_scene,
                     x + bottom_x_offset,
                     (y - image_tile_height),
                     width);
             } else {
-                fill_tile_row(y, width);
+                fill_tile_row(x, y, width);
             }
         } else if (right_y_offset + continuous_scenes[DIRECTION_RIGHT].tile_height > image_tile_height){
             continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_row(continuous_scene,
+                neighbor_load_tile_row(continuous_scene,
                     (x - image_tile_width),
                     y + right_y_offset,
                     width);
             } else {
-                fill_tile_row(y, width);
+                fill_tile_row(x, y, width);
             }
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_row(continuous_scene,
+                neighbor_load_tile_row(continuous_scene,
                     (x - image_tile_width) + bottom_x_offset,
                     (y - image_tile_height) + right_y_offset,
                     width);
             } else {
-                fill_tile_row(y, width);
+                fill_tile_row(x, y, width);
             }
         }
     }
@@ -778,74 +743,74 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             if (top_x_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_TOP];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_col(continuous_scene,
+                    neighbor_load_tile_col(continuous_scene,
                         x + top_x_offset,
                         (UBYTE)(continuous_scene->tile_height + y),
                         section_height);
                 } else {
-                    fill_tile_col(x, section_height);
+                    fill_tile_col(x, y, section_height);
                 }
             } else if (left_y_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_col(continuous_scene,
+                    neighbor_load_tile_col(continuous_scene,
                         continuous_scene->tile_width + x,
                         (UBYTE)(y + left_y_offset),
                         section_height);
                 } else {
-                    fill_tile_col(x, section_height);
+                    fill_tile_col(x, y, section_height);
                 }
             } else {
                 continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_col(continuous_scene,
+                    neighbor_load_tile_col(continuous_scene,
                         continuous_scene->tile_width + x + top_x_offset,
                         (UBYTE)(continuous_scene->tile_height + y + left_y_offset),
                         section_height);
                 } else {
-                    fill_tile_col(x, section_height);
+                    fill_tile_col(x, y, section_height);
                 }
             }
         } else if (x < image_tile_width) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_col(continuous_scene,
+                neighbor_load_tile_col(continuous_scene,
                     x + top_x_offset,
                     (UBYTE)(continuous_scene->tile_height + y),
                     section_height);
             } else {
-                fill_tile_col(x, section_height);
+                fill_tile_col(x, y, section_height);
             }
         } else {
             if (top_x_offset + continuous_scenes[DIRECTION_TOP].tile_width > image_tile_width){
                 continuous_scene = &continuous_scenes[DIRECTION_TOP];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_col(continuous_scene,
+                    neighbor_load_tile_col(continuous_scene,
                         x + top_x_offset,
                         (UBYTE)(continuous_scene->tile_height + y),
                         section_height);
                 } else {
-                    fill_tile_col(x, section_height);
+                    fill_tile_col(x, y, section_height);
                 }
             } else if (right_y_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_col(continuous_scene,
+                    neighbor_load_tile_col(continuous_scene,
                         (x - image_tile_width),
                         (UBYTE)(y + right_y_offset),
                         section_height);
                 } else {
-                    fill_tile_col(x, section_height);
+                    fill_tile_col(x, y, section_height);
                 }
             } else {
                 continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_col(continuous_scene,
+                    neighbor_load_tile_col(continuous_scene,
                         (x - image_tile_width) + top_x_offset,
                         (UBYTE)(continuous_scene->tile_height + y + right_y_offset),
                         section_height);
                 } else {
-                    fill_tile_col(x, section_height);
+                    fill_tile_col(x, y, section_height);
                 }
             }
         }
@@ -858,12 +823,12 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         if (x > SCREEN_OOB_LEFT) {
             continuous_scene = &continuous_scenes[DIRECTION_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-            cs_load_tile_col(continuous_scene,
+            neighbor_load_tile_col(continuous_scene,
                 continuous_scene->tile_width + x,
                 (y + left_y_offset),
                 section_height);
             } else {
-                fill_tile_col(x, section_height);
+                fill_tile_col(x, y, section_height);
             }
         } else if (x < image_tile_width) {
             // use current scene
@@ -875,12 +840,12 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-            cs_load_tile_col(continuous_scene,
+            neighbor_load_tile_col(continuous_scene,
                 (x - image_tile_width),
                 (y + right_y_offset),
                 section_height);
             } else {
-                fill_tile_col(x, section_height);
+                fill_tile_col(x, y, section_height);
             }
         }
         height -= section_height;
@@ -891,74 +856,74 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         if (bottom_x_offset > 0){
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_col(continuous_scene,
+                neighbor_load_tile_col(continuous_scene,
                     x + bottom_x_offset,
                     (UBYTE)(y - image_tile_height),
                     height);
             } else {
-                fill_tile_col(x, height);
+                fill_tile_col(x, y, height);
             }
         } else if ((left_y_offset + continuous_scenes[DIRECTION_LEFT].tile_height) > image_tile_height){
             continuous_scene = &continuous_scenes[DIRECTION_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_col(continuous_scene,
+                neighbor_load_tile_col(continuous_scene,
                     continuous_scene->tile_width + x,
                     (UBYTE)(y + left_y_offset),
                     height);
             } else {
-                fill_tile_col(x, height);
+                fill_tile_col(x, y, height);
             }
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_col(continuous_scene,
+                neighbor_load_tile_col(continuous_scene,
                     continuous_scene->tile_width + x + bottom_x_offset,
                     (UBYTE)((y - image_tile_height) + left_y_offset),
                     height);
             } else {
-                fill_tile_col(x, height);
+                fill_tile_col(x, y, height);
             }
         }
     } else if (x < image_tile_width) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-            cs_load_tile_col(continuous_scene,
+            neighbor_load_tile_col(continuous_scene,
                 x + bottom_x_offset,
                 (UBYTE)(y - image_tile_height),
                 height);
         } else {
-            fill_tile_col(x, height);
+            fill_tile_col(x, y, height);
         }
     } else {
         if (bottom_x_offset + continuous_scenes[DIRECTION_BOTTOM].tile_width > image_tile_width){
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_col(continuous_scene,
+                neighbor_load_tile_col(continuous_scene,
                     x + bottom_x_offset,
                     (UBYTE)(y - image_tile_height),
                     height);
             } else {
-                fill_tile_col(x, height);
+                fill_tile_col(x, y, height);
             }
         } else if (right_y_offset + continuous_scenes[DIRECTION_RIGHT].tile_height > image_tile_height){
             continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_col(continuous_scene,
+                neighbor_load_tile_col(continuous_scene,
                     (x - image_tile_width),
                     (UBYTE)(y + right_y_offset),
                     height);
             } else {
-                fill_tile_col(x, height);
+                fill_tile_col(x, y, height);
             }
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_col(continuous_scene,
+                neighbor_load_tile_col(continuous_scene,
                     (x - image_tile_width) + bottom_x_offset,
                     (UBYTE)((y - image_tile_height) + right_y_offset),
                     height);
             } else {
-                fill_tile_col(x, height);
+                fill_tile_col(x, y, height);
             }
         }
     }
@@ -966,11 +931,91 @@ void load_tile_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
 
 #ifdef CGB
 
+// ============================================================
+// CGB: Metatile attribute rendering — neighbor scene (ROM tilemap lookup)
+// ============================================================
 
-void impl_fill_metatile_attr_row(UBYTE y, UBYTE width, UBYTE metatile_id) {
+// Render a row of CGB attributes from a neighbor scene's ROM tilemap via metatile_attr_ptr lookup.
+static void load_neighbor_metatile_attr_row(const UBYTE* tilemap, UBYTE x, UBYTE y,
+                                            UBYTE width, UBYTE source_width, UBYTE source_height, UBYTE bank) {
+#if METATILE_SIZE == METATILE_SIZE_16
+    UBYTE metatile_src_w = source_width >> 1;
+    UWORD y_offset = ((UWORD)(y >> 1)) * metatile_src_w;
+    width = width + x;
+    for (x; x != width; x++) {
+        UBYTE tile_id;
+        if (x < source_width && y < source_height) {
+            UBYTE mid = ReadBankedUBYTE(tilemap + y_offset + (x >> 1), bank);
+            tile_id = ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(mid, x, y), metatile_attr_bank);
+        } else {
+            tile_id = ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(fill_tile_id, x, y), metatile_attr_bank);
+        }
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
+        bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
+    }
+#else
+    UWORD y_offset = (y * (UWORD)source_width);
+    width = width + x;
+    for (x; x != width; x++) {
+        UBYTE tile_id;
+        if (x < source_width && y < source_height) {
+            UBYTE mid = ReadBankedUBYTE(tilemap + y_offset + x, bank);
+            tile_id = ReadBankedUBYTE(metatile_attr_ptr + mid, metatile_attr_bank);
+        } else {
+            tile_id = ReadBankedUBYTE(metatile_attr_ptr + fill_tile_id, metatile_attr_bank);
+        }
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
+        bkg_address_offset = (bkg_address_offset & 0xFFE0) + ((bkg_address_offset + 1) & 31);
+    }
+#endif
+}
+
+// Render a column of CGB attributes from a neighbor scene's ROM tilemap via metatile_attr_ptr lookup.
+static void load_neighbor_metatile_attr_col(const UBYTE* tilemap, UBYTE x, UWORD y,
+                                            UWORD height, UBYTE source_width, UBYTE source_height, UBYTE bank) {
+#if METATILE_SIZE == METATILE_SIZE_16
+    UBYTE metatile_src_w = source_width >> 1;
+    UBYTE metatile_x = x >> 1;
+    UWORD end_y = y + height;
+    for (y; y != end_y; y++) {
+        UBYTE tile_id;
+        if (x < source_width && y < source_height) {
+            UWORD rom_offset = ((UWORD)(y >> 1)) * metatile_src_w + metatile_x;
+            UBYTE mid = ReadBankedUBYTE(tilemap + rom_offset, bank);
+            tile_id = ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(mid, x, y), metatile_attr_bank);
+        } else {
+            tile_id = ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(fill_tile_id, x, y), metatile_attr_bank);
+        }
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
+        bkg_address_offset = (bkg_address_offset + 32) & 1023;
+    }
+#else
+    UWORD tile_offset = (y * (UINT16)source_width) + x;
+    height = tile_offset + (height * (UINT16)source_width);
+    for (tile_offset; tile_offset != height; tile_offset += (UINT16)source_width) {
+        UBYTE tile_id;
+        if (x < source_width && y < source_height) {
+            UBYTE mid = ReadBankedUBYTE(tilemap + tile_offset, bank);
+            tile_id = ReadBankedUBYTE(metatile_attr_ptr + mid, metatile_attr_bank);
+        } else {
+            tile_id = ReadBankedUBYTE(metatile_attr_ptr + fill_tile_id, metatile_attr_bank);
+        }
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), tile_id);
+        bkg_address_offset = (bkg_address_offset + 32) & 1023;
+        y++;
+    }
+#endif
+}
+
+// ============================================================
+// CGB: Metatile attribute fill — current scene
+// ============================================================
+
+// Fill a row section with CGB attribute bytes by resolving a metatile ID through metatile_attr_ptr.
+static void fill_metatile_attr_row(UBYTE x_offset, UBYTE y_offset, UBYTE width, UBYTE metatile_id) {
     for (UBYTE x = 0; x != width; x++) {
 #if METATILE_SIZE == METATILE_SIZE_16
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(metatile_id, x, y), metatile_attr_bank));
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(metatile_id, x + x_offset, y_offset), metatile_attr_bank));
 #else
         set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_attr_ptr + metatile_id, metatile_attr_bank));
 #endif
@@ -978,18 +1023,11 @@ void impl_fill_metatile_attr_row(UBYTE y, UBYTE width, UBYTE metatile_id) {
     }
 }
 
-void fill_tile_attr_row(UBYTE y, UBYTE width) {
-    if (metatile_attr_bank) {
-        impl_fill_metatile_attr_row(y, width, fill_tile_id);
-    } else {
-        impl_fill_tile_row(width, fill_tile_attr);
-    }
-}
-
-void impl_fill_metatile_attr_col(UBYTE x, UBYTE height, UBYTE metatile_id) {
+// Fill a column section with CGB attribute bytes by resolving a metatile ID through metatile_attr_ptr.
+static void fill_metatile_attr_col(UBYTE x_offset, UBYTE y_offset, UBYTE height, UBYTE metatile_id) {
     for (UBYTE y = 0; y != height; y++) {
 #if METATILE_SIZE == METATILE_SIZE_16
-        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(metatile_id, x, y), metatile_attr_bank));
+        set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_attr_ptr + TILE_MAP_OFFSET(metatile_id, x_offset, y + y_offset), metatile_attr_bank));
 #else
         set_vram_byte((UBYTE*)(0x9800 + bkg_address_offset), ReadBankedUBYTE(metatile_attr_ptr + metatile_id, metatile_attr_bank));
 #endif
@@ -997,25 +1035,47 @@ void impl_fill_metatile_attr_col(UBYTE x, UBYTE height, UBYTE metatile_id) {
     }
 }
 
-void fill_tile_attr_col(UBYTE x, UBYTE height) {
+// ============================================================
+// CGB: Attribute fill dispatch — current scene (metatile or plain)
+// ============================================================
+
+// Fill a row section with fill_tile_id attrs; treats it as a metatile ID when MetaTile is active.
+void fill_tile_attr_row(UBYTE x_offset, UBYTE y_offset, UBYTE width) {
     if (metatile_attr_bank) {
-        impl_fill_metatile_attr_col(x, height, fill_tile_id);
+        fill_metatile_attr_row(x_offset, y_offset, width, fill_tile_id);
     } else {
-        impl_fill_tile_col(height, fill_tile_attr);
+        fill_tile_row_plain(width, fill_tile_attr);
     }
 }
 
-static void cs_load_tile_attr_row(continuous_scene_t* continuous_scene, UBYTE x, UBYTE y, UBYTE width) {
+// Fill a column section with fill_tile_id attrs; treats it as a metatile ID when MetaTile is active.
+void fill_tile_attr_col(UBYTE x_offset, UBYTE y_offset, UBYTE height) {
     if (metatile_attr_bank) {
-        load_metatile_attr_row_rom(continuous_scene->tilemap.ptr, x, y, width, continuous_scene->tile_width, continuous_scene->tile_height, continuous_scene->tilemap.bank);
+        fill_metatile_attr_col(x_offset, y_offset, height, fill_tile_id);
+    } else {
+        fill_tile_col_plain(height, fill_tile_attr);
+    }
+}
+
+// ============================================================
+// CGB: Attribute rendering dispatch — neighbor scene
+// ============================================================
+
+// Render a row of CGB attributes from a neighbor scene: uses metatile ROM lookup when MetaTile
+// is active, otherwise reads attrs directly from the neighbor's banked attr tilemap.
+static void neighbor_load_tile_attr_row(continuous_scene_t* continuous_scene, UBYTE x, UBYTE y, UBYTE width) {
+    if (metatile_attr_bank) {
+        load_neighbor_metatile_attr_row(continuous_scene->tilemap.ptr, x, y, width, continuous_scene->tile_width, continuous_scene->tile_height, continuous_scene->tilemap.bank);
     } else {
         load_tile_row(continuous_scene->cgb_tilemap_attr.ptr, x, y, width, continuous_scene->tile_width, continuous_scene->tile_height, fill_tile_attr, continuous_scene->cgb_tilemap_attr.bank);
     }
 }
 
-static void cs_load_tile_attr_col(continuous_scene_t* continuous_scene, UBYTE x, UWORD y, UWORD height) {
+// Render a column of CGB attributes from a neighbor scene: uses metatile ROM lookup when MetaTile
+// is active, otherwise reads attrs directly from the neighbor's banked attr tilemap.
+static void neighbor_load_tile_attr_col(continuous_scene_t* continuous_scene, UBYTE x, UWORD y, UWORD height) {
     if (metatile_attr_bank) {
-        load_metatile_attr_col_rom(continuous_scene->tilemap.ptr, x, y, height, continuous_scene->tile_width, continuous_scene->tile_height, continuous_scene->tilemap.bank);
+        load_neighbor_metatile_attr_col(continuous_scene->tilemap.ptr, x, y, height, continuous_scene->tile_width, continuous_scene->tile_height, continuous_scene->tilemap.bank);
     } else {
         load_tile_col(continuous_scene->cgb_tilemap_attr.ptr, x, y, height, continuous_scene->tile_width, continuous_scene->tile_height, fill_tile_attr, continuous_scene->cgb_tilemap_attr.bank);
     }
@@ -1036,74 +1096,74 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
             if (top_x_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_TOP];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_row(continuous_scene,
+                    neighbor_load_tile_attr_row(continuous_scene,
                         x + top_x_offset,
                         continuous_scene->tile_height + y,
                         section_width);
                 } else {
-                    fill_tile_attr_row(y, section_width);
+                    fill_tile_attr_row(x, y, section_width);
                 }
             } else if (left_y_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_row(continuous_scene,
+                    neighbor_load_tile_attr_row(continuous_scene,
                         continuous_scene->tile_width + x,
                         y + left_y_offset,
                         section_width);
                 } else {
-                    fill_tile_attr_row(y, section_width);
+                    fill_tile_attr_row(x, y, section_width);
                 }
             } else {
                 continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_row(continuous_scene,
+                    neighbor_load_tile_attr_row(continuous_scene,
                         continuous_scene->tile_width + x + top_x_offset,
                         continuous_scene->tile_height + y + left_y_offset,
                         section_width);
                 } else {
-                    fill_tile_attr_row(y, section_width);
+                    fill_tile_attr_row(x, y, section_width);
                 }
             }
         } else if (y < image_tile_height) {
             continuous_scene = &continuous_scenes[DIRECTION_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_row(continuous_scene,
+                neighbor_load_tile_attr_row(continuous_scene,
                     continuous_scene->tile_width + x,
                     y + left_y_offset,
                     section_width);
             } else {
-                fill_tile_attr_row(y, section_width);
+                fill_tile_attr_row(x, y, section_width);
             }
         } else {
             if (bottom_x_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_row(continuous_scene,
+                    neighbor_load_tile_attr_row(continuous_scene,
                         x + bottom_x_offset,
                         (y - image_tile_height),
                         section_width);
                 } else {
-                    fill_tile_attr_row(y, section_width);
+                    fill_tile_attr_row(x, y, section_width);
                 }
             } else if ((left_y_offset + continuous_scenes[DIRECTION_LEFT].tile_height) > image_tile_height){
                 continuous_scene = &continuous_scenes[DIRECTION_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                     cs_load_tile_attr_row(continuous_scene,
+                     neighbor_load_tile_attr_row(continuous_scene,
                         continuous_scene->tile_width + x,
                         y + left_y_offset,
                         section_width);
                 } else {
-                    fill_tile_attr_row(y, section_width);
+                    fill_tile_attr_row(x, y, section_width);
                 }
             } else {
                 continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_row(continuous_scene,
+                    neighbor_load_tile_attr_row(continuous_scene,
                         continuous_scene->tile_width + x + bottom_x_offset,
                         (y - image_tile_height) + left_y_offset,
                         section_width);
                 } else {
-                    fill_tile_attr_row(y, section_width);
+                    fill_tile_attr_row(x, y, section_width);
                 }
             }
         }
@@ -1116,13 +1176,13 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         if (y > SCREEN_OOB_TOP) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_row(continuous_scene,
+                neighbor_load_tile_attr_row(continuous_scene,
                     x + top_x_offset,
                     continuous_scene->tile_height + y,
                     section_width);
 
             } else {
-                fill_tile_attr_row(y, section_width);
+                fill_tile_attr_row(x, y, section_width);
             }
         } else if (y < image_tile_height) {
             // use current scene
@@ -1134,12 +1194,12 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_row(continuous_scene,
+                neighbor_load_tile_attr_row(continuous_scene,
                     x + bottom_x_offset,
                     (y - image_tile_height),
                     section_width);
             } else {
-                fill_tile_attr_row(y, section_width);
+                fill_tile_attr_row(x, y, section_width);
             }
         }
         width -= section_width;
@@ -1150,74 +1210,74 @@ void load_tile_attribute_row_continuous(UBYTE x, UBYTE y, UBYTE width) {
         if (top_x_offset + continuous_scenes[DIRECTION_TOP].tile_width > image_tile_width){
             continuous_scene = &continuous_scenes[DIRECTION_TOP];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_row(continuous_scene,
+                neighbor_load_tile_attr_row(continuous_scene,
                     x + top_x_offset,
                     continuous_scene->tile_height + y,
                     width);
             } else {
-                fill_tile_attr_row(y, width);
+                fill_tile_attr_row(x, y, width);
             }
         } else if (right_y_offset > 0){
             continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_row(continuous_scene,
+                neighbor_load_tile_attr_row(continuous_scene,
                     (x - image_tile_width),
                     y + right_y_offset,
                     width);
             } else {
-                fill_tile_attr_row(y, width);
+                fill_tile_attr_row(x, y, width);
             }
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_row(continuous_scene,
+                neighbor_load_tile_attr_row(continuous_scene,
                     (x - image_tile_width) + top_x_offset,
                     continuous_scene->tile_height + y + right_y_offset,
                     width);
             } else {
-                fill_tile_attr_row(y, width);
+                fill_tile_attr_row(x, y, width);
             }
         }
     } else if (y < image_tile_height) {
         continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-            cs_load_tile_attr_row(continuous_scene,
+            neighbor_load_tile_attr_row(continuous_scene,
                 (x - image_tile_width),
                 y + right_y_offset,
                 width);
         } else {
-            fill_tile_attr_row(y, width);
+            fill_tile_attr_row(x, y, width);
         }
     } else {
         if (bottom_x_offset + continuous_scenes[DIRECTION_BOTTOM].tile_width > image_tile_width){
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_row(continuous_scene,
+                neighbor_load_tile_attr_row(continuous_scene,
                     x + bottom_x_offset,
                     (y - image_tile_height),
                     width);
             } else {
-                fill_tile_attr_row(y, width);
+                fill_tile_attr_row(x, y, width);
             }
         } else if (right_y_offset + continuous_scenes[DIRECTION_RIGHT].tile_height > image_tile_height){
             continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_row(continuous_scene,
+                neighbor_load_tile_attr_row(continuous_scene,
                     (x - image_tile_width),
                     y + right_y_offset,
                     width);
             } else {
-                fill_tile_attr_row(y, width);
+                fill_tile_attr_row(x, y, width);
             }
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_row(continuous_scene,
+                neighbor_load_tile_attr_row(continuous_scene,
                     (x - image_tile_width) + bottom_x_offset,
                     (y - image_tile_height) + right_y_offset,
                     width);
             } else {
-                fill_tile_attr_row(y, width);
+                fill_tile_attr_row(x, y, width);
             }
         }
     }
@@ -1238,74 +1298,74 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
             if (top_x_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_TOP];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_col(continuous_scene,
+                    neighbor_load_tile_attr_col(continuous_scene,
                         x + top_x_offset,
                         (UBYTE)(continuous_scene->tile_height + y),
                         section_height);
                 } else {
-                    fill_tile_attr_col(x, section_height);
+                    fill_tile_attr_col(x, y, section_height);
                 }
             } else if (left_y_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_col(continuous_scene,
+                    neighbor_load_tile_attr_col(continuous_scene,
                         continuous_scene->tile_width + x,
                         (UBYTE)(y + left_y_offset),
                         section_height);
                 } else {
-                    fill_tile_attr_col(x, section_height);
+                    fill_tile_attr_col(x, y, section_height);
                 }
             } else {
                 continuous_scene = &continuous_scenes[DIRECTION_TOP_LEFT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_col(continuous_scene,
+                    neighbor_load_tile_attr_col(continuous_scene,
                         continuous_scene->tile_width + x + top_x_offset,
                         (UBYTE)(continuous_scene->tile_height + y + left_y_offset),
                         section_height);
                 } else {
-                    fill_tile_attr_col(x, section_height);
+                    fill_tile_attr_col(x, y, section_height);
                 }
             }
         } else if (x < image_tile_width) {
             continuous_scene = &continuous_scenes[DIRECTION_TOP];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_col(continuous_scene,
+                neighbor_load_tile_attr_col(continuous_scene,
                     x + top_x_offset,
                     (UBYTE)(continuous_scene->tile_height + y),
                     section_height);
             } else {
-                fill_tile_attr_col(x, section_height);
+                fill_tile_attr_col(x, y, section_height);
             }
         } else {
             if (top_x_offset + continuous_scenes[DIRECTION_TOP].tile_width > image_tile_width){
                 continuous_scene = &continuous_scenes[DIRECTION_TOP];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_col(continuous_scene,
+                    neighbor_load_tile_attr_col(continuous_scene,
                         x + top_x_offset,
                         (UBYTE)(continuous_scene->tile_height + y),
                         section_height);
                 } else {
-                    fill_tile_attr_col(x, section_height);
+                    fill_tile_attr_col(x, y, section_height);
                 }
             } else if (right_y_offset > 0){
                 continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_col(continuous_scene,
+                    neighbor_load_tile_attr_col(continuous_scene,
                         (x - image_tile_width),
                         (UBYTE)(y + right_y_offset),
                         section_height);
                 } else {
-                    fill_tile_attr_col(x, section_height);
+                    fill_tile_attr_col(x, y, section_height);
                 }
             } else {
                 continuous_scene = &continuous_scenes[DIRECTION_TOP_RIGHT];
                 if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                    cs_load_tile_attr_col(continuous_scene,
+                    neighbor_load_tile_attr_col(continuous_scene,
                         (x - image_tile_width) + top_x_offset,
                         (UBYTE)(continuous_scene->tile_height + y + right_y_offset),
                         section_height);
                 } else {
-                    fill_tile_attr_col(x, section_height);
+                    fill_tile_attr_col(x, y, section_height);
                 }
             }
         }
@@ -1318,12 +1378,12 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         if (x > SCREEN_OOB_LEFT) {
             continuous_scene = &continuous_scenes[DIRECTION_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-            cs_load_tile_attr_col(continuous_scene,
+            neighbor_load_tile_attr_col(continuous_scene,
                 continuous_scene->tile_width + x,
                 (UBYTE)(y + left_y_offset),
                 section_height);
             } else {
-                fill_tile_attr_col(x, section_height);
+                fill_tile_attr_col(x, y, section_height);
             }
         } else if (x < image_tile_width) {
             // use current scene
@@ -1335,12 +1395,12 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-            cs_load_tile_attr_col(continuous_scene,
+            neighbor_load_tile_attr_col(continuous_scene,
                 (x - image_tile_width),
                 (y + right_y_offset),
                 section_height);
             } else {
-                fill_tile_attr_col(x, section_height);
+                fill_tile_attr_col(x, y, section_height);
             }
         }
         height -= section_height;
@@ -1351,74 +1411,74 @@ void load_tile_attribute_col_continuous(UBYTE x, UBYTE y, UBYTE height) {
         if (bottom_x_offset > 0){
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_col(continuous_scene,
+                neighbor_load_tile_attr_col(continuous_scene,
                     x + bottom_x_offset,
                     (UBYTE)(y - image_tile_height),
                     height);
             } else {
-                fill_tile_attr_col(x, height);
+                fill_tile_attr_col(x, y, height);
             }
         } else if ((left_y_offset + continuous_scenes[DIRECTION_LEFT].tile_height) > image_tile_height){
             continuous_scene = &continuous_scenes[DIRECTION_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_col(continuous_scene,
+                neighbor_load_tile_attr_col(continuous_scene,
                     continuous_scene->tile_width + x,
                     (UBYTE)(y + left_y_offset),
                     height);
             } else {
-                fill_tile_attr_col(x, height);
+                fill_tile_attr_col(x, y, height);
             }
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_LEFT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_col(continuous_scene,
+                neighbor_load_tile_attr_col(continuous_scene,
                     continuous_scene->tile_width + x + bottom_x_offset,
                     (UBYTE)((y - image_tile_height) + left_y_offset),
                     height);
             } else {
-                fill_tile_attr_col(x, height);
+                fill_tile_attr_col(x, y, height);
             }
         }
     } else if (x < image_tile_width) {
         continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
         if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-            cs_load_tile_attr_col(continuous_scene,
+            neighbor_load_tile_attr_col(continuous_scene,
                 x + bottom_x_offset,
                 (UBYTE)(y - image_tile_height),
                 height);
         } else {
-            fill_tile_attr_col(x, height);
+            fill_tile_attr_col(x, y, height);
         }
     } else {
         if (bottom_x_offset + continuous_scenes[DIRECTION_BOTTOM].tile_width > image_tile_width){
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_col(continuous_scene,
+                neighbor_load_tile_attr_col(continuous_scene,
                     x + bottom_x_offset,
                     (UBYTE)(y - image_tile_height),
                     height);
             } else {
-                fill_tile_attr_col(x, height);
+                fill_tile_attr_col(x, y, height);
             }
         } else if (right_y_offset + continuous_scenes[DIRECTION_RIGHT].tile_height > image_tile_height){
             continuous_scene = &continuous_scenes[DIRECTION_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_col(continuous_scene,
+                neighbor_load_tile_attr_col(continuous_scene,
                     (x - image_tile_width),
                     (UBYTE)(y + right_y_offset),
                     height);
             } else {
-                fill_tile_attr_col(x, height);
+                fill_tile_attr_col(x, y, height);
             }
         } else {
             continuous_scene = &continuous_scenes[DIRECTION_BOTTOM_RIGHT];
             if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
-                cs_load_tile_attr_col(continuous_scene,
+                neighbor_load_tile_attr_col(continuous_scene,
                     (x - image_tile_width) + bottom_x_offset,
                     (UBYTE)((y - image_tile_height) + right_y_offset),
                     height);
             } else {
-                fill_tile_attr_col(x, height);
+                fill_tile_attr_col(x, y, height);
             }
         }
     }

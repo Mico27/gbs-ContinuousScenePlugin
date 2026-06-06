@@ -29,6 +29,16 @@
       "id": "d6de9517-fcd3-46aa-9827-4ebd57539942"
     },
     {
+      "command": "EVENT_SET_OOB_TILE",
+      "args": {
+        "tile_id": {
+          "type": "number",
+          "value": 13
+        }
+      },
+      "id": "993d28d3-7333-4cde-9e50-7a69408a8fdf"
+    },
+    {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
