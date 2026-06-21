@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "cb007114-5ebb-4e44-9115-320bf92a3947",
+  "name": "Underground Path South",
+  "prefabId": "",
+  "x": 34,
+  "y": 54,
+  "symbol": "trigger_36",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 28
+        }
+      },
+      "id": "8522e68d-d3bd-42be-b67c-2d25bef2fd41"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "aea9d0d7-73be-4fd1-a6b3-3a060e5ac0f8"
+    }
+  ],
+  "_index": 2
+}

@@ -29,9 +29,10 @@
       "id": "0a1cd44b-0808-4b4e-b8de-3e0834181f66"
     },
     {
-      "command": "EVENT_SET_OOB_TILE",
+      "command": "EVENT_ENGINE_FIELD_SET",
       "args": {
-        "tile_id": {
+        "engineFieldKey": "fill_tile_id",
+        "value": {
           "type": "number",
           "value": 13
         }
@@ -41,12 +42,14 @@
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
+        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb",
+        "$actor[0]$": "8af636ac-a661-425c-8f5e-2a682dffa748"
       },
       "id": "3a3e843b-7b47-4d28-9954-0df6e4059ba8"
     }
   ],
   "playerHit1Script": [],
   "playerHit2Script": [],
-  "playerHit3Script": []
+  "playerHit3Script": [],
+  "playerSpriteSheetId": "b7aa1f71-df79-4daa-beaf-818cf41bbd6e"
 }

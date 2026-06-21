@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "42009146-8a79-4bd8-bc83-7ce18fc3506c",
+  "name": "Cerulean House E Reverse",
+  "prefabId": "",
+  "x": 54,
+  "y": 18,
+  "symbol": "trigger_115",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 51
+        }
+      },
+      "id": "2401b589-513b-445c-8d84-467534fea767"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "1d1f28a3-f064-499f-8902-241461ab8993"
+    }
+  ],
+  "_index": 9
+}

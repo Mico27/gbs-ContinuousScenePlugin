@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "ea392913-c6b7-45ad-af97-135fa83dcade",
+  "name": "Lavender Poke Mart",
+  "prefabId": "",
+  "x": 14,
+  "y": 26,
+  "symbol": "trigger_79",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "2d2ec9d0-1e31-4279-bc42-3b9afc7cbd9e"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "ef0ed904-b494-4a74-ba50-07e348e8f61c"
+    }
+  ],
+  "_index": 4
+}

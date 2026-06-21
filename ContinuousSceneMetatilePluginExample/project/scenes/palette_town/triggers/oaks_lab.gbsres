@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "c37d57c2-d02a-4ee3-9e05-aac1db20069b",
+  "name": "Oaks Lab",
+  "prefabId": "",
+  "x": 24,
+  "y": 22,
+  "symbol": "trigger_2",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "37adebcb-990b-49c0-8014-8e5463a04d05"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "82a48979-e1a7-4119-bf97-be8e77ea8ad3"
+    }
+  ],
+  "_index": 2
+}

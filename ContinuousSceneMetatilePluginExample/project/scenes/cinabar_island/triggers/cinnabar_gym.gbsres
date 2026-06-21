@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "7b8c78e6-0098-4ef3-a502-646da34193bf",
+  "name": "Cinnabar Gym",
+  "prefabId": "",
+  "x": 22,
+  "y": 22,
+  "symbol": "trigger_111",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "b1fb32b3-c571-4cf0-a520-9f2c4810e65a"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "f3657031-326c-48f9-bc73-15c65c94f58a"
+    }
+  ],
+  "_index": 3
+}

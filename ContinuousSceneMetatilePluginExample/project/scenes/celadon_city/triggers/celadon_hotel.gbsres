@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "db7ae15f-98d9-4d8f-9495-57755cb3a1f0",
+  "name": "Celadon Hotel",
+  "prefabId": "",
+  "x": 82,
+  "y": 18,
+  "symbol": "trigger_59",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "c5582c11-7366-43ff-8d29-f671f2c950a6"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "6e19e11b-ac70-485a-acb4-e5a731f5872d"
+    }
+  ],
+  "_index": 1
+}

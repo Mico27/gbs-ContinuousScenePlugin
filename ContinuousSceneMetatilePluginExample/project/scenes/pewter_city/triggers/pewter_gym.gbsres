@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "a9817429-69af-4745-87e6-13bedbcf0f94",
+  "name": "Pewter Gym",
+  "prefabId": "",
+  "x": 58,
+  "y": 26,
+  "symbol": "trigger_16",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "a8eb0fc3-f6ab-405c-a608-48e85d9197d5"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "a510f148-48c3-4df1-86bf-d2aa86232410"
+    }
+  ],
+  "_index": 2
+}

@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "b95f805f-400a-41a3-8df8-59b85bf04287",
+  "name": "Ashs House",
+  "prefabId": "",
+  "x": 10,
+  "y": 10,
+  "symbol": "trigger_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "cba76eb3-60d2-4b5b-9358-756d8a2fe8b4"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "66c28ee1-dfda-45cb-b530-e4c88bf8ae8a"
+    }
+  ],
+  "_index": 0
+}

@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "9be52b38-fdb1-4ef5-8958-24e8687c9625",
+  "name": "Fuchsia Warden House",
+  "prefabId": "",
+  "x": 44,
+  "y": 26,
+  "symbol": "trigger_90",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "7f455b50-e87f-45a7-8806-d7d5ae06ded4"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "a2de8130-2c9e-4644-9933-6b35a7d19513"
+    }
+  ],
+  "_index": 2
+}

@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "6616549a-cea9-424a-8b32-d449b11ad7b8",
+  "name": "Fuchsia Safari Zone E",
+  "prefabId": "",
+  "x": 62,
+  "y": 54,
+  "symbol": "trigger_95",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "0865ddeb-d3df-4b4b-81b8-05fd41d69470"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "2aa75ae9-ecf1-44bc-b693-8dc59649ec59"
+    }
+  ],
+  "_index": 7
+}

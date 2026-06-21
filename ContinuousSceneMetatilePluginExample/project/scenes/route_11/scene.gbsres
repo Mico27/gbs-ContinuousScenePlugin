@@ -29,9 +29,10 @@
       "id": "cf7bac05-0817-404d-9a66-9c96b97fd8a6"
     },
     {
-      "command": "EVENT_SET_OOB_TILE",
+      "command": "EVENT_ENGINE_FIELD_SET",
       "args": {
-        "tile_id": {
+        "engineFieldKey": "fill_tile_id",
+        "value": {
           "type": "number",
           "value": 13
         }
@@ -48,5 +49,6 @@
   ],
   "playerHit1Script": [],
   "playerHit2Script": [],
-  "playerHit3Script": []
+  "playerHit3Script": [],
+  "playerSpriteSheetId": "b7aa1f71-df79-4daa-beaf-818cf41bbd6e"
 }

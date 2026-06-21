@@ -493,7 +493,7 @@
                   "value": 116
                 }
               },
-              "__collapseElse": true,
+              "__collapseElse": false,
               "__comment": false
             },
             "children": {
@@ -587,6 +587,252 @@
       "id": "f3f4a4cd-5e1b-445c-ac91-d53b6180d99a"
     },
     {
+      "command": "PM_EVENT_METATILE_SCRIPT",
+      "args": {
+        "metatile_event": "2",
+        "__scriptTabs": "scriptinput",
+        "__collapse": true
+      },
+      "children": {
+        "script": [
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "engineField",
+                  "value": "collided_metatile_id"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 118
+                }
+              },
+              "__collapseElse": false,
+              "__comment": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_ACTOR_SET_STATE",
+                  "args": {
+                    "actorId": "$self$",
+                    "spriteStateId": "Jump",
+                    "loopAnim": false
+                  },
+                  "id": "3ea77aa9-adf4-4b50-b6fd-7c06283acc34"
+                },
+                {
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "11",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  },
+                  "id": "edee38c1-2fbe-4325-9ae0-5450042c0ce2"
+                },
+                {
+                  "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                  "args": {
+                    "actorId": "$self$",
+                    "speed": 0
+                  },
+                  "id": "c2ee1572-9041-499f-bb76-fae51fcbd45d"
+                },
+                {
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "__section": "movement",
+                    "actorId": "$self$",
+                    "x": {
+                      "type": "number",
+                      "value": 4
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "collideWith": [],
+                    "lockDirection": [
+                      "y",
+                      "x"
+                    ],
+                    "moveType": "horizontal",
+                    "units": "tiles"
+                  },
+                  "id": "204ee913-eadd-4bf0-80a7-a085ce10cee9"
+                },
+                {
+                  "command": "EVENT_ACTOR_SET_STATE",
+                  "args": {
+                    "actorId": "$self$",
+                    "spriteStateId": "",
+                    "loopAnim": true
+                  },
+                  "id": "931f6262-89cb-4417-ba56-573ec488a2f4"
+                },
+                {
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "11",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  },
+                  "id": "cbade9e1-5495-4846-9bd4-6064accc97d4"
+                },
+                {
+                  "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                  "args": {
+                    "actorId": "$self$",
+                    "speed": 15
+                  },
+                  "id": "b801880d-bf9e-49cc-aa40-302321f99cb9"
+                }
+              ],
+              "false": []
+            },
+            "id": "289160d8-5cea-4965-b1d2-df95e27dc10b"
+          }
+        ]
+      },
+      "id": "3e19d57d-87dd-430d-9039-74b97bae2d95"
+    },
+    {
+      "command": "PM_EVENT_METATILE_SCRIPT",
+      "args": {
+        "metatile_event": "4",
+        "__scriptTabs": "scriptinput",
+        "__collapse": true
+      },
+      "children": {
+        "script": [
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "or",
+                "valueA": {
+                  "type": "eq",
+                  "valueA": {
+                    "type": "engineField",
+                    "value": "collided_metatile_id"
+                  },
+                  "valueB": {
+                    "type": "number",
+                    "value": 119
+                  }
+                },
+                "valueB": {
+                  "type": "eq",
+                  "valueA": {
+                    "type": "engineField",
+                    "value": "collided_metatile_id"
+                  },
+                  "valueB": {
+                    "type": "number",
+                    "value": 120
+                  }
+                }
+              },
+              "__collapseElse": false,
+              "__comment": false
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_ACTOR_SET_STATE",
+                  "args": {
+                    "actorId": "$self$",
+                    "spriteStateId": "Jump",
+                    "loopAnim": false
+                  },
+                  "id": "7dca27ee-9087-44f4-a2ed-5d380f301faa"
+                },
+                {
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "11",
+                    "value": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  },
+                  "id": "29886d00-ab55-4c09-b7df-9cb66f377c92"
+                },
+                {
+                  "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                  "args": {
+                    "actorId": "$self$",
+                    "speed": 0
+                  },
+                  "id": "d087ab64-a220-4760-bcaa-4b7fdc6ece5e"
+                },
+                {
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "__section": "movement",
+                    "actorId": "$self$",
+                    "x": {
+                      "type": "number",
+                      "value": -4
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "collideWith": [],
+                    "lockDirection": [
+                      "y",
+                      "x"
+                    ],
+                    "moveType": "horizontal",
+                    "units": "tiles"
+                  },
+                  "id": "c703a7a7-ad44-40b0-9c91-0a5d2f23a557"
+                },
+                {
+                  "command": "EVENT_ACTOR_SET_STATE",
+                  "args": {
+                    "actorId": "$self$",
+                    "spriteStateId": "",
+                    "loopAnim": true
+                  },
+                  "id": "41384b20-2241-43e9-9713-771d2027a06b"
+                },
+                {
+                  "command": "EVENT_SET_VALUE",
+                  "args": {
+                    "variable": "11",
+                    "value": {
+                      "type": "number",
+                      "value": 0
+                    }
+                  },
+                  "id": "c30f7c74-d3b1-4776-8ef8-8f3b55033c09"
+                },
+                {
+                  "command": "EVENT_ACTOR_SET_ANIMATION_SPEED",
+                  "args": {
+                    "actorId": "$self$",
+                    "speed": 15
+                  },
+                  "id": "c5e0929c-fec5-4d4d-baec-91de6617626e"
+                }
+              ],
+              "false": []
+            },
+            "id": "46ffa312-aa01-4456-93fc-46589048be06"
+          }
+        ]
+      },
+      "id": "91c67235-eb21-4ff3-aa2b-aa2ef691091a"
+    },
+    {
       "command": "EVENT_SET_INPUT_SCRIPT",
       "args": {
         "input": [
@@ -594,7 +840,7 @@
         ],
         "override": false,
         "__scriptTabs": "press",
-        "__collapse": false
+        "__collapse": true
       },
       "children": {
         "true": [

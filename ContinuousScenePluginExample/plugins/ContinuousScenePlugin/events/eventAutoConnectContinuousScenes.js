@@ -23,7 +23,7 @@ export const fields = [
     label: "Loop Vertically",
     description: "Whether to connect scenes on the top and bottom edges of the map",
     type: "checkbox",
-  },    
+  },
 ];
 
 
@@ -301,7 +301,7 @@ export const compile = (input, helpers) => {
         }).join(", ");
         sceneConnectionsData += `          ${connections_formatted},\n`;
         sceneConnectionCounter++;
-    });    
+    });
 
   writeAsset(
       `${scene_connections_symbol}.c`,

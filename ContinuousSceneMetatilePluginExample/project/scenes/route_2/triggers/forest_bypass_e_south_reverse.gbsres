@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "2057fd45-eac9-488c-a7f6-b43c80b28f0d",
+  "name": "Forest Bypass E South Reverse",
+  "prefabId": "",
+  "x": 32,
+  "y": 70,
+  "symbol": "trigger_13",
+  "prefabScriptOverrides": {},
+  "width": 4,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 27
+        }
+      },
+      "id": "73d3eaf1-67aa-408f-a30d-9d9f4ce88e8b"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "b14ef2f4-6558-4f48-9ebb-7f57ac47502e"
+    }
+  ],
+  "_index": 5
+}

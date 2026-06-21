@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "2ba3a78c-672e-488d-86c7-bb62a3b82cbf",
+  "name": "Route 5 House",
+  "prefabId": "",
+  "x": 20,
+  "y": 42,
+  "symbol": "trigger_35",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "3ddfa5c5-0ae6-473f-aacf-630610d4de5c"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "03283053-b499-458d-a242-8a7e42653dfc"
+    }
+  ],
+  "_index": 1
+}

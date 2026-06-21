@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "f9d2fb88-dd42-420d-bf04-25cc7502ace0",
+  "name": "Route 7 Gate West",
+  "prefabId": "",
+  "x": 22,
+  "y": 20,
+  "symbol": "trigger_57",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 31
+        }
+      },
+      "id": "21e9cd98-3910-4b68-b1e3-3391f64872a8"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "ad7b9e1d-0b7c-45cb-8877-ae37166662b4"
+    }
+  ],
+  "_index": 2
+}

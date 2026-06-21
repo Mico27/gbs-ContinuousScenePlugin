@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "84ee2fbe-60af-4736-8620-276c43f1a161",
+  "name": "Pewter Museum N",
+  "prefabId": "",
+  "x": 38,
+  "y": 10,
+  "symbol": "trigger_14",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "a2065948-89eb-43ca-b789-e346c4b0bc86"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "62b1f907-44fe-4e76-a58a-958ac400fa20"
+    }
+  ],
+  "_index": 0
+}

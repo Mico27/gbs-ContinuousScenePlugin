@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "24581831-67b9-4d86-9ea9-df534b6d5079",
+  "name": "Viridian School",
+  "prefabId": "",
+  "x": 42,
+  "y": 18,
+  "symbol": "trigger_4",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "9c6012bf-b256-4cdc-b136-3cff95d45fb0"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "0f23564c-727b-46e7-ac74-acb9a9975fd5"
+    }
+  ],
+  "_index": 1
+}

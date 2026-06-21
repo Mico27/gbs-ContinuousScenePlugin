@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "8274e123-73d4-42eb-a48e-f69a388b64a5",
+  "name": "Fuchsia House",
+  "prefabId": "",
+  "x": 22,
+  "y": 54,
+  "symbol": "trigger_92",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "646bb463-d405-4afb-a3a5-40a66c7bdf76"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "ae06cfe5-04a3-42bf-b7a7-1a7c318f694d"
+    }
+  ],
+  "_index": 4
+}

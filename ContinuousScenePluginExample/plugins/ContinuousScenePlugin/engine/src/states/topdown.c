@@ -19,7 +19,7 @@
 #endif
 
 UBYTE topdown_grid;
-UWORD max_pos = 0;
+UBYTE player_collision_group;
 
 void topdown_init(void) BANKED {
     camera_offset_x = 0;
@@ -30,7 +30,7 @@ void topdown_init(void) BANKED {
     if (topdown_grid == 16) {
         // Snap to 16px grid
         PLAYER.pos.x = SUBPX_SNAP_TILE16(PLAYER.pos.x);
-        PLAYER.pos.y = SUBPX_SNAP_TILE16(PLAYER.pos.y);
+        PLAYER.pos.y = SUBPX_SNAP_TILE16(PLAYER.pos.y) + TILE_TO_SUBPX(1);
     } else {
         PLAYER.pos.x = SUBPX_SNAP_TILE(PLAYER.pos.x);
         PLAYER.pos.y = SUBPX_SNAP_TILE(PLAYER.pos.y);
@@ -41,6 +41,7 @@ void topdown_update(void) BANKED {
     actor_t *hit_actor;
     UBYTE tile_start, tile_end;
     direction_e new_dir = DIR_NONE;
+    static UWORD max_pos = 0;
 
     // Is player on an 8x8px tile?
     if ((topdown_grid == 16 && ON_16PX_GRID(PLAYER.pos)) ||
@@ -48,6 +49,11 @@ void topdown_update(void) BANKED {
         // Player landed on an tile
         // so stop movement for now
         player_moving = FALSE;
+
+        //Check scene transition
+        if (check_transition_to_scene_collision()) {
+            return;
+        }
 
         // Check for trigger collisions
         if (trigger_activate_at_intersection(&PLAYER.bounds, &PLAYER.pos, FALSE)) {
@@ -64,7 +70,7 @@ void topdown_update(void) BANKED {
             tile_start = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
             tile_end   = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
             UBYTE tile_x = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
-            if (tile_col_test_range_y(COLLISION_RIGHT, tile_x - 1, tile_start, tile_end)) {
+            if (tile_col_test_range_y(COLLISION_RIGHT | player_collision_group, tile_x - 1, tile_start, tile_end)) {
                 player_moving = FALSE;
             }
         } else if (INPUT_RECENT_RIGHT) {
@@ -75,7 +81,7 @@ void topdown_update(void) BANKED {
             tile_start = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
             tile_end   = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
             UBYTE tile_x = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
-            if (tile_col_test_range_y(COLLISION_LEFT, tile_x + 1, tile_start, tile_end)) {
+            if (tile_col_test_range_y(COLLISION_LEFT | player_collision_group, tile_x + 1, tile_start, tile_end)) {
                 player_moving = FALSE;
             }
         } else if (INPUT_RECENT_UP) {
@@ -86,7 +92,7 @@ void topdown_update(void) BANKED {
             tile_start = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
             tile_end   = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
             UBYTE tile_y = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
-            if (tile_col_test_range_x(COLLISION_BOTTOM, tile_y - 1, tile_start, tile_end)) {
+            if (tile_col_test_range_x(COLLISION_BOTTOM | player_collision_group, tile_y - 1, tile_start, tile_end)) {
                 player_moving = FALSE;
             }
         } else if (INPUT_RECENT_DOWN) {
@@ -97,7 +103,7 @@ void topdown_update(void) BANKED {
             tile_start = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
             tile_end   = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
             UBYTE tile_y = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
-            if (tile_col_test_range_x(COLLISION_TOP, tile_y + 1, tile_start, tile_end)) {
+            if (tile_col_test_range_x(COLLISION_TOP | player_collision_group, tile_y + 1, tile_start, tile_end)) {
                 player_moving = FALSE;
             }
         }
@@ -154,24 +160,20 @@ void topdown_update(void) BANKED {
 
         // Clamp to grid
         if (PLAYER.dir == DIR_RIGHT) {
-            if (PLAYER.pos.x > max_pos) {
+            if (PLAYER.pos.x > max_pos && (PLAYER.pos.x - max_pos) < PLAYER.move_speed) {
                 PLAYER.pos.x = max_pos;
             }
         } else if (PLAYER.dir == DIR_LEFT) {
-            if (PLAYER.pos.x < max_pos) {
+            if (PLAYER.pos.x < max_pos && (max_pos - PLAYER.pos.x) < PLAYER.move_speed) {
                 PLAYER.pos.x = max_pos;
-            } else if (max_pos == 0 && PLAYER.pos.x >= (UWORD_MAX - PLAYER.move_speed)) {
-                PLAYER.pos.x = 0;
             }
         } else if (PLAYER.dir == DIR_DOWN) {
-            if (PLAYER.pos.y > max_pos) {
+            if (PLAYER.pos.y > max_pos && (PLAYER.pos.y - max_pos) < PLAYER.move_speed) {
                 PLAYER.pos.y = max_pos;
             }
         } else if (PLAYER.dir == DIR_UP) {
-            if (PLAYER.pos.y < max_pos) {
+            if (PLAYER.pos.y < max_pos && (max_pos - PLAYER.pos.y) < PLAYER.move_speed) {
                 PLAYER.pos.y = max_pos;
-            } else if (max_pos == 0 && PLAYER.pos.y >= (UWORD_MAX - PLAYER.move_speed)) {
-                PLAYER.pos.y = 0;
             }
         }
     }

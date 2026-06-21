@@ -54,8 +54,8 @@ extern UBYTE fill_tile_id;
 extern UBYTE fill_tile_attr;
 
 void scene_transition_reset(void) BANKED;
-void check_transition_to_scene_collision(void) BANKED;
-void transition_to_scene_modal(UBYTE direction) BANKED;
+bool check_transition_to_scene_collision(void) BANKED;
+bool transition_to_scene_modal(UBYTE direction) BANKED;
 void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction) BANKED;
 
 #endif

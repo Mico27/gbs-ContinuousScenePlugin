@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "71bb75b0-2423-4f29-9c4c-ad1fba763e5a",
+  "name": "Route 22 Gate",
+  "prefabId": "",
+  "x": 16,
+  "y": 10,
+  "symbol": "trigger_32",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 21
+        }
+      },
+      "id": "7a2fa4be-8e2a-48d1-be63-600c08602aff"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "6cf9ac7b-2cb2-4e00-b0c9-9b38ac12257f"
+    }
+  ],
+  "_index": 0
+}

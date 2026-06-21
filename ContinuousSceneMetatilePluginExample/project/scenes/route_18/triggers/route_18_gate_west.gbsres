@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "a8cdfe27-c51b-43bf-8007-29245d9df9ec",
+  "name": "Route 18 Gate West",
+  "prefabId": "",
+  "x": 66,
+  "y": 16,
+  "symbol": "trigger_102",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 4,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 42
+        }
+      },
+      "id": "0deeacef-f184-48c4-b959-aab8f3f9fb9b"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "062b40fd-0c26-4257-867f-b2f51849ffed"
+    }
+  ],
+  "_index": 0
+}

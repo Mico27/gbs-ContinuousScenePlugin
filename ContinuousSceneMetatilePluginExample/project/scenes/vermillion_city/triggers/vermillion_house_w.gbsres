@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "d8d5d7f1-45e7-43fd-9f23-415cd41e21b7",
+  "name": "Vermillion House W",
+  "prefabId": "",
+  "x": 24,
+  "y": 38,
+  "symbol": "trigger_52",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "f747b98a-cf70-485e-9d21-035b4f29bd95"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "5e087f3e-492e-4815-b502-1f28e60bda88"
+    }
+  ],
+  "_index": 5
+}

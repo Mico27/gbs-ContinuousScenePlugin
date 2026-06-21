@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "9ba4e419-4bc5-4c32-878a-305fa0f1004f",
+  "name": "Route 16 Gate A West",
+  "prefabId": "",
+  "x": 34,
+  "y": 20,
+  "symbol": "trigger_98",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 38
+        }
+      },
+      "id": "dff28023-6787-46b5-83e5-3ba290890263"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "bc41b209-5379-4507-85d6-9fba57cc7646"
+    }
+  ],
+  "_index": 2
+}

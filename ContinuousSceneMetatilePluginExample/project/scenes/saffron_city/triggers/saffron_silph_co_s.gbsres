@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "cf163cc0-7b41-4ad2-ac79-f11e0bc68bbb",
+  "name": "Saffron Silph Co S",
+  "prefabId": "",
+  "x": 36,
+  "y": 42,
+  "symbol": "trigger_42",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "46077c13-066e-4efa-bcaa-4ded1ec99e30"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "57470bac-05a1-4813-b115-39658f03c8e9"
+    }
+  ],
+  "_index": 5
+}

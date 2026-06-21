@@ -27,10 +27,10 @@ export const fields = [
 
 
 export const compile = (input, helpers) => {
-    const { _addComment, _stackPushConst, _callNative, _addNL, _stackPop } = helpers;    
+    const { _addComment, _stackPushConst, _callNative, _addNL, _stackPop } = helpers;
     _addComment("Remove continuous scene");
-    _stackPushConst(input.direction);    
+    _stackPushConst(input.direction);
     _callNative("remove_continuous_scene");
-    _stackPop(1);    
+    _stackPop(1);
     _addNL();
 };

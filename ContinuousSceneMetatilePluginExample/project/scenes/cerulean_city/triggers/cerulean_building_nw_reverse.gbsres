@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "b38d0888-fa73-4533-a6d2-207e6dcc0995",
+  "name": "Cerulean Building NW Reverse",
+  "prefabId": "",
+  "x": 18,
+  "y": 18,
+  "symbol": "trigger_54",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 49
+        }
+      },
+      "id": "57d732cc-ed5a-4de7-bc52-b7c0b1560122"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "a34e3958-257a-47c2-95cb-5d10d0520d18"
+    }
+  ],
+  "_index": 8
+}

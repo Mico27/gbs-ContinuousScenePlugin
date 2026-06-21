@@ -30,9 +30,10 @@
       "id": "816f05ca-f292-43f7-af36-686888665dc1"
     },
     {
-      "command": "EVENT_SET_OOB_TILE",
+      "command": "EVENT_ENGINE_FIELD_SET",
       "args": {
-        "tile_id": {
+        "engineFieldKey": "fill_tile_id",
+        "value": {
           "type": "number",
           "value": 32
         }

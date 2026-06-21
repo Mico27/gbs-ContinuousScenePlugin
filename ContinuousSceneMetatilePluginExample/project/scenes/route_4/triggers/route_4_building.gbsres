@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "bd3b1007-a06f-4378-a306-a265df4555af",
+  "name": "Route 4 Building",
+  "prefabId": "",
+  "x": 22,
+  "y": 10,
+  "symbol": "trigger_23",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "581b57c8-9224-4e9f-b608-8c7a2c79a234"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "2a5d1170-a982-4aed-9f9c-4d5fdb2a4b09"
+    }
+  ],
+  "_index": 2
+}

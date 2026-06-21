@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "9e4528ce-c4f0-4f07-b94d-70f62b71be8e",
+  "name": "Route 6 Saffron South Gate",
+  "prefabId": "",
+  "x": 20,
+  "y": 14,
+  "symbol": "trigger_45",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 46
+        }
+      },
+      "id": "d243ab9d-d23d-4e7c-af45-d9155c42f541"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "44830448-9791-4a48-9e22-835849f34027"
+    }
+  ],
+  "_index": 0
+}

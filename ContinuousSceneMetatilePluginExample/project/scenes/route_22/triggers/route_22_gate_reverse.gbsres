@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "c6831a88-8ed5-4389-80d8-3764b86fbf39",
+  "name": "Route 22 Gate Reverse",
+  "prefabId": "",
+  "x": 16,
+  "y": 6,
+  "symbol": "trigger_33",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 26
+        }
+      },
+      "id": "b1e6e813-25f5-4377-8035-fdb4d38d32b5"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "f5f31e50-2659-45f9-9a1b-aeaf0638bfb7"
+    }
+  ],
+  "_index": 1
+}

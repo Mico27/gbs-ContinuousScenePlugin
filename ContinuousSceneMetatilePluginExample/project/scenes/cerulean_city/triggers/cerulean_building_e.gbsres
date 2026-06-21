@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "109d0204-237c-4cfd-85a1-9c25ae07cebc",
+  "name": "Cerulean Building E",
+  "prefabId": "",
+  "x": 50,
+  "y": 50,
+  "symbol": "trigger_29",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "3d5c0888-c9fc-4dfc-a52c-c98157890a90"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "879f121b-3a26-4b88-88e7-742abfd84fec"
+    }
+  ],
+  "_index": 5
+}

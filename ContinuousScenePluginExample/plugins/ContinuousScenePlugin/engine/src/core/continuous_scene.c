@@ -46,65 +46,46 @@ void scene_transition_reset(void) BANKED {
     //camera_settings |= CAMERA_LOCK_FLAG;
 }
 
-void check_transition_to_scene_collision(void) BANKED {	
-    if (continuous_scene_enabled && !is_transitioning_scene && !CHK_FLAG(PLAYER.flags, ACTOR_FLAG_DISABLED)) {		
+bool check_transition_to_scene_collision(void) BANKED {
+    if (continuous_scene_enabled && !is_transitioning_scene && !CHK_FLAG(PLAYER.flags, ACTOR_FLAG_DISABLED)) {
         // Check for scene change collision
         if (transitioning_player_pos_y != PLAYER.pos.y)
         {
             transitioning_player_pos_y = 0x7FFF;
             if (PLAYER.pos.y > TILE_TO_SUBPX(SCREEN_OOB_TOP)){
-                transition_to_scene_modal(DIRECTION_TOP);				
+                return transition_to_scene_modal(DIRECTION_TOP);
             } else if (PLAYER.pos.y >= image_height_subpx){
-                transition_to_scene_modal(DIRECTION_BOTTOM);		
+                return transition_to_scene_modal(DIRECTION_BOTTOM);
             }
         }
         if (transitioning_player_pos_x != PLAYER.pos.x)
         {
             transitioning_player_pos_x = 0x7FFF;
             if (PLAYER.pos.x > TILE_TO_SUBPX(SCREEN_OOB_LEFT)){
-                transition_to_scene_modal(DIRECTION_LEFT);
+                return transition_to_scene_modal(DIRECTION_LEFT);
             } else if (PLAYER.pos.x >= image_width_subpx){
-                transition_to_scene_modal(DIRECTION_RIGHT);
+                return transition_to_scene_modal(DIRECTION_RIGHT);
             }
         }
     }
+    return FALSE;
 }
 
-void transition_to_scene_modal(UBYTE direction) BANKED {
-    continuous_scene_t* continuous_scene = &continuous_scenes[direction];    
+bool transition_to_scene_modal(UBYTE direction) BANKED {
+    continuous_scene_t* continuous_scene = &continuous_scenes[direction];
     if (continuous_scene->scene.ptr && continuous_scene->scene.bank){
         is_transitioning_scene = 1;
         UBYTE was_scroll_render_disabled = scroll_render_disabled;
         scroll_render_disabled = 1;
         transition_load_scene(continuous_scene, direction);
         do {
-			script_runner_update();
+            script_runner_update();
         } while (VM_ISLOCKED());
-#if __has_include ("states/topdown.h")
-    if (scene_type == SCENE_TYPE_TOPDOWN){
-        if (direction == DIRECTION_LEFT){
-            PLAYER.pos.x = TILE_TO_SUBPX(image_tile_width);
-        } else if (direction == DIRECTION_TOP){
-            PLAYER.pos.y = TILE_TO_SUBPX(image_tile_height);
-        } else if (direction == DIRECTION_RIGHT){
-            PLAYER.pos.x = 0;
-        } else if (direction == DIRECTION_BOTTOM){
-            PLAYER.pos.y = 0;
-        }
-        if (topdown_grid == 16) {
-            // Snap to 16px grid
-            PLAYER.pos.x = SUBPX_SNAP_TILE16(PLAYER.pos.x);
-            PLAYER.pos.y = SUBPX_SNAP_TILE16(PLAYER.pos.y);
-        } else {
-            PLAYER.pos.x = SUBPX_SNAP_TILE(PLAYER.pos.x);
-            PLAYER.pos.y = SUBPX_SNAP_TILE(PLAYER.pos.y);
-        }
-    }
-#endif
         is_transitioning_scene = 0;
         scroll_render_disabled = was_scroll_render_disabled;
-
+        return TRUE;
     }
+    return FALSE;
 }
 
 void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction) BANKED {

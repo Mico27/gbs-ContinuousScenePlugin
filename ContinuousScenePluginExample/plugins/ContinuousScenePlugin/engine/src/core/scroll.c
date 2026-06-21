@@ -172,9 +172,7 @@ UBYTE scroll_viewport(parallax_row_t * port) {
             scroll_queue_col(x, y);
             activate_actors_in_col(x, full_y);
         } else if (current_col != new_col) {
-            // If column differs by more than 1 render entire screen 
-            script_memory[0] = current_col;
-            script_memory[1] = new_col;      
+            // If column differs by more than 1 render entire screen
             scroll_render_rows(draw_scroll_x, draw_scroll_y, ((scene_LCD_type == LCD_parallax) ? port->start_tile : -SCREEN_PAD_TOP), SCREEN_TILE_REFRES_H);
             return TRUE;
         } else if (pending_h_i) {
@@ -195,8 +193,6 @@ UBYTE scroll_viewport(parallax_row_t * port) {
             scroll_queue_row(x, y);
             activate_actors_in_row(x, y);
         } else if (current_row != new_row) {
-            script_memory[2] = current_row;
-            script_memory[3] = new_row;  
             // If row differs by more than 1 render entire screen
             scroll_render_rows(draw_scroll_x, draw_scroll_y, ((scene_LCD_type == LCD_parallax) ? port->start_tile : -SCREEN_PAD_TOP), SCREEN_TILE_REFRES_H);
             return TRUE;

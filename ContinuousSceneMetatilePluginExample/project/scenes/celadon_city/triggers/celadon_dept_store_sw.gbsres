@@ -1,0 +1,39 @@
+{
+  "_resourceType": "trigger",
+  "id": "100d8b1a-0f04-4cc3-b18a-0bc275b079f6",
+  "name": "Celadon Dept Store SW",
+  "prefabId": "",
+  "x": 56,
+  "y": 38,
+  "symbol": "trigger_62",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "797e8efd-edec-452d-b1f1-17b495404a3d"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "20",
+        "value": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "90aa6bd6-5ecd-436a-9063-32cee675b468"
+    }
+  ],
+  "_index": 4
+}

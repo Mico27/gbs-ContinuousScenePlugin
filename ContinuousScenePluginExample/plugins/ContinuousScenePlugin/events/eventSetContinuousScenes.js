@@ -40,7 +40,7 @@ export const fields = [
 
 export const compile = (input, helpers) => {
     const { _addComment, options, _stackPushConst, _callNative, _addNL, _stackPop } = helpers;
-    
+
     _addComment("Set continuous scene");
     const { scenes } = options;
     const scene = scenes.find((s) => s.id === input.sceneId);
@@ -48,9 +48,9 @@ export const compile = (input, helpers) => {
     _stackPushConst(input.direction);
     _stackPushConst((scene)? `_${scene.symbol}`: 0);
     _stackPushConst((scene)? `___bank_${scene.symbol}`: 0);
-    
+
     _callNative("set_continuous_scene");
-    _stackPop(4);    
-    
+    _stackPop(4);
+
     _addNL();
 };
