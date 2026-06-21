@@ -1,0 +1,366 @@
+{
+  "_resourceType": "script",
+  "id": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+  "name": "MoveNPCRancom",
+  "description": "Move actor A in a random partern",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "CollisionMask",
+      "passByReference": false
+    }
+  },
+  "actors": {
+    "0": {
+      "id": "0",
+      "name": "Actor A"
+    }
+  },
+  "symbol": "script_2",
+  "script": [
+    {
+      "id": "91356199-4b45-4f78-ae11-0986b9ce0c85",
+      "command": "EVENT_VARIABLE_MATH",
+      "args": {
+        "vectorX": "15",
+        "operation": "set",
+        "other": "rnd",
+        "minValue": 0,
+        "maxValue": 3,
+        "__collapse": true
+      }
+    },
+    {
+      "id": "6878d35e-8bbe-4452-89ba-f61387adbc95",
+      "command": "EVENT_SWITCH",
+      "args": {
+        "variable": "15",
+        "choices": 4,
+        "__collapseCase0": false,
+        "value0": {
+          "type": "number",
+          "value": 0
+        },
+        "__collapseCase1": false,
+        "value1": {
+          "type": "number",
+          "value": 1
+        },
+        "__collapseCase2": false,
+        "value2": {
+          "type": "number",
+          "value": 2
+        },
+        "__collapseCase3": false,
+        "value3": {
+          "type": "number",
+          "value": 3
+        },
+        "__collapseElse": false,
+        "__collapse": false
+      },
+      "children": {
+        "true0": [
+          {
+            "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
+            "args": {
+              "x": {
+                "type": "property",
+                "target": "0",
+                "property": "xpos"
+              },
+              "y": {
+                "type": "add",
+                "valueA": {
+                  "type": "property",
+                  "target": "0",
+                  "property": "ypos"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              },
+              "output": "18",
+              "__collapse": false
+            },
+            "id": "a2629bf2-04d5-4da1-8a1e-bc15d25feda9"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "18"
+                },
+                "valueB": {
+                  "type": "variable",
+                  "value": "V0"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "1fedc7b6-89fa-44c1-ac4e-d11c09998748",
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "actorId": "0",
+                    "x": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 2
+                    },
+                    "moveType": "horizontal",
+                    "collideWith": [
+                      "walls",
+                      "actors"
+                    ],
+                    "__collapse": true,
+                    "__section": "movement"
+                  }
+                }
+              ],
+              "false": []
+            },
+            "id": "d2cff1a7-28bd-4416-b048-473969418268"
+          }
+        ],
+        "true1": [
+          {
+            "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
+            "args": {
+              "x": {
+                "type": "add",
+                "valueA": {
+                  "type": "property",
+                  "target": "0",
+                  "property": "xpos"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              },
+              "y": {
+                "type": "property",
+                "target": "0",
+                "property": "ypos"
+              },
+              "output": "18",
+              "__collapse": true
+            },
+            "id": "803513b3-04d8-4ac6-9e12-dab7d2782341"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "18"
+                },
+                "valueB": {
+                  "type": "variable",
+                  "value": "V0"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "8a6df886-a240-4e81-9cd0-16301eed072e",
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "actorId": "0",
+                    "x": {
+                      "type": "number",
+                      "value": 2
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "moveType": "horizontal",
+                    "collideWith": [
+                      "walls",
+                      "actors"
+                    ],
+                    "__collapse": true,
+                    "__section": "movement"
+                  }
+                }
+              ],
+              "false": []
+            },
+            "id": "6701a783-d2f9-4957-944d-8d0666645d2e"
+          }
+        ],
+        "true2": [
+          {
+            "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
+            "args": {
+              "x": {
+                "type": "property",
+                "target": "0",
+                "property": "xpos"
+              },
+              "y": {
+                "type": "sub",
+                "valueA": {
+                  "type": "property",
+                  "target": "0",
+                  "property": "ypos"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              },
+              "output": "18",
+              "__collapse": true
+            },
+            "id": "e8f69632-f8d3-42f3-ae11-24496fb384bf"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "18"
+                },
+                "valueB": {
+                  "type": "variable",
+                  "value": "V0"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "609accf5-156e-4184-a039-7be151a4d09e",
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "actorId": "0",
+                    "x": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": -2
+                    },
+                    "moveType": "horizontal",
+                    "collideWith": [
+                      "walls",
+                      "actors"
+                    ],
+                    "__collapse": true,
+                    "__section": "movement"
+                  }
+                }
+              ],
+              "false": []
+            },
+            "id": "257f1e56-2255-48e3-be08-dc6f2be4008f"
+          }
+        ],
+        "true3": [
+          {
+            "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
+            "args": {
+              "x": {
+                "type": "sub",
+                "valueA": {
+                  "type": "property",
+                  "target": "0",
+                  "property": "xpos"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 2
+                }
+              },
+              "y": {
+                "type": "property",
+                "target": "0",
+                "property": "ypos"
+              },
+              "output": "18",
+              "__collapse": true
+            },
+            "id": "a106be45-d16a-4339-91a4-d2acbec1b6af"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "18"
+                },
+                "valueB": {
+                  "type": "variable",
+                  "value": "V0"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "id": "0c3894b2-f4a4-4775-afd0-de423f9870fc",
+                  "command": "EVENT_ACTOR_MOVE_RELATIVE",
+                  "args": {
+                    "actorId": "0",
+                    "x": {
+                      "type": "number",
+                      "value": -2
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "moveType": "horizontal",
+                    "collideWith": [
+                      "walls",
+                      "actors"
+                    ],
+                    "__collapse": false,
+                    "__section": "movement"
+                  }
+                }
+              ],
+              "false": []
+            },
+            "id": "65fd568d-9b2d-47b8-9401-1e2a3f823cb1"
+          }
+        ],
+        "false": []
+      }
+    },
+    {
+      "id": "5be8eb38-7795-46a6-89aa-f8bcbbabe12e",
+      "command": "EVENT_WAIT",
+      "args": {
+        "frames": {
+          "type": "number",
+          "value": 30
+        },
+        "units": "frames"
+      }
+    }
+  ]
+}

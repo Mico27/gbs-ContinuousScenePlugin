@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actorPrefab",
+  "id": "29f678cd-1e78-40ee-add0-224b5a74b9b5",
+  "name": "pokemon_fan",
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "49c9f310-64f9-43d9-a416-b5b9237509cf",
+  "paletteId": "",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "script": [
+    {
+      "id": "232a9658-d1c1-4a1e-ab17-2aa84c3cb0c9",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "Pokemon are simply\nadorable!"
+        ],
+        "avatarId": ""
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "28ec665a-0931-4598-a7e3-5665757e5c59"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

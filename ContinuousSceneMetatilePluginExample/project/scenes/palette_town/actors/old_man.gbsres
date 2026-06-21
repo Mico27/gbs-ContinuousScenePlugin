@@ -1,0 +1,42 @@
+{
+  "_resourceType": "actor",
+  "id": "1fb582ff-14cd-47ac-b236-5e0a31a8a6a2",
+  "_index": 1,
+  "symbol": "npc_old_man_0001",
+  "prefabId": "8a822eae-0622-4e35-9340-eaa66baa23fd",
+  "name": "old_man",
+  "coordinateType": "tiles",
+  "x": 26,
+  "y": 25,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "305ba234-4dad-4633-93e9-521f65945c38",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {
+    "4966d9f2-5542-45aa-9205-af1b5e10ccc2": {
+      "id": "4966d9f2-5542-45aa-9205-af1b5e10ccc2",
+      "args": {
+        "__section": "movement"
+      }
+    },
+    "022186f3-a003-4a86-9ad2-753e87e5b354": {
+      "id": "022186f3-a003-4a86-9ad2-753e87e5b354",
+      "args": {
+        "__section": "text"
+      }
+    }
+  },
+  "script": [],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

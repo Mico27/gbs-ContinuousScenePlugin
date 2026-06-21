@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actorPrefab",
+  "id": "272e5f1e-7e39-4463-aaaf-29eb2a8fd3d5",
+  "name": "young_trainer_m",
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "64da604a-9a10-4476-bb69-bd88918b9572",
+  "paletteId": "",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "script": [
+    {
+      "id": "461e9d5e-217e-4dea-ba4c-f1bdfa8075a5",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The road to Pallet\nnever ends!"
+        ],
+        "avatarId": ""
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "b6c1cd67-bfbd-4e42-86f1-65b76c9ce3ad"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

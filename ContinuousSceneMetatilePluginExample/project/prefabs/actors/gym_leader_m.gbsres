@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actorPrefab",
+  "id": "7c9b1d79-58bc-424c-aa5f-bb7970181adb",
+  "name": "gym_leader_m",
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "d20d169d-1ea5-4cba-a47e-7abed9a09b83",
+  "paletteId": "",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "script": [
+    {
+      "id": "89f2213b-37ec-44b8-80d9-3eafc0c68a26",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "I have trained \nhere for years."
+        ],
+        "avatarId": ""
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "e0b1142d-af8f-4fab-8bc5-5dc042af828d"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actorPrefab",
+  "id": "d32eadab-5e78-413c-aa1c-d31e0f56f4d3",
+  "name": "young_trainer_f",
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "701ec7b4-547f-4c0b-a6fe-e23a0c9f29f5",
+  "paletteId": "",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "script": [
+    {
+      "id": "4959baa7-e57b-4ae9-92a9-96849b01566c",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "I'm waiting for my\nfirst Pokemon!"
+        ],
+        "avatarId": ""
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "724d590c-66fc-492e-a580-562c88fb5bf1"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

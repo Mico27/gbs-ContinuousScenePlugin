@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actorPrefab",
+  "id": "07c54d65-8bda-48af-afaf-2eb8d034f1fe",
+  "name": "swimmer",
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "18b3500a-2ed3-46b2-b710-7e16c7525d16",
+  "paletteId": "",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "script": [
+    {
+      "id": "0d0dad95-70cd-44b6-95b7-f8bbf3799dac",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "The water is\nperfect today!"
+        ],
+        "avatarId": ""
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 16
+        }
+      },
+      "id": "171b77f8-16ee-40d1-9d98-583746f04398"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

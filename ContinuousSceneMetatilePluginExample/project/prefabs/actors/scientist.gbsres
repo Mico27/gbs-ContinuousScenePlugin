@@ -1,0 +1,43 @@
+{
+  "_resourceType": "actorPrefab",
+  "id": "ff14efd8-6fff-48cb-96c2-f511a957a54e",
+  "name": "scientist",
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "b23d8b64-75e2-4c51-8576-13dbf1e77de3",
+  "paletteId": "",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "script": [
+    {
+      "id": "5776b507-7a2f-4d92-af05-82586b6230ea",
+      "command": "EVENT_TEXT",
+      "args": {
+        "text": [
+          "These fossils hold\ngreat mysteries."
+        ],
+        "avatarId": ""
+      }
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "e2bc19e6-470c-4d37-817b-2e119406e8ff"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

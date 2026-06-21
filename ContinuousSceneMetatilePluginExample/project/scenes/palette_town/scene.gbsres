@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "005a0+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_palette_town",
   "x": 2096,
   "y": 9112,
@@ -45,6 +45,13 @@
         "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
       },
       "id": "746d3e4b-b2da-487d-89cd-3553f3c06031"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "1f4ce897-a2dd-48a1-84cb-1d21565a4729"
     }
   ],
   "playerHit1Script": [],
