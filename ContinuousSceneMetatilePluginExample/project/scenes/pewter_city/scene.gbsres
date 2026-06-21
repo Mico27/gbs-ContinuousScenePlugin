@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "001680+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_pewter_city",
   "x": 1936,
   "y": 6232,
@@ -46,6 +46,20 @@
         "$actor[0]$": "be2c2b6c-0d81-49f1-8ba9-1adcd7796d7b"
       },
       "id": "42c614e9-c394-4bc9-8c54-a53addc5f4a3"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "f0b6e139-dbe1-467a-ae20-bb1ed2276f9b"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      "id": "5ca7ccd9-319c-4392-8032-2478b65eefb4"
     }
   ],
   "playerHit1Script": [],

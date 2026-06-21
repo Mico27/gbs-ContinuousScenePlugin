@@ -1,0 +1,164 @@
+{
+  "_resourceType": "script",
+  "id": "c0de0001-0000-0000-0000-000000000004",
+  "name": "Warp Input Down",
+  "symbol": "script_warp_input_down",
+  "description": "",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "script": [
+    {
+      "command": "EVENT_SCRIPT_UNLOCK",
+      "args": {},
+      "id": "54733698-0e11-4df4-bc93-080b695d0ce4"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 4
+        },
+        "units": "frames"
+      },
+      "id": "7530a648-c01a-4346-a509-9bff26d3c92a"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "variable",
+          "value": "V0"
+        }
+      },
+      "id": "a971f310-7d08-4fc2-b525-86af08863130"
+    },
+    {
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "down"
+        ],
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": "14",
+              "__collapse": true
+            },
+            "id": "3e2e275f-bdc6-4196-b2f4-66768d528624"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                    "$variable[V0]$": {
+                      "type": "variable",
+                      "value": "17"
+                    }
+                  },
+                  "id": "a7134b46-30d6-4a22-b175-6c7423b58431"
+                }
+              ],
+              "false": []
+            },
+            "id": "5fd6548e-2a4c-4fdc-ac04-d7259dd2e641"
+          }
+        ],
+        "false": []
+      },
+      "id": "cad6d756-2831-4582-9c9e-4360308347a9"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ],
+        "override": false,
+        "__scriptTabs": "press"
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": "14",
+              "__collapse": true
+            },
+            "id": "3a15d49c-e70c-4c77-9ae8-5e50e96b8c17"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "number",
+                  "value": 0
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+                    "$variable[V0]$": {
+                      "type": "variable",
+                      "value": "17"
+                    }
+                  },
+                  "id": "7d9b034a-15cf-4019-87c5-56f0f48490ab"
+                }
+              ],
+              "false": []
+            },
+            "id": "cd9b09f8-7ea8-40d2-99f6-7dbcdaa77cc0"
+          }
+        ]
+      },
+      "id": "e0fbd283-a24f-4b46-933a-e7b64407841d"
+    }
+  ]
+}

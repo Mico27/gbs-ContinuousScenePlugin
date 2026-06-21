@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "001680+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_vermillion_c",
   "x": 4816,
   "y": 8248,
@@ -46,6 +46,20 @@
         "$actor[0]$": "45f17d74-e109-491c-894e-fb8d39a12448"
       },
       "id": "48103d57-278c-44ad-8c42-45f4d9379025"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "5e24edc8-4b9d-4806-bd6e-999c086c606b"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      "id": "4dfacd93-bd50-4625-b377-e5aaf97e377c"
     }
   ],
   "playerHit1Script": [],

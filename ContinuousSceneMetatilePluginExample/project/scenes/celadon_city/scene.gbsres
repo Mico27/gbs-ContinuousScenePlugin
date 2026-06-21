@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "001c20+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_celadon_city",
   "x": 3696,
   "y": 7096,
@@ -46,6 +46,20 @@
         "$actor[0]$": "8af636ac-a661-425c-8f5e-2a682dffa748"
       },
       "id": "3a3e843b-7b47-4d28-9954-0df6e4059ba8"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "504b6436-e613-40fd-ad10-074106a41100"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      "id": "8a2b3ca0-a694-4d85-9c95-f34a63759fa8"
     }
   ],
   "playerHit1Script": [],

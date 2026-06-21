@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "005a0+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_cinabar_isla",
   "x": 2096,
   "y": 10840,
@@ -45,6 +45,20 @@
         "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
       },
       "id": "d31538a0-1738-4b17-8a4a-82ac40f3252b"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "b129a43b-3691-4941-b4fb-03754ba1e723"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      "id": "ec9c517e-3c5e-4060-9fc8-ff5b59a0da4e"
     }
   ],
   "playerHit1Script": [],

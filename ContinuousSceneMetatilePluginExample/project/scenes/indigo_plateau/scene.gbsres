@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "005a0+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_indigo_plate",
   "x": 1296,
   "y": 5496,
@@ -27,6 +27,20 @@
         "matchCollision": false
       },
       "id": "fa654844-f1da-4ccb-9366-97371250d337"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "4577ce84-d557-4f38-b7a4-fdd01df10dbb"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      "id": "272833c5-c1cb-44a6-b01f-9a9bd0361ad1"
     }
   ],
   "playerHit1Script": [],

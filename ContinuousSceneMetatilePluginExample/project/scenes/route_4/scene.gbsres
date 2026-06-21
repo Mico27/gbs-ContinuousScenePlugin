@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "001950+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_route_4",
   "x": 3376,
   "y": 6072,
@@ -45,6 +45,20 @@
         "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb"
       },
       "id": "2986a290-c42c-48cf-bb67-4b8dfc4dc100"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "c35da21e-57be-450d-957a-415d45ad8c0a"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      "id": "7e0f4e5c-e216-4d19-a3b8-ca21f380de2b"
     }
   ],
   "playerHit1Script": [],

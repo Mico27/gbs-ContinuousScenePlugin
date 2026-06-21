@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "001680+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_viridian_cit",
   "x": 1936,
   "y": 7960,
@@ -46,6 +46,20 @@
         "$actor[0]$": "ae7412f9-4f68-4a4f-b33b-f035d20ef04d"
       },
       "id": "4709549d-2d50-43ef-86d8-04db96971710"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "380253af-67e4-4622-802e-8af120b5a061"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      "id": "19b55ea6-ce36-4223-b22e-ef1571fe0f5c"
     }
   ],
   "playerHit1Script": [],

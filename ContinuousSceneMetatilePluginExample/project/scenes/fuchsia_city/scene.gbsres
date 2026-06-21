@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "001680+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_fuchsia_city",
   "x": 3856,
   "y": 9688,
@@ -46,6 +46,20 @@
         "$actor[0]$": "55818bf3-2b20-40b6-a16a-55d6282f678e"
       },
       "id": "9eef9b11-893b-40a6-bf5f-a8f36465fded"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "232e3e25-57f4-4a38-b20e-3e1ab34bdf78"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      "id": "e0ed03b6-d0fe-4b9d-94fc-9124ea87e1d9"
     }
   ],
   "playerHit1Script": [],

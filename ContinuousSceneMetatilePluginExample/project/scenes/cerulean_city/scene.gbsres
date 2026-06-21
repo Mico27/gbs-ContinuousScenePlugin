@@ -14,7 +14,7 @@
   ],
   "spritePaletteIds": [],
   "collisions": "001680+",
-  "autoFadeSpeed": 1,
+  "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_cerulean_cit",
   "x": 4816,
   "y": 5944,
@@ -46,6 +46,20 @@
         "$actor[0]$": "f63b13c9-40d0-462f-a9b9-a113f6f6df5d"
       },
       "id": "d7b32b5d-56e3-4e22-8304-9cd7922e1ab7"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "23aa3a70-f795-47a2-892c-51bf2791177f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+      },
+      "id": "046beaf0-07af-4615-92d6-68d775ef796b"
     }
   ],
   "playerHit1Script": [],

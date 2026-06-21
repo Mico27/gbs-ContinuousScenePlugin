@@ -13,26 +13,24 @@
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "customEventId": "c0de0001-0000-0000-0000-000000000001",
         "$variable[V0]$": {
           "type": "number",
           "value": 41
         }
       },
-      "id": "c86b4303-a01b-4c35-9097-289bdb47aa16"
+      "id": "32f34f3e-ead8-4f25-8d5b-31046bdccaca"
     }
   ],
   "leaveScript": [
     {
-      "command": "EVENT_SET_VALUE",
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
       "args": {
-        "variable": "20",
-        "value": {
-          "type": "number",
-          "value": 0
-        }
+        "input": [
+          "left"
+        ]
       },
-      "id": "9a3d4a66-ebad-4728-af06-3f3e2f94efc2"
+      "id": "52be5969-4aab-4231-8eb2-01bdf1eb5217"
     }
   ],
   "_index": 5
