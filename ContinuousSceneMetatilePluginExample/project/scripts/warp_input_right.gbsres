@@ -3,7 +3,7 @@
   "id": "c0de0001-0000-0000-0000-000000000002",
   "name": "Warp Input Right",
   "symbol": "script_warp_input_right",
-  "description": "",
+  "description": "Handles warp entry for a RIGHT-facing trigger (e.g. west wall of a gate, left-side building entrance). DIR_RIGHT = 1. Saves WarpId (V0) to PendingWarpId (var 17). Unlocks movement, waits 4 frames, then: if right is already held AND player faces right → warp immediately; otherwise attaches the same check to the right input button.",
   "variables": {
     "V0": {
       "id": "V0",
@@ -14,9 +14,30 @@
   "actors": {},
   "script": [
     {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "WARP INPUT RIGHT"
+      },
+      "id": "comment-0070-0000-0000-0000-000000000000"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Release the script lock so the player can move while waiting for input."
+      },
+      "id": "comment-0071-0000-0000-0000-000000000000"
+    },
+    {
       "command": "EVENT_SCRIPT_UNLOCK",
       "args": {},
       "id": "bf277926-3012-427a-8aa0-c7ef7feb6bd6"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Wait 4 frames so a button already held when entering the trigger does not fire instantly."
+      },
+      "id": "comment-0072-0000-0000-0000-000000000000"
     },
     {
       "command": "EVENT_WAIT",
@@ -34,6 +55,13 @@
       "id": "1cb79f9b-085d-4a7e-8781-f0d657cc8e1a"
     },
     {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Cache WarpId (V0) into PendingWarpId (var 17) — V0 is gone after this script ends but var 17 persists for the attached input handler."
+      },
+      "id": "comment-0073-0000-0000-0000-000000000000"
+    },
+    {
       "command": "EVENT_SET_VALUE",
       "args": {
         "variable": "17",
@@ -45,6 +73,13 @@
       "id": "6df97994-4cfe-4b3e-8f0e-492d5fa25d45"
     },
     {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "If the right button is already held right now: check player facing and warp immediately."
+      },
+      "id": "comment-0074-0000-0000-0000-000000000000"
+    },
+    {
       "command": "EVENT_IF_INPUT",
       "args": {
         "input": [
@@ -54,6 +89,13 @@
       },
       "children": {
         "true": [
+          {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Read player facing direction into PlayerDir (var 14). DIR: down=0, right=1, up=2, left=3."
+            },
+            "id": "comment-0076-0000-0000-0000-000000000000"
+          },
           {
             "command": "EVENT_ACTOR_GET_DIRECTION",
             "args": {
@@ -73,8 +115,8 @@
                   "value": "14"
                 },
                 "valueB": {
-                  "type": "number",
-                  "value": 1
+                  "type": "constant",
+                  "value": "b001-0000-0000-0000-000000000011"
                 }
               },
               "__collapseElse": true
@@ -103,6 +145,13 @@
       "id": "cf372fef-3511-4eb8-b73d-e5720b96b186"
     },
     {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Attach the warp+direction check to the right button. Fires each time the button is pressed while the player stands on this trigger. Removed by the trigger's leaveScript."
+      },
+      "id": "comment-0075-0000-0000-0000-000000000000"
+    },
+    {
       "command": "EVENT_SET_INPUT_SCRIPT",
       "args": {
         "input": [
@@ -113,6 +162,13 @@
       },
       "children": {
         "true": [
+          {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Re-read player direction each time the button fires — player may have turned since entering the trigger."
+            },
+            "id": "comment-0077-0000-0000-0000-000000000000"
+          },
           {
             "command": "EVENT_ACTOR_GET_DIRECTION",
             "args": {
@@ -132,8 +188,8 @@
                   "value": "14"
                 },
                 "valueB": {
-                  "type": "number",
-                  "value": 1
+                  "type": "constant",
+                  "value": "b001-0000-0000-0000-000000000011"
                 }
               },
               "__collapseElse": true

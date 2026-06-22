@@ -1,8 +1,8 @@
 {
   "_resourceType": "script",
   "id": "c468dd94-f2e8-4583-ba29-de77bb527f50",
-  "name": "MoveNPCRancom",
-  "description": "Move actor A in a random partern",
+  "name": "MoveNPCRandom",
+  "description": "Moves Actor A one step in a random cardinal direction, but only if the destination metatile's collision value matches CollisionMask (V0). Typically called from an NPC's update script on a timer. After the move attempt, waits 30 frames before returning.",
   "variables": {
     "V0": {
       "id": "V0",
@@ -19,6 +19,20 @@
   "symbol": "script_2",
   "script": [
     {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "MOVE NPC RANDOM"
+      },
+      "id": "comment-0094-0000-0000-0000-000000000000"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Pick a random direction (0=down, 1=right, 2=up, 3=left), check metatile collision at the target tile, and move only if collision matches the mask."
+      },
+      "id": "comment-0095-0000-0000-0000-000000000000"
+    },
+    {
       "id": "91356199-4b45-4f78-ae11-0986b9ce0c85",
       "command": "EVENT_VARIABLE_MATH",
       "args": {
@@ -31,6 +45,13 @@
       }
     },
     {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Switch on random direction value stored in NpcDir (var 15)."
+      },
+      "id": "comment-0104-0000-0000-0000-000000000000"
+    },
+    {
       "id": "6878d35e-8bbe-4452-89ba-f61387adbc95",
       "command": "EVENT_SWITCH",
       "args": {
@@ -38,29 +59,43 @@
         "choices": 4,
         "__collapseCase0": false,
         "value0": {
-          "type": "number",
-          "value": 0
+          "type": "constant",
+          "value": "b001-0000-0000-0000-000000000010"
         },
         "__collapseCase1": false,
         "value1": {
-          "type": "number",
-          "value": 1
+          "type": "constant",
+          "value": "b001-0000-0000-0000-000000000011"
         },
         "__collapseCase2": false,
         "value2": {
-          "type": "number",
-          "value": 2
+          "type": "constant",
+          "value": "b001-0000-0000-0000-000000000012"
         },
         "__collapseCase3": false,
         "value3": {
-          "type": "number",
-          "value": 3
+          "type": "constant",
+          "value": "b001-0000-0000-0000-000000000013"
         },
         "__collapseElse": false,
         "__collapse": false
       },
       "children": {
         "true0": [
+          {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Direction 0: down (+Y)"
+            },
+            "id": "comment-0096-0000-0000-0000-000000000000"
+          },
+          {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Check metatile collision at target position → MetatileCollision (var 18). Move only if it equals CollisionMask (V0)."
+            },
+            "id": "comment-0097-0000-0000-0000-000000000000"
+          },
           {
             "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
             "args": {
@@ -134,6 +169,20 @@
         ],
         "true1": [
           {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Direction 1: right (+X)"
+            },
+            "id": "comment-0098-0000-0000-0000-000000000000"
+          },
+          {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Check metatile collision at target position → MetatileCollision (var 18). Move only if it equals CollisionMask (V0)."
+            },
+            "id": "comment-0099-0000-0000-0000-000000000000"
+          },
+          {
             "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
             "args": {
               "x": {
@@ -205,6 +254,20 @@
           }
         ],
         "true2": [
+          {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Direction 2: up (-Y)"
+            },
+            "id": "comment-0100-0000-0000-0000-000000000000"
+          },
+          {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Check metatile collision at target position → MetatileCollision (var 18). Move only if it equals CollisionMask (V0)."
+            },
+            "id": "comment-0101-0000-0000-0000-000000000000"
+          },
           {
             "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
             "args": {
@@ -278,6 +341,20 @@
         ],
         "true3": [
           {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Direction 3: left (-X)"
+            },
+            "id": "comment-0102-0000-0000-0000-000000000000"
+          },
+          {
+            "command": "EVENT_COMMENT",
+            "args": {
+              "text": "Check metatile collision at target position → MetatileCollision (var 18). Move only if it equals CollisionMask (V0)."
+            },
+            "id": "comment-0103-0000-0000-0000-000000000000"
+          },
+          {
             "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
             "args": {
               "x": {
@@ -350,6 +427,13 @@
         ],
         "false": []
       }
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Pause 30 frames (~0.5 s) between movement steps."
+      },
+      "id": "comment-0105-0000-0000-0000-000000000000"
     },
     {
       "id": "5be8eb38-7795-46a6-89aa-f8bcbbabe12e",

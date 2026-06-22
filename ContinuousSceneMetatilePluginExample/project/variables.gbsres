@@ -107,5 +107,168 @@
       "symbol": "var_warpcooldown"
     }
   ],
-  "constants": []
+  "constants": [
+    {
+      "id": "0a85d005-f3ad-404f-af80-773cf2824502",
+      "name": "METATILEIDS/TREE",
+      "symbol": "const_metatileids_tree",
+      "value": 127
+    },
+    {
+      "id": "a369820d-229e-4bd8-b123-2cd223018904",
+      "name": "METATILEIDS/GRASS",
+      "symbol": "const_metatileids_grass",
+      "value": 12
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000001",
+      "name": "METATILEIDS/TALL_GRASS",
+      "symbol": "const_metatileids_tall_gras",
+      "value": 32
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000002",
+      "name": "METATILEIDS/WATER_FIRST",
+      "symbol": "const_metatileids_water_fir",
+      "value": 21
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000003",
+      "name": "METATILEIDS/WATER_LAST",
+      "symbol": "const_metatileids_water_las",
+      "value": 30
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000004",
+      "name": "METATILEIDS/LEDGE_SOUTH_MAX",
+      "symbol": "const_metatileids_ledge_sou",
+      "value": 116
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000005",
+      "name": "METATILEIDS/LEDGE_EAST",
+      "symbol": "const_metatileids_ledge_eas",
+      "value": 118
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000006",
+      "name": "METATILEIDS/LEDGE_WEST_A",
+      "symbol": "const_metatileids_ledge_wes",
+      "value": 119
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000007",
+      "name": "METATILEIDS/LEDGE_WEST_B",
+      "symbol": "const_metatileids_ledge_wes_0",
+      "value": 120
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000008",
+      "name": "METATILEIDS/CAVE",
+      "symbol": "const_metatileids_cave",
+      "value": 123
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000009",
+      "name": "METATILEIDS/DOOR",
+      "symbol": "const_metatileids_door",
+      "value": 124
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000010",
+      "name": "DIRECTIONS/DOWN",
+      "symbol": "const_directions_down",
+      "value": 0
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000011",
+      "name": "DIRECTIONS/RIGHT",
+      "symbol": "const_directions_right",
+      "value": 1
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000012",
+      "name": "DIRECTIONS/UP",
+      "symbol": "const_directions_up",
+      "value": 2
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000013",
+      "name": "DIRECTIONS/LEFT",
+      "symbol": "const_directions_left",
+      "value": 3
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000014",
+      "name": "PLAYERSTATE/DEFAULT",
+      "symbol": "const_playerstate_default",
+      "value": 0
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000015",
+      "name": "PLAYERSTATE/GRASS",
+      "symbol": "const_playerstate_grass",
+      "value": 1
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000016",
+      "name": "PLAYERSTATE/JUMP",
+      "symbol": "const_playerstate_jump",
+      "value": 2
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000017",
+      "name": "PLAYERSTATE/SURF",
+      "symbol": "const_playerstate_surf",
+      "value": 3
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000018",
+      "name": "WARPCOOLDOWN/OFF",
+      "symbol": "const_warpcooldown_off",
+      "value": 0
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000019",
+      "name": "WARPCOOLDOWN/ON",
+      "symbol": "const_warpcooldown_on",
+      "value": 1
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000020",
+      "name": "METATILEIDS/STONE_FLOOR",
+      "symbol": "const_metatileids_stone_flo",
+      "value": 1
+    },
+    {
+      "id": "b001-0000-0000-0000-000000000021",
+      "name": "METATILEIDS/HEDGE",
+      "symbol": "const_metatileids_hedge",
+      "value": 13
+    },
+    {
+      "id": "1a795997-ef9b-4f79-aeea-efe80eb2abbd",
+      "name": "METATILEIDS/BUILDING_ROOF",
+      "symbol": "const_metatileids_building_",
+      "value": 35
+    },
+    {
+      "id": "c1c8785c-df84-4ff3-891c-eb7bdb881e96",
+      "name": "METATILEIDS/HOUSE_ROOF",
+      "symbol": "const_metatileids_house_roo_0",
+      "value": 9
+    },
+    {
+      "id": "1b62115a-4964-4a2d-8183-28b225a796c6",
+      "name": "METATILEIDS/BUILDING_RIGHT_SIDE",
+      "symbol": "const_metatileids_building__0",
+      "value": 66
+    },
+    {
+      "id": "b3cba377-6caa-4cc1-bb73-0748fea464bb",
+      "name": "METATILEIDS/BUILDING_LEFT_SIDE",
+      "symbol": "const_metatileids_building__1",
+      "value": 65
+    }
+  ]
 }

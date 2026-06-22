@@ -3,19 +3,47 @@
   "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
   "name": "Post Fadein Overworld Script",
   "symbol": "script_post_fadein_overworl",
-  "description": "",
+  "description": "Runs after each scene fade-in. Unlocks the script runner, then checks if the player spawned on a door (metatile 124) or cave entrance (metatile 123). If so, steps them 2 tiles south to clear the entrance. Finally resets WarpCooldown (var 20) to 0.",
   "variables": {},
   "actors": {},
   "script": [
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "POST FADEIN OVERWORLD SCRIPT"
+      },
+      "id": "comment-0055-0000-0000-0000-000000000000"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Release script lock so the player regains control."
+      },
+      "id": "comment-0056-0000-0000-0000-000000000000"
+    },
     {
       "command": "EVENT_SCRIPT_UNLOCK",
       "args": {},
       "id": "a1b2c3d4-0001-0000-0000-000000000007"
     },
     {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Wait one frame to let the engine settle after fade."
+      },
+      "id": "comment-0057-0000-0000-0000-000000000000"
+    },
+    {
       "command": "EVENT_IDLE",
       "args": {},
       "id": "a1b2c3d4-0001-0000-0000-000000000008"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Read the player's current tile position into PlayerX (var 12) / PlayerY (var 13)."
+      },
+      "id": "comment-0058-0000-0000-0000-000000000000"
     },
     {
       "command": "EVENT_ACTOR_GET_POSITION",
@@ -26,6 +54,13 @@
         "__collapse": true
       },
       "id": "a1b2c3d4-0001-0000-0000-000000000001"
+    },
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Read the metatile at the player's position into MetatileId (var 0)."
+      },
+      "id": "comment-0059-0000-0000-0000-000000000000"
     },
     {
       "command": "EVENT_GET_META_TILE_AT_POS",
@@ -43,6 +78,13 @@
       "id": "a1b2c3d4-0001-0000-0000-000000000002"
     },
     {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "If standing on a door (124) or cave entrance (123): step 2 tiles south to clear the entrance."
+      },
+      "id": "comment-0060-0000-0000-0000-000000000000"
+    },
+    {
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -54,8 +96,8 @@
               "value": "0"
             },
             "valueB": {
-              "type": "number",
-              "value": 123
+              "type": "constant",
+              "value": "b001-0000-0000-0000-000000000008"
             }
           },
           "valueB": {
@@ -65,8 +107,8 @@
               "value": "0"
             },
             "valueB": {
-              "type": "number",
-              "value": 124
+              "type": "constant",
+              "value": "b001-0000-0000-0000-000000000009"
             }
           }
         },
@@ -100,12 +142,19 @@
       "id": "a1b2c3d4-0001-0000-0000-000000000004"
     },
     {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "Reset WarpCooldown (var 20) now that the post-warp setup is complete."
+      },
+      "id": "comment-0061-0000-0000-0000-000000000000"
+    },
+    {
       "command": "EVENT_SET_VALUE",
       "args": {
         "variable": "20",
         "value": {
-          "type": "number",
-          "value": 0
+          "type": "constant",
+          "value": "b001-0000-0000-0000-000000000018"
         }
       },
       "id": "a1b2c3d4-0001-0000-0000-000000000005"
