@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "9f587294-fad4-43ef-8917-b3e1f511c415",
+  "name": "Victory Road Entrance",
+  "prefabId": "",
+  "x": 8,
+  "y": 62,
+  "symbol": "trigger_116",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 52
+        }
+      },
+      "id": "5afd5059-0bc8-4f5c-87fd-d793b2c659ab"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

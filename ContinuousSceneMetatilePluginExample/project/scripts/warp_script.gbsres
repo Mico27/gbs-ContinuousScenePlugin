@@ -748,7 +748,7 @@
                               "command": "EVENT_SWITCH",
                               "args": {
                                 "variable": "V0",
-                                "choices": 3,
+                                "choices": 5,
                                 "value0": {
                                   "type": "number",
                                   "value": 49
@@ -763,7 +763,17 @@
                                   "type": "number",
                                   "value": 51
                                 },
-                                "__collapseCase2": false
+                                "__collapseCase2": false,
+                                "value3": {
+                                  "type": "number",
+                                  "value": 52
+                                },
+                                "__collapseCase3": false,
+                                "value4": {
+                                  "type": "number",
+                                  "value": 53
+                                },
+                                "__collapseCase4": false
                               },
                               "children": {
                                 "false": [],
@@ -843,6 +853,58 @@
                                       "fadeSpeed": "2"
                                     },
                                     "id": "4db54669-257f-47d7-b474-9aaec42f9b3a"
+                                  }
+                                ],
+                                "true3": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 52 → Route 23 A (28, 62) facing down  [Victory Road: Entrance → Exit mouth]"
+                                    },
+                                    "id": "c628c9ce-6c91-4534-86b9-9b3729723e7d"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "fd42525e-4f9f-4a88-8da8-cf7aca6e5f86",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 28
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 62
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "c546cef7-2809-4e25-ab13-1177aa1e3bcb"
+                                  }
+                                ],
+                                "true4": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 53 → Route 23 A (8, 62) facing down  [Victory Road: Exit → Entrance mouth]"
+                                    },
+                                    "id": "bea5fd57-ebe8-4d08-b796-c14c709d7cae"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "fd42525e-4f9f-4a88-8da8-cf7aca6e5f86",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 8
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 62
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "14e56fe4-5253-4d45-9888-056b3d5d01c5"
                                   }
                                 ]
                               },
@@ -1377,21 +1439,21 @@
                       {
                         "command": "EVENT_COMMENT",
                         "args": {
-                          "text": "WarpId 21 → Route 22 (16, 6) facing up"
+                          "text": "WarpId 21 → Route 23B (16, 6) facing up"
                         },
                         "id": "comment-0024-0000-0000-0000-000000000000"
                       },
                       {
                         "command": "EVENT_SWITCH_SCENE",
                         "args": {
-                          "sceneId": "4544a89b-56f1-4df7-b234-baaaca9e4560",
+                          "sceneId": "41e36c17-ebde-4738-967c-153aa27accf2",
                           "x": {
                             "type": "number",
                             "value": 16
                           },
                           "y": {
                             "type": "number",
-                            "value": 6
+                            "value": 134
                           },
                           "direction": "up",
                           "fadeSpeed": "2"

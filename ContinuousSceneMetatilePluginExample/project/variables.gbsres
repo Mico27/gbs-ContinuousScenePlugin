@@ -105,6 +105,11 @@
       "id": "20",
       "name": "WarpCooldown",
       "symbol": "var_warpcooldown"
+    },
+    {
+      "id": "21",
+      "name": "MetatileType",
+      "symbol": "var_metatiletype"
     }
   ],
   "constants": [
@@ -255,7 +260,7 @@
     {
       "id": "c1c8785c-df84-4ff3-891c-eb7bdb881e96",
       "name": "METATILEIDS/HOUSE_ROOF",
-      "symbol": "const_metatileids_house_roo_0",
+      "symbol": "const_metatileids_house_roo",
       "value": 9
     },
     {
@@ -269,6 +274,24 @@
       "name": "METATILEIDS/BUILDING_LEFT_SIDE",
       "symbol": "const_metatileids_building__1",
       "value": 65
+    },
+    {
+      "id": "e06a546c-3ca3-4608-87b5-c34395ad41f6",
+      "name": "METATILETYPES/OVERWORLD",
+      "symbol": "const_metatiletypes_overwor",
+      "value": 0
+    },
+    {
+      "id": "4341312c-72d9-4409-bd99-5d48f50eec3e",
+      "name": "METATILETYPES/PLATEAU",
+      "symbol": "const_metatiletypes_plateau",
+      "value": 1
+    },
+    {
+      "id": "edef1b1d-4243-4a9f-897b-b3b3b45c1a87",
+      "name": "METATILEIDS/SIGN",
+      "symbol": "const_metatileids_sign",
+      "value": 125
     }
   ]
 }

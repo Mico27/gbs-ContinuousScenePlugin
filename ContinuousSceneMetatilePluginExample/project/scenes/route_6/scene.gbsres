@@ -29,6 +29,17 @@
       "id": "cc2630d1-ed23-49fe-9ca1-c238c8628687"
     },
     {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "e06a546c-3ca3-4608-87b5-c34395ad41f6"
+        }
+      },
+      "id": "f5cefb1d-edd1-4eea-8cf3-b65ce552c764"
+    },
+    {
       "command": "EVENT_ENGINE_FIELD_SET",
       "args": {
         "engineFieldKey": "fill_tile_id",
