@@ -16,10 +16,26 @@
       "id": "b8e46792-201f-449c-b2e1-e00814bd56bb",
       "command": "EVENT_TEXT",
       "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
         "text": [
-          "This area requires\nconstant patrol."
+          "I keep the peace\n\naround here."
         ],
-        "avatarId": ""
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
       }
     }
   ],

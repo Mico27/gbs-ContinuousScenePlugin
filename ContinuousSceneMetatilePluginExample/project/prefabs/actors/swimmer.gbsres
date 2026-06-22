@@ -16,10 +16,26 @@
       "id": "0d0dad95-70cd-44b6-95b7-f8bbf3799dac",
       "command": "EVENT_TEXT",
       "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
         "text": [
-          "The water is\nperfect today!"
+          "The water is\n\nperfect for a\n\nswim!"
         ],
-        "avatarId": ""
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
       }
     }
   ],

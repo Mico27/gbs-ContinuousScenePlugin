@@ -20,6 +20,17 @@
   "y": 6936,
   "script": [
     {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "22",
+        "value": {
+          "type": "number",
+          "value": 36
+        }
+      },
+      "id": "417cee08-3fe2-4077-b938-2ff5c17b4d53"
+    },
+    {
       "command": "EVENT_LOAD_META_TILES",
       "args": {
         "sceneId": "833113a4-fa67-47ba-9466-cc5194472f26",

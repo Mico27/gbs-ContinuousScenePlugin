@@ -13,14 +13,30 @@
   "collisionExtraFlags": [],
   "script": [
     {
-      "id": "022186f3-a003-4a86-9ad2-753e87e5b354",
       "command": "EVENT_TEXT",
       "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
         "text": [
-          "Back in my day we \nwalked everywhere."
+          "Back in my day, we\n\nwalked everywhere!"
         ],
-        "avatarId": ""
-      }
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "b09a6ede-ea52-4e75-aba3-ae45d7680986"
     }
   ],
   "startScript": [],

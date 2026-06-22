@@ -16,10 +16,26 @@
       "id": "4959baa7-e57b-4ae9-92a9-96849b01566c",
       "command": "EVENT_TEXT",
       "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
         "text": [
-          "I'm waiting for my\nfirst Pokemon!"
+          "I'm training to be\n\nthe very best!"
         ],
-        "avatarId": ""
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
       }
     }
   ],

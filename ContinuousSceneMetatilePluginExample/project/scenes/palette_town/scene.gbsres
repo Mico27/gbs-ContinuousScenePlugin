@@ -20,6 +20,17 @@
   "y": 9112,
   "script": [
     {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "22",
+        "value": {
+          "type": "number",
+          "value": 1
+        }
+      },
+      "id": "7cd7ebf3-5882-4258-9347-f2d8104c2dc1"
+    },
+    {
       "command": "EVENT_LOAD_META_TILES",
       "args": {
         "sceneId": "3bfc6403-d858-4b4e-b235-73dbb828b337",
@@ -76,5 +87,5 @@
   "playerHit1Script": [],
   "playerHit2Script": [],
   "playerHit3Script": [],
-  "playerSpriteSheetId": "b7aa1f71-df79-4daa-beaf-818cf41bbd6e"
+  "playerSpriteSheetId": "3ab82b4e-f708-4d23-9114-e77cc5eeec22"
 }

@@ -69,32 +69,6 @@
               "__collapse": false
             },
             "id": "be7de4b4-9018-4afb-addf-c481a3c8622b"
-          },
-          {
-            "command": "EVENT_TEXT",
-            "args": {
-              "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
-              "text": [
-                "\nINITIALIZE\n\nDIALOGUE PRESET"
-              ],
-              "__section": "presets",
-              "avatarId": "",
-              "minHeight": 6,
-              "maxHeight": 6,
-              "textX": 1,
-              "textY": 1,
-              "textHeight": 4,
-              "position": "bottom",
-              "clearPrevious": true,
-              "showFrame": "true",
-              "speedIn": -3,
-              "speedOut": -3,
-              "closeWhen": "key",
-              "closeButton": "a",
-              "closeDelayTime": 0.5,
-              "closeDelayFrames": 30
-            },
-            "id": "bad4014e-953e-4c29-b39d-08d49d5f86d6"
           }
         ],
         "false": []
@@ -1022,7 +996,7 @@
         ],
         "override": false,
         "__scriptTabs": "press",
-        "__collapse": true
+        "__collapse": false
       },
       "children": {
         "true": [
@@ -1164,6 +1138,36 @@
               "output": "0"
             },
             "id": "d257302a-ec07-46f5-a275-9a4e9d7edee0"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "0"
+                },
+                "valueB": {
+                  "type": "constant",
+                  "value": "edef1b1d-4243-4a9f-897b-b3b3b45c1a87"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "f0a1b2c3-d4e5-4f60-8a1b-2c3d4e5f6071"
+                  },
+                  "id": "bc9954c8-ce08-402e-a3c0-0de5cfebed23"
+                }
+              ],
+              "false": []
+            },
+            "id": "0f457a8d-7076-4a32-ae7f-95104e2dbc43"
           },
           {
             "command": "EVENT_IF",

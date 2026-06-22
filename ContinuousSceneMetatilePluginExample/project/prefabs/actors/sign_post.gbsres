@@ -16,10 +16,26 @@
       "id": "c468c208-c496-405a-9828-09f3f05a8d81",
       "command": "EVENT_TEXT",
       "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
         "text": [
-          "Welcome to the\nPokemon world!"
+          "Read me for local\n\ninfo."
         ],
-        "avatarId": ""
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
       }
     }
   ],

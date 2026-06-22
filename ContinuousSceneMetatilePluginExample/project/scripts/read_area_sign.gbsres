@@ -1,0 +1,3214 @@
+{
+  "_resourceType": "script",
+  "id": "f0a1b2c3-d4e5-4f60-8a1b-2c3d4e5f6071",
+  "name": "Read Area Sign",
+  "description": "Shows a signboard message for the Sign the player faces. Switches on CurrentArea (var 22, set by each scene's On Init), then on the sign's X tile (PlayerX var12); where several signs share an X, a nested switch on the Y tile (PlayerY var13) picks the right one. Unmatched signs fall through to the area sign. Called from the overworld A-button handler when the player faces a Sign metatile (id 125).",
+  "variables": {},
+  "actors": {},
+  "symbol": "script_read_area_sign",
+  "script": [
+    {
+      "command": "EVENT_SWITCH",
+      "args": {
+        "variable": "22",
+        "choices": 16,
+        "__collapseElse": false,
+        "__collapseCase0": false,
+        "__collapseCase1": false,
+        "__collapseCase2": false,
+        "__collapseCase3": false,
+        "__collapseCase4": false,
+        "__collapseCase5": false,
+        "__collapseCase6": false,
+        "__collapseCase7": false,
+        "__collapseCase8": false,
+        "__collapseCase9": false,
+        "__collapseCase10": false,
+        "__collapseCase11": false,
+        "__collapseCase12": false,
+        "__collapseCase13": false,
+        "__collapseCase14": false,
+        "__collapseCase15": false,
+        "value0": {
+          "type": "number",
+          "value": 1
+        },
+        "value1": {
+          "type": "number",
+          "value": 2
+        },
+        "value2": {
+          "type": "number",
+          "value": 3
+        },
+        "value3": {
+          "type": "number",
+          "value": 4
+        },
+        "value4": {
+          "type": "number",
+          "value": 5
+        },
+        "value5": {
+          "type": "number",
+          "value": 6
+        },
+        "value6": {
+          "type": "number",
+          "value": 7
+        },
+        "value7": {
+          "type": "number",
+          "value": 8
+        },
+        "value8": {
+          "type": "number",
+          "value": 9
+        },
+        "value9": {
+          "type": "number",
+          "value": 10
+        },
+        "value10": {
+          "type": "number",
+          "value": 11
+        },
+        "value11": {
+          "type": "number",
+          "value": 12
+        },
+        "value12": {
+          "type": "number",
+          "value": 13
+        },
+        "value13": {
+          "type": "number",
+          "value": 14
+        },
+        "value14": {
+          "type": "number",
+          "value": 15
+        },
+        "value15": {
+          "type": "number",
+          "value": 16
+        }
+      },
+      "children": {
+        "true0": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 3,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 6
+              },
+              "value1": {
+                "type": "number",
+                "value": 22
+              },
+              "value2": {
+                "type": "number",
+                "value": 26
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "YOUR HOUSE\n\nHome, sweet home."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "ceb6d65f-10be-44cb-b5ff-60c812f7ec08"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "RIVAL'S HOUSE\n\nYour rival lives\n\nhere."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "bf961dc5-d2e6-476e-a1bc-30220f2ce289"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "OAK'S LAB\n\nPokemon research\n\nhappens here!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "66eea694-800f-41dd-a61b-69bda50e7a9d"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "PALLET TOWN\n\nShades of your\n\njourney await!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "2ae9d312-6c74-43d3-9de8-86c6498b90d7"
+                }
+              ]
+            },
+            "id": "917e5045-a5b3-494a-865b-a841f4c71844"
+          }
+        ],
+        "true1": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 3,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 34
+              },
+              "value1": {
+                "type": "number",
+                "value": 42
+              },
+              "value2": {
+                "type": "number",
+                "value": 54
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "PRIVATE HOME\n\nSomeone lives\n\nhere."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "7dd5cc52-47d7-4cfe-8ccc-eba105b7ae00"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKE MART\n\nBuy useful goods\n\nfor your trip."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "2347d8d5-547f-4117-8000-3689e8455cc1"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKEMON GYM\n\nA tough battle\n\nawaits inside!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "db44ddcd-08b3-44c0-b2a3-6f2c3c80269e"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "VIRIDIAN CITY\n\nThe eternally\n\ngreen paradise."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "2a5db376-fb4f-4724-a14c-63d8a8b2840b"
+                }
+              ]
+            },
+            "id": "65f06239-b54a-402b-b946-51fe28082178"
+          }
+        ],
+        "true2": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 5,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 22
+              },
+              "value1": {
+                "type": "number",
+                "value": 30
+              },
+              "value2": {
+                "type": "number",
+                "value": 38
+              },
+              "value3": {
+                "type": "number",
+                "value": 50
+              },
+              "value4": {
+                "type": "number",
+                "value": 66
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "PRIVATE HOME\n\nSomeone lives\n\nhere."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "b53a2815-3aee-41db-af32-550f17fc1843"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "MUSEUM\n\nOf science.\n\nFossils within!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "9e24e8f4-7fce-4203-8e5f-70ed2c5bebce"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKEMON CENTER\n\nHeal your tired\n\nPokemon here!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "e12742fd-cdfd-4d4e-9477-fdf919ca0e40"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "PRIVATE HOME\n\nSomeone lives\n\nhere."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "b30b504a-9e87-4ae0-a2c3-134bf075bcaf"
+                }
+              ],
+              "true4": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "PEWTER GYM\n\nLeader: Brock\n\nRock types!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "77e2fd63-59ee-40cd-86a9-c3c897cf13bb"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "PEWTER CITY\n\nA stone gray city."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "ff519ef1-439c-416c-9a59-a13d7e646f55"
+                }
+              ]
+            },
+            "id": "c5503887-08cb-46e4-8c40-965043e81d61"
+          }
+        ],
+        "true3": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 3,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 22
+              },
+              "value1": {
+                "type": "number",
+                "value": 46
+              },
+              "value2": {
+                "type": "number",
+                "value": 54
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "BIKE SHOP\n\nWheels for your\n\nadventure!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "fca0235d-ad75-4811-a354-39fcea4040dc"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKEMON CENTER\n\nHeal your tired\n\nPokemon here!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "65f4cc3b-3413-42f9-a685-c4c1fc1742f2"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "CERULEAN GYM\n\nLeader: Misty\n\nWater types!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "e0553181-1675-49d0-b0f6-862a6cc06016"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "CERULEAN CITY\n\nA mysterious,\n\nblue aura town."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "1be013dd-aa25-4a0d-8e01-ba9974478a4e"
+                }
+              ]
+            },
+            "id": "f62edaff-203a-4628-9662-ac4ed7da67b5"
+          }
+        ],
+        "true4": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 2,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 14
+              },
+              "value1": {
+                "type": "number",
+                "value": 58
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "13",
+                    "choices": 2,
+                    "__collapseElse": false,
+                    "__collapseCase0": false,
+                    "__collapseCase1": false,
+                    "__collapseCase2": false,
+                    "__collapseCase3": false,
+                    "__collapseCase4": false,
+                    "__collapseCase5": false,
+                    "__collapseCase6": false,
+                    "__collapseCase7": false,
+                    "__collapseCase8": false,
+                    "__collapseCase9": false,
+                    "__collapseCase10": false,
+                    "__collapseCase11": false,
+                    "__collapseCase12": false,
+                    "__collapseCase13": false,
+                    "__collapseCase14": false,
+                    "__collapseCase15": false,
+                    "value0": {
+                      "type": "number",
+                      "value": 26
+                    },
+                    "value1": {
+                      "type": "number",
+                      "value": 38
+                    }
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "VERMILION GYM\n\nLeader: Lt. Surge\n\nElectric types!"
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "ef7592c9-67fd-423a-94f8-e76de8f4262c"
+                      }
+                    ],
+                    "true1": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "PRIVATE HOME\n\nSomeone lives\n\nhere."
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "ba932f5e-6c4b-4aef-af48-1cdb2b87ddb6"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "VERMILION CITY\n\nPort of exquisite\n\nsunsets."
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "fe028b94-d425-411e-9a98-4f25ac8dd477"
+                      }
+                    ]
+                  },
+                  "id": "d3c90260-2359-497b-a8b4-c7b1a16a4dd0"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKE MART\n\nBuy useful goods\n\nfor your trip."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "2a05b201-7d29-4a20-a724-d6ebafec454a"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "VERMILION CITY\n\nPort of exquisite\n\nsunsets."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "0c93a12d-2b61-4d99-9f97-107e5be9cb17"
+                }
+              ]
+            },
+            "id": "69d3883c-0ba9-4bac-930f-5f47ebc60894"
+          }
+        ],
+        "true5": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 4,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 10
+              },
+              "value1": {
+                "type": "number",
+                "value": 18
+              },
+              "value2": {
+                "type": "number",
+                "value": 22
+              },
+              "value3": {
+                "type": "number",
+                "value": 34
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKEMON CENTER\n\nHeal your tired\n\nPokemon here!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "2a7755de-a1c0-4546-a3ab-91e6a62c957d"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "VOLUNTEER HOUSE\n\nHelping Pokemon\n\nin need."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "0cc3e30a-5842-415f-b037-44f5a8a9d567"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKE MART\n\nBuy useful goods\n\nfor your trip."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "8e2570ef-7100-42d6-be7d-f572af81c9c9"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKEMON TOWER\n\nRest in peace,\n\nlost Pokemon."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "674b73eb-6c39-4493-b368-9f2730c6e93b"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "LAVENDER TOWN\n\nThe noble\n\npurple town."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "ab19ea04-a3dc-463f-86c8-27e7bc159301"
+                }
+              ]
+            },
+            "id": "5f9b73b1-c2c7-486c-a404-e81ba2fad7e7"
+          }
+        ],
+        "true6": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 4,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 26
+              },
+              "value1": {
+                "type": "number",
+                "value": 42
+              },
+              "value2": {
+                "type": "number",
+                "value": 54
+              },
+              "value3": {
+                "type": "number",
+                "value": 66
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKEMON CENTER\n\nHeal your tired\n\nPokemon here!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "0e818d52-2742-456d-b8e6-e9d86812882f"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "DEPT. STORE\n\nFloors full of\n\nPokemon goods!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "91d30fd8-5908-4717-87bf-be12cad5bc62"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "DEPT. STORE\n\nFloors full of\n\nPokemon goods!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "9347c503-f181-42ef-bd84-3ad68193c63a"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "DEPT. STORE\n\nFloors full of\n\nPokemon goods!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "6de550ed-8403-4960-b992-e5844479af15"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "CELADON CITY\n\nCity of rainbow\n\ndreams."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "76b74fb8-4ae3-4d21-9e4c-18f1c36bc9ae"
+                }
+              ]
+            },
+            "id": "8c4d3106-1d0e-4443-99a4-57fca74873dd"
+          }
+        ],
+        "true7": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 5,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 10
+              },
+              "value1": {
+                "type": "number",
+                "value": 14
+              },
+              "value2": {
+                "type": "number",
+                "value": 34
+              },
+              "value3": {
+                "type": "number",
+                "value": 42
+              },
+              "value4": {
+                "type": "number",
+                "value": 54
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKEMON CENTER\n\nHeal your tired\n\nPokemon here!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "3ecc2524-38c4-4a2c-9d11-35b10420aa2f"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "FUCHSIA GYM\n\nLeader: Koga\n\nPoison types!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "28c4ce8f-df68-4526-8cc9-c0ff1df54c89"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "SAFARI ZONE\n\nCatch rare\n\nPokemon inside!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "e60aac35-4dcf-41f6-8c65-8f6072e9bcfd"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "WARDEN'S HOME\n\nKeeper of the\n\nSafari Zone."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "e408cd3b-4886-4d58-8e5c-ae6e608e78a6"
+                }
+              ],
+              "true4": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "SAFARI ZONE\n\nCatch rare\n\nPokemon inside!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "cc666037-e036-477b-b9ca-75eb449e8f5e"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "FUCHSIA CITY\n\nBehold! Passion\n\npink!"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "bc8d6457-d1a1-4209-b0b7-d501b5ec25dc"
+                }
+              ]
+            },
+            "id": "10398ceb-b943-4384-ba5b-174911c5f411"
+          }
+        ],
+        "true8": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 3,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 30
+              },
+              "value1": {
+                "type": "number",
+                "value": 54
+              },
+              "value2": {
+                "type": "number",
+                "value": 70
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "SILPH CO.\n\nMakers of fine\n\nPokemon gear."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "8c1e7c54-f159-4a15-8656-c1b2bd1fca92"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "13",
+                    "choices": 2,
+                    "__collapseElse": false,
+                    "__collapseCase0": false,
+                    "__collapseCase1": false,
+                    "__collapseCase2": false,
+                    "__collapseCase3": false,
+                    "__collapseCase4": false,
+                    "__collapseCase5": false,
+                    "__collapseCase6": false,
+                    "__collapseCase7": false,
+                    "__collapseCase8": false,
+                    "__collapseCase9": false,
+                    "__collapseCase10": false,
+                    "__collapseCase11": false,
+                    "__collapseCase12": false,
+                    "__collapseCase13": false,
+                    "__collapseCase14": false,
+                    "__collapseCase15": false,
+                    "value0": {
+                      "type": "number",
+                      "value": 10
+                    },
+                    "value1": {
+                      "type": "number",
+                      "value": 58
+                    }
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "SILPH CO.\n\nMakers of fine\n\nPokemon gear."
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "5fcf6bc2-6c72-4460-8d8f-79fa1341b3e4"
+                      }
+                    ],
+                    "true1": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "POKEMON CENTER\n\nHeal your tired\n\nPokemon here!"
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "80edddcf-ba0f-4996-8fd2-8d08473615c4"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "SAFFRON CITY\n\nGolden land of\n\ncommerce."
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "4b11c85a-d44d-42f4-a3e7-9c7a74322f83"
+                      }
+                    ]
+                  },
+                  "id": "c36241eb-0a2e-40c3-afe3-10591697c068"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "SILPH CO.\n\nMakers of fine\n\nPokemon gear."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "140c239b-c835-4272-b62f-66ac1ff5fc89"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "SAFFRON CITY\n\nGolden land of\n\ncommerce."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "ac2a0ad7-6eff-49b7-a73a-1a21a15b195a"
+                }
+              ]
+            },
+            "id": "4c934b36-5037-4c87-a91b-5a13b6c9d55b"
+          }
+        ],
+        "true9": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 2,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 18
+              },
+              "value1": {
+                "type": "number",
+                "value": 26
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "13",
+                    "choices": 2,
+                    "__collapseElse": false,
+                    "__collapseCase0": false,
+                    "__collapseCase1": false,
+                    "__collapseCase2": false,
+                    "__collapseCase3": false,
+                    "__collapseCase4": false,
+                    "__collapseCase5": false,
+                    "__collapseCase6": false,
+                    "__collapseCase7": false,
+                    "__collapseCase8": false,
+                    "__collapseCase9": false,
+                    "__collapseCase10": false,
+                    "__collapseCase11": false,
+                    "__collapseCase12": false,
+                    "__collapseCase13": false,
+                    "__collapseCase14": false,
+                    "__collapseCase15": false,
+                    "value0": {
+                      "type": "number",
+                      "value": 10
+                    },
+                    "value1": {
+                      "type": "number",
+                      "value": 22
+                    }
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "POKEMON LAB\n\nResearch in\n\nprogress."
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "c6817446-559e-4ba6-b5e3-911af27fe1c5"
+                      }
+                    ],
+                    "true1": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "CINNABAR GYM\n\nLeader: Blaine\n\nFire types!"
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "756dff91-c543-4316-926d-410833d09bcc"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "CINNABAR ISLAND\n\nFiery town of\n\nburning desire."
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "3d7a60bb-7574-43ad-8ab2-c3ee2f2682f4"
+                      }
+                    ]
+                  },
+                  "id": "aee491fc-a03a-4950-8f13-bcead508cf8d"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "POKEMON LAB\n\nResearch in\n\nprogress."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "f3cef26c-101b-4689-8ebc-142011ee3584"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "CINNABAR ISLAND\n\nFiery town of\n\nburning desire."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "45879258-47f1-4514-99da-14ec62284218"
+                }
+              ]
+            },
+            "id": "c3b45f71-6d7b-48ef-b8c1-e9a46a007650"
+          }
+        ],
+        "true10": [
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+              "text": [
+                "INDIGO PLATEAU\n\nPokemon League\n\nfront."
+              ],
+              "__section": "presets",
+              "avatarId": "",
+              "minHeight": 6,
+              "maxHeight": 6,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 4,
+              "position": "bottom",
+              "clearPrevious": true,
+              "showFrame": "true",
+              "speedIn": -3,
+              "speedOut": -3,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "closeDelayTime": 0.5,
+              "closeDelayFrames": 30
+            },
+            "id": "391e6276-5f10-432c-b02f-0a60aa50f226"
+          }
+        ],
+        "true11": [
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+              "text": [
+                "ROUTE 1\n\nPallet Town -\n\nViridian City"
+              ],
+              "__section": "presets",
+              "avatarId": "",
+              "minHeight": 6,
+              "maxHeight": 6,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 4,
+              "position": "bottom",
+              "clearPrevious": true,
+              "showFrame": "true",
+              "speedIn": -3,
+              "speedOut": -3,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "closeDelayTime": 0.5,
+              "closeDelayFrames": 30
+            },
+            "id": "a39d0654-8b7e-4bb6-a992-81c82c68aea5"
+          }
+        ],
+        "true12": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 1,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 22
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "DIGLETT'S CAVE\n\nA tunnel for\n\nsmall Pokemon."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "6a125c32-f686-4a85-957b-028e6fc85621"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 2\n\nViridian City -\n\nPewter City"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "18f2cbae-6d0f-402c-b86b-367fd87b133a"
+                }
+              ]
+            },
+            "id": "e59acea8-729a-46a8-9138-f809f3825b5c"
+          }
+        ],
+        "true13": [
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+              "text": [
+                "ROUTE 3\n\nPewter City -\n\nMt. Moon"
+              ],
+              "__section": "presets",
+              "avatarId": "",
+              "minHeight": 6,
+              "maxHeight": 6,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 4,
+              "position": "bottom",
+              "clearPrevious": true,
+              "showFrame": "true",
+              "speedIn": -3,
+              "speedOut": -3,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "closeDelayTime": 0.5,
+              "closeDelayFrames": 30
+            },
+            "id": "58a8b991-5e84-468a-bed0-50b7816d7ae7"
+          }
+        ],
+        "true14": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "12",
+              "choices": 1,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 34
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "PRIVATE HOME\n\nSomeone lives\n\nhere."
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "05f634f9-4423-4cb4-bd2d-1cba3f3d85de"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 4\n\nMt. Moon -\n\nCerulean City"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "4a1be8fa-35e8-478d-93ba-5d3ffe8790f4"
+                }
+              ]
+            },
+            "id": "fdab4c21-1354-40c3-acb1-9d37b64d7182"
+          }
+        ],
+        "true15": [
+          {
+            "command": "EVENT_TEXT",
+            "args": {
+              "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+              "text": [
+                "ROUTE 5\n\nCerulean City -\n\nSaffron City"
+              ],
+              "__section": "presets",
+              "avatarId": "",
+              "minHeight": 6,
+              "maxHeight": 6,
+              "textX": 1,
+              "textY": 1,
+              "textHeight": 4,
+              "position": "bottom",
+              "clearPrevious": true,
+              "showFrame": "true",
+              "speedIn": -3,
+              "speedOut": -3,
+              "closeWhen": "key",
+              "closeButton": "a",
+              "closeDelayTime": 0.5,
+              "closeDelayFrames": 30
+            },
+            "id": "ff1c368e-2d79-48cd-a098-88581d9b2c05"
+          }
+        ],
+        "false": [
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "22",
+              "choices": 16,
+              "__collapseElse": false,
+              "__collapseCase0": false,
+              "__collapseCase1": false,
+              "__collapseCase2": false,
+              "__collapseCase3": false,
+              "__collapseCase4": false,
+              "__collapseCase5": false,
+              "__collapseCase6": false,
+              "__collapseCase7": false,
+              "__collapseCase8": false,
+              "__collapseCase9": false,
+              "__collapseCase10": false,
+              "__collapseCase11": false,
+              "__collapseCase12": false,
+              "__collapseCase13": false,
+              "__collapseCase14": false,
+              "__collapseCase15": false,
+              "value0": {
+                "type": "number",
+                "value": 17
+              },
+              "value1": {
+                "type": "number",
+                "value": 18
+              },
+              "value2": {
+                "type": "number",
+                "value": 19
+              },
+              "value3": {
+                "type": "number",
+                "value": 20
+              },
+              "value4": {
+                "type": "number",
+                "value": 21
+              },
+              "value5": {
+                "type": "number",
+                "value": 22
+              },
+              "value6": {
+                "type": "number",
+                "value": 23
+              },
+              "value7": {
+                "type": "number",
+                "value": 24
+              },
+              "value8": {
+                "type": "number",
+                "value": 25
+              },
+              "value9": {
+                "type": "number",
+                "value": 26
+              },
+              "value10": {
+                "type": "number",
+                "value": 27
+              },
+              "value11": {
+                "type": "number",
+                "value": 28
+              },
+              "value12": {
+                "type": "number",
+                "value": 29
+              },
+              "value13": {
+                "type": "number",
+                "value": 30
+              },
+              "value14": {
+                "type": "number",
+                "value": 31
+              },
+              "value15": {
+                "type": "number",
+                "value": 32
+              }
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 6\n\nSaffron City -\n\nVermilion City"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "73c92ee3-2603-4d18-9ec5-6a63c8b10fd0"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 7\n\nCeladon City -\n\nSaffron City"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "bb230979-1166-4b31-948f-f19245379a45"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 8\n\nSaffron City -\n\nLavender Town"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "6c8a3451-07f4-4652-94f1-9376de4671f0"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 9\n\nCerulean City -\n\nRock Tunnel"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "cfa87710-a857-47cf-9215-26bc4622a8cb"
+                }
+              ],
+              "true4": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 10\n\nRock Tunnel -\n\nLavender Town"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "8c83ab3e-19fa-4415-baa1-fb65611fa9b9"
+                }
+              ],
+              "true5": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "12",
+                    "choices": 1,
+                    "__collapseElse": false,
+                    "__collapseCase0": false,
+                    "__collapseCase1": false,
+                    "__collapseCase2": false,
+                    "__collapseCase3": false,
+                    "__collapseCase4": false,
+                    "__collapseCase5": false,
+                    "__collapseCase6": false,
+                    "__collapseCase7": false,
+                    "__collapseCase8": false,
+                    "__collapseCase9": false,
+                    "__collapseCase10": false,
+                    "__collapseCase11": false,
+                    "__collapseCase12": false,
+                    "__collapseCase13": false,
+                    "__collapseCase14": false,
+                    "__collapseCase15": false,
+                    "value0": {
+                      "type": "number",
+                      "value": 2
+                    }
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "DIGLETT'S CAVE\n\nA tunnel for\n\nsmall Pokemon."
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "87c4010c-731b-4136-a542-e968acad443f"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "ROUTE 11\n\nVermilion City -\n\nRoute 12"
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "ef4fa59b-e95d-4119-9462-c2fc3a7315f6"
+                      }
+                    ]
+                  },
+                  "id": "23f385c2-a57c-4bc6-95c2-643201bfcdd6"
+                }
+              ],
+              "true6": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 12\n\nLavender Town -\n\nRoute 13"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "b95af201-20cc-420f-b8fc-635365413fb4"
+                }
+              ],
+              "true7": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 13\n\nRoute 12 -\n\nRoute 14"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "41151246-b437-45aa-841e-1760202ea557"
+                }
+              ],
+              "true8": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 14\n\nRoute 13 -\n\nRoute 15"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "006bf04f-3366-4b39-ba32-8de6a08a0ac8"
+                }
+              ],
+              "true9": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 15\n\nRoute 14 -\n\nFuchsia City"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "a396541e-13d2-46f1-b24d-934fda3d0f97"
+                }
+              ],
+              "true10": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 16\n\nCeladon City -\n\nCycling Road"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "c6ca3b05-bc2c-4982-ab35-d9a2ef0cdc72"
+                }
+              ],
+              "true11": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 17\n\nCycling Road\n\n(north end)"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "5bc2f87b-5f59-43e5-97b3-472fc42524ee"
+                }
+              ],
+              "true12": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 17\n\nCycling Road\n\n(south end)"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "593fced5-653c-48e0-aacc-a5a4aca9da0f"
+                }
+              ],
+              "true13": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 18\n\nCycling Road -\n\nFuchsia City"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "fcf630ce-475d-4272-82ea-f5fc2df53ff1"
+                }
+              ],
+              "true14": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 19\n\nFuchsia City -\n\nthe open sea"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "364347e1-b659-43f4-805c-e215fad3f436"
+                }
+              ],
+              "true15": [
+                {
+                  "command": "EVENT_TEXT",
+                  "args": {
+                    "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                    "text": [
+                      "ROUTE 20\n\nSeafoam Islands -\n\nCinnabar Island"
+                    ],
+                    "__section": "presets",
+                    "avatarId": "",
+                    "minHeight": 6,
+                    "maxHeight": 6,
+                    "textX": 1,
+                    "textY": 1,
+                    "textHeight": 4,
+                    "position": "bottom",
+                    "clearPrevious": true,
+                    "showFrame": "true",
+                    "speedIn": -3,
+                    "speedOut": -3,
+                    "closeWhen": "key",
+                    "closeButton": "a",
+                    "closeDelayTime": 0.5,
+                    "closeDelayFrames": 30
+                  },
+                  "id": "4ee7b083-0e10-4b76-8210-261ab4f0d5d8"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "22",
+                    "choices": 6,
+                    "__collapseElse": false,
+                    "__collapseCase0": false,
+                    "__collapseCase1": false,
+                    "__collapseCase2": false,
+                    "__collapseCase3": false,
+                    "__collapseCase4": false,
+                    "__collapseCase5": false,
+                    "__collapseCase6": false,
+                    "__collapseCase7": false,
+                    "__collapseCase8": false,
+                    "__collapseCase9": false,
+                    "__collapseCase10": false,
+                    "__collapseCase11": false,
+                    "__collapseCase12": false,
+                    "__collapseCase13": false,
+                    "__collapseCase14": false,
+                    "__collapseCase15": false,
+                    "value0": {
+                      "type": "number",
+                      "value": 33
+                    },
+                    "value1": {
+                      "type": "number",
+                      "value": 34
+                    },
+                    "value2": {
+                      "type": "number",
+                      "value": 35
+                    },
+                    "value3": {
+                      "type": "number",
+                      "value": 36
+                    },
+                    "value4": {
+                      "type": "number",
+                      "value": 37
+                    },
+                    "value5": {
+                      "type": "number",
+                      "value": 38
+                    }
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "ROUTE 21\n\nCinnabar Island -\n\nPallet Town"
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "be9315a1-3e29-451c-8ed9-06f0fc7da0b2"
+                      }
+                    ],
+                    "true1": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "ROUTE 22\n\nViridian City -\n\nVictory Road"
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "3f4a8766-2fb1-4e98-9ebc-31242775c58f"
+                      }
+                    ],
+                    "true2": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "ROUTE 23\n\nVictory Road\n\ncheckpoint (A)"
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "93773c01-e2ce-4356-bcee-6aa35b6fd67a"
+                      }
+                    ],
+                    "true3": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "ROUTE 23\n\nVictory Road\n\ncheckpoint (B)"
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "6bf3cdf6-ea54-4bbc-8f80-afa8026ecc1a"
+                      }
+                    ],
+                    "true4": [
+                      {
+                        "command": "EVENT_TEXT",
+                        "args": {
+                          "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                          "text": [
+                            "ROUTE 24\n\nCerulean City -\n\nNugget Bridge"
+                          ],
+                          "__section": "presets",
+                          "avatarId": "",
+                          "minHeight": 6,
+                          "maxHeight": 6,
+                          "textX": 1,
+                          "textY": 1,
+                          "textHeight": 4,
+                          "position": "bottom",
+                          "clearPrevious": true,
+                          "showFrame": "true",
+                          "speedIn": -3,
+                          "speedOut": -3,
+                          "closeWhen": "key",
+                          "closeButton": "a",
+                          "closeDelayTime": 0.5,
+                          "closeDelayFrames": 30
+                        },
+                        "id": "dbf8690a-8848-4225-a947-2f6aec03fc74"
+                      }
+                    ],
+                    "true5": [
+                      {
+                        "command": "EVENT_SWITCH",
+                        "args": {
+                          "variable": "12",
+                          "choices": 1,
+                          "__collapseElse": false,
+                          "__collapseCase0": false,
+                          "__collapseCase1": false,
+                          "__collapseCase2": false,
+                          "__collapseCase3": false,
+                          "__collapseCase4": false,
+                          "__collapseCase5": false,
+                          "__collapseCase6": false,
+                          "__collapseCase7": false,
+                          "__collapseCase8": false,
+                          "__collapseCase9": false,
+                          "__collapseCase10": false,
+                          "__collapseCase11": false,
+                          "__collapseCase12": false,
+                          "__collapseCase13": false,
+                          "__collapseCase14": false,
+                          "__collapseCase15": false,
+                          "value0": {
+                            "type": "number",
+                            "value": 86
+                          }
+                        },
+                        "children": {
+                          "true0": [
+                            {
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                                "text": [
+                                  "BILL'S HOUSE\n\nThe PokeManiac\n\nlives here."
+                                ],
+                                "__section": "presets",
+                                "avatarId": "",
+                                "minHeight": 6,
+                                "maxHeight": 6,
+                                "textX": 1,
+                                "textY": 1,
+                                "textHeight": 4,
+                                "position": "bottom",
+                                "clearPrevious": true,
+                                "showFrame": "true",
+                                "speedIn": -3,
+                                "speedOut": -3,
+                                "closeWhen": "key",
+                                "closeButton": "a",
+                                "closeDelayTime": 0.5,
+                                "closeDelayFrames": 30
+                              },
+                              "id": "97ecd0f5-5c7d-4d65-a811-0fd658da4775"
+                            }
+                          ],
+                          "false": [
+                            {
+                              "command": "EVENT_TEXT",
+                              "args": {
+                                "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+                                "text": [
+                                  "ROUTE 25\n\nNugget Bridge -\n\nthe sea cape"
+                                ],
+                                "__section": "presets",
+                                "avatarId": "",
+                                "minHeight": 6,
+                                "maxHeight": 6,
+                                "textX": 1,
+                                "textY": 1,
+                                "textHeight": 4,
+                                "position": "bottom",
+                                "clearPrevious": true,
+                                "showFrame": "true",
+                                "speedIn": -3,
+                                "speedOut": -3,
+                                "closeWhen": "key",
+                                "closeButton": "a",
+                                "closeDelayTime": 0.5,
+                                "closeDelayFrames": 30
+                              },
+                              "id": "563cf253-d652-415a-b758-e5e211edb874"
+                            }
+                          ]
+                        },
+                        "id": "42addd35-bcbd-4695-8cb5-e71de8ee87ea"
+                      }
+                    ],
+                    "false": []
+                  },
+                  "id": "b91d1d1a-da79-4af3-bfd3-88aa36156881"
+                }
+              ]
+            },
+            "id": "fb358c04-5099-422c-966a-83f8673a5749"
+          }
+        ]
+      },
+      "id": "89096ed5-a165-473d-8de9-2fe1a6f9d9cf"
+    }
+  ]
+}
