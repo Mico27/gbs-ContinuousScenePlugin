@@ -1,0 +1,61 @@
+{
+  "_resourceType": "actor",
+  "id": "6955aeae-904e-4c55-8eb4-415954c364c4",
+  "_index": 0,
+  "symbol": "npc_blue_000f",
+  "name": "blue",
+  "coordinateType": "tiles",
+  "x": 40,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "20e8bc66-8983-4a44-9dfb-da49bfa11613",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nBLUE: Yo!\n\nRED!",
+          "\nYou're still\n\nstruggling along",
+          "\nback here?",
+          "\nI'm doing great!\n\nI caught a bunch",
+          "\nof strong and\n\nsmart POKéMON!",
+          "\nHere, let me see\n\nwhat you caught,",
+          "\nRED!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "2c12e509-a847-4439-a65f-77ef0f913af7"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

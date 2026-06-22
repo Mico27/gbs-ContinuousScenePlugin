@@ -1,0 +1,70 @@
+{
+  "_resourceType": "actor",
+  "id": "3af62a3d-087a-49cd-b48d-e250a6953415",
+  "_index": 1,
+  "symbol": "npc_gambler_003c",
+  "name": "gambler",
+  "coordinateType": "tiles",
+  "x": 56,
+  "y": 35,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9b1bf2e3-1138-4c14-8105-c1e8c0eff8e6",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nSAFARI ZONE has a\n\nzoo in front of",
+          "\nthe entrance.",
+          "\nOut back is the\n\nSAFARI GAME for",
+          "\ncatching POKéMON."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "d52df94f-d0b6-4e19-a446-24e19a4ff267"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "dc713ed0-e4b1-4f5b-9153-caf2be05d3a3"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

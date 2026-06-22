@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "372868f3-0e07-40a7-b001-2d66c8ef4b85",
+  "_index": 8,
+  "symbol": "npc_youngster_006e",
+  "name": "youngster",
+  "coordinateType": "tiles",
+  "x": 80,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5236d55d-c4a9-4790-b7af-fe16dac8c6ce",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nGo, my super bug\n\nPOKéMON!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "01ba9656-7be0-4e84-8be2-3337d2aea28e"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

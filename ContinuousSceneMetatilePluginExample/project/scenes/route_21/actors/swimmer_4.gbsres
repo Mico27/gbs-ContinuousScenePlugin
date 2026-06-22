@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "45612eb6-3292-498c-9bf5-2d47780ff7a2",
+  "_index": 5,
+  "symbol": "npc_swimmer_00d6",
+  "name": "swimmer",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 143,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "b1bf8093-e873-4613-b628-18658279a326",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nRight now, I'm in\n\na triathlon meet!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "1215dbfb-76d7-49e1-ba31-67ccc7d53628"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

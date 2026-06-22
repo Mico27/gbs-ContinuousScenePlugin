@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "1ba4b05d-43d8-48e1-864b-ef051fa458db",
+  "_index": 6,
+  "symbol": "npc_youngster_0051",
+  "name": "youngster",
+  "coordinateType": "tiles",
+  "x": 44,
+  "y": 19,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5236d55d-c4a9-4790-b7af-fe16dac8c6ce",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHey! You're not\n\nwearing shorts!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "b56797ac-5bba-46a5-af12-2d8f8a8fec6a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "7a58e3b9-8a78-47e5-a859-ac1c47f7f57e",
+  "_index": 2,
+  "symbol": "npc_fisher_003d",
+  "name": "fisher",
+  "coordinateType": "tiles",
+  "x": 60,
+  "y": 29,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "8003d515-854c-4cef-92f1-5ceb25bd4018",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nERIK: Where's\n\nSARA? I said I'd",
+          "\nmeet her here."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "3eb8e2c7-bf94-4f14-9076-675ebc6e5344"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

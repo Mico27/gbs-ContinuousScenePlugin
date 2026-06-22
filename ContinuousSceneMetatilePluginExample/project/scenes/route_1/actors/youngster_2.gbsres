@@ -1,0 +1,71 @@
+{
+  "_resourceType": "actor",
+  "id": "9bbefa0b-b40f-4bbf-ac7f-62177dbf1454",
+  "_index": 1,
+  "symbol": "npc_youngster_0048",
+  "name": "youngster",
+  "coordinateType": "tiles",
+  "x": 30,
+  "y": 27,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5236d55d-c4a9-4790-b7af-fe16dac8c6ce",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nSee those ledges\n\nalong the road?",
+          "\nIt's a bit scary,\n\nbut you can jump",
+          "\nfrom them.",
+          "\nYou can get back\n\nto PALLET TOWN",
+          "\nquicker that way."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "972091dc-06fb-4a09-87f2-1ee4de8bc622"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "02d4ef1f-502f-4cc0-9a8c-9d51178f3ede"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

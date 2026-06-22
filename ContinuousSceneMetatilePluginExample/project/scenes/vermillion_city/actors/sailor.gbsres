@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "a87448c6-41c6-478b-8008-0e23d166e772",
+  "_index": 2,
+  "symbol": "npc_sailor_001c",
+  "name": "sailor",
+  "coordinateType": "tiles",
+  "x": 38,
+  "y": 61,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "abb5612e-13cd-4525-85ec-d378209a1897",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWelcome to S.S.\n\nANNE!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "c10892f5-461f-40fa-9acb-3f1fcdd3a25c"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

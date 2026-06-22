@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "ef8282e4-33e5-4590-b5d8-3f8fe226e292",
+  "_index": 4,
+  "symbol": "npc_gramps_0024",
+  "name": "gramps",
+  "coordinateType": "tiles",
+  "x": 44,
+  "y": 33,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5ae693e7-3e22-4f46-99bc-0adde32dbba3",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHello, there!",
+          "\nI've seen you,\n\nbut I never had a",
+          "\nchance to talk!",
+          "\nHere's a gift for\n\ndropping by!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "95ff30db-bcef-40d4-93ca-25eae821d443"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

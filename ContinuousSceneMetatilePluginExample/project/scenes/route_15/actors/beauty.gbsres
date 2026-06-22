@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "e7c4a2b9-325c-42a3-b38b-8ded8554b6fc",
+  "_index": 4,
+  "symbol": "npc_beauty_00a2",
+  "name": "beauty",
+  "coordinateType": "tiles",
+  "x": 106,
+  "y": 23,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9010ea9e-eb00-404a-a06c-c76b286c75dc",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nOh, you're a\n\nlittle cutie!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "197897d3-860c-4463-bb49-531437afb518"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

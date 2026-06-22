@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "f99273e4-26a7-466c-82a1-9340ad8e427b",
+  "_index": 1,
+  "symbol": "npc_fisher_00d2",
+  "name": "fisher",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 51,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "8003d515-854c-4cef-92f1-5ceb25bd4018",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI got a big haul!\n\nWanna go for it?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "192bc25f-5c9e-4e30-9329-54c6d528e001"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

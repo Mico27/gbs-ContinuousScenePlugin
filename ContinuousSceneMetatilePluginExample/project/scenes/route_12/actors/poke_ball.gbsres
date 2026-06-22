@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "b2b3ad83-6bc2-4a6f-bf3e-6e58dc1b5bc2",
+  "_index": 8,
+  "symbol": "npc_poke_ball_0088",
+  "name": "poke_ball",
+  "coordinateType": "tiles",
+  "x": 28,
+  "y": 71,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "1766d109-ee15-4501-b55b-463ae384207d",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nFound\n\nTM PAY DAY!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "b71c6bc7-e3d0-416b-ab7c-261ee27ba74a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

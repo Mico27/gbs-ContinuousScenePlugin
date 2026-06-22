@@ -1,0 +1,67 @@
+{
+  "_resourceType": "actor",
+  "id": "2fafe9dc-f7a2-4d59-b747-ec5d18f6ecd6",
+  "_index": 0,
+  "symbol": "npc_little_girl_0038",
+  "name": "little_girl",
+  "coordinateType": "tiles",
+  "x": 30,
+  "y": 19,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "e757094a-1b64-48d0-9def-829e5eb456a1",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nDo you believe in\n\nGHOSTs?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "74d83683-65d4-40f2-af29-baea6798ef0b"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "55d80437-2030-437d-b9f6-fe289c74cc3a"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

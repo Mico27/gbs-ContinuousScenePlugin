@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "d069310b-08ea-45e3-a16d-53dbf3317c08",
+  "_index": 2,
+  "symbol": "npc_youngster_0059",
+  "name": "youngster",
+  "coordinateType": "tiles",
+  "x": 0,
+  "y": 31,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5236d55d-c4a9-4790-b7af-fe16dac8c6ce",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThere aren't many\n\nbugs out here."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "efb2d473-98cc-4eb9-988a-ca3687d6af26"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

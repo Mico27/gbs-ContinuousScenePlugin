@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "ce1a9169-0313-48b3-bcd7-25a2c7749dc2",
+  "_index": 6,
+  "symbol": "npc_youngster_006c",
+  "name": "youngster",
+  "coordinateType": "tiles",
+  "x": 44,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5236d55d-c4a9-4790-b7af-fe16dac8c6ce",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI got up early\n\nevery day to",
+          "\nraise my POKéMON\n\nfrom cocoons!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "3de0e351-639b-4b87-b65e-1c937d477fd5"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

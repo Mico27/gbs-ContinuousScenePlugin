@@ -1,16 +1,15 @@
 {
   "_resourceType": "actor",
-  "id": "460e3dba-4ee7-48bd-9032-1bbd363e9cdf",
-  "_index": 3,
-  "symbol": "npc_scientist_0069",
-  "prefabId": "ff14efd8-6fff-48cb-96c2-f511a957a54e",
+  "id": "512633c8-2e9e-49f1-a4d3-9c66fecb5bf8",
+  "_index": 7,
+  "symbol": "npc_scientist_0030",
   "name": "scientist",
   "coordinateType": "tiles",
-  "x": 7,
-  "y": 16,
+  "x": 16,
+  "y": 29,
   "frame": 0,
   "animate": true,
-  "spriteSheetId": "b23d8b64-75e2-4c51-8576-13dbf1e77de3",
+  "spriteSheetId": "995270ad-1b0d-45ad-8184-253216f30349",
   "paletteId": "",
   "direction": "down",
   "moveSpeed": 1,
@@ -19,19 +18,50 @@
   "persistent": false,
   "collisionGroup": "",
   "collisionExtraFlags": [],
-  "prefabScriptOverrides": {
-    "5776b507-7a2f-4d92-af05-82586b6230ea": {
-      "id": "5776b507-7a2f-4d92-af05-82586b6230ea",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
       "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
         "text": [
-          "Silph Co. hides\n\nscientific\n\nwonders."
-        ]
-      }
+          "\nYou beat TEAM\n\nROCKET all alone?",
+          "\nThat's amazing!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "596e1a2f-db75-4efe-9ab8-c029c5901d65"
     }
-  },
-  "script": [],
+  ],
   "startScript": [],
-  "updateScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "a7a7780f-a816-454a-8dc0-25fc8a10c40c"
+    }
+  ],
   "hit1Script": [],
   "hit2Script": [],
   "hit3Script": []

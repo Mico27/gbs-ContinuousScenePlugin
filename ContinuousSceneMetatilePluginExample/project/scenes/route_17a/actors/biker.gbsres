@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "d8e8a621-5ffc-460a-b6e3-0d4cb7b76273",
+  "_index": 0,
+  "symbol": "npc_biker_00b0",
+  "name": "biker",
+  "coordinateType": "tiles",
+  "x": 24,
+  "y": 39,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "375e51b5-4b86-4b59-90e8-eedc52f2b04d",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThere's no money\n\nin fighting kids!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "c703be89-65b0-4add-879a-bf58d458fbc0"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

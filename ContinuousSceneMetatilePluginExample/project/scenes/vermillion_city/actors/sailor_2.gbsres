@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "6fe9bd54-7835-42d0-8de0-5106bc01d9fd",
+  "_index": 5,
+  "symbol": "npc_sailor_001f",
+  "name": "sailor",
+  "coordinateType": "tiles",
+  "x": 50,
+  "y": 55,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "abb5612e-13cd-4525-85ec-d378209a1897",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nS.S.ANNE is a\n\nfamous luxury",
+          "\ncruise ship.",
+          "\nWe visit VERMILION\n\nonce a year."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "ef997cdc-c9c2-43b9-ba8b-e64bfc0587ef"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "3915809a-e0c4-49f9-b8dc-6374e04c05bf"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

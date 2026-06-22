@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "30340e38-0c7d-4429-a95b-f630abaa7934",
+  "_index": 2,
+  "symbol": "npc_swimmer_00d3",
+  "name": "swimmer",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 63,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "b1bf8093-e873-4613-b628-18658279a326",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThe sea cleanses\n\nmy body and soul!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "01521927-fb04-4792-87e7-ff4f4a7204ee"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

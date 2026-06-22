@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "964130d4-7019-48c8-8483-d907f653409b",
+  "_index": 1,
+  "symbol": "npc_biker_00b1",
+  "name": "biker",
+  "coordinateType": "tiles",
+  "x": 22,
+  "y": 33,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "375e51b5-4b86-4b59-90e8-eedc52f2b04d",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWhat do you want,\n\nkiddo?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "43322390-8c4e-408c-9909-0f8392ec8fea"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

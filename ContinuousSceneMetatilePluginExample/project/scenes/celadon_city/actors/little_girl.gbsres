@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "339c33a7-e764-44af-a4af-49470c7c47aa",
+  "_index": 0,
+  "symbol": "npc_little_girl_0020",
+  "name": "little_girl",
+  "coordinateType": "tiles",
+  "x": 16,
+  "y": 35,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "e757094a-1b64-48d0-9def-829e5eb456a1",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI got my KOFFING\n\nin CINNABAR!",
+          "\nIt's nice, but it\n\nbreathes poison",
+          "\nwhen it's angry!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "d602f232-42a6-471d-aef3-218e858e3849"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "df2f03fe-b568-4afb-82fd-bcb467e005e3"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "91991e90-127f-4008-ae1b-d0c97eaa5461",
+  "_index": 0,
+  "symbol": "npc_beauty_001a",
+  "name": "beauty",
+  "coordinateType": "tiles",
+  "x": 38,
+  "y": 15,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9010ea9e-eb00-404a-a06c-c76b286c75dc",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWe're careful\n\nabout pollution!",
+          "\nWe've heard GRIMER\n\nmultiplies in",
+          "\ntoxic sludge!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "d5b11f16-4916-45e7-9234-e1870f2a5e82"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "95318d45-c379-4a93-84bc-8dab9d2b4d78"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

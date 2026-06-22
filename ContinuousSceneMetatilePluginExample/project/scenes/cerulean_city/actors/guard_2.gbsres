@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "edcd4b17-9041-4f3d-b721-198d985f9809",
+  "_index": 10,
+  "symbol": "npc_guard_0019",
+  "name": "guard",
+  "coordinateType": "tiles",
+  "x": 54,
+  "y": 25,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "94c91544-6aba-47f8-834f-8e6406144c7c",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThe people here\n\nwere robbed.",
+          "\nIt's obvious that\n\nTEAM ROCKET is",
+          "\nbehind this most\n\nheinous crime!",
+          "\nEven our POLICE\n\nforce has trouble",
+          "\nwith the ROCKETs!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "10a15f3d-8913-4c35-a65b-06ea5f2e7b3f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

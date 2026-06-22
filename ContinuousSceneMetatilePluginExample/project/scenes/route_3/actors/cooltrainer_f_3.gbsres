@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "09d0599a-4c8f-4826-bbc4-ffc677013f49",
+  "_index": 8,
+  "symbol": "npc_cooltrainer__0053",
+  "name": "cooltrainer_f",
+  "coordinateType": "tiles",
+  "x": 66,
+  "y": 21,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "32c25bb6-bd63-4b2f-a38a-140a935781d9",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nEek! Did you\n\ntouch me?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "1d289435-85b7-4e92-9016-81b571c91ef9"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

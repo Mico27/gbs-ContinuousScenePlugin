@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "b6e6ef7b-91b9-4b0d-9d53-8c71d9729ec9",
+  "_index": 4,
+  "symbol": "npc_swimmer_00c1",
+  "name": "swimmer",
+  "coordinateType": "tiles",
+  "x": 32,
+  "y": 63,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "b1bf8093-e873-4613-b628-18658279a326",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI tried diving\n\nfor POKéMON, but",
+          "\nit was a no go!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "2322bf98-dab3-4078-8182-4ce68f118971"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

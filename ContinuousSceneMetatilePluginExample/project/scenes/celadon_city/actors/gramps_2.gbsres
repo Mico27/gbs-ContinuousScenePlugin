@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "ef8de995-febe-4e07-bded-bd77e7c74a43",
+  "_index": 3,
+  "symbol": "npc_gramps_0023",
+  "name": "gramps",
+  "coordinateType": "tiles",
+  "x": 50,
+  "y": 45,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5ae693e7-3e22-4f46-99bc-0adde32dbba3",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMoan! I blew it\n\nall at the slots!",
+          "\nI knew I should\n\nhave cashed in my",
+          "\ncoins for prizes!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "33732c44-ff82-4c0f-a0f1-feccf011949a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

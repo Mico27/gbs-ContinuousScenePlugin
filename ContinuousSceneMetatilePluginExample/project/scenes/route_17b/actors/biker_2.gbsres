@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "e2e61a69-9473-4465-b2ff-5bfc44188176",
+  "_index": 1,
+  "symbol": "npc_biker_00b8",
+  "name": "biker",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 53,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "375e51b5-4b86-4b59-90e8-eedc52f2b04d",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nNice BIKE!\n\nHow's it handle?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "ff3bad41-fdfa-4c16-b141-f844ed0b1971"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "0c1ef076-ad5a-4f3f-bf42-bcb94036d420",
+  "_index": 1,
+  "symbol": "npc_gambler_0004",
+  "name": "gambler",
+  "coordinateType": "tiles",
+  "x": 60,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9b1bf2e3-1138-4c14-8105-c1e8c0eff8e6",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThis POKéMON GYM\n\nis always closed.",
+          "\nI wonder who the\n\nLEADER is?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "03de4bcc-3831-4bc8-a093-247d108cab1a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

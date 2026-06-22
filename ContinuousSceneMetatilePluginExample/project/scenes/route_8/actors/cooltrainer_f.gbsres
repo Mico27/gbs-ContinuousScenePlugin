@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "bbae225d-1b6b-4ace-a3b8-7e3824bc4856",
+  "_index": 3,
+  "symbol": "npc_cooltrainer__0060",
+  "name": "cooltrainer_f",
+  "coordinateType": "tiles",
+  "x": 52,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "32c25bb6-bd63-4b2f-a38a-140a935781d9",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI like NIDORAN, so\n\nI collect them!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "0d51a829-d20c-4385-87d8-c447f622584f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

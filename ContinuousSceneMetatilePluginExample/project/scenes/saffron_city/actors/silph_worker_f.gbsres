@@ -1,0 +1,68 @@
+{
+  "_resourceType": "actor",
+  "id": "5f46f832-c599-462a-a0f0-be872a6a71cd",
+  "_index": 9,
+  "symbol": "npc_silph_worker_0032",
+  "name": "silph_worker_f",
+  "coordinateType": "tiles",
+  "x": 34,
+  "y": 61,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "d2fe155a-fbcd-4148-87a1-eddac08e68bf",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nPeople should be\n\nflocking back to",
+          "\nSAFFRON now."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "10f8b6b8-9df9-4d68-aab5-fbb32396c106"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "d2645840-6a67-4679-ab35-31eb636ee42f"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

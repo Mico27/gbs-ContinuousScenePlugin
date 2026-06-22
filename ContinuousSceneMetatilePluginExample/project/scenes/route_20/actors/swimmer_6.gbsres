@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "da559814-bb4c-4f1d-a10e-95895b61eb64",
+  "_index": 5,
+  "symbol": "npc_swimmer_00cc",
+  "name": "swimmer",
+  "coordinateType": "tiles",
+  "x": 174,
+  "y": 27,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "b1bf8093-e873-4613-b628-18658279a326",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWhy are you\n\nriding a POKéMON?",
+          "\nCan't you swim?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "061afdb3-67ca-4a02-86bc-8f631325d8ae"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

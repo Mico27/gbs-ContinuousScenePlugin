@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "9c848b87-f8cc-4eb9-ae1b-2c173e4768c0",
+  "_index": 9,
+  "symbol": "npc_fossil_0044",
+  "name": "fossil",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "4acedc66-387b-4d79-8064-6bd5aa68ad42",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\n!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "fab34030-4813-4f8f-be9d-d414d6c9ef21"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

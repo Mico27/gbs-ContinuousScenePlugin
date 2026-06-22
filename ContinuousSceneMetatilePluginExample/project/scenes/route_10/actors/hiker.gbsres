@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "df8b6cb4-d65a-4238-9486-01183490f350",
+  "_index": 1,
+  "symbol": "npc_hiker_0071",
+  "name": "hiker",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 115,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "25f3792c-ae42-40aa-9f3e-711181665025",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHa-hahah-ah-ha!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "4ce9cbb3-cff2-4888-8cba-a0d5915088f6"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

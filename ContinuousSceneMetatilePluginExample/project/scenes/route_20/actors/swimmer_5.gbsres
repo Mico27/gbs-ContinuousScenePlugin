@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "db4cbe8c-9eed-41fe-9501-eae92795d404",
+  "_index": 4,
+  "symbol": "npc_swimmer_00cb",
+  "name": "swimmer",
+  "coordinateType": "tiles",
+  "x": 76,
+  "y": 27,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "b1bf8093-e873-4613-b628-18658279a326",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nCheck out my buff\n\nphysique!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "06e6eac9-c5e5-4f70-8ce2-848311732dbd"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

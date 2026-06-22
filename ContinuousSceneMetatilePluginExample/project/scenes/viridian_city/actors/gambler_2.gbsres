@@ -1,0 +1,70 @@
+{
+  "_resourceType": "actor",
+  "id": "83543a42-a1eb-4960-886f-bd7bed676888",
+  "_index": 6,
+  "symbol": "npc_gambler_0009",
+  "name": "gambler",
+  "coordinateType": "tiles",
+  "x": 34,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9b1bf2e3-1138-4c14-8105-c1e8c0eff8e6",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nAhh, I've had my\n\ncoffee now and I",
+          "\nfeel great!",
+          "\nSure you can go\n\nthrough!",
+          "\nAre you in a\n\nhurry?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "8d23edf8-cdc0-442e-af74-baeaa4a03f05"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "5641fe12-442c-41e8-98c9-d739da43dde8"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

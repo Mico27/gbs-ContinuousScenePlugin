@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "8b65437e-2d7d-4547-9f9b-08a941e034e1",
+  "_index": 9,
+  "symbol": "npc_biker_009d",
+  "name": "biker",
+  "coordinateType": "tiles",
+  "x": 8,
+  "y": 63,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "375e51b5-4b86-4b59-90e8-eedc52f2b04d",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nPOKéMON fight?\n\nCool! Rumble!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "c18a694a-3a2e-4468-99c4-a60d95b4e37e"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

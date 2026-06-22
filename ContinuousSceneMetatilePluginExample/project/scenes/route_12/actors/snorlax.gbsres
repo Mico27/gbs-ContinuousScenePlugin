@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "34a36435-6991-46de-ab37-acbeefb31cbe",
+  "_index": 0,
+  "symbol": "npc_snorlax_0080",
+  "name": "snorlax",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 125,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "57586c6d-4330-4f4a-897a-ea6d16d98723",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nA sleeping POKéMON\n\nblocks the way!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "6025d466-c4d6-4855-96b6-c8b4be64e15a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

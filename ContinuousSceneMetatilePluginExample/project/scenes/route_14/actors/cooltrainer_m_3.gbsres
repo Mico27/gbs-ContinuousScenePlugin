@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "e83c20a4-b37d-4404-9e67-991351b62e49",
+  "_index": 2,
+  "symbol": "npc_cooltrainer__0096",
+  "name": "cooltrainer_m",
+  "coordinateType": "tiles",
+  "x": 24,
+  "y": 23,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "20eca12d-e3a0-4bcb-aaf1-1bd1945b7d18",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nTMs are on sale\n\nin CELADON!",
+          "\nBut, only a few\n\npeople have HMs!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "1405e3af-d188-4049-8a48-6a7c2eee1cf1"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

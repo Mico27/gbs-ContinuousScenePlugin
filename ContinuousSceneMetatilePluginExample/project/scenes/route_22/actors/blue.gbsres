@@ -1,0 +1,61 @@
+{
+  "_resourceType": "actor",
+  "id": "779df421-9064-447d-b717-e8bf0221d867",
+  "_index": 0,
+  "symbol": "npc_blue_00da",
+  "name": "blue",
+  "coordinateType": "tiles",
+  "x": 50,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "20e8bc66-8983-4a44-9dfb-da49bfa11613",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nBLUE: Hey!\n\nRED!",
+          "\nYou're going to\n\nPOKéMON LEAGUE?",
+          "\nForget it! You\n\nprobably don't",
+          "\nhave any BADGEs!",
+          "\nThe guard won't\n\nlet you through!",
+          "\nBy the way, did\n\nyour POKéMON",
+          "\nget any stronger?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "182a9d45-2c2d-47f8-8669-4f017a2aacd5"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

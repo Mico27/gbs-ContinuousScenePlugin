@@ -1,35 +1,52 @@
 {
   "_resourceType": "actor",
-  "id": "a704d8c6-92df-4ecd-a7c9-ad21ca0997cc",
-  "_index": 1,
-  "symbol": "npc_swimmer_0044",
-  "prefabId": "07c54d65-8bda-48af-afaf-2eb8d034f1fe",
+  "id": "28818ad0-a55f-4a02-b5de-f66af0bb9322",
+  "_index": 0,
+  "symbol": "npc_swimmer_00c7",
   "name": "swimmer",
   "coordinateType": "tiles",
-  "x": 112,
-  "y": 29,
+  "x": 174,
+  "y": 17,
   "frame": 0,
   "animate": true,
-  "spriteSheetId": "18b3500a-2ed3-46b2-b710-7e16c7525d16",
+  "spriteSheetId": "b1bf8093-e873-4613-b628-18658279a326",
   "paletteId": "",
-  "direction": "left",
+  "direction": "up",
   "moveSpeed": 1,
   "animSpeed": 15,
   "isPinned": false,
   "persistent": false,
   "collisionGroup": "",
   "collisionExtraFlags": [],
-  "prefabScriptOverrides": {
-    "0d0dad95-70cd-44b6-95b7-f8bbf3799dac": {
-      "id": "0d0dad95-70cd-44b6-95b7-f8bbf3799dac",
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
       "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
         "text": [
-          "The sea breeze\n\nfeels amazing!"
-        ]
-      }
+          "\nThe water is\n\nshallow here."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "9b44f433-2d03-4328-8d30-9ab07be2f8d6"
     }
-  },
-  "script": [],
+  ],
   "startScript": [],
   "updateScript": [],
   "hit1Script": [],

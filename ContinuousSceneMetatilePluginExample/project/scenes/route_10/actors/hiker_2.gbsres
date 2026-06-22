@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "8b00062b-9789-4f3d-b74c-9d46f70c7a2e",
+  "_index": 4,
+  "symbol": "npc_hiker_0074",
+  "name": "hiker",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 123,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "25f3792c-ae42-40aa-9f3e-711181665025",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nAh! This mountain\n\nair is delicious!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "14e237ac-c8a2-43aa-8327-2578af7e27df"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

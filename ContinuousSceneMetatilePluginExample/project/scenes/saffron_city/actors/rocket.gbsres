@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "7690868f-1655-4dcd-bb2a-3a7fdb5ec1d8",
+  "_index": 0,
+  "symbol": "npc_rocket_0029",
+  "name": "rocket",
+  "coordinateType": "tiles",
+  "x": 14,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a3ff961e-6195-445c-b7c8-1d9165448d0a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWhat do you want?\n\nGet lost!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "01d277be-849d-47b0-9de4-164ed7ea9560"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

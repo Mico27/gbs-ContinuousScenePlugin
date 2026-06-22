@@ -1,0 +1,67 @@
+{
+  "_resourceType": "actor",
+  "id": "3b4b0bec-d9b1-4627-a8a4-5198e5fd5161",
+  "_index": 4,
+  "symbol": "npc_rocket_002d",
+  "name": "rocket",
+  "coordinateType": "tiles",
+  "x": 22,
+  "y": 51,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a3ff961e-6195-445c-b7c8-1d9165448d0a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nBeing evil makes\n\nme feel so alive!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "53cb8702-ecde-4e42-afa0-94da1bac1d30"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "7bd4dc68-6edb-4379-9523-a9c7d1eed1e8"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "b563ddc1-6c40-4fb5-88a0-662d4e0218df",
+  "_index": 3,
+  "symbol": "npc_super_nerd_0012",
+  "name": "super_nerd",
+  "coordinateType": "tiles",
+  "x": 30,
+  "y": 37,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5639eede-6431-4bd5-b884-a9e9b61fde0b",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThat bush in\n\nfront of the shop",
+          "\nis in the way.",
+          "\nThere might be a\n\nway around."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "96209e53-0642-4b7c-a6b0-ded4fcba134f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "e2e02fda-84a1-46e3-b0f3-a1dbf16109fe"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

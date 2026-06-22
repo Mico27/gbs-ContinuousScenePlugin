@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "539a1199-5f0b-4a4a-9c6a-59ae28227ba2",
+  "_index": 1,
+  "symbol": "npc_gambler_005e",
+  "name": "gambler",
+  "coordinateType": "tiles",
+  "x": 26,
+  "y": 19,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9b1bf2e3-1138-4c14-8105-c1e8c0eff8e6",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nAll right! Let's\n\nroll the dice!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "3f6e8e60-b367-4f86-9da1-d41e36ecb9e4"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

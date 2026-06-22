@@ -1,0 +1,55 @@
+{
+  "_resourceType": "actor",
+  "id": "f93ab04d-c505-4aaf-ad32-bc63e4db3b1d",
+  "_index": 5,
+  "symbol": "npc_fisher_0008",
+  "name": "fisher",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 47,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "8003d515-854c-4cef-92f1-5ceb25bd4018",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nRED received\n\nTM42!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "f9b39ffd-effe-4280-adbb-28eb9d3145c1"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}
