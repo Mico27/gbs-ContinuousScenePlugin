@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "6b22e61b-5e6b-43b2-a3a6-41f7b413760b",
+  "_index": 67,
+  "name": "Rock Tunnel1 F",
+  "backgroundId": "cd60c383-4f9f-4b39-8c02-ec11bc25b4a9",
+  "tilesetId": "117777a9-9bed-4ebe-939f-a4d2be64e6f3",
+  "width": 80,
+  "height": 72,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001680+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_rock_tunnel_1f",
+  "x": 2264,
+  "y": 12312,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "944389bf-6266-4090-aa70-8c361cf3a874",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "4958e9b3-d15d-41ac-9dc1-e7b0af0343ca"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000001"
+        }
+      },
+      "id": "cd6be0e9-8cfc-40eb-aa01-8dcad5b0c05e"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "5af4349c-f65f-4a2e-b71a-8a925dfe6698"
+      },
+      "id": "9d5f66af-f489-47a5-abd2-b939babb13b6"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "836e23e6-4bc6-4f16-aa4a-0b8f4df17ead"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "72e91277-100b-4db5-91d9-4cd857c178b5"
+      },
+      "id": "0a79cd83-7daa-4e2a-a912-214514bfb5ce"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

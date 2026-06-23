@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "b2753a73-8a37-424a-93af-44036818dbc6",
+  "_index": 63,
+  "name": "Digletts Cave Route2",
+  "backgroundId": "a0e35866-eece-4ffa-9250-deb61173a76c",
+  "tilesetId": "117777a9-9bed-4ebe-939f-a4d2be64e6f3",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_digletts_cave_route_2",
+  "x": 4968,
+  "y": 12936,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "944389bf-6266-4090-aa70-8c361cf3a874",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "782d1d74-b6f1-4f24-a4ff-57c73a53b51b"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000001"
+        }
+      },
+      "id": "e77fd401-061e-4242-b449-dc9bd5ce99a8"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "5af4349c-f65f-4a2e-b71a-8a925dfe6698"
+      },
+      "id": "8324c7b3-177a-4bb1-a4b2-fa8347dcb147"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "3eef5ec1-eb95-4e56-8c10-80e2ee787146"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "72e91277-100b-4db5-91d9-4cd857c178b5"
+      },
+      "id": "9f7c3a75-063d-4b12-983a-7411b5787095"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

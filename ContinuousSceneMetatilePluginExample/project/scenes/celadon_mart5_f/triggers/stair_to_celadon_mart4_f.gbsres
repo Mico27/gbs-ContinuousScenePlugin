@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "5d522b3f-5b20-4b51-808b-669020b770df",
+  "name": "Stair to celadon_mart4_f",
+  "prefabId": "",
+  "x": 32,
+  "y": 2,
+  "symbol": "trigger_stair_to_celadon_ma_14",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "4a0fea21-0b1f-4697-903a-366b7cf6e15a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 725
+        }
+      },
+      "id": "2c3d35c2-c43a-4359-905c-f40dae1d3953"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

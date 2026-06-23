@@ -1,0 +1,65 @@
+{
+  "_resourceType": "script",
+  "id": "e5d7896a-9fe3-43b4-8467-3c8e066ed1be",
+  "name": "House/Init Script",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "symbol": "script_mt_house_init",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "16"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "id": "617bbf38-8dd1-466e-b9ee-2bcda6e86ddf",
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "references": [
+                {
+                  "type": "variable",
+                  "id": "0"
+                },
+                {
+                  "type": "variable",
+                  "id": "1"
+                },
+                {
+                  "type": "variable",
+                  "id": "3"
+                }
+              ],
+              "script": "VM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 8\nVM_SET_CONST_UINT8 _player_collision_group, 16",
+              "__collapse": false
+            },
+            "id": "f9078008-2566-4ae8-a344-41a6e3b230bb"
+          },
+          {
+            "command": "EVENT_INC_VALUE",
+            "args": {
+              "variable": "16",
+              "__collapse": false
+            },
+            "id": "86aa78af-9fa1-4e2c-9da2-1a0320cf728f"
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

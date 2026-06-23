@@ -1,0 +1,68 @@
+{
+  "_resourceType": "actor",
+  "id": "b43cc865-a488-4aa5-bbcb-8ab41a5357ea",
+  "_index": 1,
+  "symbol": "npc_bird_01eb",
+  "prefabId": "",
+  "name": "bird",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "8b24c62a-d7a7-4631-a4d2-a1a59316bc8e",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nPIDGEY: Kurukkoo!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "f1e77f32-92dd-4df0-beb9-75def0f115b9"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "278e373e-cd46-4149-ae8f-c7bb150193d1"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

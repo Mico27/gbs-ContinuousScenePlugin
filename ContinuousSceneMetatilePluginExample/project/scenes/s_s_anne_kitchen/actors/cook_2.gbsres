@@ -1,0 +1,68 @@
+{
+  "_resourceType": "actor",
+  "id": "3619e069-d339-46a2-b37c-806d96e6091f",
+  "_index": 1,
+  "symbol": "npc_cook_0299",
+  "prefabId": "",
+  "name": "cook",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a90161c7-11f9-4ca2-8feb-41d669aac9fa",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI saw an odd ball\n\nin the trash."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "cb3bf920-26d6-4baa-9289-f69277ccc60a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "5e471837-d0d3-443b-82bf-888325bd7740"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

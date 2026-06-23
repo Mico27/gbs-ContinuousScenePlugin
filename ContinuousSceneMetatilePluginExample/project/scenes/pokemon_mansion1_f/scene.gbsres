@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "d3272060-27b3-4f68-9f04-90b54da5f10a",
+  "_index": 89,
+  "name": "Pokemon Mansion1 F",
+  "backgroundId": "27b31a37-8294-436a-b076-02a29de9761f",
+  "tilesetId": "8a3072cf-93c2-4233-96e1-a0720b8095d7",
+  "width": 60,
+  "height": 56,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00d20+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_pokemon_mansion_1f",
+  "x": 888,
+  "y": 14072,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3dcfb78d-8aab-46c5-8e14-2bd8712142bf",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "e3d87991-82bb-4b7f-93e7-eca35a5ff03a"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000004"
+        }
+      },
+      "id": "d8bac9dd-15a0-43bf-9189-77be29cba686"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "30144e86-fe72-4905-80fc-f21aae506fff"
+      },
+      "id": "5fe750a3-cd15-4599-bf48-79019134a3b7"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "47d3a100-cade-49e0-8fa1-fd9d25b1afcf"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ce205ce4-e874-466c-8207-1b96134ae0c3"
+      },
+      "id": "c7ac2ab2-d66c-46c7-b1c7-0b1aaedc9154"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

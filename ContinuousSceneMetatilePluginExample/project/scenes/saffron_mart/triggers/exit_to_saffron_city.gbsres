@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "6fe2c878-4079-47ee-aa3f-edac06aae65d",
+  "name": "Exit to saffron_city",
+  "prefabId": "",
+  "x": 6,
+  "y": 14,
+  "symbol": "trigger_exit_to_saffron_cit_4",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 155
+        }
+      },
+      "id": "ac84b460-ad61-4d93-a40c-20ed66245779"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a17eb4d8-8e36-4db9-bc2a-f00fcfda704d"
+      },
+      "id": "ab3fa5e4-a599-4c06-a204-89123b08b893"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "89d8bd47-3af8-4c43-97be-58de858b4cbc"
+    }
+  ],
+  "_index": 0
+}

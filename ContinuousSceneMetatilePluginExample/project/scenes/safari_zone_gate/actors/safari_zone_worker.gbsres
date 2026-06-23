@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "4946bb84-05bc-4dae-9468-ed50a9a80449",
+  "_index": 0,
+  "symbol": "npc_safari_zone_0144",
+  "prefabId": "",
+  "name": "safari_zone_worker",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "4c44083a-6467-4af8-9031-9fae178fdd4d",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWelcome to the\n\nSAFARI ZONE!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "8b018225-4a77-43cf-8ae0-ff486f1ce824"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "3a1fb775-6e67-470d-a9a3-3e18dad7f130",
+  "_index": 1,
+  "symbol": "npc_safari_zone_0147",
+  "prefabId": "",
+  "name": "safari_zone_worker",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "4c44083a-6467-4af8-9031-9fae178fdd4d",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nGo to the deepest\n\npart of the",
+          "\nSAFARI ZONE. You\n\nwill win a prize!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "c2f7fec9-88e8-46c2-8470-ca5534eb2c2c"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "a5990db2-fc9f-4052-8d2b-0378f337025d",
+  "_index": 172,
+  "name": "Vermilion Old Rod House",
+  "backgroundId": "1b679627-2327-4774-b3b6-88a40e2f2c0b",
+  "tilesetId": "a5d5e5aa-a71b-49ef-b7e1-bc3aab1be1e6",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_vermilion_old_rod_hous",
+  "x": 3016,
+  "y": 17448,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5dfc6b74-d862-4fe2-8b2c-208d7049a71e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "b863a1ae-bd80-4f6a-b66f-722692aa18eb"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000008"
+        }
+      },
+      "id": "d0135dc1-b737-45f8-9410-17342deb2880"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e5d7896a-9fe3-43b4-8467-3c8e066ed1be"
+      },
+      "id": "d8dc7542-6537-451a-b798-02b7c6ddce72"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "b97ce6a0-3d48-4478-99e9-bd7f382c19a7"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "1cea50d8-2a85-4c55-8a05-6fd0c8027a13"
+      },
+      "id": "501ce956-d171-42d4-a9d8-dd8c21e3350e"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

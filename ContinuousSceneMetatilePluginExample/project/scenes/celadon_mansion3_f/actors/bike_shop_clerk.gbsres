@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "6d54e1d1-50e1-4fa0-bcb1-d3a638057765",
+  "_index": 0,
+  "symbol": "npc_bike_shop_cl_0209",
+  "prefabId": "",
+  "name": "bike_shop_clerk",
+  "coordinateType": "tiles",
+  "x": 0,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a78a645b-601d-4585-88a8-0b9a2cafc800",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMe? I'm the\n\nprogrammer!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "90aee16e-0dda-4cde-9626-97eda4ffda13"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

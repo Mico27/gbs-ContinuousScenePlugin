@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "78483e78-d0f0-4b99-b3a8-c60f0e9851a6",
+  "_index": 159,
+  "name": "Cerulean Trashed House",
+  "backgroundId": "4b58f0a5-d329-4a56-aeca-e2309e367574",
+  "tilesetId": "a5d5e5aa-a71b-49ef-b7e1-bc3aab1be1e6",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_cerulean_trashed_house",
+  "x": 728,
+  "y": 17448,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5dfc6b74-d862-4fe2-8b2c-208d7049a71e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "2f7fdb2a-28e9-4bf6-96d5-60c7580286d8"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000008"
+        }
+      },
+      "id": "227e5f39-7f49-4c06-b753-e9a0f653286c"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e5d7896a-9fe3-43b4-8467-3c8e066ed1be"
+      },
+      "id": "8c829058-e653-447d-abcd-2e087dd00cb6"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "07c86636-2d03-4641-ba98-b21d3444a145"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "1cea50d8-2a85-4c55-8a05-6fd0c8027a13"
+      },
+      "id": "43de88ff-b5dd-4f6f-8ddf-7106feac7c43"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

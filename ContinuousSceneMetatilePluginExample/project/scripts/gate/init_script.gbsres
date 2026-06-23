@@ -1,0 +1,65 @@
+{
+  "_resourceType": "script",
+  "id": "a407ad18-cd50-418d-8f5d-e844a1389f39",
+  "name": "Gate/Init Script",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "symbol": "script_mt_gate_init",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "16"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "id": "dc31a5ea-9a9e-4b8e-b2cb-7c3197784549",
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "references": [
+                {
+                  "type": "variable",
+                  "id": "0"
+                },
+                {
+                  "type": "variable",
+                  "id": "1"
+                },
+                {
+                  "type": "variable",
+                  "id": "3"
+                }
+              ],
+              "script": "VM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 8\nVM_SET_CONST_UINT8 _player_collision_group, 16",
+              "__collapse": false
+            },
+            "id": "fa31ca8d-c664-4a2c-984a-b41b74f54c9f"
+          },
+          {
+            "command": "EVENT_INC_VALUE",
+            "args": {
+              "variable": "16",
+              "__collapse": false
+            },
+            "id": "cea47059-bf30-42ac-8966-e28d90728d25"
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

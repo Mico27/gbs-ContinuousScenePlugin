@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "11a954ce-f8a5-4c61-ace0-15724f2ac8db",
+  "_index": 1,
+  "symbol": "npc_rocket_00f7",
+  "prefabId": "",
+  "name": "rocket",
+  "coordinateType": "tiles",
+  "x": 40,
+  "y": 15,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a3ff961e-6195-445c-b7c8-1d9165448d0a",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nQuit messing with\n\nus, kid!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "7d697577-4859-4a63-b61e-213e32baa494"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

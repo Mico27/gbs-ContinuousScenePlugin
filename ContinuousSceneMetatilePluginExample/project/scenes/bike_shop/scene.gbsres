@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "c24354cc-f509-468c-8a36-133ab163e758",
+  "_index": 85,
+  "name": "Bike Shop",
+  "backgroundId": "5d1d7efc-3fb0-4a6b-bd38-0fd571f4fd29",
+  "tilesetId": "513f2fd5-ca32-4dc6-88fb-653698e78ba4",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_bike_shop",
+  "x": 616,
+  "y": 13800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "7c56cd68-3a30-4d10-8013-9c2056532f68",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "afd1d2ef-f47f-4846-a492-62427ec15682"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000003"
+        }
+      },
+      "id": "5e0db579-4f38-45d0-87aa-6084a1e556da"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6a431eda-aa53-4b10-8809-6f30f1d400a0"
+      },
+      "id": "c3af95a2-f142-48c2-870d-7037150de37b"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "3a042901-4e64-4cc2-9b45-72aa64b27021"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e994a528-05de-478d-9e57-3a01374a3292"
+      },
+      "id": "2e65a712-bd50-4669-97d2-eb07a90cf163"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

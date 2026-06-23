@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "45294b06-9157-4eb3-8caa-0664be018fd4",
+  "_index": 93,
+  "name": "Power Plant",
+  "backgroundId": "292c4e63-8397-40a9-b41e-84b559875f8e",
+  "tilesetId": "8a3072cf-93c2-4233-96e1-a0720b8095d7",
+  "width": 80,
+  "height": 72,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001680+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_power_plant",
+  "x": 200,
+  "y": 14072,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3dcfb78d-8aab-46c5-8e14-2bd8712142bf",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "3423dd13-828d-4241-acb4-07e38f92edd1"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000004"
+        }
+      },
+      "id": "0c8f8068-3082-4ace-aa29-580842122afa"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "30144e86-fe72-4905-80fc-f21aae506fff"
+      },
+      "id": "e3e079c7-6345-4b8c-b62b-a6f1f106cc99"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "7797161d-3e3a-4788-b719-3872285b1931"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ce205ce4-e874-466c-8207-1b96134ae0c3"
+      },
+      "id": "818bfa1f-ae20-4ff2-ac09-c8d53b242a0c"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

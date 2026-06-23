@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "fba9a864-4a5b-4db9-b7eb-86b9812646ee",
+  "_index": 138,
+  "name": "Underground Path Route6",
+  "backgroundId": "63b2754a-1ebe-45fe-93f3-ee5e0781ac64",
+  "tilesetId": "1248d090-8b07-47a1-987c-e73d01b9ea99",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_underground_path_route_0",
+  "x": 4344,
+  "y": 16376,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "be091cf5-b232-41ad-a078-2666f17c821e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "efecdcd7-3278-4e98-8179-4626dcbb76a8"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000006"
+        }
+      },
+      "id": "178ad97d-80cb-4494-b932-a0089c952197"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a407ad18-cd50-418d-8f5d-e844a1389f39"
+      },
+      "id": "21411699-32db-4914-ab59-ce84dded1299"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "344273e2-e5f0-4c2b-8839-b66ab272d46e"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "2b976ade-af03-4c8f-b4d5-20758bf7341e"
+      },
+      "id": "faa15f62-82cd-4533-a500-300099c6fa8d"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

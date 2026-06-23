@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "73b68ca4-2c07-452e-a873-867d7e888d7e",
+  "_index": 77,
+  "name": "Agathas Room",
+  "backgroundId": "a04b973a-ac29-4b18-b76f-27626d56e0fe",
+  "tilesetId": "de77ae13-43b5-400b-8ecf-8dfc1ebdeb26",
+  "width": 20,
+  "height": 24,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001e0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_agathas_room",
+  "x": 2776,
+  "y": 13368,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "ac107464-8c52-4173-bbeb-6044ff183813",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "2f3c951f-df93-4314-bb0a-4f690ecf1b1f"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000002"
+        }
+      },
+      "id": "81a4af8b-1fb8-4095-a6c4-afbc7ec092cb"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "87ce1d35-d888-414f-a627-d35b39887e06"
+      },
+      "id": "312f7346-5998-443a-8fa5-d7ef7b34f1a9"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "6815b3d0-ad5a-46bd-90f7-3a6c79f9d2d3"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a2232920-f382-4842-b2db-d534ebd711df"
+      },
+      "id": "6c3b68ab-3ee5-4b22-8df3-68cd7df267dc"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

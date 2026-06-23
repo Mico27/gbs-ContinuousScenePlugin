@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "3c152527-3c95-487b-88a4-b539caead87d",
+  "_index": 152,
+  "name": "Oaks Lab",
+  "backgroundId": "7c8efab8-2ec9-405d-a8f6-8bdb11334adf",
+  "tilesetId": "4b2c68cb-8f81-4e59-af87-8c52f72acd6f",
+  "width": 20,
+  "height": 24,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001e0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_oaks_lab",
+  "x": 2696,
+  "y": 16888,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "6ba45848-b087-48c5-ae19-fb6dd62a7b25",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "ca16dd1d-8353-4b9b-a404-101028d0f6e6"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000007"
+        }
+      },
+      "id": "315e10ae-e199-4710-b650-87942f9510a4"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c8f57e9b-f5bb-4285-819a-dd9a4ec826e4"
+      },
+      "id": "e8f5c5d7-7ff8-4cb9-b69f-e0ba38b90556"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "b6a8ebcc-131e-4209-918a-a993a77aad52"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3da4e714-53a4-4061-aff8-aeb6103c614b"
+      },
+      "id": "32ce3b8c-c0b3-499d-a2f8-1de73d6a83b5"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "0462e49a-3c20-4005-8f57-d1b2e9b0d5e9",
+  "name": "Exit to route_7",
+  "prefabId": "",
+  "x": 6,
+  "y": 14,
+  "symbol": "trigger_exit_to_route_50",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 249
+        }
+      },
+      "id": "c3120e04-2d06-455c-bf73-f8a9625d74c3"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "07e5c1bd-ed5c-415b-a135-7c069bb948e4"
+      },
+      "id": "b5eb2580-2cec-4a49-9681-954b8951cb5c"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "2d1adeab-ad7b-4349-8e9e-3b6e545da1f7"
+    }
+  ],
+  "_index": 0
+}

@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "e514a945-402b-4a25-8e09-38b66c0a00ac",
+  "_index": 2,
+  "symbol": "npc_gentleman_009f",
+  "prefabId": "",
+  "name": "gentleman",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "6a50df44-a80b-4d6c-8360-8ff8526102ea",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nDo you have any\n\nfriends?",
+          "\nPOKéMON you get\n\nin trades grow",
+          "\nvery quickly.",
+          "\nI think it's\n\nworth a try!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "14ed25ed-84ed-42fd-9199-e5e0ca856f0b"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

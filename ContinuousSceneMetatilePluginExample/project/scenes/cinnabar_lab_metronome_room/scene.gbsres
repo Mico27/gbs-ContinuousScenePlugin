@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "81effba6-71e3-42ad-bd04-6cc9b0eeda09",
+  "_index": 182,
+  "name": "Cinnabar Lab Metronome Room",
+  "backgroundId": "6df39783-98f6-491c-96b9-9a7f12259686",
+  "tilesetId": "c455300d-3171-4245-8e86-2a4b8d17d2cf",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_cinnabar_lab_metronome",
+  "x": 1192,
+  "y": 18152,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "113d3def-5a4e-4521-893f-5ba653053941",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "a9909b2c-a87d-4ac1-af40-5c058badd96a"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000a"
+        }
+      },
+      "id": "9e62edaa-66ea-4bb9-aa88-f629e8cf64ca"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6c89a5f1-b3f7-4954-a344-2a811e3aa6b7"
+      },
+      "id": "ce581583-eb12-4b21-8318-017c5fdd05da"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "fae7a1a3-9f87-4d49-8dc0-7c217bed593f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c82e076a-e07c-4233-9b0e-6e02291007df"
+      },
+      "id": "67d3e14b-a4a6-4278-9bce-5c90d5c5b2b7"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "d8407718-5636-4f80-8dc8-340ca242513a",
+  "name": "Stair to indigo_plateau_lobby",
+  "prefabId": "",
+  "x": 8,
+  "y": 22,
+  "symbol": "trigger_stair_to_indigo_pla",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ed3ad6f2-d9d4-4ed4-8b63-a564aa907be5",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 436
+        }
+      },
+      "id": "fc260881-f734-4119-b49c-f99219156083"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

@@ -1,0 +1,37 @@
+{
+  "_resourceType": "trigger",
+  "id": "08615b6b-c78e-4d6f-846c-6f1527e2d1c2",
+  "name": "Entry to viridian_forest_south_gate",
+  "prefabId": "",
+  "x": 6,
+  "y": 86,
+  "symbol": "trigger_entry_to_viridian_f_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 215
+        }
+      },
+      "id": "5b20c5b2-86b8-4cf6-9003-3aa9e413adc3"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "up"
+        ]
+      },
+      "id": "3d20f73f-68dc-4e36-8350-d33591a80fe8"
+    }
+  ],
+  "_index": 5
+}

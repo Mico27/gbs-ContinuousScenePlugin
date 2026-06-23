@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "4c95f80f-af57-43d5-a0ea-9f0357e00887",
+  "_index": 145,
+  "name": "Cerulean Gym",
+  "backgroundId": "c9fe746c-7859-49fd-ac6f-53f323122e42",
+  "tilesetId": "4b2c68cb-8f81-4e59-af87-8c52f72acd6f",
+  "width": 20,
+  "height": 28,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00230+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_cerulean_gym",
+  "x": 1656,
+  "y": 16888,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "6ba45848-b087-48c5-ae19-fb6dd62a7b25",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "e281d9de-0238-47bf-95a4-ff7b3f10a9b9"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000007"
+        }
+      },
+      "id": "9115a4b9-13fc-4c0f-9f01-fd58af832f89"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c8f57e9b-f5bb-4285-819a-dd9a4ec826e4"
+      },
+      "id": "fe42faf1-ea12-48f9-925c-68b2e0989d5c"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "d1636720-69b8-4634-9b46-d5c8dfa16220"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3da4e714-53a4-4061-aff8-aeb6103c614b"
+      },
+      "id": "237dcd2c-c369-432a-aee4-a14c81c62d73"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

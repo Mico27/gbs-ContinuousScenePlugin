@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "9f7047db-2a2a-4195-a80d-a63deab3c269",
+  "_index": 69,
+  "name": "Seafoam Islands1 F",
+  "backgroundId": "b5c2a17c-ab28-4407-bedc-9bdd4c5589fe",
+  "tilesetId": "117777a9-9bed-4ebe-939f-a4d2be64e6f3",
+  "width": 60,
+  "height": 36,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00870+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_seafoam_islands_1f",
+  "x": 728,
+  "y": 12936,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "944389bf-6266-4090-aa70-8c361cf3a874",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "249e789c-c91b-4e23-9823-7fe1f256449c"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000001"
+        }
+      },
+      "id": "99d7f7ce-09fc-4494-8456-8197773ec0d4"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "5af4349c-f65f-4a2e-b71a-8a925dfe6698"
+      },
+      "id": "12e299a9-c711-4e8f-9662-34306ebe38a1"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "d5f8e534-b316-423b-a1a6-3c325beb5c56"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "72e91277-100b-4db5-91d9-4cd857c178b5"
+      },
+      "id": "d8ce19d3-656c-4d44-a552-9a0a75be70c2"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

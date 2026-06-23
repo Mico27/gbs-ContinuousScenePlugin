@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "6fc76d40-031e-4ce9-ba1c-9ba627052195",
+  "_index": 3,
+  "symbol": "npc_girl_0067",
+  "prefabId": "",
+  "name": "girl",
+  "coordinateType": "tiles",
+  "x": 26,
+  "y": 15,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "c1839d6b-81d5-407e-ad6a-271415ad22a3",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMy GROWLITHE...\n\nWhy did you die?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "f6fa55ae-20bd-4197-814e-09a2bffcdb9f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

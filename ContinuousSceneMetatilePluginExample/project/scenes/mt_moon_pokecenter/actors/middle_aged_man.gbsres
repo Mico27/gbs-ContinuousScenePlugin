@@ -1,0 +1,71 @@
+{
+  "_resourceType": "actor",
+  "id": "b3cf1eda-2e3e-42a0-9c36-00a49d7a1566",
+  "_index": 3,
+  "symbol": "npc_middle_aged_024e",
+  "prefabId": "",
+  "name": "middle_aged_man",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "8b1af5cb-380c-4b2a-9beb-e3512ec78221",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMAN: Hello, there!\n\nHave I got a deal",
+          "\njust for you!",
+          "\nI'll let you have\n\na swell MAGIKARP",
+          "\nfor just ¥500!\n\nWhat do you say?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "484b62a1-0f9a-48bd-a70b-2cb08c1a1ed2"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "889461bf-c26c-46ab-9a8f-857b5fd0ba95"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

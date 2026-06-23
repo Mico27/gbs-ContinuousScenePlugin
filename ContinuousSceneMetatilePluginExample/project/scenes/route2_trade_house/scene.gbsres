@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "f0261882-8302-4680-9937-64b9487f82e8",
+  "_index": 170,
+  "name": "Route2 Trade House",
+  "backgroundId": "ebdae849-a874-4af5-a4d9-38345ff3999b",
+  "tilesetId": "a5d5e5aa-a71b-49ef-b7e1-bc3aab1be1e6",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_route_2_trade_house",
+  "x": 2664,
+  "y": 17448,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5dfc6b74-d862-4fe2-8b2c-208d7049a71e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "7bb6785b-3dd4-4068-9b9f-8bdecd673be2"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000008"
+        }
+      },
+      "id": "2966010d-2960-40ac-9958-2c53de8d75f1"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e5d7896a-9fe3-43b4-8467-3c8e066ed1be"
+      },
+      "id": "df40302a-c06b-46d1-98e0-3cf5402fc921"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "d4326141-7914-47e6-a5cd-2776a04ac1b4"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "1cea50d8-2a85-4c55-8a05-6fd0c8027a13"
+      },
+      "id": "1c7d8401-ea3a-4bb2-9110-f0d7527244dd"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

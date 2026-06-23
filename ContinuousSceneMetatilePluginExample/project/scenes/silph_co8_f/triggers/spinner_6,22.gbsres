@@ -1,0 +1,34 @@
+{
+  "_resourceType": "trigger",
+  "id": "a43919c3-48a5-4389-a665-96a632455328",
+  "name": "Spinner 6,22",
+  "prefabId": "",
+  "x": 6,
+  "y": 22,
+  "symbol": "trigger_spinner_6_22",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e1000001-0000-4000-a000-000000000005"
+      },
+      "id": "7b2bb3d8-c683-4d31-9dc6-7d2dc364a6b8"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e2000001-0000-4000-a000-000000000001",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 594
+        }
+      },
+      "id": "4209e0c1-9d2e-4267-b4b2-0cb0c0dc3303"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "a1fb53ae-216c-4e56-9c4a-53453ee25eb9",
+  "_index": 7,
+  "symbol": "npc_super_nerd_0090",
+  "prefabId": "",
+  "name": "super_nerd",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5639eede-6431-4bd5-b884-a9e9b61fde0b",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nFire is weak\n\nagainst H2O!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "aa30a44d-3535-4c4d-91e2-bc520452bebf"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

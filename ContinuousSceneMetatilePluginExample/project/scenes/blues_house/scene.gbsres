@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "364788a2-7d3c-416c-863c-cd8f3fff7313",
+  "_index": 156,
+  "name": "Blues House",
+  "backgroundId": "a968fa03-5473-4fe9-92fd-52325bd47c32",
+  "tilesetId": "a5d5e5aa-a71b-49ef-b7e1-bc3aab1be1e6",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_blues_house",
+  "x": 200,
+  "y": 17448,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5dfc6b74-d862-4fe2-8b2c-208d7049a71e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "ae041a9e-5fab-4d06-85ff-3442a05a0abf"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000008"
+        }
+      },
+      "id": "c4c835cc-ca65-4d78-b2bd-3a98abc225e5"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e5d7896a-9fe3-43b4-8467-3c8e066ed1be"
+      },
+      "id": "a818dabe-da77-43f1-b272-7a80f7973202"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "35c861d6-424c-42fa-b8e3-d426bdf8e83b"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "1cea50d8-2a85-4c55-8a05-6fd0c8027a13"
+      },
+      "id": "97c5d8c4-3a8c-4ec9-bc06-9f316a4b4f10"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

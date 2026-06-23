@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "f0e16d6c-bfbb-49a2-b8b6-e877dc51588d",
+  "_index": 1,
+  "symbol": "npc_gambler_015a",
+  "prefabId": "",
+  "name": "gambler",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9b1bf2e3-1138-4c14-8105-c1e8c0eff8e6",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThat is one\n\nmagnificent",
+          "\nfossil!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "244dc85c-7a78-4762-abcb-7aecb5fcce3d"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

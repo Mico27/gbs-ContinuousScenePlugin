@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "892ca81a-840e-41a1-bc8f-ee94a07eaf7e",
+  "name": "Stair to cinnabar_lab",
+  "prefabId": "",
+  "x": 4,
+  "y": 14,
+  "symbol": "trigger_stair_to_cinnabar_l_2",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e37d819b-c890-405c-a8c7-08998d4ce2e8",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 459
+        }
+      },
+      "id": "8613a286-bc0c-4618-8500-143b19892394"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

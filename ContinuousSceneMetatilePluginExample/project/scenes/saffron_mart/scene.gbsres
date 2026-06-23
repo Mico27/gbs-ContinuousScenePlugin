@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "3fb574ce-3430-4569-b862-ce2194701123",
+  "_index": 219,
+  "name": "Saffron Mart",
+  "backgroundId": "5b7d2134-d58f-499b-965e-6065ba2855b3",
+  "tilesetId": "770e09aa-68e2-4660-a200-c3b158d3dfa3",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_saffron_mart",
+  "x": 4648,
+  "y": 19192,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5e12ba29-a7fc-4631-be50-fff1e493f71c",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "75d77738-e2de-47c9-8771-b1059a63918a"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000d"
+        }
+      },
+      "id": "8c21c711-ccad-4da6-802a-5ff08b2c08ab"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f37155f0-14b5-4916-a17e-6c30c0873d9a"
+      },
+      "id": "3d736872-4607-4a13-9cf2-0633d34e0f1d"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "964d51fe-6b4f-4107-b98c-1dbd2f4af7db"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fb34b23c-a04b-43c3-92bb-7485def21a19"
+      },
+      "id": "3020cc3e-d4f5-41db-adeb-9c5cb592ec51"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

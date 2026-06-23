@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "1673bde7-c348-4d19-8407-a04b685254a2",
+  "name": "Stair to viridian_forest",
+  "prefabId": "",
+  "x": 10,
+  "y": 14,
+  "symbol": "trigger_stair_to_viridian_f_6",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 668
+        }
+      },
+      "id": "fa75a904-0bd2-4345-b2af-c0d4c8efdef5"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

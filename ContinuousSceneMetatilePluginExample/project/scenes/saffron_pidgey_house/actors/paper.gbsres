@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "3090ef6e-f132-41d2-924f-9b72057aa7bc",
+  "_index": 3,
+  "symbol": "npc_paper_00eb",
+  "prefabId": "",
+  "name": "paper",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "7f38f66d-29de-4f3c-a803-88cde95d79bc",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI was given a PP\n\nUP as a gift.",
+          "\nIt's used for\n\nincreasing the PP",
+          "\nof techniques!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "ca3fb934-db65-4c7f-b62b-25f1789982dd"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

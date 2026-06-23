@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "d68b830a-7f7f-435c-ac0a-e742f75d1cca",
+  "_index": 161,
+  "name": "Fuchsia Bills Grandpas House",
+  "backgroundId": "1cb6dff9-4922-43d5-8263-bf86e1d24932",
+  "tilesetId": "a5d5e5aa-a71b-49ef-b7e1-bc3aab1be1e6",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_fuchsia_bills_grandpas",
+  "x": 1080,
+  "y": 17448,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5dfc6b74-d862-4fe2-8b2c-208d7049a71e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "2401a270-ac64-42ef-a361-fd3aff267937"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000008"
+        }
+      },
+      "id": "e5578a98-724f-4615-8578-8cd25164fef5"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e5d7896a-9fe3-43b4-8467-3c8e066ed1be"
+      },
+      "id": "9548bc3f-07b6-4f2a-9364-2884f54a96e4"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "c118f002-59a2-4121-b824-5704210cd714"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "1cea50d8-2a85-4c55-8a05-6fd0c8027a13"
+      },
+      "id": "278a929e-3760-4b57-b467-409ba6f31e90"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

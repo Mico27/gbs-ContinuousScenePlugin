@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "1e3668b6-8164-4ee3-a7aa-9d830642c6ea",
+  "_index": 2,
+  "symbol": "npc_pokedex_00a6",
+  "prefabId": "",
+  "name": "pokedex",
+  "coordinateType": "tiles",
+  "x": 36,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "bcc9d9d8-b977-495e-b834-8640bb4a9556",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nDiary: July 5\n\nGuyana,",
+          "\nSouth America",
+          "\nA new POKéMON was\n\ndiscovered deep",
+          "\nin the jungle."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "82944e10-7873-4eaf-b7c5-86db3cbed46c"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

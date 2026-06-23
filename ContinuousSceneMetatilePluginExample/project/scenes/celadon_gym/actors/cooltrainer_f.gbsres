@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "b1c1c894-15e8-4c4f-be88-171992e6cff3",
+  "_index": 1,
+  "symbol": "npc_cooltrainer_0181",
+  "prefabId": "",
+  "name": "cooltrainer_f",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 23,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "32c25bb6-bd63-4b2f-a38a-140a935781d9",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHey!",
+          "\nYou are not\n\nallowed in here!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "0b487531-ace4-4fc8-90e1-88366ddcb09a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

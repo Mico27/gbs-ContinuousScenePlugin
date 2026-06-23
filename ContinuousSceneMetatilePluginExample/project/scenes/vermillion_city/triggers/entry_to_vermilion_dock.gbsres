@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "17759295-2ae8-45d0-b901-43d4e637dc29",
+  "name": "Entry to vermilion_dock",
+  "prefabId": "",
+  "x": 36,
+  "y": 62,
+  "symbol": "trigger_entry_to_vermilion_",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 114
+        }
+      },
+      "id": "38de163e-f483-4d46-a94b-da6d70a7f158"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

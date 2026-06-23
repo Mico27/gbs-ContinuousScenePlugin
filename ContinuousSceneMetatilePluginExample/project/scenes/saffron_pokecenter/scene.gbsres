@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "72271a8c-a9aa-4a0f-bd78-4265edff2ff2",
+  "_index": 220,
+  "name": "Saffron Pokecenter",
+  "backgroundId": "319eff0c-1cc7-4ee5-8e4a-a84ecd8c190a",
+  "tilesetId": "770e09aa-68e2-4660-a200-c3b158d3dfa3",
+  "width": 28,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001c0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_saffron_pokecenter",
+  "x": 2952,
+  "y": 19192,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5e12ba29-a7fc-4631-be50-fff1e493f71c",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "8e133eed-506f-4b8c-ad4c-be304dcf3344"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000d"
+        }
+      },
+      "id": "0cdcbbcf-ad6f-41b4-b165-cae61bd869cf"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f37155f0-14b5-4916-a17e-6c30c0873d9a"
+      },
+      "id": "af121424-f6c8-404e-ba19-b96412bc9418"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "5355f468-b660-4013-9433-b55c3d428630"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fb34b23c-a04b-43c3-92bb-7485def21a19"
+      },
+      "id": "a3eb8d58-3f1a-4348-9e24-48c4f57fa0ec"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

@@ -1,0 +1,2731 @@
+{
+  "_resourceType": "script",
+  "id": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
+  "name": "Gate/Warp Script",
+  "description": "Source-type warp router for GATE scenes. Routes WarpId (V0) to its destination via chained EVENT_SWITCH (16 cases each). 84 case(s).",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "symbol": "script_warp_gate",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "constant",
+            "value": "b001-0000-0000-0000-000000000018"
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "constant",
+                "value": "b001-0000-0000-0000-000000000019"
+              }
+            },
+            "id": "0f56a056-c3c5-4ee6-8f2a-3f5f8b6b4803"
+          },
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "V0",
+              "choices": 16,
+              "__collapseElse": false,
+              "value0": {
+                "type": "number",
+                "value": 71
+              },
+              "__collapseCase0": false,
+              "value1": {
+                "type": "number",
+                "value": 73
+              },
+              "__collapseCase1": false,
+              "value2": {
+                "type": "number",
+                "value": 183
+              },
+              "__collapseCase2": false,
+              "value3": {
+                "type": "number",
+                "value": 208
+              },
+              "__collapseCase3": false,
+              "value4": {
+                "type": "number",
+                "value": 212
+              },
+              "__collapseCase4": false,
+              "value5": {
+                "type": "number",
+                "value": 214
+              },
+              "__collapseCase5": false,
+              "value6": {
+                "type": "number",
+                "value": 216
+              },
+              "__collapseCase6": false,
+              "value7": {
+                "type": "number",
+                "value": 224
+              },
+              "__collapseCase7": false,
+              "value8": {
+                "type": "number",
+                "value": 226
+              },
+              "__collapseCase8": false,
+              "value9": {
+                "type": "number",
+                "value": 228
+              },
+              "__collapseCase9": false,
+              "value10": {
+                "type": "number",
+                "value": 230
+              },
+              "__collapseCase10": false,
+              "value11": {
+                "type": "number",
+                "value": 234
+              },
+              "__collapseCase11": false,
+              "value12": {
+                "type": "number",
+                "value": 237
+              },
+              "__collapseCase12": false,
+              "value13": {
+                "type": "number",
+                "value": 239
+              },
+              "__collapseCase13": false,
+              "value14": {
+                "type": "number",
+                "value": 241
+              },
+              "__collapseCase14": false,
+              "value15": {
+                "type": "number",
+                "value": 243
+              },
+              "__collapseCase15": false
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 71 → EXIT museum1_f → pewter_city (28,14)"
+                  },
+                  "id": "db0a8748-6bd8-44f7-b6d8-ca5392c33317"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1e885b0b-25a4-4bb2-a446-588a6c8a2e5b",
+                    "x": {
+                      "type": "number",
+                      "value": 28
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "6137446d-ddc4-43e9-97c5-f9f45e045040"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 73 → EXIT museum1_f → pewter_city (38,10)"
+                  },
+                  "id": "3780c768-085c-49a8-9dcf-bb2c9b450a92"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1e885b0b-25a4-4bb2-a446-588a6c8a2e5b",
+                    "x": {
+                      "type": "number",
+                      "value": 38
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 10
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "605c6465-c8f3-4be5-b3ca-405de3037d25"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 183 → EXIT safari_zone_gate → fuchsia_city (36,6)"
+                  },
+                  "id": "38376f13-b45c-4456-a563-6630d32f1b2a"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "10bcdc30-2c2a-4dd5-98a4-8a3f5b25e2e4",
+                    "x": {
+                      "type": "number",
+                      "value": 36
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "38115407-c2ba-42cf-a308-499ad3286da5"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 208 → EXIT viridian_forest_north_gate → route_2 (6,22)"
+                  },
+                  "id": "28376693-0cca-4d92-9376-5f23e51f8a64"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "621bd312-3c6f-491a-a105-4604c12f1cbc",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 22
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "7a001efe-b148-410b-b9eb-2572b65107f6"
+                }
+              ],
+              "true4": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 212 → EXIT route2_gate → route_2 (32,70)"
+                  },
+                  "id": "ddd88aad-37e3-43f5-97a4-6bea5445e94b"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "621bd312-3c6f-491a-a105-4604c12f1cbc",
+                    "x": {
+                      "type": "number",
+                      "value": 32
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 70
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "8470e514-f27c-425c-b277-5a5ae1827446"
+                }
+              ],
+              "true5": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 214 → EXIT route2_gate → route_2 (30,78)"
+                  },
+                  "id": "b206627a-5998-4d6c-ad65-ed9c77097b38"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "621bd312-3c6f-491a-a105-4604c12f1cbc",
+                    "x": {
+                      "type": "number",
+                      "value": 30
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 78
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "ea962a83-5cea-4665-b38e-656de602afc0"
+                }
+              ],
+              "true6": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 216 → EXIT viridian_forest_south_gate → route_2 (6,86)"
+                  },
+                  "id": "485fd2d7-7acd-499b-89f7-e18bdf4dc322"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "621bd312-3c6f-491a-a105-4604c12f1cbc",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 86
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "31354bd7-c290-46c1-adef-5ea8ce19e451"
+                }
+              ],
+              "true7": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 224 → EXIT route5_gate → route_5 (20,58)"
+                  },
+                  "id": "d48a052c-68b5-4bc1-969a-bfaa73c4426c"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "2d371178-241b-412b-b2db-f00e584be739",
+                    "x": {
+                      "type": "number",
+                      "value": 20
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 58
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "28e6ee20-0150-46b3-84d9-fd492cfa135b"
+                }
+              ],
+              "true8": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 226 → EXIT route5_gate → route_5 (18,58)"
+                  },
+                  "id": "ea08ce0e-0d48-4c23-9ae3-c17a601e3f88"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "2d371178-241b-412b-b2db-f00e584be739",
+                    "x": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 58
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "a31e3999-173b-44e8-91c7-06d861ef722f"
+                }
+              ],
+              "true9": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 228 → EXIT route5_gate → route_5 (20,66)"
+                  },
+                  "id": "c23f4fdc-b154-48f8-8d66-e389e7e121b7"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "2d371178-241b-412b-b2db-f00e584be739",
+                    "x": {
+                      "type": "number",
+                      "value": 20
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 66
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "8a29e61f-7127-48a6-b6fe-a1339e233da1"
+                }
+              ],
+              "true10": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 230 → EXIT underground_path_route5 → route_5 (34,54)"
+                  },
+                  "id": "7a9d1d08-f1a9-475b-a158-9d14cd7a500c"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "2d371178-241b-412b-b2db-f00e584be739",
+                    "x": {
+                      "type": "number",
+                      "value": 34
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 54
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "c83df1c1-35c0-4d87-8747-bbe1bc21737b"
+                }
+              ],
+              "true11": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 234 → EXIT route6_gate → route_6 (18,2)"
+                  },
+                  "id": "8d070a1f-6a5d-44b5-ab53-6e88d42f91e6"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "ce24d420-1081-4bf6-8c38-e751d8701924",
+                    "x": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 2
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "9d4b1a43-857c-4276-a278-f8b71d76200c"
+                }
+              ],
+              "true12": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 237 → EXIT route6_gate → route_6 (20,14)"
+                  },
+                  "id": "2ead421f-81a2-4b16-af13-bfccaf3fb8dd"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "ce24d420-1081-4bf6-8c38-e751d8701924",
+                    "x": {
+                      "type": "number",
+                      "value": 20
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "69372ae1-01a8-42e0-ae54-a17ea28d822e"
+                }
+              ],
+              "true13": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 239 → EXIT underground_path_route6 → route_6 (34,26)"
+                  },
+                  "id": "6d8e6962-054a-47f2-b419-999ea9d4d00a"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "ce24d420-1081-4bf6-8c38-e751d8701924",
+                    "x": {
+                      "type": "number",
+                      "value": 34
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 26
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "8f098ce9-a6ed-4c63-ae7a-356cdf4c896f"
+                }
+              ],
+              "true14": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 241 → EXIT route7_gate → route_7 (38,18)"
+                  },
+                  "id": "efa5c2ee-445e-4846-bd4c-38aafa1161cd"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "addd6de7-03b7-4965-912f-8d429fedae01",
+                    "x": {
+                      "type": "number",
+                      "value": 38
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "aa0eb0d6-0d72-4776-9d3f-60357baa91a4"
+                }
+              ],
+              "true15": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 243 → EXIT route7_gate → route_7 (38,20)"
+                  },
+                  "id": "8bd34fbf-229d-49f3-94ab-b67b5226aec0"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "addd6de7-03b7-4965-912f-8d429fedae01",
+                    "x": {
+                      "type": "number",
+                      "value": 38
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 20
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "bffa1658-19b5-4a50-9882-c517de626188"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "V0",
+                    "choices": 16,
+                    "__collapseElse": false,
+                    "value0": {
+                      "type": "number",
+                      "value": 245
+                    },
+                    "__collapseCase0": false,
+                    "value1": {
+                      "type": "number",
+                      "value": 247
+                    },
+                    "__collapseCase1": false,
+                    "value2": {
+                      "type": "number",
+                      "value": 249
+                    },
+                    "__collapseCase2": false,
+                    "value3": {
+                      "type": "number",
+                      "value": 251
+                    },
+                    "__collapseCase3": false,
+                    "value4": {
+                      "type": "number",
+                      "value": 253
+                    },
+                    "__collapseCase4": false,
+                    "value5": {
+                      "type": "number",
+                      "value": 255
+                    },
+                    "__collapseCase5": false,
+                    "value6": {
+                      "type": "number",
+                      "value": 257
+                    },
+                    "__collapseCase6": false,
+                    "value7": {
+                      "type": "number",
+                      "value": 259
+                    },
+                    "__collapseCase7": false,
+                    "value8": {
+                      "type": "number",
+                      "value": 269
+                    },
+                    "__collapseCase8": false,
+                    "value9": {
+                      "type": "number",
+                      "value": 271
+                    },
+                    "__collapseCase9": false,
+                    "value10": {
+                      "type": "number",
+                      "value": 273
+                    },
+                    "__collapseCase10": false,
+                    "value11": {
+                      "type": "number",
+                      "value": 275
+                    },
+                    "__collapseCase11": false,
+                    "value12": {
+                      "type": "number",
+                      "value": 279
+                    },
+                    "__collapseCase12": false,
+                    "value13": {
+                      "type": "number",
+                      "value": 281
+                    },
+                    "__collapseCase13": false,
+                    "value14": {
+                      "type": "number",
+                      "value": 283
+                    },
+                    "__collapseCase14": false,
+                    "value15": {
+                      "type": "number",
+                      "value": 287
+                    },
+                    "__collapseCase15": false
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 245 → EXIT route7_gate → route_7 (20,18)"
+                        },
+                        "id": "b82cd01d-6811-4ab8-b4c2-9800ab1b5700"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "addd6de7-03b7-4965-912f-8d429fedae01",
+                          "x": {
+                            "type": "number",
+                            "value": 20
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "d0c5b3af-fd9c-408e-8a46-0b578fc7a46b"
+                      }
+                    ],
+                    "true1": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 247 → EXIT route7_gate → route_7 (20,20)"
+                        },
+                        "id": "2def6bcc-2ea7-4eaf-965c-8ffdd9f497ca"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "addd6de7-03b7-4965-912f-8d429fedae01",
+                          "x": {
+                            "type": "number",
+                            "value": 20
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 20
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "d4d6a166-db77-4d1a-84b7-112a60196a44"
+                      }
+                    ],
+                    "true2": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 249 → EXIT underground_path_route7 → route_7 (10,26)"
+                        },
+                        "id": "1da5ee0e-20cd-41a1-ba65-903a8da1fa60"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "addd6de7-03b7-4965-912f-8d429fedae01",
+                          "x": {
+                            "type": "number",
+                            "value": 10
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 26
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "bf40f9ba-e0a8-48fb-b6c8-1e351c2f0233"
+                      }
+                    ],
+                    "true3": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 251 → EXIT route8_gate → route_8 (0,18)"
+                        },
+                        "id": "903871c7-af5b-44ac-b16e-63d0e31a21ff"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "97178807-b51e-4dc6-b8ee-37c383563ee5",
+                          "x": {
+                            "type": "number",
+                            "value": 0
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "891116fb-a56b-49c5-a972-6792b0b8a418"
+                      }
+                    ],
+                    "true4": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 253 → EXIT route8_gate → route_8 (0,20)"
+                        },
+                        "id": "d3568936-1f63-4788-8254-c89824172eea"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "97178807-b51e-4dc6-b8ee-37c383563ee5",
+                          "x": {
+                            "type": "number",
+                            "value": 0
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 20
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "0e276e06-e503-4903-bf22-c1b662995464"
+                      }
+                    ],
+                    "true5": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 255 → EXIT route8_gate → route_8 (18,18)"
+                        },
+                        "id": "16e1c8b9-b8d5-4367-a946-d8a4ba24e9f3"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "97178807-b51e-4dc6-b8ee-37c383563ee5",
+                          "x": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "45cb01e2-9d5a-4451-a10b-dda17e95adb8"
+                      }
+                    ],
+                    "true6": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 257 → EXIT route8_gate → route_8 (18,20)"
+                        },
+                        "id": "d33394ee-08ff-4013-9bc1-65c70c4b0a66"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "97178807-b51e-4dc6-b8ee-37c383563ee5",
+                          "x": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 20
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "8558617d-dd61-4aef-8bfd-d16bbcf81fd7"
+                      }
+                    ],
+                    "true7": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 259 → EXIT underground_path_route8 → route_8 (26,6)"
+                        },
+                        "id": "4e221d60-1400-49f5-b2b4-69d925575ba2"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "97178807-b51e-4dc6-b8ee-37c383563ee5",
+                          "x": {
+                            "type": "number",
+                            "value": 26
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 6
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "490a17e9-bf02-4cad-8b39-60dc2d397a1c"
+                      }
+                    ],
+                    "true8": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 269 → EXIT route11_gate1_f → route_11 (96,16)"
+                        },
+                        "id": "59ec5eb8-6582-42c4-995a-1f575e6011d1"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "6e4edc69-2ff9-47b6-8e1c-31cb5d2f9b1b",
+                          "x": {
+                            "type": "number",
+                            "value": 96
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 16
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "4c7a21dc-8447-4db8-a0f1-478c64df2f5f"
+                      }
+                    ],
+                    "true9": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 271 → EXIT route11_gate1_f → route_11 (96,18)"
+                        },
+                        "id": "6584cda3-6586-4dc6-9421-3446e955a709"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "6e4edc69-2ff9-47b6-8e1c-31cb5d2f9b1b",
+                          "x": {
+                            "type": "number",
+                            "value": 96
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "10568915-3ef7-431e-8c83-a40d1794105d"
+                      }
+                    ],
+                    "true10": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 273 → EXIT route11_gate1_f → route_11 (118,16)"
+                        },
+                        "id": "2a9d7e12-52d2-4411-b549-95dc8ff08196"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "6e4edc69-2ff9-47b6-8e1c-31cb5d2f9b1b",
+                          "x": {
+                            "type": "number",
+                            "value": 118
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 16
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "3ab3c803-0c4f-4700-8dc8-6e7d781ba610"
+                      }
+                    ],
+                    "true11": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 275 → EXIT route11_gate1_f → route_11 (118,18)"
+                        },
+                        "id": "069167d3-382a-44cd-9aeb-47b0feabc208"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "6e4edc69-2ff9-47b6-8e1c-31cb5d2f9b1b",
+                          "x": {
+                            "type": "number",
+                            "value": 118
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "0637a0aa-ce66-48f9-81b6-4cbf34cbfa35"
+                      }
+                    ],
+                    "true12": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 279 → EXIT route12_gate1_f → route_12 (20,30)"
+                        },
+                        "id": "7981056c-2973-482d-8647-46bb83d1a082"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "61537168-1a7d-4ed3-a11d-e74a5309672e",
+                          "x": {
+                            "type": "number",
+                            "value": 20
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 30
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "67847a4b-2fe4-4aae-82c7-c75e47f7fcde"
+                      }
+                    ],
+                    "true13": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 281 → EXIT route12_gate1_f → route_12 (22,30)"
+                        },
+                        "id": "2cf596fe-5cfc-43ba-8ca3-6d19acbc3a01"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "61537168-1a7d-4ed3-a11d-e74a5309672e",
+                          "x": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 30
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "1594f15a-37f0-4ac1-be5b-e4a36c2ba3bb"
+                      }
+                    ],
+                    "true14": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 283 → EXIT route12_gate1_f → route_12 (20,42)"
+                        },
+                        "id": "ec1c8e9b-46ca-4f8f-af25-b877dd40c718"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "61537168-1a7d-4ed3-a11d-e74a5309672e",
+                          "x": {
+                            "type": "number",
+                            "value": 20
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 42
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "2aa0e7e7-bce9-48e5-a308-7fcc26a027a5"
+                      }
+                    ],
+                    "true15": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 287 → EXIT route15_gate1_f → route_15 (12,16)"
+                        },
+                        "id": "28b02b2d-42c0-486b-b678-85e1c9df9f36"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "d0d5d8b6-f2c0-4ad8-bfc9-fb048d892c0a",
+                          "x": {
+                            "type": "number",
+                            "value": 12
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 16
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "f842b202-800f-42e6-93c8-cfd79bfac7b7"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "EVENT_SWITCH",
+                        "args": {
+                          "variable": "V0",
+                          "choices": 16,
+                          "__collapseElse": false,
+                          "value0": {
+                            "type": "number",
+                            "value": 289
+                          },
+                          "__collapseCase0": false,
+                          "value1": {
+                            "type": "number",
+                            "value": 291
+                          },
+                          "__collapseCase1": false,
+                          "value2": {
+                            "type": "number",
+                            "value": 293
+                          },
+                          "__collapseCase2": false,
+                          "value3": {
+                            "type": "number",
+                            "value": 295
+                          },
+                          "__collapseCase3": false,
+                          "value4": {
+                            "type": "number",
+                            "value": 297
+                          },
+                          "__collapseCase4": false,
+                          "value5": {
+                            "type": "number",
+                            "value": 299
+                          },
+                          "__collapseCase5": false,
+                          "value6": {
+                            "type": "number",
+                            "value": 301
+                          },
+                          "__collapseCase6": false,
+                          "value7": {
+                            "type": "number",
+                            "value": 303
+                          },
+                          "__collapseCase7": false,
+                          "value8": {
+                            "type": "number",
+                            "value": 305
+                          },
+                          "__collapseCase8": false,
+                          "value9": {
+                            "type": "number",
+                            "value": 307
+                          },
+                          "__collapseCase9": false,
+                          "value10": {
+                            "type": "number",
+                            "value": 309
+                          },
+                          "__collapseCase10": false,
+                          "value11": {
+                            "type": "number",
+                            "value": 313
+                          },
+                          "__collapseCase11": false,
+                          "value12": {
+                            "type": "number",
+                            "value": 315
+                          },
+                          "__collapseCase12": false,
+                          "value13": {
+                            "type": "number",
+                            "value": 317
+                          },
+                          "__collapseCase13": false,
+                          "value14": {
+                            "type": "number",
+                            "value": 319
+                          },
+                          "__collapseCase14": false,
+                          "value15": {
+                            "type": "number",
+                            "value": 325
+                          },
+                          "__collapseCase15": false
+                        },
+                        "children": {
+                          "true0": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 289 → EXIT route15_gate1_f → route_15 (12,18)"
+                              },
+                              "id": "b30d8cfc-353a-458a-9882-656ea9e093de"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "d0d5d8b6-f2c0-4ad8-bfc9-fb048d892c0a",
+                                "x": {
+                                  "type": "number",
+                                  "value": 12
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 18
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "c5362a64-c911-4ecc-b3eb-5caa69dea867"
+                            }
+                          ],
+                          "true1": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 291 → EXIT route15_gate1_f → route_15 (30,16)"
+                              },
+                              "id": "9cdd5cfc-4706-4119-8f46-6ec6d2f26399"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "d0d5d8b6-f2c0-4ad8-bfc9-fb048d892c0a",
+                                "x": {
+                                  "type": "number",
+                                  "value": 30
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 16
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "39790328-613a-4239-875d-ac0c891a8387"
+                            }
+                          ],
+                          "true2": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 293 → EXIT route15_gate1_f → route_15 (30,18)"
+                              },
+                              "id": "8521fea4-8065-448a-a32e-57cd236c5f16"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "d0d5d8b6-f2c0-4ad8-bfc9-fb048d892c0a",
+                                "x": {
+                                  "type": "number",
+                                  "value": 30
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 18
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "62db075c-4ffb-434f-8655-0aa4ae2577d3"
+                            }
+                          ],
+                          "true3": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 295 → EXIT route16_gate1_f → route_16 (32,20)"
+                              },
+                              "id": "67a99616-fb8c-43ae-9c45-1d5e9480c9cc"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4b7db487-0b87-49ba-987d-0e1788bebe62",
+                                "x": {
+                                  "type": "number",
+                                  "value": 32
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 20
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "36469362-6a58-4c6f-9ff4-35b05f6af33d"
+                            }
+                          ],
+                          "true4": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 297 → EXIT route16_gate1_f → route_16 (32,22)"
+                              },
+                              "id": "c771d49a-7ae1-497e-b194-465b63f50294"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4b7db487-0b87-49ba-987d-0e1788bebe62",
+                                "x": {
+                                  "type": "number",
+                                  "value": 32
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 22
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "c54bd04d-e139-406d-b954-dd7649b528b5"
+                            }
+                          ],
+                          "true5": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 299 → EXIT route16_gate1_f → route_16 (50,20)"
+                              },
+                              "id": "174c7421-3f21-4fef-a1d7-08cccc11a3d5"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4b7db487-0b87-49ba-987d-0e1788bebe62",
+                                "x": {
+                                  "type": "number",
+                                  "value": 50
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 20
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "46107c5b-2260-4dff-9a72-954001ddbc47"
+                            }
+                          ],
+                          "true6": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 301 → EXIT route16_gate1_f → route_16 (50,22)"
+                              },
+                              "id": "ce71b41c-b978-4f00-9a1f-a49c6bc21bb1"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4b7db487-0b87-49ba-987d-0e1788bebe62",
+                                "x": {
+                                  "type": "number",
+                                  "value": 50
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 22
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "deefd1e4-957e-40f3-ab7a-d4ff881706ae"
+                            }
+                          ],
+                          "true7": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 303 → EXIT route16_gate1_f → route_16 (32,8)"
+                              },
+                              "id": "8676fa48-1da8-4cf9-9706-8cbb3a787f6a"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4b7db487-0b87-49ba-987d-0e1788bebe62",
+                                "x": {
+                                  "type": "number",
+                                  "value": 32
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 8
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "68d44e33-63c0-4879-a01c-ea9433e7ea52"
+                            }
+                          ],
+                          "true8": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 305 → EXIT route16_gate1_f → route_16 (32,10)"
+                              },
+                              "id": "d2f0abb2-283e-450c-b57d-0229ceea1966"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4b7db487-0b87-49ba-987d-0e1788bebe62",
+                                "x": {
+                                  "type": "number",
+                                  "value": 32
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 10
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "c5a71981-dc76-4aaa-8790-bb2d14b129b5"
+                            }
+                          ],
+                          "true9": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 307 → EXIT route16_gate1_f → route_16 (50,8)"
+                              },
+                              "id": "5df74ef1-78ea-4fcd-97b6-d569ecba1d40"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4b7db487-0b87-49ba-987d-0e1788bebe62",
+                                "x": {
+                                  "type": "number",
+                                  "value": 50
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 8
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "107a5c54-bebf-462a-8a34-ab6e644f5076"
+                            }
+                          ],
+                          "true10": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 309 → EXIT route16_gate1_f → route_16 (50,10)"
+                              },
+                              "id": "1becfe06-defe-4398-a0c2-a0d768fd2ad3"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4b7db487-0b87-49ba-987d-0e1788bebe62",
+                                "x": {
+                                  "type": "number",
+                                  "value": 50
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 10
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "a12baa2b-f3df-4762-9de4-55281f5934f7"
+                            }
+                          ],
+                          "true11": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 313 → EXIT route18_gate1_f → route_18 (64,16)"
+                              },
+                              "id": "fb168a43-bb27-4ba3-a1b6-f18f31fff00d"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f533e499-251a-45bd-bd30-f490538e6a34",
+                                "x": {
+                                  "type": "number",
+                                  "value": 64
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 16
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "97ede0a0-40fa-4f44-b5ae-03375c31316e"
+                            }
+                          ],
+                          "true12": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 315 → EXIT route18_gate1_f → route_18 (64,18)"
+                              },
+                              "id": "930ddd13-c465-41ad-9f7f-36c92b451bf8"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f533e499-251a-45bd-bd30-f490538e6a34",
+                                "x": {
+                                  "type": "number",
+                                  "value": 64
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 18
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "5e9bfb5d-7960-4a10-a81e-eb8c7d5f583e"
+                            }
+                          ],
+                          "true13": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 317 → EXIT route18_gate1_f → route_18 (82,16)"
+                              },
+                              "id": "3c37e926-6c87-411c-b322-8d5f613ec777"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f533e499-251a-45bd-bd30-f490538e6a34",
+                                "x": {
+                                  "type": "number",
+                                  "value": 82
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 16
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "4a420c95-07ef-4284-ae64-c275476f0845"
+                            }
+                          ],
+                          "true14": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 319 → EXIT route18_gate1_f → route_18 (82,18)"
+                              },
+                              "id": "61734ae1-83ec-4743-a6fd-4ccd9da32cb5"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f533e499-251a-45bd-bd30-f490538e6a34",
+                                "x": {
+                                  "type": "number",
+                                  "value": 82
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 18
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "ee633081-bd79-49b3-b507-5361f084b8d4"
+                            }
+                          ],
+                          "true15": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 325 → EXIT route22_gate → route_22 (16,10)"
+                              },
+                              "id": "a8d54fb7-2a91-480b-84d5-53f6ac1017ed"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4544a89b-56f1-4df7-b234-baaaca9e4560",
+                                "x": {
+                                  "type": "number",
+                                  "value": 16
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 10
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "788e5472-716d-47d4-add3-6909f3e6321d"
+                            }
+                          ],
+                          "false": [
+                            {
+                              "command": "EVENT_SWITCH",
+                              "args": {
+                                "variable": "V0",
+                                "choices": 16,
+                                "__collapseElse": false,
+                                "value0": {
+                                  "type": "number",
+                                  "value": 331
+                                },
+                                "__collapseCase0": false,
+                                "value1": {
+                                  "type": "number",
+                                  "value": 333
+                                },
+                                "__collapseCase1": false,
+                                "value2": {
+                                  "type": "number",
+                                  "value": 607
+                                },
+                                "__collapseCase2": false,
+                                "value3": {
+                                  "type": "number",
+                                  "value": 609
+                                },
+                                "__collapseCase3": false,
+                                "value4": {
+                                  "type": "number",
+                                  "value": 623
+                                },
+                                "__collapseCase4": false,
+                                "value5": {
+                                  "type": "number",
+                                  "value": 631
+                                },
+                                "__collapseCase5": false,
+                                "value6": {
+                                  "type": "number",
+                                  "value": 641
+                                },
+                                "__collapseCase6": false,
+                                "value7": {
+                                  "type": "number",
+                                  "value": 645
+                                },
+                                "__collapseCase7": false,
+                                "value8": {
+                                  "type": "number",
+                                  "value": 646
+                                },
+                                "__collapseCase8": false,
+                                "value9": {
+                                  "type": "number",
+                                  "value": 648
+                                },
+                                "__collapseCase9": false,
+                                "value10": {
+                                  "type": "number",
+                                  "value": 650
+                                },
+                                "__collapseCase10": false,
+                                "value11": {
+                                  "type": "number",
+                                  "value": 652
+                                },
+                                "__collapseCase11": false,
+                                "value12": {
+                                  "type": "number",
+                                  "value": 657
+                                },
+                                "__collapseCase12": false,
+                                "value13": {
+                                  "type": "number",
+                                  "value": 659
+                                },
+                                "__collapseCase13": false,
+                                "value14": {
+                                  "type": "number",
+                                  "value": 661
+                                },
+                                "__collapseCase14": false,
+                                "value15": {
+                                  "type": "number",
+                                  "value": 663
+                                },
+                                "__collapseCase15": false
+                              },
+                              "children": {
+                                "true0": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 331 → EXIT route22_gate → route_23_a (14,134)"
+                                    },
+                                    "id": "6c25f1ec-d99a-4e19-9a00-1ffb4f71a082"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "fd42525e-4f9f-4a88-8da8-cf7aca6e5f86",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 14
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 134
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "f8b041af-af17-4397-866a-2c1951631c2e"
+                                  }
+                                ],
+                                "true1": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 333 → EXIT route22_gate → route_23_a (16,134)"
+                                    },
+                                    "id": "443caf4c-c289-45bb-905e-9081e3c8b043"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "fd42525e-4f9f-4a88-8da8-cf7aca6e5f86",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 16
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 134
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "05f0e18e-9c0b-4e28-bce3-f7f51761f29d"
+                                  }
+                                ],
+                                "true2": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 607 → STAIR safari_zone_gate → safari_zone_center (28,50)"
+                                    },
+                                    "id": "8edefeaf-b716-4c3c-b4e4-c579593cc378"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "d6e7e8fc-2041-4143-9bf8-7d8402c4e716",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 28
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 50
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "48cd7486-aff5-4eab-894f-76d14d09032f"
+                                  }
+                                ],
+                                "true3": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 609 → STAIR safari_zone_gate → safari_zone_center (30,50)"
+                                    },
+                                    "id": "729f652a-e1ad-4488-ae9f-6dfdbb0be251"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "d6e7e8fc-2041-4143-9bf8-7d8402c4e716",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 30
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 50
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "08399f2c-5aeb-415d-8804-73c30fa68ed6"
+                                  }
+                                ],
+                                "true4": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 623 → STAIR safari_zone_center_rest_house → safari_zone_center (34,38)"
+                                    },
+                                    "id": "36309ac2-121f-40e1-b130-7358113416a0"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "d6e7e8fc-2041-4143-9bf8-7d8402c4e716",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 34
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 38
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "72bd16e3-cfee-4c1e-838c-34e673467020"
+                                  }
+                                ],
+                                "true5": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 631 → STAIR safari_zone_east_rest_house → safari_zone_east (50,18)"
+                                    },
+                                    "id": "4dc493e7-5be7-45cb-b35f-7bb68c4f964a"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "e8d9df45-adb1-47ff-989d-1b71f3412c12",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 50
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 18
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "1ba67a8e-1fc5-46c7-befb-4f5019a16a1f"
+                                  }
+                                ],
+                                "true6": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 641 → STAIR safari_zone_north_rest_house → safari_zone_north (70,6)"
+                                    },
+                                    "id": "47611ba8-4c57-4bb6-8944-59e3bbd7eeba"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "b04d1772-b4b5-4948-8054-6995e2534b2f",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 70
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 6
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "ec7dae95-8363-4390-bd59-e65783005e03"
+                                  }
+                                ],
+                                "true7": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 645 → STAIR safari_zone_west_rest_house → safari_zone_west (22,22)"
+                                    },
+                                    "id": "86c046c8-5ca6-4828-aa00-7d29008b8acc"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "16a30039-95e8-4b11-ad80-ba3fe5b87f61",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 22
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 22
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "ac2afbc2-11c2-4336-bcf7-d4367792cd49"
+                                  }
+                                ],
+                                "true8": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 646 → STAIR safari_zone_center_rest_house → safari_zone_center (34,38)"
+                                    },
+                                    "id": "bd0113ed-e745-41e5-9f27-26cdb96e0333"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "d6e7e8fc-2041-4143-9bf8-7d8402c4e716",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 34
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 38
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "70b302d6-43bc-4914-b03b-0e04c1c4990b"
+                                  }
+                                ],
+                                "true9": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 648 → STAIR safari_zone_east_rest_house → safari_zone_east (50,18)"
+                                    },
+                                    "id": "95eb9481-0570-46fd-9366-b6ced173fe00"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "e8d9df45-adb1-47ff-989d-1b71f3412c12",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 50
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 18
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "85c37477-8947-422d-ac6e-15ea18993d8b"
+                                  }
+                                ],
+                                "true10": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 650 → STAIR safari_zone_north_rest_house → safari_zone_north (70,6)"
+                                    },
+                                    "id": "1e4f5b4c-729c-4583-8771-265ea32de25f"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "b04d1772-b4b5-4948-8054-6995e2534b2f",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 70
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 6
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "16d64ca0-ee5e-4e00-a89d-aa8e608980f7"
+                                  }
+                                ],
+                                "true11": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 652 → STAIR safari_zone_west_rest_house → safari_zone_west (22,22)"
+                                    },
+                                    "id": "a5169c2d-c683-4187-920c-9e2beffd6e1b"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "16a30039-95e8-4b11-ad80-ba3fe5b87f61",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 22
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 22
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "82cb06ff-dd14-4a5d-abd3-67ad7df9b8e3"
+                                  }
+                                ],
+                                "true12": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 657 → STAIR viridian_forest_north_gate → viridian_forest (2,0)"
+                                    },
+                                    "id": "e02499f0-27fc-48c0-9ff7-ec8b16179896"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "b246d7b8-971c-49c1-82b0-38a39c6a5311",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 2
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 0
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "3167c64e-e6b9-419e-8b98-d3becbab6792"
+                                  }
+                                ],
+                                "true13": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 659 → STAIR viridian_forest_north_gate → viridian_forest (4,0)"
+                                    },
+                                    "id": "c23a4bf5-5606-4cd5-a86d-13527a7f000d"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "b246d7b8-971c-49c1-82b0-38a39c6a5311",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 4
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 0
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "fdfb661b-4ded-4eea-819e-ab71ae9721d4"
+                                  }
+                                ],
+                                "true14": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 661 → STAIR viridian_forest_south_gate → viridian_forest (30,94)"
+                                    },
+                                    "id": "c3dc560c-d979-431a-bd6c-d3821a990b2f"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "b246d7b8-971c-49c1-82b0-38a39c6a5311",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 30
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 94
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "a5f63744-41bf-4777-8872-2b16e012fa81"
+                                  }
+                                ],
+                                "true15": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 663 → STAIR viridian_forest_south_gate → viridian_forest (32,94)"
+                                    },
+                                    "id": "78c19259-7810-4d64-af15-6c07181b23d5"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "b246d7b8-971c-49c1-82b0-38a39c6a5311",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 32
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 94
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "b34efd96-06d3-47ff-b5bf-2ad07a958fe1"
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "command": "EVENT_SWITCH",
+                                    "args": {
+                                      "variable": "V0",
+                                      "choices": 16,
+                                      "__collapseElse": false,
+                                      "value0": {
+                                        "type": "number",
+                                        "value": 665
+                                      },
+                                      "__collapseCase0": false,
+                                      "value1": {
+                                        "type": "number",
+                                        "value": 667
+                                      },
+                                      "__collapseCase1": false,
+                                      "value2": {
+                                        "type": "number",
+                                        "value": 668
+                                      },
+                                      "__collapseCase2": false,
+                                      "value3": {
+                                        "type": "number",
+                                        "value": 670
+                                      },
+                                      "__collapseCase3": false,
+                                      "value4": {
+                                        "type": "number",
+                                        "value": 672
+                                      },
+                                      "__collapseCase4": false,
+                                      "value5": {
+                                        "type": "number",
+                                        "value": 673
+                                      },
+                                      "__collapseCase5": false,
+                                      "value6": {
+                                        "type": "number",
+                                        "value": 674
+                                      },
+                                      "__collapseCase6": false,
+                                      "value7": {
+                                        "type": "number",
+                                        "value": 675
+                                      },
+                                      "__collapseCase7": false,
+                                      "value8": {
+                                        "type": "number",
+                                        "value": 676
+                                      },
+                                      "__collapseCase8": false,
+                                      "value9": {
+                                        "type": "number",
+                                        "value": 677
+                                      },
+                                      "__collapseCase9": false,
+                                      "value10": {
+                                        "type": "number",
+                                        "value": 678
+                                      },
+                                      "__collapseCase10": false,
+                                      "value11": {
+                                        "type": "number",
+                                        "value": 679
+                                      },
+                                      "__collapseCase11": false,
+                                      "value12": {
+                                        "type": "number",
+                                        "value": 680
+                                      },
+                                      "__collapseCase12": false,
+                                      "value13": {
+                                        "type": "number",
+                                        "value": 681
+                                      },
+                                      "__collapseCase13": false,
+                                      "value14": {
+                                        "type": "number",
+                                        "value": 682
+                                      },
+                                      "__collapseCase14": false,
+                                      "value15": {
+                                        "type": "number",
+                                        "value": 683
+                                      },
+                                      "__collapseCase15": false
+                                    },
+                                    "children": {
+                                      "true0": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 665 → STAIR viridian_forest_south_gate → viridian_forest (34,94)"
+                                          },
+                                          "id": "b62eb257-74ec-4c57-8bf2-079043b0e05d"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "b246d7b8-971c-49c1-82b0-38a39c6a5311",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 34
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 94
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "7e4f13f3-a087-4cd8-82f2-b0dbd359154e"
+                                        }
+                                      ],
+                                      "true1": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 667 → STAIR viridian_forest_south_gate → viridian_forest (36,94)"
+                                          },
+                                          "id": "a2f0c8d2-25b6-44c8-8463-50f8d2af1617"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "b246d7b8-971c-49c1-82b0-38a39c6a5311",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 36
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 94
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "6c1173c8-9d5e-4c56-bbc6-fae4ee43b1f4"
+                                        }
+                                      ],
+                                      "true2": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 668 → STAIR viridian_forest_north_gate → viridian_forest (2,0)"
+                                          },
+                                          "id": "c428cd2e-135c-4218-afbe-e421a7411112"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "b246d7b8-971c-49c1-82b0-38a39c6a5311",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 2
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 0
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "501a1208-4797-4438-9326-2efed4ddd743"
+                                        }
+                                      ],
+                                      "true3": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 670 → STAIR viridian_forest_south_gate → viridian_forest (32,94)"
+                                          },
+                                          "id": "5873d88e-90fc-41b4-9884-157218e8eb30"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "b246d7b8-971c-49c1-82b0-38a39c6a5311",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 32
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 94
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "4e81e91d-0e66-4c48-835d-60c0830022c6"
+                                        }
+                                      ],
+                                      "true4": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 672 → STAIR museum1_f → museum2_f (14,14)"
+                                          },
+                                          "id": "b3d3977f-f2ef-4fa1-8eff-51b172dd5df4"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "ae55d821-d3cc-4c3e-9725-943a66ae7312",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "91de4345-53a3-4e46-9478-fb678486253b"
+                                        }
+                                      ],
+                                      "true5": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 673 → STAIR museum2_f → museum1_f (14,14)"
+                                          },
+                                          "id": "ad054501-9f2a-44b3-a3c3-9b0a25efd830"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "816335d7-986f-4ce5-902a-8adb8d9bc840",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "d6bc633d-6bde-466d-bbf6-4fb2248c726b"
+                                        }
+                                      ],
+                                      "true6": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 674 → STAIR route11_gate1_f → route11_gate2_f (14,14)"
+                                          },
+                                          "id": "7fef432c-34c0-41db-9b6d-fa3df3920ef9"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "694699dc-2bd4-4d68-8c4a-8e63e9957de5",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "88579ee6-1620-4683-9273-f729a385ba59"
+                                        }
+                                      ],
+                                      "true7": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 675 → STAIR route11_gate2_f → route11_gate1_f (12,16)"
+                                          },
+                                          "id": "ce15805d-7f70-4c95-91bb-2a2d4153e14d"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "ad2e9a79-f213-4bbf-befb-53bcd1c9ac03",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 12
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 16
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "25959877-eab9-468d-a749-ea67ca8142cf"
+                                        }
+                                      ],
+                                      "true8": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 676 → STAIR route12_gate1_f → route12_gate2_f (14,14)"
+                                          },
+                                          "id": "823b08a7-7de5-4198-a92e-b0a144c38768"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "4f8efedc-8a4f-4aba-add9-91dc96f103c5",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "3184c2a0-760d-4aff-852f-abff18b85ddb"
+                                        }
+                                      ],
+                                      "true9": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 677 → STAIR route12_gate2_f → route12_gate1_f (16,12)"
+                                          },
+                                          "id": "8a084b80-aeba-4c90-a267-3c6cc5788ad4"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "94a24f8d-e387-4c60-b703-2553dace1428",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 16
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 12
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "5097f9c0-bd73-48d3-a0c4-cf49fe8ca48f"
+                                        }
+                                      ],
+                                      "true10": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 678 → STAIR route15_gate1_f → route15_gate2_f (14,14)"
+                                          },
+                                          "id": "afa7df10-3689-4b8c-8d17-9a536397bb16"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "e33ac18d-7e46-48db-82fd-e3872f64e127",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "48a3dc91-3d3b-4107-9194-40502a63eef6"
+                                        }
+                                      ],
+                                      "true11": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 679 → STAIR route15_gate2_f → route15_gate1_f (12,16)"
+                                          },
+                                          "id": "c6c1964d-cb71-4527-a07f-45d1cfec4207"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "8737cd19-70d2-467c-b858-70f5da2baf31",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 12
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 16
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "4a349031-77bc-49c5-a008-7a30cce2fbc6"
+                                        }
+                                      ],
+                                      "true12": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 680 → STAIR route16_gate1_f → route16_gate2_f (14,14)"
+                                          },
+                                          "id": "ec7accf1-500c-420b-992c-1c4a990416d5"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "e14a9a53-f800-433f-815f-46242e20ecb4",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "6a0c1178-37f9-4d7f-b2ec-17b8448ac605"
+                                        }
+                                      ],
+                                      "true13": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 681 → STAIR route16_gate2_f → route16_gate1_f (12,24)"
+                                          },
+                                          "id": "1d2055d2-0444-4425-a765-7096399db327"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "694a5277-55c9-4216-8a8a-a41acd1c6dcf",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 12
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 24
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "5cd17b40-3312-4383-b735-7fe7a6c1c453"
+                                        }
+                                      ],
+                                      "true14": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 682 → STAIR route18_gate1_f → route18_gate2_f (14,14)"
+                                          },
+                                          "id": "91e11186-d7ef-4c0b-bc64-ebabbd846446"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "e26afc08-20d2-4b3e-a609-2da4ca03dfe4",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "73a8574e-ecc1-4ced-ac4e-d3a2e71ebc67"
+                                        }
+                                      ],
+                                      "true15": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 683 → STAIR route18_gate2_f → route18_gate1_f (12,16)"
+                                          },
+                                          "id": "539e77bb-a334-4c3c-bc46-a86aea30c0ef"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "6589c88b-2754-4556-9e9b-aa7735fb310c",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 12
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 16
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "9eb39d94-d222-4081-9fb0-ca50257adb8b"
+                                        }
+                                      ],
+                                      "false": [
+                                        {
+                                          "command": "EVENT_SWITCH",
+                                          "args": {
+                                            "variable": "V0",
+                                            "choices": 4,
+                                            "__collapseElse": true,
+                                            "value0": {
+                                              "type": "number",
+                                              "value": 684
+                                            },
+                                            "__collapseCase0": false,
+                                            "value1": {
+                                              "type": "number",
+                                              "value": 686
+                                            },
+                                            "__collapseCase1": false,
+                                            "value2": {
+                                              "type": "number",
+                                              "value": 688
+                                            },
+                                            "__collapseCase2": false,
+                                            "value3": {
+                                              "type": "number",
+                                              "value": 690
+                                            },
+                                            "__collapseCase3": false
+                                          },
+                                          "children": {
+                                            "true0": [
+                                              {
+                                                "command": "EVENT_COMMENT",
+                                                "args": {
+                                                  "text": "WarpId 684 → STAIR underground_path_route5 → underground_path_north_south (10,8)"
+                                                },
+                                                "id": "cdc8ec2f-ad94-499f-ba86-9746391f4f52"
+                                              },
+                                              {
+                                                "command": "EVENT_SWITCH_SCENE",
+                                                "args": {
+                                                  "sceneId": "589c457c-6385-4227-96ff-e640b7e4169a",
+                                                  "x": {
+                                                    "type": "number",
+                                                    "value": 10
+                                                  },
+                                                  "y": {
+                                                    "type": "number",
+                                                    "value": 8
+                                                  },
+                                                  "direction": "down",
+                                                  "fadeSpeed": "2"
+                                                },
+                                                "id": "67bfa9ac-ed80-48bd-ae58-a46b948eb780"
+                                              }
+                                            ],
+                                            "true1": [
+                                              {
+                                                "command": "EVENT_COMMENT",
+                                                "args": {
+                                                  "text": "WarpId 686 → STAIR underground_path_route6 → underground_path_north_south (4,82)"
+                                                },
+                                                "id": "af6a03ca-3ef8-4d2c-be2f-4e8204b63675"
+                                              },
+                                              {
+                                                "command": "EVENT_SWITCH_SCENE",
+                                                "args": {
+                                                  "sceneId": "589c457c-6385-4227-96ff-e640b7e4169a",
+                                                  "x": {
+                                                    "type": "number",
+                                                    "value": 4
+                                                  },
+                                                  "y": {
+                                                    "type": "number",
+                                                    "value": 82
+                                                  },
+                                                  "direction": "down",
+                                                  "fadeSpeed": "2"
+                                                },
+                                                "id": "72288418-f112-4f39-99c0-899b4b8713dc"
+                                              }
+                                            ],
+                                            "true2": [
+                                              {
+                                                "command": "EVENT_COMMENT",
+                                                "args": {
+                                                  "text": "WarpId 688 → STAIR underground_path_route7 → underground_path_west_east (4,10)"
+                                                },
+                                                "id": "4f828836-21c5-43d6-916d-1012a6926de3"
+                                              },
+                                              {
+                                                "command": "EVENT_SWITCH_SCENE",
+                                                "args": {
+                                                  "sceneId": "21ec1147-d719-4df5-87a5-f50211736af0",
+                                                  "x": {
+                                                    "type": "number",
+                                                    "value": 4
+                                                  },
+                                                  "y": {
+                                                    "type": "number",
+                                                    "value": 10
+                                                  },
+                                                  "direction": "down",
+                                                  "fadeSpeed": "2"
+                                                },
+                                                "id": "7cc967c7-830a-4ccf-84bb-2395eb0c779d"
+                                              }
+                                            ],
+                                            "true3": [
+                                              {
+                                                "command": "EVENT_COMMENT",
+                                                "args": {
+                                                  "text": "WarpId 690 → STAIR underground_path_route8 → underground_path_west_east (94,4)"
+                                                },
+                                                "id": "59d1bcfe-7473-458a-8a8f-99231ca33d5e"
+                                              },
+                                              {
+                                                "command": "EVENT_SWITCH_SCENE",
+                                                "args": {
+                                                  "sceneId": "21ec1147-d719-4df5-87a5-f50211736af0",
+                                                  "x": {
+                                                    "type": "number",
+                                                    "value": 94
+                                                  },
+                                                  "y": {
+                                                    "type": "number",
+                                                    "value": 4
+                                                  },
+                                                  "direction": "down",
+                                                  "fadeSpeed": "2"
+                                                },
+                                                "id": "1e83035e-9c86-420e-a5c4-ef1ea03ec744"
+                                              }
+                                            ]
+                                          },
+                                          "id": "e471a65b-37c0-4c93-8bb4-6337752d9fe5"
+                                        }
+                                      ]
+                                    },
+                                    "id": "791bef55-68e5-462c-b624-3a3bbc8b71e6"
+                                  }
+                                ]
+                              },
+                              "id": "8b5aedf6-06f2-4cdb-b655-add33279d1a1"
+                            }
+                          ]
+                        },
+                        "id": "b8a1dfe9-7943-477c-994b-f4fce42107e5"
+                      }
+                    ]
+                  },
+                  "id": "bd15385d-644e-4fcb-bb89-12c6b4c332ab"
+                }
+              ]
+            },
+            "id": "1f959057-bb61-438c-be13-8fdd1846d07c"
+          }
+        ],
+        "false": []
+      },
+      "id": "bcec8d03-8881-4943-b4a9-0583ee470ac1"
+    }
+  ]
+}

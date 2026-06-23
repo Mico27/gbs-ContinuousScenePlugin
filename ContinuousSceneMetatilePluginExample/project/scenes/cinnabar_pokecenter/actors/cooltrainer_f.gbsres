@@ -1,0 +1,70 @@
+{
+  "_resourceType": "actor",
+  "id": "e282db58-05aa-4b15-a95c-e2565adbdf84",
+  "_index": 1,
+  "symbol": "npc_cooltrainere_0",
+  "prefabId": "",
+  "name": "cooltrainer_f",
+  "coordinateType": "tiles",
+  "x": 18,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "32c25bb6-bd63-4b2f-a38a-140a935781d9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYou can cancel\n\nevolution.",
+          "\nWhen a POKéMON is\n\nevolving, you can",
+          "\nstop it and leave\n\nit the way it is."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "170ee8c9-fdac-4404-ba0f-a4b372beef34"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "2ef10565-68df-47d7-89fd-2b4f3de92721"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

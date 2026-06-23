@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "f0ee5508-1b4e-436f-acff-0b8221a76c94",
+  "name": "Entry to pokemon_mansion1_f",
+  "prefabId": "",
+  "x": 12,
+  "y": 6,
+  "symbol": "trigger_entry_to_pokemon_ma",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 192
+        }
+      },
+      "id": "6c57d2ea-2c2f-48d0-98eb-67417943bd2a"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 4
+}

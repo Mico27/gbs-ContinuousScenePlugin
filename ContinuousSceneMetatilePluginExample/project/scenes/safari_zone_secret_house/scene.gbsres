@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "5478a5a4-7793-43e4-94ca-2ce4080b1ebe",
+  "_index": 185,
+  "name": "Safari Zone Secret House",
+  "backgroundId": "28fe1da5-0f63-412f-8de6-ae80e919d790",
+  "tilesetId": "c455300d-3171-4245-8e86-2a4b8d17d2cf",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_safari_zone_secret_hou",
+  "x": 1544,
+  "y": 18152,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "113d3def-5a4e-4521-893f-5ba653053941",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "2dba8227-5085-4650-b660-b015211930e1"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000a"
+        }
+      },
+      "id": "36cfe0e1-71b0-4cdd-a923-434fab2fba51"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6c89a5f1-b3f7-4954-a344-2a811e3aa6b7"
+      },
+      "id": "c2d7fda2-cf17-4051-b8f9-d0bc93c97d34"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "66f919b8-2ac2-43e0-a51b-bf56370d372f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c82e076a-e07c-4233-9b0e-6e02291007df"
+      },
+      "id": "0166860a-9798-4116-9676-7a07368c5fe6"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

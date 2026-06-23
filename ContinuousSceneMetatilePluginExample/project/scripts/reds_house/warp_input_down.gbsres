@@ -1,0 +1,147 @@
+{
+  "_resourceType": "script",
+  "id": "f3027d09-dec8-4d41-8bf0-bef1799f7477",
+  "name": "Reds_house/Warp Input Down",
+  "description": "EXIT trigger behavior for down exits. Unlocks the script, waits 4 frames, checks DOWN input and player facing direction, then routes through this scene type's Warp Script (PendingWarpId → router) to switch scene. Also installs a persistent input handler for continuous detection.",
+  "variables": {},
+  "actors": {},
+  "symbol": "script_warp_input_down_reds",
+  "script": [
+    {
+      "command": "EVENT_SCRIPT_UNLOCK",
+      "args": {},
+      "id": "4a69965a-b689-4263-88d2-4f1096c6369d"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 4
+        },
+        "units": "frames"
+      },
+      "id": "2f2a4e70-2343-49d8-8867-8e0f69540246"
+    },
+    {
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "down"
+        ],
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": "14",
+              "__collapse": true
+            },
+            "id": "33813ca9-6440-44f8-abc6-e0d1a24d4ceb"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "constant",
+                  "value": "b001-0000-0000-0000-000000000010"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "20c84844-5a5e-4702-8bc4-86c6d2ce2b28",
+                    "$variable[V0]$": {
+                      "type": "variable",
+                      "value": "17"
+                    }
+                  },
+                  "id": "35bad06a-72f4-4acc-a95a-05c17add0569"
+                }
+              ],
+              "false": []
+            },
+            "id": "edc14c21-2ea4-41cf-b008-722a86c41f26"
+          }
+        ],
+        "false": []
+      },
+      "id": "b4d6d6f2-80e3-48c5-9667-ccd6cc208a64"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ],
+        "override": false,
+        "__scriptTabs": "press"
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": "14",
+              "__collapse": true
+            },
+            "id": "c826839b-4a14-4afa-8710-aa9e923ffff4"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "constant",
+                  "value": "b001-0000-0000-0000-000000000010"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "20c84844-5a5e-4702-8bc4-86c6d2ce2b28",
+                    "$variable[V0]$": {
+                      "type": "variable",
+                      "value": "17"
+                    }
+                  },
+                  "id": "fd908901-f13e-4862-9048-a211477016bf"
+                }
+              ],
+              "false": []
+            },
+            "id": "3817ba5e-bd52-41e9-877f-52ed2f06ead5"
+          }
+        ]
+      },
+      "id": "bdc5c503-2fcb-439f-94a5-cae7dc7cf5f2"
+    }
+  ]
+}

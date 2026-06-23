@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "8732ac4c-0453-4ce9-b54a-a53d8fc000fa",
+  "_index": 205,
+  "name": "Celadon Pokecenter",
+  "backgroundId": "36a5ceed-85ed-4dd4-bad5-40c92d698525",
+  "tilesetId": "770e09aa-68e2-4660-a200-c3b158d3dfa3",
+  "width": 28,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001c0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_celadon_pokecenter",
+  "x": 776,
+  "y": 19192,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5e12ba29-a7fc-4631-be50-fff1e493f71c",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "73cdedf6-737e-4be5-8fb2-58d9a1ec3ae0"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000d"
+        }
+      },
+      "id": "88f5e18c-8283-45a4-b3a3-b6fd848fe11e"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f37155f0-14b5-4916-a17e-6c30c0873d9a"
+      },
+      "id": "fc341a91-aaf0-41a6-a051-09c8ec84fd05"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "fc112074-2adb-4f52-aa5a-e0a83d235805"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fb34b23c-a04b-43c3-92bb-7485def21a19"
+      },
+      "id": "797f1694-9c2f-4464-883d-b2a002ae3912"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "09509954-1a23-438d-ab95-ebf4d84889a4",
+  "_index": 4,
+  "symbol": "npc_cook_029c",
+  "prefabId": "",
+  "name": "cook",
+  "coordinateType": "tiles",
+  "x": 26,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a90161c7-11f9-4ca2-8feb-41d669aac9fa",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nDid you hear about\n\nSNORLAX?",
+          "\nAll it does is\n\neat and sleep!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "dda9817b-650d-4f12-9fb1-0cc4da760a9c"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

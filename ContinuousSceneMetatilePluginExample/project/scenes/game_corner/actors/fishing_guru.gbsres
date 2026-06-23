@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "0426669a-768b-4bcc-81dd-7edee7815da6",
+  "_index": 4,
+  "symbol": "npc_fishing_guru_0228",
+  "prefabId": "",
+  "name": "fishing_guru",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 23,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5d007b5b-aa29-4f7e-9d96-684ba77dbc4b",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nKid, do you want\n\nto play?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "68e0f903-0268-4912-bcfb-a0ac6bd10b18"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

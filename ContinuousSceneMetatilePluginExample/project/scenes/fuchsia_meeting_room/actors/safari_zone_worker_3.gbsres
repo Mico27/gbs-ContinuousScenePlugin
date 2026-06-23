@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "bfc303fe-8c43-45c5-ad65-41c668b90df9",
+  "_index": 2,
+  "symbol": "npc_safari_zone_01d8",
+  "prefabId": "",
+  "name": "safari_zone_worker",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 3,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "4c44083a-6467-4af8-9031-9fae178fdd4d",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nSLOWPOKE came in,\n\nbut I couldn't",
+          "\nunderstand him.",
+          "\nI think he's got\n\na speech problem!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "cb4672fd-5ea3-4b0d-a42b-4dfa5b3729ce"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

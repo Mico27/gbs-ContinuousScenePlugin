@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "49948682-6309-4bca-80f7-6dcba9a68993",
+  "name": "Entry to copycats_house1_f",
+  "prefabId": "",
+  "x": 14,
+  "y": 10,
+  "symbol": "trigger_entry_to_copycats_h",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 146
+        }
+      },
+      "id": "917a88c5-8e74-4a15-a937-073465590b08"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "b4431ab3-615a-418e-aec7-f907be671464",
+  "_index": 2,
+  "symbol": "npc_beauty_0099",
+  "prefabId": "",
+  "name": "beauty",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9010ea9e-eb00-404a-a06c-c76b286c75dc",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "..."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "89617f2f-cc1a-4a77-88e9-530d371f122c"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

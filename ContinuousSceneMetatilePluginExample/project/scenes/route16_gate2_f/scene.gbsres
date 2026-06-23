@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "e14a9a53-f800-433f-815f-46242e20ecb4",
+  "_index": 123,
+  "name": "Route16 Gate2 F",
+  "backgroundId": "bf200bae-6984-45b8-876e-36813586a816",
+  "tilesetId": "1248d090-8b07-47a1-987c-e73d01b9ea99",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_route_16_gate_2f",
+  "x": 3112,
+  "y": 16376,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "be091cf5-b232-41ad-a078-2666f17c821e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "d350f705-149e-4335-992f-b001ed603b92"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000006"
+        }
+      },
+      "id": "164da375-cbe9-4c60-a562-5c50cbd355f6"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a407ad18-cd50-418d-8f5d-e844a1389f39"
+      },
+      "id": "1f4de361-96af-407b-a33d-1f8984e736f5"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "3f38c5b2-64e6-4035-8ffe-bed69d9684e2"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "2b976ade-af03-4c8f-b4d5-20758bf7341e"
+      },
+      "id": "90a5b556-10f4-4967-af1a-6f8868344257"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

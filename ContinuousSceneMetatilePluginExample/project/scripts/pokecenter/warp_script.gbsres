@@ -1,0 +1,788 @@
+{
+  "_resourceType": "script",
+  "id": "f1dc21a0-36eb-4e70-ade4-265f5d42f71b",
+  "name": "Pokecenter/Warp Script",
+  "description": "Source-type warp router for POKECENTER scenes. Routes WarpId (V0) to its destination via chained EVENT_SWITCH (16 cases each). 23 case(s).",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "symbol": "script_warp_pokecenter",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "constant",
+            "value": "b001-0000-0000-0000-000000000018"
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "constant",
+                "value": "b001-0000-0000-0000-000000000019"
+              }
+            },
+            "id": "95707500-1c22-42cd-9bb5-db1e380dba07"
+          },
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "V0",
+              "choices": 16,
+              "__collapseElse": false,
+              "value0": {
+                "type": "number",
+                "value": 61
+              },
+              "__collapseCase0": false,
+              "value1": {
+                "type": "number",
+                "value": 63
+              },
+              "__collapseCase1": false,
+              "value2": {
+                "type": "number",
+                "value": 79
+              },
+              "__collapseCase2": false,
+              "value3": {
+                "type": "number",
+                "value": 83
+              },
+              "__collapseCase3": false,
+              "value4": {
+                "type": "number",
+                "value": 89
+              },
+              "__collapseCase4": false,
+              "value5": {
+                "type": "number",
+                "value": 95
+              },
+              "__collapseCase5": false,
+              "value6": {
+                "type": "number",
+                "value": 105
+              },
+              "__collapseCase6": false,
+              "value7": {
+                "type": "number",
+                "value": 109
+              },
+              "__collapseCase7": false,
+              "value8": {
+                "type": "number",
+                "value": 131
+              },
+              "__collapseCase8": false,
+              "value9": {
+                "type": "number",
+                "value": 145
+              },
+              "__collapseCase9": false,
+              "value10": {
+                "type": "number",
+                "value": 155
+              },
+              "__collapseCase10": false,
+              "value11": {
+                "type": "number",
+                "value": 159
+              },
+              "__collapseCase11": false,
+              "value12": {
+                "type": "number",
+                "value": 163
+              },
+              "__collapseCase12": false,
+              "value13": {
+                "type": "number",
+                "value": 169
+              },
+              "__collapseCase13": false,
+              "value14": {
+                "type": "number",
+                "value": 175
+              },
+              "__collapseCase14": false,
+              "value15": {
+                "type": "number",
+                "value": 179
+              },
+              "__collapseCase15": false
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 61 → EXIT viridian_pokecenter → viridian_city (46,50)"
+                  },
+                  "id": "50b8b10a-2506-4a13-a39d-aabc7a21830b"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "7b0c8ce6-066a-4d7d-872d-12fadeb1f463",
+                    "x": {
+                      "type": "number",
+                      "value": 46
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 50
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "d4123887-8e6d-4eb1-81ed-337f53876173"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 63 → EXIT viridian_mart → viridian_city (58,38)"
+                  },
+                  "id": "f9859b16-2cc9-49a5-b4ca-68219a3f996d"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "7b0c8ce6-066a-4d7d-872d-12fadeb1f463",
+                    "x": {
+                      "type": "number",
+                      "value": 58
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 38
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "575cdde8-e3eb-4e55-8143-602b39c5359d"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 79 → EXIT pewter_mart → pewter_city (46,34)"
+                  },
+                  "id": "f44b044a-874c-4c1c-9571-275f86c7eb1f"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1e885b0b-25a4-4bb2-a446-588a6c8a2e5b",
+                    "x": {
+                      "type": "number",
+                      "value": 46
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 34
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "d8712b4b-a38c-4be8-b7f5-95c933b1321a"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 83 → EXIT pewter_pokecenter → pewter_city (26,50)"
+                  },
+                  "id": "878b8517-6f5f-4336-9149-ec077ea7ada5"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1e885b0b-25a4-4bb2-a446-588a6c8a2e5b",
+                    "x": {
+                      "type": "number",
+                      "value": 26
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 50
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "88cc7ed6-6d51-4eff-a047-fe1c2342094b"
+                }
+              ],
+              "true4": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 89 → EXIT cerulean_pokecenter → cerulean_city (38,34)"
+                  },
+                  "id": "0b2fbad5-6046-4a8c-9274-c1cccb0ef449"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "88e84bf0-7445-477e-9c4a-9503e0478076",
+                    "x": {
+                      "type": "number",
+                      "value": 38
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 34
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "e2b409d5-18ea-42d2-b23b-66d9785d5edf"
+                }
+              ],
+              "true5": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 95 → EXIT cerulean_mart → cerulean_city (50,50)"
+                  },
+                  "id": "f68a8be7-cd45-4372-ab0c-3220c86e7344"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "88e84bf0-7445-477e-9c4a-9503e0478076",
+                    "x": {
+                      "type": "number",
+                      "value": 50
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 50
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "78a43776-074d-4b9e-8fd2-0a72a47e76bf"
+                }
+              ],
+              "true6": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 105 → EXIT vermilion_pokecenter → vermillion_city (22,6)"
+                  },
+                  "id": "c2a98ffc-1ea7-4aa5-9d00-025555c30b83"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "076f289b-e6d7-4d3a-84a5-ed876a4cb899",
+                    "x": {
+                      "type": "number",
+                      "value": 22
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "a7067eab-2b0b-4f3c-932c-0c416f88bd5b"
+                }
+              ],
+              "true7": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 109 → EXIT vermilion_mart → vermillion_city (46,26)"
+                  },
+                  "id": "49cc8e18-6596-4b5d-afb4-6890a914cb87"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "076f289b-e6d7-4d3a-84a5-ed876a4cb899",
+                    "x": {
+                      "type": "number",
+                      "value": 46
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 26
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "211baa87-eeec-434c-be83-36fec3bddd86"
+                }
+              ],
+              "true8": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 131 → EXIT celadon_pokecenter → celadon_city (82,18)"
+                  },
+                  "id": "a580f9ee-c334-4b53-b1df-6e5e43cc72a1"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "231ece2c-d7ef-43e8-9a44-22b4534e6a04",
+                    "x": {
+                      "type": "number",
+                      "value": 82
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "1f513d88-80a5-40fe-a2cb-aa8dbc210ed2"
+                }
+              ],
+              "true9": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 145 → EXIT celadon_hotel → celadon_city (86,54)"
+                  },
+                  "id": "e30ea87d-e57b-4175-bf61-e9b58d7c0b1c"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "231ece2c-d7ef-43e8-9a44-22b4534e6a04",
+                    "x": {
+                      "type": "number",
+                      "value": 86
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 54
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "120ecb77-3f62-44bc-9af4-f7aa9c6f15e8"
+                }
+              ],
+              "true10": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 155 → EXIT saffron_mart → saffron_city (50,22)"
+                  },
+                  "id": "7ecde922-349e-420d-9388-78d343692cb9"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "5c9a5d50-402c-416d-800c-b17b2b689e27",
+                    "x": {
+                      "type": "number",
+                      "value": 50
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 22
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "99bdbd7c-a117-4bdb-abf7-bac04ee1b4f0"
+                }
+              ],
+              "true11": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 159 → EXIT saffron_pokecenter → saffron_city (18,58)"
+                  },
+                  "id": "c4c7d526-f416-4964-9dde-ace2741f9add"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "5c9a5d50-402c-416d-800c-b17b2b689e27",
+                    "x": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 58
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "c37e0878-4863-4fe3-ba65-b2ac5ae7bf18"
+                }
+              ],
+              "true12": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 163 → EXIT lavender_pokecenter → lavender_town (6,10)"
+                  },
+                  "id": "251fd131-0466-4b2f-b314-3219fb5c7b52"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "949e335d-4bbb-4f65-ad0b-544b5488bf9d",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 10
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "ec830c40-0100-430c-a952-d2cc9e880479"
+                }
+              ],
+              "true13": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 169 → EXIT lavender_mart → lavender_town (30,26)"
+                  },
+                  "id": "cf140d64-f026-4068-b95b-63cb08b424dc"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "949e335d-4bbb-4f65-ad0b-544b5488bf9d",
+                    "x": {
+                      "type": "number",
+                      "value": 30
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 26
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "d232d662-0639-4eb7-bde2-4fd4db093a28"
+                }
+              ],
+              "true14": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 175 → EXIT fuchsia_mart → fuchsia_city (10,26)"
+                  },
+                  "id": "b9cd3039-9186-4516-b6e0-924d8e3b1c50"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "10bcdc30-2c2a-4dd5-98a4-8a3f5b25e2e4",
+                    "x": {
+                      "type": "number",
+                      "value": 10
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 26
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "41fe4287-1811-4dab-be76-777e48129aac"
+                }
+              ],
+              "true15": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 179 → EXIT fuchsia_pokecenter → fuchsia_city (38,54)"
+                  },
+                  "id": "dd010fe6-e21f-4c70-8968-0bfea03d25b5"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "10bcdc30-2c2a-4dd5-98a4-8a3f5b25e2e4",
+                    "x": {
+                      "type": "number",
+                      "value": 38
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 54
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "34e340f2-0979-4f75-a83b-862ebadee437"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "V0",
+                    "choices": 7,
+                    "__collapseElse": true,
+                    "value0": {
+                      "type": "number",
+                      "value": 199
+                    },
+                    "__collapseCase0": false,
+                    "value1": {
+                      "type": "number",
+                      "value": 201
+                    },
+                    "__collapseCase1": false,
+                    "value2": {
+                      "type": "number",
+                      "value": 203
+                    },
+                    "__collapseCase2": false,
+                    "value3": {
+                      "type": "number",
+                      "value": 218
+                    },
+                    "__collapseCase3": false,
+                    "value4": {
+                      "type": "number",
+                      "value": 261
+                    },
+                    "__collapseCase4": false,
+                    "value5": {
+                      "type": "number",
+                      "value": 437
+                    },
+                    "__collapseCase5": false,
+                    "value6": {
+                      "type": "number",
+                      "value": 439
+                    },
+                    "__collapseCase6": false
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 199 → EXIT cinnabar_pokecenter → cinabar_island (22,22)"
+                        },
+                        "id": "c206fcfc-a613-48be-8ca3-b07f2ed2d454"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "6cf3d3c9-381b-448f-a1c5-9aacdbb24d17",
+                          "x": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "6881f2b7-6337-433c-8a6c-1c24819afb27"
+                      }
+                    ],
+                    "true1": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 201 → EXIT cinnabar_mart → cinabar_island (30,22)"
+                        },
+                        "id": "07eca7a5-5359-4d4f-8166-0a8f3cfb3d10"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "6cf3d3c9-381b-448f-a1c5-9aacdbb24d17",
+                          "x": {
+                            "type": "number",
+                            "value": 30
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "e1b29146-a272-4561-8e43-5a180a264652"
+                      }
+                    ],
+                    "true2": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 203 → EXIT indigo_plateau_lobby → indigo_plateau (18,10)"
+                        },
+                        "id": "e542c3db-58bf-42d4-863b-8b518731126a"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "0a328a38-d2a0-4999-85ab-a4300b521c4e",
+                          "x": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 10
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "45b920bc-192b-49d9-9736-e8c62e20cbab"
+                      }
+                    ],
+                    "true3": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 218 → EXIT mt_moon_pokecenter → route_4 (22,10)"
+                        },
+                        "id": "268808d8-d9fb-44eb-a701-41597368b461"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "68d29235-319a-4cea-9ec8-59b5f0d63c91",
+                          "x": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 10
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "da393f6b-bcd5-43cb-ad46-a57c9b2f1350"
+                      }
+                    ],
+                    "true4": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 261 → EXIT rock_tunnel_pokecenter → route_10 (22,38)"
+                        },
+                        "id": "855eabf0-09f8-458c-9948-bcea58278272"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "da623464-6dcc-4943-b59f-7f0d0c8ffda6",
+                          "x": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 38
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "6a95fa10-d76d-471e-8a11-7f13d49ce3bd"
+                      }
+                    ],
+                    "true5": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 437 → STAIR indigo_plateau_lobby → loreleis_room (8,22)"
+                        },
+                        "id": "85642461-52ec-411e-a05a-55e834cafca9"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "8461310e-ddf3-4ab5-8d64-70ed8c46ba05",
+                          "x": {
+                            "type": "number",
+                            "value": 8
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "b65bb16e-772c-4bb7-aa96-2752ae967483"
+                      }
+                    ],
+                    "true6": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 439 → STAIR indigo_plateau_lobby → loreleis_room (10,22)"
+                        },
+                        "id": "b05184ae-9665-49b8-a8b6-5a1f4a2b17b4"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "8461310e-ddf3-4ab5-8d64-70ed8c46ba05",
+                          "x": {
+                            "type": "number",
+                            "value": 10
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "bd6f523c-b882-4c57-b0a9-ffb00d77d73a"
+                      }
+                    ]
+                  },
+                  "id": "078efd2c-e716-446d-a8f3-b5b64a90bc99"
+                }
+              ]
+            },
+            "id": "327ef240-1a0f-4bc1-ab62-dda707a77f73"
+          }
+        ],
+        "false": []
+      },
+      "id": "4a4ae440-5321-434d-b95a-c6266be6edb3"
+    }
+  ]
+}

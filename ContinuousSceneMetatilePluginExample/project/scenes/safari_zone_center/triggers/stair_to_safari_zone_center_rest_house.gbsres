@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "a5293130-a2f7-4313-aa94-5fb88526eef7",
+  "name": "Stair to safari_zone_center_rest_house",
+  "prefabId": "",
+  "x": 34,
+  "y": 38,
+  "symbol": "trigger_stair_to_safari_zon",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "5d7fe336-487c-4927-8348-892305f289ac",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 647
+        }
+      },
+      "id": "2b5e1d6b-719c-42de-8acf-9d720b8f2d45"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

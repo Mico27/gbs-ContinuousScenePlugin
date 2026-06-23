@@ -1,0 +1,60 @@
+{
+  "_resourceType": "actor",
+  "id": "bf0d6d71-a2aa-468e-aa0f-3d5d862e75e8",
+  "_index": 0,
+  "symbol": "npc_blue_0069",
+  "prefabId": "",
+  "name": "blue",
+  "coordinateType": "tiles",
+  "x": 28,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "20e8bc66-8983-4a44-9dfb-da49bfa11613",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nBLUE: Hey,\n\nRED! What",
+          "\nbrings you here?\n\nYour POKéMON",
+          "\ndon't look dead!",
+          "\nI can at least\n\nmake them faint!",
+          "\nLet's go, pal!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "2229d65e-932a-485e-88f8-7351bc94f56b"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

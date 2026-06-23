@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "a37e8529-e4cd-492c-82c7-2fe6f5f44c1f",
+  "name": "Entry to blues_house",
+  "prefabId": "",
+  "x": 26,
+  "y": 10,
+  "symbol": "trigger_entry_to_blues_hous",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 56
+        }
+      },
+      "id": "75be0001-a675-46fe-86ca-19237a4295c0"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

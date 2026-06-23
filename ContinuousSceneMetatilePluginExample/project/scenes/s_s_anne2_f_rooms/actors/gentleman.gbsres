@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "9e6fa420-f182-481a-9c11-3522d695fa71",
+  "_index": 0,
+  "symbol": "npc_gentleman_0279",
+  "prefabId": "",
+  "name": "gentleman",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "6a50df44-a80b-4d6c-8360-8ff8526102ea",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nCompeting against\n\nthe young keeps",
+          "\nme youthful."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "8ee12e27-a95a-4df6-b1f9-cafb72fc6bf0"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

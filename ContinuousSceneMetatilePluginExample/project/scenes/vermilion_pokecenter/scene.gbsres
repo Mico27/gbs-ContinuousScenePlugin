@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "feca0fec-5154-4502-8bd5-25866f260121",
+  "_index": 222,
+  "name": "Vermilion Pokecenter",
+  "backgroundId": "3688ff62-1b63-46de-89b3-38f2cafc39f3",
+  "tilesetId": "770e09aa-68e2-4660-a200-c3b158d3dfa3",
+  "width": 28,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001c0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_vermilion_pokecenter",
+  "x": 3224,
+  "y": 19192,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5e12ba29-a7fc-4631-be50-fff1e493f71c",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "20b1b712-983b-41bb-baea-3c87732d81aa"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000d"
+        }
+      },
+      "id": "e676e8bb-8d97-4ccb-b5c5-b338b4f2b554"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f37155f0-14b5-4916-a17e-6c30c0873d9a"
+      },
+      "id": "0644ff05-4ed2-402f-bc42-566b667fc5ec"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "fbf5fff6-42b2-4d54-8bf9-d69dbc885b57"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fb34b23c-a04b-43c3-92bb-7485def21a19"
+      },
+      "id": "f3669486-65a2-4773-8db1-75f263f37c7e"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

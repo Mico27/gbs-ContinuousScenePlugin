@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "3c225869-3edb-4b2a-bcaa-61b9588fa88f",
+  "name": "Entry to underground_path_route8",
+  "prefabId": "",
+  "x": 26,
+  "y": 6,
+  "symbol": "trigger_entry_to_undergroun_2",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 258
+        }
+      },
+      "id": "dbd8a40a-de52-4f57-842b-c5b69e8b3cdd"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 4
+}

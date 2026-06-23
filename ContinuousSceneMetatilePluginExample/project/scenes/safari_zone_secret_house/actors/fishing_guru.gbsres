@@ -1,0 +1,61 @@
+{
+  "_resourceType": "actor",
+  "id": "76bdaa8e-609b-4554-be6d-d62d45b85e2b",
+  "_index": 0,
+  "symbol": "npc_fishing_guru_014c",
+  "prefabId": "",
+  "name": "fishing_guru",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5d007b5b-aa29-4f7e-9d96-684ba77dbc4b",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nAh! Finally!",
+          "\nYou're the first\n\nperson to reach",
+          "\nthe SECRET HOUSE!",
+          "\nI was getting\n\nworried that no",
+          "\none would win our\n\ncampaign prize.",
+          "\nCongratulations!\n\nYou have won!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "d1d625e6-fbd1-4c12-b714-af75cb1b277f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

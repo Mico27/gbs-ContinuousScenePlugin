@@ -1,0 +1,93 @@
+{
+  "_resourceType": "script",
+  "id": "7d91350e-1a18-44e8-82ce-c9c4b2738cef",
+  "name": "Club/Warp Script",
+  "description": "Source-type warp router for CLUB scenes. Routes WarpId (V0) to its destination via chained EVENT_SWITCH (16 cases each). 1 case(s).",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "symbol": "script_warp_club",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "constant",
+            "value": "b001-0000-0000-0000-000000000018"
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "constant",
+                "value": "b001-0000-0000-0000-000000000019"
+              }
+            },
+            "id": "1fac6abd-0080-42ac-9428-2c32a8a67479"
+          },
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "V0",
+              "choices": 1,
+              "__collapseElse": true,
+              "value0": {
+                "type": "number",
+                "value": 93
+              },
+              "__collapseCase0": false
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 93 → EXIT bike_shop → cerulean_city (26,50)"
+                  },
+                  "id": "9e02c126-bd1f-4ee5-9c19-9ad3859b2c90"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "88e84bf0-7445-477e-9c4a-9503e0478076",
+                    "x": {
+                      "type": "number",
+                      "value": 26
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 50
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "1f04d2cb-6d3b-42b4-ac36-236b186d6fc3"
+                }
+              ]
+            },
+            "id": "270ceb23-ba7f-4059-8d19-7a2237386e0e"
+          }
+        ],
+        "false": []
+      },
+      "id": "189d6307-c059-4dd6-81f6-c5e1aace973f"
+    }
+  ]
+}

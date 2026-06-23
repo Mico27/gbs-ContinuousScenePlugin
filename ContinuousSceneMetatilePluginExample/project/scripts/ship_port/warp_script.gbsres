@@ -1,0 +1,155 @@
+{
+  "_resourceType": "script",
+  "id": "8e01aa86-4141-49f5-9945-ef4e80f2061a",
+  "name": "Ship Port/Warp Script",
+  "description": "Source-type warp router for SHIP_PORT scenes. Routes WarpId (V0) to its destination via chained EVENT_SWITCH (16 cases each). 3 case(s).",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "symbol": "script_warp_ship_port",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "constant",
+            "value": "b001-0000-0000-0000-000000000018"
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "constant",
+                "value": "b001-0000-0000-0000-000000000019"
+              }
+            },
+            "id": "ab654085-93bc-4445-b1cd-b9b1a46b69d6"
+          },
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "V0",
+              "choices": 3,
+              "__collapseElse": true,
+              "value0": {
+                "type": "number",
+                "value": 115
+              },
+              "__collapseCase0": false,
+              "value1": {
+                "type": "number",
+                "value": 735
+              },
+              "__collapseCase1": false,
+              "value2": {
+                "type": "number",
+                "value": 737
+              },
+              "__collapseCase2": false
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 115 → EXIT vermilion_dock → vermillion_city (36,62)"
+                  },
+                  "id": "3373b690-2c6f-457c-8752-216863c7799d"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "076f289b-e6d7-4d3a-84a5-ed876a4cb899",
+                    "x": {
+                      "type": "number",
+                      "value": 36
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 62
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "2af0fe5a-8f47-4240-a68d-7a471ff558cf"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 735 → STAIR vermilion_dock → s_s_anne1_f (52,0)"
+                  },
+                  "id": "969e8980-d0bd-4c03-aa86-50a70820d24f"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                    "x": {
+                      "type": "number",
+                      "value": 52
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "ef47a88d-c35f-4ad8-b128-d8dc88cb4acd"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 737 → STAIR vermilion_dock → s_s_anne1_f (54,0)"
+                  },
+                  "id": "343209bd-fce2-4cbf-9a76-f2a1ce4a5ae6"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                    "x": {
+                      "type": "number",
+                      "value": 54
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "80dc7dca-0312-4d8c-9873-4d8b892dab72"
+                }
+              ]
+            },
+            "id": "fadc250f-674d-4180-803f-706e327d2c82"
+          }
+        ],
+        "false": []
+      },
+      "id": "2ccfc684-607c-419d-8577-a160e66e7e02"
+    }
+  ]
+}

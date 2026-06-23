@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "3484d800-68c7-4508-8b7e-045c353ced32",
+  "_index": 186,
+  "name": "Wardens House",
+  "backgroundId": "8ed7c1c0-d1d3-4fe3-a0cb-5a51c87d317f",
+  "tilesetId": "c455300d-3171-4245-8e86-2a4b8d17d2cf",
+  "width": 20,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00140+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_wardens_house",
+  "x": 808,
+  "y": 18152,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "113d3def-5a4e-4521-893f-5ba653053941",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "d4e5c90e-951e-46a3-b639-677ae6dacc35"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000a"
+        }
+      },
+      "id": "16d61435-8f5b-4af5-96c1-9475296ca333"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6c89a5f1-b3f7-4954-a344-2a811e3aa6b7"
+      },
+      "id": "43640dad-cd73-46f8-875c-45281f40de8d"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "1ba25a7f-f38b-4fda-843e-9c3ce8c2952d"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c82e076a-e07c-4233-9b0e-6e02291007df"
+      },
+      "id": "ee18f9cd-1bdc-4c6b-af2b-f0e433449177"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

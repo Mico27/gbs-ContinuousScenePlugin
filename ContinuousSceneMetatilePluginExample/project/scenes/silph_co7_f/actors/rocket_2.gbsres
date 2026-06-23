@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "cff39f5d-a4b1-4da0-947f-ccb1bb43bb9a",
+  "_index": 6,
+  "symbol": "npc_rocket_011c",
+  "prefabId": "",
+  "name": "rocket",
+  "coordinateType": "tiles",
+  "x": 40,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a3ff961e-6195-445c-b7c8-1d9165448d0a",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI am one of the 4\n\nROCKET BROTHERS!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "19a9fdaa-78a5-4f9c-a225-96716e1ac1b1"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

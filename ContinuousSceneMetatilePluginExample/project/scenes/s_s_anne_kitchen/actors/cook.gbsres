@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "1484660a-42ee-4bb8-8759-e031d1980933",
+  "_index": 0,
+  "symbol": "npc_cook_0298",
+  "prefabId": "",
+  "name": "cook",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a90161c7-11f9-4ca2-8feb-41d669aac9fa",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYou, mon petit!\n\nWe're busy here!",
+          "\nOut of the way!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "2f131ecf-df9d-4642-a0f7-993e4828c2b9"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "9c5f1d0a-1182-47f5-94e1-19fe77672fde"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

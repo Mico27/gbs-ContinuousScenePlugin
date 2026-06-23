@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "067cf5f8-7644-4927-a7dd-46172f7dd9f2",
+  "name": "Stair to safari_zone_north",
+  "prefabId": "",
+  "x": 28,
+  "y": 0,
+  "symbol": "trigger_stair_to_safari_zon_4",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "5d7fe336-487c-4927-8348-892305f289ac",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 614
+        }
+      },
+      "id": "0b4a4923-3f22-43a4-a096-77ea14c4c3a7"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 5
+}

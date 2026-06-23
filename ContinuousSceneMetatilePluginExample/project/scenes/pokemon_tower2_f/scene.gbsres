@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "3ecf1b55-1f10-45c9-8655-9d5c9912c2f7",
+  "_index": 79,
+  "name": "Pokemon Tower2 F",
+  "backgroundId": "36c5d4f4-ef1e-42e5-836b-3842ef586d8c",
+  "tilesetId": "de77ae13-43b5-400b-8ecf-8dfc1ebdeb26",
+  "width": 40,
+  "height": 36,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "005a0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_pokemon_tower_2f",
+  "x": 568,
+  "y": 13368,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "ac107464-8c52-4173-bbeb-6044ff183813",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "3295ce00-9268-4e40-ae44-9e6595309223"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000002"
+        }
+      },
+      "id": "f78cc0d7-f11e-43bd-9594-2921974e5386"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "87ce1d35-d888-414f-a627-d35b39887e06"
+      },
+      "id": "e0a94227-77d9-4139-883a-f8c57a363c7d"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "07964be2-897a-4a07-9934-45e8d0495b60"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a2232920-f382-4842-b2db-d534ebd711df"
+      },
+      "id": "c71fac4e-a997-415c-b225-3dec6235f6a0"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "3a0b8c8c-2f9c-42bc-9dfd-707505cbde93",
+  "_index": 1,
+  "symbol": "npc_rocket_0081",
+  "prefabId": "",
+  "name": "rocket",
+  "coordinateType": "tiles",
+  "x": 24,
+  "y": 19,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a3ff961e-6195-445c-b7c8-1d9165448d0a",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThis old guy came\n\nand complained",
+          "\nabout us harming\n\nuseless POKéMON!",
+          "\nWe're talking it\n\nover as adults!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "6db51bfb-c81f-4de0-bae2-e28eaaa279f9"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

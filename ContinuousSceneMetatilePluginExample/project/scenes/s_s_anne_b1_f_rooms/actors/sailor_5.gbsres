@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "8aa0884b-bf99-41ad-a977-74ea7e5c53ce",
+  "_index": 4,
+  "symbol": "npc_sailor_028b",
+  "prefabId": "",
+  "name": "sailor",
+  "coordinateType": "tiles",
+  "x": 0,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "abb5612e-13cd-4525-85ec-d378209a1897",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMatey, you're\n\nwalking the plank",
+          "\nif you lose!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "828fd4a6-0d58-445c-aa6b-a1bd136e614e"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

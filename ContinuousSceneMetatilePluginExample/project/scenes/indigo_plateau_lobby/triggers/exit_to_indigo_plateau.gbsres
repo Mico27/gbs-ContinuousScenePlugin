@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "25602ea5-7164-4676-b493-52ab6c72825a",
+  "name": "Exit to indigo_plateau",
+  "prefabId": "",
+  "x": 14,
+  "y": 22,
+  "symbol": "trigger_exit_to_indigo_plat",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 203
+        }
+      },
+      "id": "5c0a69e9-7c72-4367-a6a6-97bb9963f762"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a17eb4d8-8e36-4db9-bc2a-f00fcfda704d"
+      },
+      "id": "e34d1ff1-5cc1-4331-b20d-c4b565538a46"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "72ebac9c-572f-46eb-99b2-022c51f3edd8"
+    }
+  ],
+  "_index": 0
+}

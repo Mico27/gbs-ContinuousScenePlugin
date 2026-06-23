@@ -1,0 +1,68 @@
+{
+  "_resourceType": "actor",
+  "id": "37d03a4d-d164-4db3-8955-8fb10d441982",
+  "_index": 3,
+  "symbol": "npc_monster_0208",
+  "prefabId": "",
+  "name": "monster",
+  "coordinateType": "tiles",
+  "x": 8,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "f2fc9824-95c5-4c18-981f-48f06c58c4b9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nNIDORAN: Kya\n\nkyaoo!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "07ec517d-5ea9-42fb-885a-9ffc4cd274ff"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "526800f5-5a66-4cb4-97a4-ba8434a1e655"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

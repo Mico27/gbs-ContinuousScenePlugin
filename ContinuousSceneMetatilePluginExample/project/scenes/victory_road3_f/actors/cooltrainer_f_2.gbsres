@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "e1cc4681-be5b-4913-b3cc-92a2c424c70b",
+  "_index": 3,
+  "symbol": "npc_cooltrainer_0056",
+  "prefabId": "",
+  "name": "cooltrainer_f",
+  "coordinateType": "tiles",
+  "x": 26,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "32c25bb6-bd63-4b2f-a38a-140a935781d9",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nTrainers live to\n\nseek stronger",
+          "\nopponents!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "4bf75398-4960-4c36-9d83-a95a2c226221"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "d43a0b56-0310-4c6d-9cc3-6752aff439d8",
+  "_index": 208,
+  "name": "Cinnabar Mart",
+  "backgroundId": "870c00ae-abb3-434d-a888-10a706ab6ff5",
+  "tilesetId": "770e09aa-68e2-4660-a200-c3b158d3dfa3",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_cinnabar_mart",
+  "x": 3944,
+  "y": 19192,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5e12ba29-a7fc-4631-be50-fff1e493f71c",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "e4a329c6-3702-47dd-9e2e-ba9fa449a9bf"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000d"
+        }
+      },
+      "id": "c94e0e26-7cc2-4c15-92ce-0c4992e95497"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f37155f0-14b5-4916-a17e-6c30c0873d9a"
+      },
+      "id": "269e386f-afc4-4bb4-98c6-248cbbbc2394"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "e6f15605-7e7d-4463-a1ae-e4061744c0fb"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fb34b23c-a04b-43c3-92bb-7485def21a19"
+      },
+      "id": "46801bc8-3cf8-442a-b9e5-69d66a7af339"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

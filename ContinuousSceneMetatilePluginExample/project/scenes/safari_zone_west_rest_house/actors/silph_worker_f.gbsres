@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "f9b5dc4b-00a6-4c1a-aed9-19592ee45b36",
+  "_index": 2,
+  "symbol": "npc_silph_worker_014b",
+  "prefabId": "",
+  "name": "silph_worker_f",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "d2fe155a-fbcd-4148-87a1-eddac08e68bf",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI hiked a lot, but\n\nI didn't see any",
+          "\nPOKéMON I wanted."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "712a7e1b-8a67-415c-814c-489134387bc4"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

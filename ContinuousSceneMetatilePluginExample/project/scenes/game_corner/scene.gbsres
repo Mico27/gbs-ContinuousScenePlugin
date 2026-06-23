@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "c02af27b-2cd3-48d0-8d22-5b364aa202e4",
+  "_index": 195,
+  "name": "Game Corner",
+  "backgroundId": "da63b708-9c13-4587-9185-2bd85eb3175d",
+  "tilesetId": "c2fe883e-1f9a-4a66-adaa-c5dd95712959",
+  "width": 40,
+  "height": 36,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "005a0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_game_corner",
+  "x": 200,
+  "y": 18424,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "7ab9a7a2-5957-4f4a-885b-2f5c99d9d1bf",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "bd0ba188-bd90-4510-824a-c073d9970d17"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000b"
+        }
+      },
+      "id": "790ccb67-5215-419b-875b-803860d11c79"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3d83b0ca-951f-4267-a68b-6d774c6cb496"
+      },
+      "id": "016b6236-ca64-489f-ac50-c77f00ef5104"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "35b65506-b1cf-4185-b5a3-25bb9ab071ca"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ebac4f18-86b1-4ac2-b8c6-73e5190bb557"
+      },
+      "id": "9129f3f9-c160-4d08-95ca-a2b849d8bcc7"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

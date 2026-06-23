@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "89cda717-4111-41b2-bd37-d89b8af982a8",
+  "name": "Entry to vermilion_old_rod_house",
+  "prefabId": "",
+  "x": 14,
+  "y": 6,
+  "symbol": "trigger_entry_to_vermilion__3",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 119
+        }
+      },
+      "id": "f1c60fec-c1bd-4783-a797-3ad67fb3b5c4"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 5
+}

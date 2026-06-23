@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "bf19f9d1-9608-4950-bc0d-82cb149a89bc",
+  "_index": 1,
+  "symbol": "npc_oak_0060",
+  "prefabId": "",
+  "name": "oak",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 15,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "e7f2cddb-7430-41de-8890-1750ed0638fd",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nOAK: RED!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "7b4591f2-e3c9-4d99-897f-f1040648e3d5"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

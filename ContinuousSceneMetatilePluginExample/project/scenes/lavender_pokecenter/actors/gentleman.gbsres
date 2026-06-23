@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "7ae3b443-ca49-4ea5-8d91-dc913a8fe512",
+  "_index": 1,
+  "symbol": "npc_gentleman_0248",
+  "prefabId": "",
+  "name": "gentleman",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "6a50df44-a80b-4d6c-8360-8ff8526102ea",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nTEAM ROCKET will\n\ndo anything for",
+          "\nthe sake of gold!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "9a1814cf-1623-4d22-805e-1b539d4bac04"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "1b35a4a5-2c66-40fc-929a-3e4aa0c0d94b",
+  "_index": 181,
+  "name": "Cinnabar Lab Fossil Room",
+  "backgroundId": "cca2bea6-38ee-4e1f-a380-6d63f5352cf3",
+  "tilesetId": "c455300d-3171-4245-8e86-2a4b8d17d2cf",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_cinnabar_lab_fossil_ro",
+  "x": 1016,
+  "y": 18152,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "113d3def-5a4e-4521-893f-5ba653053941",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "26a1eb0e-737c-4f9b-9874-fa3071ab56c3"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000a"
+        }
+      },
+      "id": "8d6155dd-b2fb-4c9a-b06e-fadfbe520b3b"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6c89a5f1-b3f7-4954-a344-2a811e3aa6b7"
+      },
+      "id": "fcffbe3e-5af5-4349-876e-af0df062067a"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "da0153fc-78ee-49ea-9a51-a618b9f59a82"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c82e076a-e07c-4233-9b0e-6e02291007df"
+      },
+      "id": "654e8826-ab76-47d9-be3b-1f5b7cd5f36b"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

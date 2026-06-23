@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "4c4e941b-a0b1-4e54-b0b5-02fc8a5a23aa",
+  "_index": 142,
+  "name": "Viridian Forest South Gate",
+  "backgroundId": "cbb64bf2-caff-4faa-ba79-b35981b2bfdf",
+  "tilesetId": "1248d090-8b07-47a1-987c-e73d01b9ea99",
+  "width": 20,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00140+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_viridian_forest_south_",
+  "x": 2376,
+  "y": 16376,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "be091cf5-b232-41ad-a078-2666f17c821e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "b49053a2-3915-420f-99f1-e47d7edcc99e"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000006"
+        }
+      },
+      "id": "48432b13-20a9-4270-95f5-0ef5b16432b0"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a407ad18-cd50-418d-8f5d-e844a1389f39"
+      },
+      "id": "7ef2ec3f-f1d9-4001-8364-d5cd090015d5"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "964cbac1-0544-4e34-898d-18e35821ba32"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "2b976ade-af03-4c8f-b4d5-20758bf7341e"
+      },
+      "id": "8faa9fe3-c8dd-46ba-88f0-ee75e6f3b0f2"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

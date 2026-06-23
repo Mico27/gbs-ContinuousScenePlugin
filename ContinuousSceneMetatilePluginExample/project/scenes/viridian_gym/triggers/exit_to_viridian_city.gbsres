@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "f6c607c7-e0c9-480a-bee4-7f61897d59b5",
+  "name": "Exit to viridian_city",
+  "prefabId": "",
+  "x": 32,
+  "y": 34,
+  "symbol": "trigger_exit_to_viridian_ci",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 69
+        }
+      },
+      "id": "32f876c4-f82f-413a-8771-402d8267600a"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "0ba2ec23-df10-43fd-bfba-d540941aa528"
+      },
+      "id": "e37ea3d6-d949-4e3a-ad8b-002869e3f514"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "b0df719b-9fbe-40dd-8964-26ba3b08a71c"
+    }
+  ],
+  "_index": 0
+}

@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "55268a70-edab-4b2a-8fa2-b70f0d1cc055",
+  "_index": 0,
+  "symbol": "npc_scientist_0141",
+  "prefabId": "",
+  "name": "scientist",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "995270ad-1b0d-45ad-8184-253216f30349",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHow many did you\n\ncatch? I'm bushed",
+          "\nfrom the work!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "8f53d95e-1e12-4643-87e7-4302890db228"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "03db8da5-9d7a-436c-a55e-c1aad7cd7a8c"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

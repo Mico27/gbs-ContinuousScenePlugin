@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "6aec4e7b-0e24-4ebe-9188-c04afee0ee0b",
+  "_index": 3,
+  "symbol": "npc_silph_worker_0119",
+  "prefabId": "",
+  "name": "silph_worker_f",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "d2fe155a-fbcd-4148-87a1-eddac08e68bf",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYou! It's really\n\ndangerous here!",
+          "\nYou came to save\n\nme? You can't!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "c07e946c-fd72-4b26-9ec8-6087b6cc3d7e"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

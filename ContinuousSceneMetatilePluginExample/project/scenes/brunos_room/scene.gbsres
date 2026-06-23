@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "27d14783-d239-43d3-876b-ae89fd35f721",
+  "_index": 143,
+  "name": "Brunos Room",
+  "backgroundId": "bc09b351-d183-461c-a09e-96ef2d1fc29c",
+  "tilesetId": "4b2c68cb-8f81-4e59-af87-8c52f72acd6f",
+  "width": 20,
+  "height": 24,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001e0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_brunos_room",
+  "x": 2072,
+  "y": 16888,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "6ba45848-b087-48c5-ae19-fb6dd62a7b25",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "8eaa6b57-9bdf-4c5d-a6d4-d6d2d5db90ba"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000007"
+        }
+      },
+      "id": "ebdab204-fcaf-4d7d-bbe6-c462cbdf5f7e"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c8f57e9b-f5bb-4285-819a-dd9a4ec826e4"
+      },
+      "id": "b462151e-ae9d-42bd-9759-1d496e96603a"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "7c53025d-af3e-4a89-b1cf-f3df76643424"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3da4e714-53a4-4061-aff8-aeb6103c614b"
+      },
+      "id": "b236b879-4caf-42fb-915a-707cdc02a2bf"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

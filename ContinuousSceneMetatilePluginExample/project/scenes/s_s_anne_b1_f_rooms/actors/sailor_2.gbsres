@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "38a8db17-a1ce-4e91-9934-b282a62dfd37",
+  "_index": 1,
+  "symbol": "npc_sailor_0288",
+  "prefabId": "",
+  "name": "sailor",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 23,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "abb5612e-13cd-4525-85ec-d378209a1897",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMy sailor's pride\n\nis at stake!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "ba84ec32-fb23-414e-85b6-8a83583e95f6"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

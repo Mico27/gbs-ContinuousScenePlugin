@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "8e1ee2e5-9f17-4d6f-885b-4b82e226622c",
+  "_index": 1,
+  "symbol": "npc_sailor_021b",
+  "prefabId": "",
+  "name": "sailor",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "abb5612e-13cd-4525-85ec-d378209a1897",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI'm here for\n\nPOKéMON ability",
+          "\nenhancers.",
+          "\nPROTEIN increases\n\nATTACK power.",
+          "\nIRON increases\n\nDEFENSE!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "d33026aa-ee27-4041-bec4-fa7e94de4632"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

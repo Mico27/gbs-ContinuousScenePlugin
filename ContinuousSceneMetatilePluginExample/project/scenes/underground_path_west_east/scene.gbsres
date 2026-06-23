@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "21ec1147-d719-4df5-87a5-f50211736af0",
+  "_index": 243,
+  "name": "Underground Path West East",
+  "backgroundId": "50572c90-be48-4f02-aed1-a2479cfeeb96",
+  "tilesetId": "c14ebb6f-343e-4362-b658-4f350fc09562",
+  "width": 100,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00640+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_underground_path_west_",
+  "x": 376,
+  "y": 20568,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "b85dfc90-df6b-4e5c-8949-a6abae5d9d1e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "948a1319-50a3-4e72-9366-7ad2527c83c9"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000011"
+        }
+      },
+      "id": "aeec4b68-fed4-4627-835a-32ca4308caef"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a653d841-6cc9-4b13-a610-0ab7b0f72d77"
+      },
+      "id": "f2c42884-4ef1-4ec1-ae0b-6833549ee85e"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "1458eb93-4367-4849-a924-7aa16109c957"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "9b7edbb0-b655-4304-a554-0ca5ea215b43"
+      },
+      "id": "cd0c40f9-cf37-4b50-b2d9-c6aac0689484"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

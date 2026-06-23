@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "c915dffe-902c-4966-a654-629ac9836d2e",
+  "_index": 1,
+  "symbol": "npc_little_girl_021f",
+  "prefabId": "",
+  "name": "little_girl",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "e757094a-1b64-48d0-9def-829e5eb456a1",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI'm thirsty!\n\nI want something",
+          "\nto drink!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "90e00a7f-b24b-4b29-9402-4cd8f41e24b9"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "900f7549-19ac-4d0b-80b6-275ff18c92da"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

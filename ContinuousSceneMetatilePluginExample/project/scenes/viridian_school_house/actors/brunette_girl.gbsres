@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "1bf91d51-59b2-4ee0-8a6b-56d635fe5c10",
+  "_index": 0,
+  "symbol": "npc_brunette_gir_01f2",
+  "prefabId": "",
+  "name": "brunette_girl",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "7c0e291e-25f1-49d9-aa4e-85458661f041",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWhew! I'm trying\n\nto memorize all",
+          "\nmy notes."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "f635e0bf-ef93-4efa-bee4-294d0a244c93"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

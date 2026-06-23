@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "99f57ce5-a9bf-4afb-ab79-102c6c691ff8",
+  "_index": 1,
+  "symbol": "npc_girl_01c8",
+  "prefabId": "",
+  "name": "girl",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "c1839d6b-81d5-407e-ad6a-271415ad22a3",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nTEAM ROCKET must\n\nbe trying to DIG",
+          "\ntheir way into no\n\ngood!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "4beecf8e-98be-47d3-a828-b1d566c17993"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "4a2eb22e-76db-47df-ae3f-3e3a3e9e1e28"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

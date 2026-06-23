@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "ddfbd440-3a28-4f9f-a97f-b50fd1377624",
+  "_index": 9,
+  "symbol": "npc_gentleman_022d",
+  "prefabId": "",
+  "name": "gentleman",
+  "coordinateType": "tiles",
+  "x": 34,
+  "y": 27,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "6a50df44-a80b-4d6c-8360-8ff8526102ea",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHey, what? You're\n\nthrowing me off!",
+          "\nHere are some\n\ncoins, shoo!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "69a80728-b1f2-471b-a56d-126b11887827"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

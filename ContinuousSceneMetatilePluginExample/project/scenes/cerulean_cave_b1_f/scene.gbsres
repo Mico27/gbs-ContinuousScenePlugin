@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "f2ff4530-b782-442d-814d-0e1fbd66bfe6",
+  "_index": 60,
+  "name": "Cerulean Cave B1 F",
+  "backgroundId": "f3ec918b-4b23-4ca9-9937-968f7210b0ab",
+  "tilesetId": "117777a9-9bed-4ebe-939f-a4d2be64e6f3",
+  "width": 60,
+  "height": 36,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00870+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_cerulean_cave_b1f",
+  "x": 200,
+  "y": 12936,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "944389bf-6266-4090-aa70-8c361cf3a874",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "0739b6b8-4b48-4f30-baa9-88a4bb280c78"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000001"
+        }
+      },
+      "id": "efd4c9b2-6203-4829-8572-2ea3cce2d3a2"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "5af4349c-f65f-4a2e-b71a-8a925dfe6698"
+      },
+      "id": "3020b3e9-009b-477e-8a15-903c343f3bd8"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "67a2bd53-9e29-42e6-abaf-9be2f213c8e4"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "72e91277-100b-4db5-91d9-4cd857c178b5"
+      },
+      "id": "b51e9e57-c560-47f3-a480-7f7edbb6b656"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

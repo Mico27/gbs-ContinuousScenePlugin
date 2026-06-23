@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "86aed4ff-f942-45d2-86d6-8d9c6292ff5e",
+  "_index": 147,
+  "name": "Fighting Dojo",
+  "backgroundId": "39b87212-1432-4fae-af47-7f63eafaf707",
+  "tilesetId": "4b2c68cb-8f81-4e59-af87-8c52f72acd6f",
+  "width": 20,
+  "height": 24,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001e0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_fighting_dojo",
+  "x": 2280,
+  "y": 16888,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "6ba45848-b087-48c5-ae19-fb6dd62a7b25",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "20524522-298c-4eff-9cc0-7b69e0c8fdc9"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000007"
+        }
+      },
+      "id": "d6f856eb-4dcd-46f6-a2a0-c55fccc238e8"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c8f57e9b-f5bb-4285-819a-dd9a4ec826e4"
+      },
+      "id": "3ad9f9c4-86dc-4e48-a196-0ac32599e79c"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "78e0d3b7-cf8f-4821-a75b-49daea683081"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3da4e714-53a4-4061-aff8-aeb6103c614b"
+      },
+      "id": "0c3da216-2ef6-466c-8f38-a0d0b3707ca7"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

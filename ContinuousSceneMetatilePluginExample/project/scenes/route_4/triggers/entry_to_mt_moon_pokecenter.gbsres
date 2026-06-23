@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "99b8a491-a120-4fe9-84ff-0c923bb031b9",
+  "name": "Entry to mt_moon_pokecenter",
+  "prefabId": "",
+  "x": 22,
+  "y": 10,
+  "symbol": "trigger_entry_to_mt_moon_po",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 217
+        }
+      },
+      "id": "60c1487d-fcdc-4e6c-ad78-10bc9eceb913"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

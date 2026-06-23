@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "8add1387-a17e-4ca1-b125-7809ac92b881",
+  "_index": 178,
+  "name": "Pokemon Fan Club",
+  "backgroundId": "f85c44c0-e399-4618-b03c-b292553e1a38",
+  "tilesetId": "4ff200df-8bc7-4cb8-a2bb-b85993216ebf",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_pokemon_fan_club",
+  "x": 712,
+  "y": 17720,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "815ea311-000a-4341-af48-577370bd6e84",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "99bb3b30-7c65-4fcb-87a9-df8427324a71"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000009"
+        }
+      },
+      "id": "ae39600d-d0ed-4b90-a618-845777c2e9c9"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6687bcbc-0530-4d06-b185-6fac34ed1fac"
+      },
+      "id": "b73b4906-29ba-48a1-b398-aa089b656112"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "7bffca6c-4858-4453-a874-cf5bd64ac0d9"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e5c481b4-8073-4f91-8099-1ba945cd8dd5"
+      },
+      "id": "210ac3cb-7ed9-4779-bd17-6360e581ec91"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

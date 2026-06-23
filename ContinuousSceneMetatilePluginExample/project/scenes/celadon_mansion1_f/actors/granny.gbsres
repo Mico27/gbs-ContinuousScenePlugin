@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "d2b0725b-95ff-43d2-b4b2-fb9ce5e5b826",
+  "_index": 1,
+  "symbol": "npc_granny_0206",
+  "prefabId": "",
+  "name": "granny",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "914ecb25-2756-4731-abcb-debe7f1d1e03",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMy dear POKéMON\n\nkeep me company.",
+          "\nMEOWTH even brings\n\nmoney home!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "fdf98654-861a-4425-9ff2-e72cedf902bd"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

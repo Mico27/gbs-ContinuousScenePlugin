@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "0efff122-949e-42ca-bf9c-6d022d748cda",
+  "_index": 238,
+  "name": "S S Anne Bow",
+  "backgroundId": "d9493a65-08bb-40a7-a509-b6deab400c8d",
+  "tilesetId": "adf80f02-dae5-4ed5-a586-02346c3b8667",
+  "width": 40,
+  "height": 28,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00460+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_ss_anne_bow",
+  "x": 3144,
+  "y": 19800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "a50510e8-6ce4-4e8b-b221-371d8f4563db",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "3cf7f0a8-de7f-49e0-a7bd-ed34e5e060f9"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000f"
+        }
+      },
+      "id": "09c24ac7-9711-4051-ae28-1d34df33208e"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fbe52389-1adf-4891-85d3-cf14a1baa771"
+      },
+      "id": "ee8d9e15-f138-447d-962b-a3b996e7b243"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "56b8cbe7-27a2-491e-be5f-bb916a9026d0"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e97c26b9-7db4-49e4-b35b-ba6d0c293f49"
+      },
+      "id": "8245ee88-0c0a-49ed-9f6b-3dd64562e9c1"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

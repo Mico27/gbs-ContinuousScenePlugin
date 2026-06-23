@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "49d7bfb5-8aa0-4fef-afb9-2c311dd83368",
+  "_index": 2,
+  "symbol": "npc_channeler_0077",
+  "prefabId": "",
+  "name": "channeler",
+  "coordinateType": "tiles",
+  "x": 28,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "7ed22f63-1c72-4580-bfc4-9ce48c9d2730",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYou...shall...\n\njoin...us..."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "679f1904-8bfa-4ec4-87c0-e53d7847b7e0"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

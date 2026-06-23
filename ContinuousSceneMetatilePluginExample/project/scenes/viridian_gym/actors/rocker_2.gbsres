@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "c7fcd6c8-a2f3-4d24-b8ee-c6ee12834e50",
+  "_index": 7,
+  "symbol": "npc_rocker_01b5",
+  "prefabId": "",
+  "name": "rocker",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 33,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "83ad689a-6547-4a75-ab86-70d2ead655fa",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYour POKéMON will\n\ncower at the",
+          "\ncrack of my whip!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "74721c96-861d-4bab-b9f6-e8434311fe35"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

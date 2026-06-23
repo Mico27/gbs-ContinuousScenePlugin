@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "5aec5fa1-322e-4c85-9f60-c6592a3501ab",
+  "_index": 1,
+  "symbol": "npc_cooltrainer_014a",
+  "prefabId": "",
+  "name": "cooltrainer_m",
+  "coordinateType": "tiles",
+  "x": 0,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "20eca12d-e3a0-4bcb-aaf1-1bd1945b7d18",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nUsing BAIT will\n\nmake POKéMON",
+          "\neasier to catch."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "51015b93-29da-45e2-b55a-3716ba32c2d7"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

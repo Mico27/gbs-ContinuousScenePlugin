@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "18f38902-dcb7-4052-9801-2c8ab653ab9d",
+  "name": "Entry to fuchsia_meeting_room",
+  "prefabId": "",
+  "x": 44,
+  "y": 26,
+  "symbol": "trigger_entry_to_fuchsia_me",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 186
+        }
+      },
+      "id": "34724aa0-526d-46dd-afc7-1f10c2451875"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 5
+}

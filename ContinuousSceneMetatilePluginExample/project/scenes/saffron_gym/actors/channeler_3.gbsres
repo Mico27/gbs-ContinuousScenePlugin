@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "a5eaf3ab-f52d-4852-bf44-9f1fbb89f5f9",
+  "_index": 5,
+  "symbol": "npc_channeler_00e1",
+  "prefabId": "",
+  "name": "channeler",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 27,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "7ed22f63-1c72-4580-bfc4-9ce48c9d2730",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYou and I, our\n\nPOKéMON shall",
+          "\nfight!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "5a795a01-ef53-4e12-9d35-6107965450a1"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

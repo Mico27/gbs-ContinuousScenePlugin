@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "7e9926c1-a91a-4b0f-adf4-6c93c3ecc514",
+  "name": "Stair to museum2_f",
+  "prefabId": "",
+  "x": 14,
+  "y": 14,
+  "symbol": "trigger_stair_to_museum2_f",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 672
+        }
+      },
+      "id": "e37bb876-df31-4199-87d2-20880c870d65"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

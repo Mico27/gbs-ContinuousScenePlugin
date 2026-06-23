@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "40fccc84-7365-4f93-a001-dda13d59529b",
+  "_index": 1,
+  "symbol": "npc_super_nerd_0047",
+  "prefabId": "",
+  "name": "super_nerd",
+  "coordinateType": "tiles",
+  "x": 42,
+  "y": 27,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5639eede-6431-4bd5-b884-a9e9b61fde0b",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nAh, so you wish\n\nto challenge the",
+          "\nELITE FOUR?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "c3257fd0-6c61-4759-b0ee-29fe129c2606"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

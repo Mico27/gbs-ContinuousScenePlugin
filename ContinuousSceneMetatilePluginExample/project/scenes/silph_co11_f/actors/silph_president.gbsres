@@ -1,0 +1,63 @@
+{
+  "_resourceType": "actor",
+  "id": "775dda8d-c36a-4674-8b70-77541252fa31",
+  "_index": 0,
+  "symbol": "npc_silph_presid_012f",
+  "prefabId": "",
+  "name": "silph_president",
+  "coordinateType": "tiles",
+  "x": 14,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "af88c27a-d4c0-4d57-83ef-4870048a48c5",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nPRESIDENT: Thank\n\nyou for saving",
+          "\nSILPH!",
+          "\nI will never\n\nforget you saved",
+          "\nus in our moment\n\nof peril!",
+          "\nI have to thank\n\nyou in some way!",
+          "\nBecause I am rich,\n\nI can give you",
+          "\nanything!",
+          "\nHere, maybe this\n\nwill do!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "19100959-50a3-451a-b4cf-4c4804b7be79"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

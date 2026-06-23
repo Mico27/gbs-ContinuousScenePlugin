@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "ac8aa4f2-a08c-4cb6-8e60-96e8d90199b2",
+  "name": "Entry to viridian_pokecenter",
+  "prefabId": "",
+  "x": 46,
+  "y": 50,
+  "symbol": "trigger_entry_to_viridian_p",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 60
+        }
+      },
+      "id": "b498d142-6fbe-49bc-bd02-bc63831d22d0"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

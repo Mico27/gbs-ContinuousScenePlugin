@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "fc96fac0-d9d3-480b-8836-42b09bd01eab",
+  "_index": 192,
+  "name": "Celadon Mart5 F",
+  "backgroundId": "40f65914-f26e-4f5b-a157-f23ffb1e3cb6",
+  "tilesetId": "c2fe883e-1f9a-4a66-adaa-c5dd95712959",
+  "width": 40,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00280+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_celadon_mart_5f",
+  "x": 2040,
+  "y": 18424,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "7ab9a7a2-5957-4f4a-885b-2f5c99d9d1bf",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "130b4cae-7ac8-4aff-aca2-2efa8afab74c"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000b"
+        }
+      },
+      "id": "489161c2-014d-4480-a4ec-29ba6c201133"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3d83b0ca-951f-4267-a68b-6d774c6cb496"
+      },
+      "id": "da6c5b3d-b404-48ba-9709-aab79683600f"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "a91a6515-2ff9-4644-b45e-4c19ce134ba8"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ebac4f18-86b1-4ac2-b8c6-73e5190bb557"
+      },
+      "id": "abf213eb-d1fb-44f4-98b5-dae82d5266f7"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

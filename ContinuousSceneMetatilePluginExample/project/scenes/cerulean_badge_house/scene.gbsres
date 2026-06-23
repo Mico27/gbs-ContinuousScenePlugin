@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "0a25bc54-0713-411f-90b6-22deb487523e",
+  "_index": 229,
+  "name": "Cerulean Badge House",
+  "backgroundId": "16bda214-3972-4801-8acf-c14ad3a9c04a",
+  "tilesetId": "adf80f02-dae5-4ed5-a586-02346c3b8667",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_cerulean_badge_house",
+  "x": 4040,
+  "y": 19800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "a50510e8-6ce4-4e8b-b221-371d8f4563db",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "d465e1ac-c43e-44e9-b82d-a305cbfb65f3"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000f"
+        }
+      },
+      "id": "816a9b1c-e3a3-497c-8d2c-2ae904fac40f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fbe52389-1adf-4891-85d3-cf14a1baa771"
+      },
+      "id": "e00384df-67b9-44ed-8a90-4ed42aa01b99"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "0b08ca5f-c367-4918-bca2-04145c8df0e9"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e97c26b9-7db4-49e4-b35b-ba6d0c293f49"
+      },
+      "id": "184d52bb-8dab-45a8-b35f-4409af1edbd6"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

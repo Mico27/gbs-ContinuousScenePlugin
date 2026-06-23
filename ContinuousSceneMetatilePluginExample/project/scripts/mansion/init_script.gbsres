@@ -1,0 +1,65 @@
+{
+  "_resourceType": "script",
+  "id": "636c1da1-1d31-47b4-b438-670a75b4af8d",
+  "name": "Mansion/Init Script",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "symbol": "script_mt_mansion_init",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "16"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "id": "c5953bfc-6bb4-4491-b6df-6a6346955e8b",
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "references": [
+                {
+                  "type": "variable",
+                  "id": "0"
+                },
+                {
+                  "type": "variable",
+                  "id": "1"
+                },
+                {
+                  "type": "variable",
+                  "id": "3"
+                }
+              ],
+              "script": "VM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 8\nVM_SET_CONST_UINT8 _player_collision_group, 16",
+              "__collapse": false
+            },
+            "id": "1bb0ba27-8150-4fa7-bf72-c7c5491defaf"
+          },
+          {
+            "command": "EVENT_INC_VALUE",
+            "args": {
+              "variable": "16",
+              "__collapse": false
+            },
+            "id": "81526742-b580-4098-ad8c-583a067f1254"
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

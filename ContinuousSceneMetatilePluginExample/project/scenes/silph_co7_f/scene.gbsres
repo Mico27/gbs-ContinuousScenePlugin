@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "20bd447a-546f-48da-a1d6-1312e7495bd7",
+  "_index": 106,
+  "name": "Silph Co7 F",
+  "backgroundId": "301659e6-041d-48ef-921b-5a489c086e50",
+  "tilesetId": "8a3072cf-93c2-4233-96e1-a0720b8095d7",
+  "width": 52,
+  "height": 36,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00750+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_silph_co_7f",
+  "x": 3304,
+  "y": 14696,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3dcfb78d-8aab-46c5-8e14-2bd8712142bf",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "81fa83d5-6893-40d1-a338-55fbebf70e89"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000004"
+        }
+      },
+      "id": "490e4822-109b-45e6-b2a7-fd441e55601e"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "30144e86-fe72-4905-80fc-f21aae506fff"
+      },
+      "id": "a34232b8-ec2c-4e92-819a-14cff3e473c3"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "aff838f3-078c-4985-8403-8822e2efa4c8"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ce205ce4-e874-466c-8207-1b96134ae0c3"
+      },
+      "id": "67382101-551d-4c75-8b89-309102970129"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

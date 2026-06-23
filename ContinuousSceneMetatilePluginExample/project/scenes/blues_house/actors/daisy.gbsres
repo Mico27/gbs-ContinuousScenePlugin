@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "7d650bda-ff91-485a-be1e-6793484d205e",
+  "_index": 0,
+  "symbol": "npc_daisy_01bc",
+  "prefabId": "",
+  "name": "daisy",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "89bf120c-d344-4d3a-88c2-471f0d69e0fe",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHi RED!\n\nBLUE is out at",
+          "\nGrandpa's lab."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "0939c5f9-aa45-4c89-98ee-558fba0e1f3d"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

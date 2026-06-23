@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "2d8d1d9f-5689-4194-9ce9-d95df2486eac",
+  "_index": 2,
+  "symbol": "npc_poke_ball_00a3",
+  "prefabId": "",
+  "name": "poke_ball",
+  "coordinateType": "tiles",
+  "x": 36,
+  "y": 43,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "1766d109-ee15-4501-b55b-463ae384207d",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nFound\n\nCARBOS!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "43affb9b-d58c-4e59-b61c-e8be0dc5e603"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

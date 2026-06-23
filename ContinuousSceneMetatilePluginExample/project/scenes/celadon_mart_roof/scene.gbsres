@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "fca70adf-b5d8-4a3f-9b90-30db36846a93",
+  "_index": 194,
+  "name": "Celadon Mart Roof",
+  "backgroundId": "49d98492-318c-42c5-ac03-d79f91c08eee",
+  "tilesetId": "c2fe883e-1f9a-4a66-adaa-c5dd95712959",
+  "width": 40,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00280+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_celadon_mart_roof",
+  "x": 2408,
+  "y": 18424,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "7ab9a7a2-5957-4f4a-885b-2f5c99d9d1bf",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "10da9e7d-deeb-4050-b564-453c3fbb9086"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000b"
+        }
+      },
+      "id": "1c9d02ae-a605-4734-ad20-e9c7adba7bb2"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3d83b0ca-951f-4267-a68b-6d774c6cb496"
+      },
+      "id": "c07da564-2c00-48ce-bdff-666579244337"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "4e59f967-26e0-47a5-8134-f818d069003e"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ebac4f18-86b1-4ac2-b8c6-73e5190bb557"
+      },
+      "id": "f43d066b-6f29-4a52-80fa-df42360dec8c"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

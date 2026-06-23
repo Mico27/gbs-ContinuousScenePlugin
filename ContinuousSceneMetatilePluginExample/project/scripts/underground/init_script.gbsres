@@ -1,0 +1,65 @@
+{
+  "_resourceType": "script",
+  "id": "a653d841-6cc9-4b13-a610-0ab7b0f72d77",
+  "name": "Underground/Init Script",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "symbol": "script_mt_underground_init",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "16"
+          },
+          "valueB": {
+            "type": "number",
+            "value": 0
+          }
+        },
+        "__collapseElse": true,
+        "__collapse": true
+      },
+      "id": "b35646a7-1ce7-4c97-aaab-325bd3d5a9e1",
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_GBVM_SCRIPT",
+            "args": {
+              "references": [
+                {
+                  "type": "variable",
+                  "id": "0"
+                },
+                {
+                  "type": "variable",
+                  "id": "1"
+                },
+                {
+                  "type": "variable",
+                  "id": "3"
+                }
+              ],
+              "script": "VM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 8\nVM_SET_CONST_UINT8 _player_collision_group, 16",
+              "__collapse": false
+            },
+            "id": "20f81281-9d92-4c12-9ae4-3a74d933e867"
+          },
+          {
+            "command": "EVENT_INC_VALUE",
+            "args": {
+              "variable": "16",
+              "__collapse": false
+            },
+            "id": "5c0a1afe-406f-4ad8-86a9-d4d9ddf0cdb1"
+          }
+        ],
+        "false": []
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "f7877d38-61a0-45d9-8819-a3e209db3e56",
+  "name": "Entry to reds_house1_f",
+  "prefabId": "",
+  "x": 10,
+  "y": 10,
+  "symbol": "trigger_entry_to_reds_house",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 54
+        }
+      },
+      "id": "733e6ee5-7d63-4b4e-b09d-ed5f4cdf5f22"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

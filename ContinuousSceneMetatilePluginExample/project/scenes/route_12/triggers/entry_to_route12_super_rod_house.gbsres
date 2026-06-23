@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "5060f3dc-22a5-4795-ac5a-eed67b84df1b",
+  "name": "Entry to route12_super_rod_house",
+  "prefabId": "",
+  "x": 22,
+  "y": 154,
+  "symbol": "trigger_entry_to_route12_su",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 284
+        }
+      },
+      "id": "31762787-5b42-47e9-b45e-13a150d7dddd"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

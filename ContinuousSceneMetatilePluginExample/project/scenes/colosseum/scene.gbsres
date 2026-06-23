@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "fd08032b-5823-4398-9278-14d21bd363bb",
+  "_index": 86,
+  "name": "Colosseum",
+  "backgroundId": "3d0048b9-c6ab-437d-96d5-483f30ae2323",
+  "tilesetId": "513f2fd5-ca32-4dc6-88fb-653698e78ba4",
+  "width": 20,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00140+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_colosseum",
+  "x": 200,
+  "y": 13800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "7c56cd68-3a30-4d10-8013-9c2056532f68",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "73626cbc-df6e-4bea-92c2-ba60fc0af394"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000003"
+        }
+      },
+      "id": "51231db7-760d-4f18-aa4b-7a68094bb430"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6a431eda-aa53-4b10-8809-6f30f1d400a0"
+      },
+      "id": "a011a03b-6a0a-401b-be78-b03d7ee725f2"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "8dd19354-7912-469d-9212-618d2f505748"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e994a528-05de-478d-9e57-3a01374a3292"
+      },
+      "id": "74f44985-9b90-4096-a1c9-043b1c66d90d"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

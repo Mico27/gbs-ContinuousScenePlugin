@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "4f129a02-8c06-4737-9439-26127a9399fb",
+  "_index": 0,
+  "symbol": "npc_silph_worker_010c",
+  "prefabId": "",
+  "name": "silph_worker_m",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "d10a65e6-c897-4e0f-8ff7-f5be832058f4",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThe ROCKETs came\n\nand took over the",
+          "\nbuilding!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "059a7fd0-f012-406e-b8a5-8c2328ac0097"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

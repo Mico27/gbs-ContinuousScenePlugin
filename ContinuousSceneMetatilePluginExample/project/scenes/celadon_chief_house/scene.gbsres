@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "121f7eda-ea0d-431a-b842-46ac78601ffe",
+  "_index": 199,
+  "name": "Celadon Chief House",
+  "backgroundId": "a2c9a36a-7f40-489b-a39b-53764f6de3ff",
+  "tilesetId": "573ded98-2204-46e0-9d76-b950c4538f2b",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_celadon_chief_house",
+  "x": 904,
+  "y": 18856,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "e7fed2f5-572c-46f5-a451-bbe304a97119",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "40b020b0-0242-422e-ba4c-45e82e8b19da"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000c"
+        }
+      },
+      "id": "ddc9b8c1-b0c0-4c34-89cd-d54107219bde"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "636c1da1-1d31-47b4-b438-670a75b4af8d"
+      },
+      "id": "f7540c68-629e-46f5-adc6-a7b2edddc36e"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "e19008ec-8983-4659-9a6e-fce821465e33"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "4a562452-c100-4f7f-8e8b-b3f2895c09c1"
+      },
+      "id": "6d3963dd-a1cc-4c40-9dfa-ab0f256cc74e"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "f1dce7d1-c26a-4894-bb57-384662a99fe0",
+  "name": "Stair to pokemon_tower7_f",
+  "prefabId": "",
+  "x": 18,
+  "y": 32,
+  "symbol": "trigger_stair_to_pokemon_to_9",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "9d5c801d-1b45-4e3d-a544-5630828b9cbf",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 452
+        }
+      },
+      "id": "3aa7d873-ee7d-484e-9194-06a05f07ed89"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

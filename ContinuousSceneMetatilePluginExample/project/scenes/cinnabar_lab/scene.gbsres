@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "3164c359-1eb2-470f-8c83-44f8ec0f690e",
+  "_index": 180,
+  "name": "Cinnabar Lab",
+  "backgroundId": "2f514036-441f-48c8-8b6f-780b383dda40",
+  "tilesetId": "c455300d-3171-4245-8e86-2a4b8d17d2cf",
+  "width": 36,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00240+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_cinnabar_lab",
+  "x": 200,
+  "y": 18152,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "113d3def-5a4e-4521-893f-5ba653053941",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "a125be28-5a71-4754-9739-a276c9aeab0a"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000a"
+        }
+      },
+      "id": "440af179-b996-445e-b296-0f3328d13db8"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6c89a5f1-b3f7-4954-a344-2a811e3aa6b7"
+      },
+      "id": "0d37a72d-259b-418d-8a75-35520eaf712e"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "4ff2eca5-73ef-451d-9440-2779f9721b06"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c82e076a-e07c-4233-9b0e-6e02291007df"
+      },
+      "id": "c9760a39-ec6a-4dd1-9860-2e6321fe4cf2"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

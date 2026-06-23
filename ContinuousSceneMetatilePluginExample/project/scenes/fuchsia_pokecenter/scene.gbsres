@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "79a65aae-f53b-4f0a-af4a-5656153d0741",
+  "_index": 211,
+  "name": "Fuchsia Pokecenter",
+  "backgroundId": "1f976049-3fc2-4b22-bb93-a5df4ff0eeaa",
+  "tilesetId": "770e09aa-68e2-4660-a200-c3b158d3dfa3",
+  "width": 28,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001c0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_fuchsia_pokecenter",
+  "x": 1592,
+  "y": 19192,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5e12ba29-a7fc-4631-be50-fff1e493f71c",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "7be97e68-7e23-4e78-ae3d-e2b61700b26f"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000d"
+        }
+      },
+      "id": "96214ad0-6347-4129-819b-d9231398cbea"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f37155f0-14b5-4916-a17e-6c30c0873d9a"
+      },
+      "id": "7a722860-294e-41b1-b321-07b1ece867df"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "7a27a762-41ef-4a30-81f0-d7409c4ef08d"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fb34b23c-a04b-43c3-92bb-7485def21a19"
+      },
+      "id": "7c73c3dc-5ff4-4729-b4f7-be1da80343ac"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

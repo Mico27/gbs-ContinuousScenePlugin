@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "ab46c4c3-b18e-41ef-a468-0f7bbb86896f",
+  "_index": 1,
+  "symbol": "npc_silph_worker_0117",
+  "prefabId": "",
+  "name": "silph_worker_m",
+  "coordinateType": "tiles",
+  "x": 26,
+  "y": 27,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "d10a65e6-c897-4e0f-8ff7-f5be832058f4",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nTEAM ROCKET was\n\nafter the MASTER",
+          "\nBALL which will\n\ncatch any POKéMON!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "70bd569d-9ee3-4310-aff5-dca1ecacb2b7"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

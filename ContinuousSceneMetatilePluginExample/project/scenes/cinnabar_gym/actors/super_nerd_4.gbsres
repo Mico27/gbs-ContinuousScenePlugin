@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "d442171e-bf81-434b-a45e-169b83c13c47",
+  "_index": 4,
+  "symbol": "npc_super_nerd_008d",
+  "prefabId": "",
+  "name": "super_nerd",
+  "coordinateType": "tiles",
+  "x": 22,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5639eede-6431-4bd5-b884-a9e9b61fde0b",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI just like using\n\nfire POKéMON!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "fe36a63f-1276-4f59-8b2e-372af80b4cbe"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

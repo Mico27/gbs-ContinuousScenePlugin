@@ -113,76 +113,94 @@
     },
     {
       "id": "22",
-      "name": "CurrentArea",
-      "symbol": "var_currentarea"
+      "name": "SceneId",
+      "symbol": "var_sceneid"
+    },
+    {
+      "id": "23",
+      "name": "WarpType",
+      "symbol": "var_warptype"
+    },
+    {
+      "id": "24",
+      "name": "SceneType",
+      "symbol": "var_scenetype"
+    },
+    {
+      "id": "25",
+      "name": "LastWarpX",
+      "symbol": "var_lastwarpx"
+    },
+    {
+      "id": "26",
+      "name": "LastWarpY",
+      "symbol": "var_lastwarpy"
+    },
+    {
+      "id": "27",
+      "name": "LastMap",
+      "symbol": "var_lastmap"
+    },
+    {
+      "id": "28",
+      "name": "StairCooldown",
+      "symbol": "var_staircooldown"
     }
   ],
   "constants": [
     {
       "id": "0a85d005-f3ad-404f-af80-773cf2824502",
-      "name": "METATILEIDS/TREE",
-      "symbol": "const_metatileids_tree",
-      "value": 127
+      "name": "METATILEIDS/OVERWORLD/TREE",
+      "symbol": "const_metatileids_overworld",
+      "value": 93
     },
     {
       "id": "a369820d-229e-4bd8-b123-2cd223018904",
-      "name": "METATILEIDS/GRASS",
-      "symbol": "const_metatileids_grass",
-      "value": 12
+      "name": "METATILEIDS/OVERWORLD/GRASS",
+      "symbol": "const_metatileids_overworld_0",
+      "value": 17
     },
     {
       "id": "b001-0000-0000-0000-000000000001",
-      "name": "METATILEIDS/TALL_GRASS",
-      "symbol": "const_metatileids_tall_gras",
-      "value": 32
-    },
-    {
-      "id": "b001-0000-0000-0000-000000000002",
-      "name": "METATILEIDS/WATER_FIRST",
-      "symbol": "const_metatileids_water_fir",
-      "value": 21
-    },
-    {
-      "id": "b001-0000-0000-0000-000000000003",
-      "name": "METATILEIDS/WATER_LAST",
-      "symbol": "const_metatileids_water_las",
-      "value": 30
+      "name": "METATILEIDS/OVERWORLD/TALL_GRASS",
+      "symbol": "const_metatileids_overworld_1",
+      "value": 97
     },
     {
       "id": "b001-0000-0000-0000-000000000004",
-      "name": "METATILEIDS/LEDGE_SOUTH_MAX",
-      "symbol": "const_metatileids_ledge_sou",
-      "value": 116
+      "name": "METATILEIDS/OVERWORLD/LEDGE_SOUTH_MAX",
+      "symbol": "const_metatileids_overworld_2",
+      "value": 110
     },
     {
       "id": "b001-0000-0000-0000-000000000005",
-      "name": "METATILEIDS/LEDGE_EAST",
-      "symbol": "const_metatileids_ledge_eas",
-      "value": 118
+      "name": "METATILEIDS/OVERWORLD/LEDGE_EAST",
+      "symbol": "const_metatileids_overworld_3",
+      "value": 113
     },
     {
       "id": "b001-0000-0000-0000-000000000006",
-      "name": "METATILEIDS/LEDGE_WEST_A",
-      "symbol": "const_metatileids_ledge_wes",
-      "value": 119
+      "name": "METATILEIDS/OVERWORLD/LEDGE_WEST_A",
+      "symbol": "const_metatileids_overworld_4",
+      "value": 114
     },
     {
       "id": "b001-0000-0000-0000-000000000007",
-      "name": "METATILEIDS/LEDGE_WEST_B",
-      "symbol": "const_metatileids_ledge_wes_0",
-      "value": 120
+      "name": "METATILEIDS/OVERWORLD/LEDGE_WEST_B",
+      "symbol": "const_metatileids_overworld_5",
+      "value": 115
     },
     {
       "id": "b001-0000-0000-0000-000000000008",
-      "name": "METATILEIDS/CAVE",
-      "symbol": "const_metatileids_cave",
-      "value": 123
+      "name": "METATILEIDS/OVERWORLD/CAVE",
+      "symbol": "const_metatileids_overworld_6",
+      "value": 95
     },
     {
       "id": "b001-0000-0000-0000-000000000009",
-      "name": "METATILEIDS/DOOR",
-      "symbol": "const_metatileids_door",
-      "value": 124
+      "name": "METATILEIDS/OVERWORLD/DOOR",
+      "symbol": "const_metatileids_overworld_7",
+      "value": 96
     },
     {
       "id": "b001-0000-0000-0000-000000000010",
@@ -246,39 +264,15 @@
     },
     {
       "id": "b001-0000-0000-0000-000000000020",
-      "name": "METATILEIDS/STONE_FLOOR",
-      "symbol": "const_metatileids_stone_flo",
-      "value": 1
+      "name": "METATILEIDS/OVERWORLD/STONE_FLOOR",
+      "symbol": "const_metatileids_overworld_8",
+      "value": 29
     },
     {
       "id": "b001-0000-0000-0000-000000000021",
-      "name": "METATILEIDS/HEDGE",
-      "symbol": "const_metatileids_hedge",
-      "value": 13
-    },
-    {
-      "id": "1a795997-ef9b-4f79-aeea-efe80eb2abbd",
-      "name": "METATILEIDS/BUILDING_ROOF",
-      "symbol": "const_metatileids_building_",
-      "value": 35
-    },
-    {
-      "id": "c1c8785c-df84-4ff3-891c-eb7bdb881e96",
-      "name": "METATILEIDS/HOUSE_ROOF",
-      "symbol": "const_metatileids_house_roo",
-      "value": 9
-    },
-    {
-      "id": "1b62115a-4964-4a2d-8183-28b225a796c6",
-      "name": "METATILEIDS/BUILDING_RIGHT_SIDE",
-      "symbol": "const_metatileids_building__0",
-      "value": 66
-    },
-    {
-      "id": "b3cba377-6caa-4cc1-bb73-0748fea464bb",
-      "name": "METATILEIDS/BUILDING_LEFT_SIDE",
-      "symbol": "const_metatileids_building__1",
-      "value": 65
+      "name": "METATILEIDS/OVERWORLD/HEDGE",
+      "symbol": "const_metatileids_overworld_9",
+      "value": 52
     },
     {
       "id": "e06a546c-3ca3-4608-87b5-c34395ad41f6",
@@ -294,9 +288,633 @@
     },
     {
       "id": "edef1b1d-4243-4a9f-897b-b3b3b45c1a87",
-      "name": "METATILEIDS/SIGN",
-      "symbol": "const_metatileids_sign",
-      "value": 125
+      "name": "METATILEIDS/OVERWORLD/SIGN",
+      "symbol": "const_metatileids_overworld_10",
+      "value": 94
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000001",
+      "name": "METATILETYPES/CAVERN",
+      "symbol": "const_metatiletypes_cavern",
+      "value": 2
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000002",
+      "name": "METATILETYPES/CEMETERY",
+      "symbol": "const_metatiletypes_cemeter",
+      "value": 3
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000003",
+      "name": "METATILETYPES/CLUB",
+      "symbol": "const_metatiletypes_club",
+      "value": 4
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000004",
+      "name": "METATILETYPES/FACILITY",
+      "symbol": "const_metatiletypes_facilit",
+      "value": 5
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000005",
+      "name": "METATILETYPES/FOREST",
+      "symbol": "const_metatiletypes_forest",
+      "value": 6
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000006",
+      "name": "METATILETYPES/GATE",
+      "symbol": "const_metatiletypes_gate",
+      "value": 7
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000007",
+      "name": "METATILETYPES/GYM",
+      "symbol": "const_metatiletypes_gym",
+      "value": 8
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000008",
+      "name": "METATILETYPES/HOUSE",
+      "symbol": "const_metatiletypes_house",
+      "value": 9
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000009",
+      "name": "METATILETYPES/INTERIOR",
+      "symbol": "const_metatiletypes_interio",
+      "value": 10
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f300000a",
+      "name": "METATILETYPES/LAB",
+      "symbol": "const_metatiletypes_lab",
+      "value": 11
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f300000b",
+      "name": "METATILETYPES/LOBBY",
+      "symbol": "const_metatiletypes_lobby",
+      "value": 12
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f300000c",
+      "name": "METATILETYPES/MANSION",
+      "symbol": "const_metatiletypes_mansion",
+      "value": 13
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f300000d",
+      "name": "METATILETYPES/POKECENTER",
+      "symbol": "const_metatiletypes_pokecen",
+      "value": 14
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f300000e",
+      "name": "METATILETYPES/REDS_HOUSE",
+      "symbol": "const_metatiletypes_reds_ho",
+      "value": 15
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f300000f",
+      "name": "METATILETYPES/SHIP",
+      "symbol": "const_metatiletypes_ship",
+      "value": 16
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000010",
+      "name": "METATILETYPES/SHIP_PORT",
+      "symbol": "const_metatiletypes_ship_po",
+      "value": 17
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f3000011",
+      "name": "METATILETYPES/UNDERGROUND",
+      "symbol": "const_metatiletypes_undergr",
+      "value": 18
+    },
+    {
+      "id": "9db75189-203d-4491-be71-56ac5f949fec",
+      "name": "SCENETYPE/OVERWORLD",
+      "symbol": "const_scenetype_overworld_0",
+      "value": 0
+    },
+    {
+      "id": "303a10ee-9b70-42f1-931b-ec29c87dbeec",
+      "name": "SCENETYPE/INDOOR",
+      "symbol": "const_scenetype_indoor",
+      "value": 1
+    },
+    {
+      "id": "94ddf798-11ac-42d3-a1cc-373a156a8da4",
+      "name": "WARPTYPES/NONE",
+      "symbol": "const_warptypes_none",
+      "value": 0
+    },
+    {
+      "id": "4dafe2fa-5880-452c-a8c9-cdd6950e86a4",
+      "name": "WARPTYPES/INPUTRIGHT",
+      "symbol": "const_warptypes_inputright_",
+      "value": 1
+    },
+    {
+      "id": "093131d9-17a8-4e80-a3f3-cdde03e1cdb8",
+      "name": "WARPTYPES/INPUTLEFT",
+      "symbol": "const_warptypes_inputleft",
+      "value": 2
+    },
+    {
+      "id": "ee0fd217-7b8d-444d-9b39-d373fbaf7508",
+      "name": "WARPTYPES/INPUTDOWN",
+      "symbol": "const_warptypes_inputdown_0",
+      "value": 3
+    },
+    {
+      "id": "06229b0e-edf2-472c-bfe6-c46ead352ccf",
+      "name": "WARPTYPES/SPINNING",
+      "symbol": "const_warptypes_spinning",
+      "value": 5
+    },
+    {
+      "id": "e3e4f763-a472-4bf2-8572-6cd84fea6037",
+      "name": "WARPTYPES/INPUTUP",
+      "symbol": "const_warptypes_inputup",
+      "value": 4
+    },
+    {
+      "id": "e0ad4350-ba1b-401b-ad6f-d67309dd8b08",
+      "name": "METATILEIDS/OVERWORLD/LEDGE_SOUTH_MIN",
+      "symbol": "const_metatileids_overworld_11",
+      "value": 107
+    },
+    {
+      "id": "0cdab59b-5bc1-4d38-8419-d00c7f13c259",
+      "name": "COLLISION/PASSABLE",
+      "symbol": "const_collision_passable_0",
+      "value": 0
+    },
+    {
+      "id": "6cfcf214-6efa-4f52-9f9d-333c853c34d1",
+      "name": "COLLISION/SOLID",
+      "symbol": "const_collision_solid_0",
+      "value": 15
+    },
+    {
+      "id": "bfdc8e1f-6bd8-4d1b-bc6f-49279a9bc0ba",
+      "name": "COLLISION/WATER",
+      "symbol": "const_collision_water",
+      "value": 16
+    },
+    {
+      "id": "3465d02c-4e87-44dc-9032-8c55c15a74d5",
+      "name": "METATILEIDS/PLATEAU/CAVE",
+      "symbol": "const_metatileids_plateau_c",
+      "value": 44
+    },
+    {
+      "id": "9a036923-1a5b-4182-8073-f1d83fb4115c",
+      "name": "METATILEIDS/PLATEAU/DOOR",
+      "symbol": "const_metatileids_plateau_d",
+      "value": 43
+    },
+    {
+      "id": "4196fa4d-e337-4b75-8d39-cb221903e046",
+      "name": "METATILEIDS/PLATEAU/TALL_GRASS",
+      "symbol": "const_metatileids_plateau_t",
+      "value": 42
+    },
+    {
+      "id": "7848a808-d1b0-43f5-a03b-6e2f64dbf60d",
+      "name": "METATILEIDS/PLATEAU/SIGN",
+      "symbol": "const_metatileids_plateau_s",
+      "value": 17
+    },
+    {
+      "id": "3e2382b0-c09f-45c1-b739-1e0ebf0a4cdf",
+      "name": "METATILEIDS/CAVERN/STAIR",
+      "symbol": "const_metatileids_cavern_st",
+      "value": 29
+    },
+    {
+      "id": "841fe0fa-f183-42af-a6ce-883252c4a195",
+      "name": "METATILEIDS/CAVERN/STAIR_2",
+      "symbol": "const_metatileids_cavern_st_0",
+      "value": 30
+    },
+    {
+      "id": "99d7d2f9-1f5d-4f8e-9c56-b8adec7cda67",
+      "name": "METATILEIDS/CAVERN/SPECIAL",
+      "symbol": "const_metatileids_cavern_sp",
+      "value": 31
+    },
+    {
+      "id": "c50d0005-2497-46ca-9696-f020863c9dae",
+      "name": "METATILEIDS/CAVERN/WATER",
+      "symbol": "const_mt_cavern_w0",
+      "value": 32
+    },
+    {
+      "id": "e0fb0603-2b15-4392-9a68-d3a10c54e004",
+      "name": "METATILEIDS/CEMETERY/STAIR",
+      "symbol": "const_metatileids_cemetery_",
+      "value": 29
+    },
+    {
+      "id": "3683b03b-c37b-4168-972d-c48eded50ec3",
+      "name": "METATILEIDS/FACILITY/DOOR",
+      "symbol": "const_mt_facility_d0",
+      "value": 55
+    },
+    {
+      "id": "f7d861f8-0415-463c-ad70-6c0003812041",
+      "name": "METATILEIDS/FACILITY/DOOR_2",
+      "symbol": "const_mt_facility_d1",
+      "value": 56
+    },
+    {
+      "id": "37766b1b-a997-4d80-9a43-d9bbac4800cc",
+      "name": "METATILEIDS/FACILITY/DOOR_3",
+      "symbol": "const_mt_facility_d2",
+      "value": 57
+    },
+    {
+      "id": "eee0b89c-fb70-4078-9a00-38ffd59e20f1",
+      "name": "METATILEIDS/FACILITY/SPECIAL",
+      "symbol": "const_mt_facility_sp0",
+      "value": 58
+    },
+    {
+      "id": "a8930466-f18d-4ae6-8ca4-5d53e0b83a73",
+      "name": "METATILEIDS/FACILITY/SPECIAL_2",
+      "symbol": "const_mt_facility_sp1",
+      "value": 59
+    },
+    {
+      "id": "a9d27fd2-0f2a-46e7-a05c-02270e5a680a",
+      "name": "METATILEIDS/FACILITY/SPECIAL_3",
+      "symbol": "const_mt_facility_sp2",
+      "value": 60
+    },
+    {
+      "id": "c63f7ddf-9d41-494d-b16f-2b374383bf82",
+      "name": "METATILEIDS/FACILITY/WATER",
+      "symbol": "const_mt_facility_w0",
+      "value": 61
+    },
+    {
+      "id": "20b8e290-4a59-4f25-b9d2-964f4d0e457d",
+      "name": "METATILEIDS/FACILITY/WATER_2",
+      "symbol": "const_mt_facility_w1",
+      "value": 62
+    },
+    {
+      "id": "b404f09b-72ca-4e21-8818-4cefc8089530",
+      "name": "METATILEIDS/FACILITY/WATER_3",
+      "symbol": "const_mt_facility_w2",
+      "value": 63
+    },
+    {
+      "id": "031bbd58-c7e4-4bb0-a128-cc744e5a6223",
+      "name": "METATILEIDS/FACILITY/WATER_4",
+      "symbol": "const_mt_facility_w3",
+      "value": 64
+    },
+    {
+      "id": "b5dd326c-b02f-44f6-bb95-6d7abfeff906",
+      "name": "METATILEIDS/FOREST/TALL_GRASS",
+      "symbol": "const_mt_forest_tg0",
+      "value": 55
+    },
+    {
+      "id": "36051b82-15d7-4f7e-b24f-4fc18da39b8c",
+      "name": "METATILEIDS/FOREST/TALL_GRASS_2",
+      "symbol": "const_mt_forest_tg1",
+      "value": 56
+    },
+    {
+      "id": "1a213a70-3961-447a-836e-367c5e8bfd59",
+      "name": "METATILEIDS/FOREST/TALL_GRASS_3",
+      "symbol": "const_mt_forest_tg2",
+      "value": 57
+    },
+    {
+      "id": "c4f3647b-1df5-49f3-a6cf-a91a18451aae",
+      "name": "METATILEIDS/FOREST/TALL_GRASS_4",
+      "symbol": "const_mt_forest_tg3",
+      "value": 58
+    },
+    {
+      "id": "89fe0ffd-bd6d-4eb8-8870-3620eb6ea6bd",
+      "name": "METATILEIDS/FOREST/SIGN",
+      "symbol": "const_mt_forest_sg0",
+      "value": 54
+    },
+    {
+      "id": "8bff84db-d674-465f-b2ee-dc47a5bbbe11",
+      "name": "METATILEIDS/FOREST/DOOR",
+      "symbol": "const_mt_forest_d0",
+      "value": 59
+    },
+    {
+      "id": "b788446b-1d3f-49f4-9be1-e229da68fe52",
+      "name": "METATILEIDS/FOREST/EXIT",
+      "symbol": "const_mt_forest_x0",
+      "value": 60
+    },
+    {
+      "id": "7a71f775-4512-4c02-a1cb-0ce62dcf82cb",
+      "name": "METATILEIDS/FOREST/EXIT_2",
+      "symbol": "const_mt_forest_x1",
+      "value": 61
+    },
+    {
+      "id": "794e0af8-b654-4899-8691-05b4a2f25d8b",
+      "name": "METATILEIDS/FOREST/WATER",
+      "symbol": "const_mt_forest_w0",
+      "value": 62
+    },
+    {
+      "id": "f0506f6f-374d-41cb-b6af-06d4ca685770",
+      "name": "METATILEIDS/FOREST/WATER_2",
+      "symbol": "const_mt_forest_w1",
+      "value": 63
+    },
+    {
+      "id": "10856e7a-f4b7-4e34-96e6-7229b08903cb",
+      "name": "METATILEIDS/FOREST/WATER_3",
+      "symbol": "const_mt_forest_w2",
+      "value": 64
+    },
+    {
+      "id": "ede86375-f1d5-457e-8f37-cb191ddd3618",
+      "name": "METATILEIDS/FOREST/WATER_4",
+      "symbol": "const_mt_forest_w3",
+      "value": 65
+    },
+    {
+      "id": "f6f04cef-53e3-4c8f-95af-2708c40d16cd",
+      "name": "METATILEIDS/FOREST/WATER_5",
+      "symbol": "const_mt_forest_w4",
+      "value": 66
+    },
+    {
+      "id": "81c0beec-b585-47bb-a3e0-0dc2eea79a2a",
+      "name": "METATILEIDS/FOREST/WATER_6",
+      "symbol": "const_mt_forest_w5",
+      "value": 67
+    },
+    {
+      "id": "148f1642-e878-4f0a-8b37-dadfc416f535",
+      "name": "METATILEIDS/FOREST/WATER_7",
+      "symbol": "const_mt_forest_w6",
+      "value": 68
+    },
+    {
+      "id": "41e19bb5-b3e2-4531-a4ed-5a760008be95",
+      "name": "METATILEIDS/FOREST/WATER_8",
+      "symbol": "const_mt_forest_w7",
+      "value": 69
+    },
+    {
+      "id": "be6a992c-eca3-4ae7-b3fe-92708919eff7",
+      "name": "METATILEIDS/FOREST/WATER_9",
+      "symbol": "const_mt_forest_w8",
+      "value": 70
+    },
+    {
+      "id": "8787e87b-2efd-4ea9-aa4b-8cb3e14e612e",
+      "name": "METATILEIDS/FOREST/WATER_10",
+      "symbol": "const_mt_forest_w9",
+      "value": 71
+    },
+    {
+      "id": "a03cdb4d-73e6-486f-a180-1eb3d00bd7c6",
+      "name": "METATILEIDS/FOREST/WATER_11",
+      "symbol": "const_mt_forest_w10",
+      "value": 72
+    },
+    {
+      "id": "31c45c6d-efab-4c2e-aeaa-b5666375a536",
+      "name": "METATILEIDS/FOREST/WATER_12",
+      "symbol": "const_mt_forest_w11",
+      "value": 73
+    },
+    {
+      "id": "19635bab-da5c-4136-90e5-65ba356bb8ec",
+      "name": "METATILEIDS/GATE/DOOR",
+      "symbol": "const_mt_gate_d0",
+      "value": 55
+    },
+    {
+      "id": "48dcd924-f492-4504-88eb-2a857255fa87",
+      "name": "METATILEIDS/GATE/STAIR",
+      "symbol": "const_mt_gate_st0",
+      "value": 56
+    },
+    {
+      "id": "6ed26518-db11-4ec6-a2f3-f1f608786482",
+      "name": "METATILEIDS/GATE/STAIR_2",
+      "symbol": "const_mt_gate_st1",
+      "value": 57
+    },
+    {
+      "id": "b709b753-836a-4e19-8110-6b52b773643f",
+      "name": "METATILEIDS/GYM/SIGN",
+      "symbol": "const_mt_gym_sg0",
+      "value": 53
+    },
+    {
+      "id": "e16f2c7e-2adb-4c06-b951-06a6f12df3e6",
+      "name": "METATILEIDS/GYM/SIGN_2",
+      "symbol": "const_mt_gym_sg1",
+      "value": 54
+    },
+    {
+      "id": "5e1a76f0-44a6-4832-9cb5-64ba9998cf84",
+      "name": "METATILEIDS/GYM/SIGN_3",
+      "symbol": "const_mt_gym_sg2",
+      "value": 55
+    },
+    {
+      "id": "8e4874fb-ef5d-4860-af45-aa96f85ef82c",
+      "name": "METATILEIDS/GYM/TREE",
+      "symbol": "const_mt_gym_tr0",
+      "value": 52
+    },
+    {
+      "id": "51385773-c75c-4e29-8e9f-cc1b36366549",
+      "name": "METATILEIDS/GYM/EXIT",
+      "symbol": "const_mt_gym_x0",
+      "value": 56
+    },
+    {
+      "id": "6dc60011-038a-4769-b390-b859f980a80b",
+      "name": "METATILEIDS/HOUSE/DOOR",
+      "symbol": "const_mt_house_d0",
+      "value": 39
+    },
+    {
+      "id": "26e97036-ff4e-4af6-9c25-679e231409c7",
+      "name": "METATILEIDS/INTERIOR/STAIR",
+      "symbol": "const_mt_interior_st0",
+      "value": 54
+    },
+    {
+      "id": "273756b1-032f-49df-9b29-ef79188a8abb",
+      "name": "METATILEIDS/INTERIOR/SPECIAL",
+      "symbol": "const_mt_interior_sp0",
+      "value": 55
+    },
+    {
+      "id": "42efeeb0-3fdf-4784-a14e-31101d3c185d",
+      "name": "METATILEIDS/INTERIOR/SPECIAL_2",
+      "symbol": "const_mt_interior_sp1",
+      "value": 56
+    },
+    {
+      "id": "a68e59a0-a92b-42cd-9253-8f712dfcce2b",
+      "name": "METATILEIDS/LAB/SIGN",
+      "symbol": "const_mt_lab_sg0",
+      "value": 59
+    },
+    {
+      "id": "9b50f2a2-4464-4e7c-8228-b34fe826d503",
+      "name": "METATILEIDS/LAB/DOOR",
+      "symbol": "const_mt_lab_d0",
+      "value": 60
+    },
+    {
+      "id": "bac90386-86e1-499e-ac53-47d2e94b0682",
+      "name": "METATILEIDS/LOBBY/DOOR",
+      "symbol": "const_mt_lobby_d0",
+      "value": 50
+    },
+    {
+      "id": "67d85c41-0d7b-4b73-9fa3-f6a9a180f9fa",
+      "name": "METATILEIDS/LOBBY/DOOR_2",
+      "symbol": "const_mt_lobby_d1",
+      "value": 51
+    },
+    {
+      "id": "9f2804bf-d81e-4339-8e8b-5f0628b41439",
+      "name": "METATILEIDS/LOBBY/DOOR_3",
+      "symbol": "const_mt_lobby_d2",
+      "value": 52
+    },
+    {
+      "id": "c889e534-f56b-4576-b2e0-15e5a2f33637",
+      "name": "METATILEIDS/MANSION/DOOR",
+      "symbol": "const_mt_mansion_d0",
+      "value": 48
+    },
+    {
+      "id": "9ce628e6-80ae-434b-b307-1d9123aa9e5b",
+      "name": "METATILEIDS/MANSION/DOOR_2",
+      "symbol": "const_mt_mansion_d1",
+      "value": 49
+    },
+    {
+      "id": "a6230df2-39c4-4d2e-bb04-50d58c5abb28",
+      "name": "METATILEIDS/MANSION/DOOR_3",
+      "symbol": "const_mt_mansion_d2",
+      "value": 50
+    },
+    {
+      "id": "2f00ac4c-3c39-41f2-92a9-466f712f8574",
+      "name": "METATILEIDS/POKECENTER/DOOR",
+      "symbol": "const_mt_pokecenter_d0",
+      "value": 40
+    },
+    {
+      "id": "173c12d1-b8bd-4908-9727-45e36cf96c73",
+      "name": "METATILEIDS/REDS_HOUSE/EXIT",
+      "symbol": "const_mt_reds_house_x0",
+      "value": 22
+    },
+    {
+      "id": "8a44d81b-bb45-41c5-9a6b-498421f74911",
+      "name": "METATILEIDS/REDS_HOUSE/EXIT_2",
+      "symbol": "const_mt_reds_house_x1",
+      "value": 23
+    },
+    {
+      "id": "3db45464-c759-4389-81c8-8301494796d6",
+      "name": "METATILEIDS/SHIP/SIGN",
+      "symbol": "const_mt_ship_sg0",
+      "value": 57
+    },
+    {
+      "id": "3be1994b-4550-4297-bdb0-70b4fb030416",
+      "name": "METATILEIDS/SHIP/SIGN_2",
+      "symbol": "const_mt_ship_sg1",
+      "value": 58
+    },
+    {
+      "id": "6ecfdcd5-8c21-40ab-a82d-1f42a9735d91",
+      "name": "METATILEIDS/SHIP/DOOR",
+      "symbol": "const_mt_ship_d0",
+      "value": 59
+    },
+    {
+      "id": "9ed8da77-86d8-4b31-b5bc-4890387d8d71",
+      "name": "METATILEIDS/SHIP/STAIR",
+      "symbol": "const_mt_ship_st0",
+      "value": 60
+    },
+    {
+      "id": "ff10d9bf-0f91-4b05-b8f8-c4926aaa93cc",
+      "name": "METATILEIDS/SHIP/STAIR_2",
+      "symbol": "const_mt_ship_st1",
+      "value": 61
+    },
+    {
+      "id": "5f0af273-81ec-4f53-b132-a10b1767ef64",
+      "name": "METATILEIDS/SHIP/EXIT",
+      "symbol": "const_mt_ship_x0",
+      "value": 62
+    },
+    {
+      "id": "9890f3e3-93d0-4a9e-8619-4f020eac4791",
+      "name": "METATILEIDS/SHIP/WATER",
+      "symbol": "const_mt_ship_w0",
+      "value": 63
+    },
+    {
+      "id": "84c212bf-3772-4339-9e4b-2098486650cc",
+      "name": "METATILEIDS/SHIP_PORT/WATER",
+      "symbol": "const_mt_ship_port_w0",
+      "value": 31
+    },
+    {
+      "id": "a7eff587-cbb2-484b-a9e5-fb2c8b9ad256",
+      "name": "METATILEIDS/SHIP_PORT/WATER_2",
+      "symbol": "const_mt_ship_port_w1",
+      "value": 32
+    },
+    {
+      "id": "966314ea-df56-4c19-9d46-d10ebd6995d8",
+      "name": "METATILEIDS/SHIP_PORT/WATER_3",
+      "symbol": "const_mt_ship_port_w2",
+      "value": 33
+    },
+    {
+      "id": "bbe3fb9b-4dca-43e5-83f1-50440bff78bb",
+      "name": "METATILEIDS/UNDERGROUND/STAIR",
+      "symbol": "const_mt_underground_st0",
+      "value": 12
+    },
+    {
+      "id": "572034c5-f32b-40e8-b750-c819375faf41",
+      "name": "METATILEIDS/CEMETERY/STAIR_2",
+      "symbol": "const_metatileids_cemetery__0",
+      "value": 2
+    },
+    {
+      "id": "b001-0000-0000-0000-0000f4000001",
+      "name": "METATILEIDS/FACILITY_SPINNING_WARP",
+      "symbol": "const_metatileids_facility_",
+      "value": 31
     }
   ]
 }

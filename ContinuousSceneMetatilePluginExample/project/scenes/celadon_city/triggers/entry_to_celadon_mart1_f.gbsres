@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "43c4b23d-6e36-439f-aac8-ebd202c8648f",
+  "name": "Entry to celadon_mart1_f",
+  "prefabId": "",
+  "x": 16,
+  "y": 26,
+  "symbol": "trigger_entry_to_celadon_ma_2",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 121
+        }
+      },
+      "id": "9f80f8df-ad2f-4778-9760-2efc3ff33068"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 7
+}

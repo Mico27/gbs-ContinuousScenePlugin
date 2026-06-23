@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "da575ea5-d889-4ca5-af79-712ea2c3dfe6",
+  "name": "Entry to viridian_gym",
+  "prefabId": "",
+  "x": 64,
+  "y": 14,
+  "symbol": "trigger_entry_to_viridian_g",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 68
+        }
+      },
+      "id": "4341ffc0-a41c-44a1-8801-b45b6488f563"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

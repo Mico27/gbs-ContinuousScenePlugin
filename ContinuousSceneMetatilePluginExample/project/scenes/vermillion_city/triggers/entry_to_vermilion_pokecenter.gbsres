@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "5250c8f3-416e-421b-b56e-e3d71fd4a7b4",
+  "name": "Entry to vermilion_pokecenter",
+  "prefabId": "",
+  "x": 22,
+  "y": 6,
+  "symbol": "trigger_entry_to_vermilion__5",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 104
+        }
+      },
+      "id": "b3686b95-a3ac-4e17-a18d-169e30878f6b"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 7
+}

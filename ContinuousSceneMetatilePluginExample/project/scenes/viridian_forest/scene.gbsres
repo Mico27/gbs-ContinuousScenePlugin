@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "b246d7b8-971c-49c1-82b0-38a39c6a5311",
+  "_index": 113,
+  "name": "Viridian Forest",
+  "backgroundId": "5059f376-b892-4412-9849-3bf926c8d109",
+  "tilesetId": "9c730ca7-2f36-4b34-9446-f9a858f92236",
+  "width": 68,
+  "height": 96,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001980+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_viridian_forest",
+  "x": 200,
+  "y": 15464,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "8143aa71-cb0e-4972-8c10-15dc7b49f555",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "088f9877-20c0-4c37-b17d-1ff5f58e6ab3"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000005"
+        }
+      },
+      "id": "f11565d9-d831-4ae3-a953-7e5c52f55d0f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "41d5a285-3d7a-4734-9016-12b89e2791cf"
+      },
+      "id": "6b592c2d-0551-4bc6-b0c0-20e48d519f7f"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "71a57b13-4ddf-4557-b41e-7ccfcc849801"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "38c97a0c-b2e7-4baa-b550-e8723265fb73"
+      },
+      "id": "41340dc3-242b-4b86-9c5b-4315205424bc"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

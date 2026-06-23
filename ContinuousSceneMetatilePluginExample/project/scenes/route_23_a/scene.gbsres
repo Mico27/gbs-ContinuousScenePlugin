@@ -1,7 +1,7 @@
 {
   "_resourceType": "scene",
   "id": "fd42525e-4f9f-4a88-8da8-cf7aca6e5f86",
-  "_index": 16,
+  "_index": 12,
   "name": "Route 23 A",
   "backgroundId": "5ca2bc60-1b92-49d9-b22b-19fda5d4101b",
   "tilesetId": "014dde50-8e39-4d2b-99b7-40cba1e42898",
@@ -13,11 +13,11 @@
     "14d5d7eb-d80f-444c-847d-6bced622e2b9"
   ],
   "spritePaletteIds": [],
-  "collisions": "001680+",
+  "collisions": "00840+0f!00e3f+",
   "autoFadeSpeed": null,
   "symbol": "pkmn_overworld_route_23a",
-  "x": 1296,
-  "y": 5784,
+  "x": 1064,
+  "y": 6568,
   "script": [
     {
       "command": "EVENT_SET_VALUE",
@@ -64,8 +64,7 @@
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "customEventId": "70823794-eb52-4bb1-83a1-d0a628f22deb",
-        "$actor[0]$": "ae7412f9-4f68-4a4f-b33b-f035d20ef04d"
+        "customEventId": "b5087102-1cc8-4c3c-9c59-2ac34ae921f0"
       },
       "id": "6f00b3c5-8539-427d-8879-c46fce14f641"
     },
@@ -79,7 +78,7 @@
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "customEventId": "b2c3d4e5-f6a7-8901-bcde-f12345678901"
+        "customEventId": "a369fa7d-8234-4cf2-84b2-ed39ecf63693"
       },
       "id": "7e1abcc2-5d9b-4f24-83b2-f209148635a8"
     }

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "bbc8c386-e6e6-4093-a507-c36b2ec35b5e",
+  "name": "Entry to bills_house",
+  "prefabId": "",
+  "x": 90,
+  "y": 6,
+  "symbol": "trigger_entry_to_bills_hous",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 334
+        }
+      },
+      "id": "501b89cb-e6dc-4000-9e9f-f304d2d6b6b6"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

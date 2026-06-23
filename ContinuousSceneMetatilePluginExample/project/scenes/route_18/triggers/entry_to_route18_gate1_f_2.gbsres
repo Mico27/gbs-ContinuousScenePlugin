@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "7578642f-8061-417e-95b0-c9f23683a886",
+  "name": "Entry to route18_gate1_f",
+  "prefabId": "",
+  "x": 66,
+  "y": 18,
+  "symbol": "trigger_entry_to_route18_ga_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 314
+        }
+      },
+      "id": "d9c8fb1e-abc7-4c0c-a716-4a16e1e065ee"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "bf57abcc-4882-400b-8d38-d05b842fd39f"
+      },
+      "id": "ddfda2d7-56c2-4580-a577-0dfd6b4b3e07"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "right"
+        ]
+      },
+      "id": "fdf89d8c-cdb6-417c-b637-2e27765f0a93"
+    }
+  ],
+  "_index": 1
+}

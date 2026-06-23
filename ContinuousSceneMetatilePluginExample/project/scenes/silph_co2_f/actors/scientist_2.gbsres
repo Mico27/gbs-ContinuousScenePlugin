@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "68cbda41-4a58-487a-b245-6947886ce84b",
+  "_index": 2,
+  "symbol": "npc_scientist_00f3",
+  "prefabId": "",
+  "name": "scientist",
+  "coordinateType": "tiles",
+  "x": 48,
+  "y": 27,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "995270ad-1b0d-45ad-8184-253216f30349",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nIt's off limits\n\nhere! Go home!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "c9b8c23b-3335-45bf-a55b-e53165b86e25"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,2470 @@
+{
+  "_resourceType": "script",
+  "id": "b480b6f5-5ab8-4046-b156-b800b9af9bb1",
+  "name": "Ship/Warp Script",
+  "description": "Source-type warp router for SHIP scenes. Routes WarpId (V0) to its destination via chained EVENT_SWITCH (16 cases each). 76 case(s).",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "symbol": "script_warp_ship",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "constant",
+            "value": "b001-0000-0000-0000-000000000018"
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "constant",
+                "value": "b001-0000-0000-0000-000000000019"
+              }
+            },
+            "id": "d4048bc0-7bbf-4934-88b4-cf9ce68b1dbb"
+          },
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "V0",
+              "choices": 16,
+              "__collapseElse": false,
+              "value0": {
+                "type": "number",
+                "value": 101
+              },
+              "__collapseCase0": false,
+              "value1": {
+                "type": "number",
+                "value": 103
+              },
+              "__collapseCase1": false,
+              "value2": {
+                "type": "number",
+                "value": 189
+              },
+              "__collapseCase2": false,
+              "value3": {
+                "type": "number",
+                "value": 191
+              },
+              "__collapseCase3": false,
+              "value4": {
+                "type": "number",
+                "value": 734
+              },
+              "__collapseCase4": false,
+              "value5": {
+                "type": "number",
+                "value": 736
+              },
+              "__collapseCase5": false,
+              "value6": {
+                "type": "number",
+                "value": 738
+              },
+              "__collapseCase6": false,
+              "value7": {
+                "type": "number",
+                "value": 739
+              },
+              "__collapseCase7": false,
+              "value8": {
+                "type": "number",
+                "value": 740
+              },
+              "__collapseCase8": false,
+              "value9": {
+                "type": "number",
+                "value": 741
+              },
+              "__collapseCase9": false,
+              "value10": {
+                "type": "number",
+                "value": 742
+              },
+              "__collapseCase10": false,
+              "value11": {
+                "type": "number",
+                "value": 743
+              },
+              "__collapseCase11": false,
+              "value12": {
+                "type": "number",
+                "value": 744
+              },
+              "__collapseCase12": false,
+              "value13": {
+                "type": "number",
+                "value": 745
+              },
+              "__collapseCase13": false,
+              "value14": {
+                "type": "number",
+                "value": 746
+              },
+              "__collapseCase14": false,
+              "value15": {
+                "type": "number",
+                "value": 747
+              },
+              "__collapseCase15": false
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 101 → EXIT cerulean_badge_house → cerulean_city (18,22)"
+                  },
+                  "id": "a4a7e603-da2b-4bb5-a271-10bebdf99622"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "88e84bf0-7445-477e-9c4a-9503e0478076",
+                    "x": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 22
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "0c41c556-439f-4042-a11a-a9e720daf3e0"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 103 → EXIT cerulean_badge_house → cerulean_city (18,18)"
+                  },
+                  "id": "d82ecda4-fc6b-48d2-9bc5-185233ad437e"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "88e84bf0-7445-477e-9c4a-9503e0478076",
+                    "x": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "b499eed5-9e0b-4bcf-80bb-47c2926e11a5"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 189 → EXIT fuchsia_good_rod_house → fuchsia_city (62,54)"
+                  },
+                  "id": "19385419-9798-4102-b9d2-c40e3b2abb65"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "10bcdc30-2c2a-4dd5-98a4-8a3f5b25e2e4",
+                    "x": {
+                      "type": "number",
+                      "value": 62
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 54
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "cc7babb1-d247-4194-92c3-94052f8c4353"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 191 → EXIT fuchsia_good_rod_house → fuchsia_city (62,48)"
+                  },
+                  "id": "1828db88-d8fa-4c53-b679-68cc3953fecf"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "10bcdc30-2c2a-4dd5-98a4-8a3f5b25e2e4",
+                    "x": {
+                      "type": "number",
+                      "value": 62
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 48
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "5533cab7-6e66-4a4f-bfd8-bd6ed1d35829"
+                }
+              ],
+              "true4": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 734 → STAIR s_s_anne1_f → vermilion_dock (28,4)"
+                  },
+                  "id": "fdf1dfae-489e-49b3-a106-6ad5a92b07ca"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "4cb949fd-0db0-47e4-9882-905a7e63eebd",
+                    "x": {
+                      "type": "number",
+                      "value": 28
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 4
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "d87dae56-b8bf-4650-b82b-4daf92011713"
+                }
+              ],
+              "true5": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 736 → STAIR s_s_anne1_f → vermilion_dock (28,4)"
+                  },
+                  "id": "84a539d2-9bba-4dcd-b0a8-5015f6d0b0ae"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "4cb949fd-0db0-47e4-9882-905a7e63eebd",
+                    "x": {
+                      "type": "number",
+                      "value": 28
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 4
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "39854f1a-9802-4e35-a4ad-8e90fe8f3abc"
+                }
+              ],
+              "true6": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 738 → STAIR s_s_anne1_f → s_s_anne1_f_rooms (0,0)"
+                  },
+                  "id": "ad8897dd-1cea-4848-9658-f00c270115ed"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "e4bddfa6-6c52-46d0-a5e8-ba77f52be6e9",
+                    "x": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "d727e265-cb75-487c-88ca-b18481b3e197"
+                }
+              ],
+              "true7": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 739 → STAIR s_s_anne1_f_rooms → s_s_anne1_f (62,16)"
+                  },
+                  "id": "1a00f823-5efe-4e00-81f3-57fb005ac471"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                    "x": {
+                      "type": "number",
+                      "value": 62
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 16
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "ee7278c1-50ee-4cfc-83e4-d83260eb7dcb"
+                }
+              ],
+              "true8": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 740 → STAIR s_s_anne1_f → s_s_anne1_f_rooms (20,0)"
+                  },
+                  "id": "de62fdbb-51c3-477b-88da-b87916c47c3a"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "e4bddfa6-6c52-46d0-a5e8-ba77f52be6e9",
+                    "x": {
+                      "type": "number",
+                      "value": 20
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "573b83c6-add0-44d2-af83-8083a406015e"
+                }
+              ],
+              "true9": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 741 → STAIR s_s_anne1_f_rooms → s_s_anne1_f (46,16)"
+                  },
+                  "id": "ad1e595f-602c-41e6-b8cd-eaebb6a042d9"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                    "x": {
+                      "type": "number",
+                      "value": 46
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 16
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "3ab4691d-f06b-4b86-b9b5-633305d7340b"
+                }
+              ],
+              "true10": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 742 → STAIR s_s_anne1_f → s_s_anne1_f_rooms (40,0)"
+                  },
+                  "id": "ecc3f999-7d2b-42fd-a5e6-6c410f335b8e"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "e4bddfa6-6c52-46d0-a5e8-ba77f52be6e9",
+                    "x": {
+                      "type": "number",
+                      "value": 40
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "6967cd3c-922d-4483-baa2-4c7e5d7d3971"
+                }
+              ],
+              "true11": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 743 → STAIR s_s_anne1_f_rooms → s_s_anne1_f (38,16)"
+                  },
+                  "id": "4b06a303-b1c5-4c13-a20d-5d5aac91d297"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                    "x": {
+                      "type": "number",
+                      "value": 38
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 16
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "4d704d84-684d-4528-b25d-733a01fbce8c"
+                }
+              ],
+              "true12": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 744 → STAIR s_s_anne1_f → s_s_anne1_f_rooms (0,20)"
+                  },
+                  "id": "74e6876d-e6e2-47cd-9663-396ae466684d"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "e4bddfa6-6c52-46d0-a5e8-ba77f52be6e9",
+                    "x": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 20
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "0f747280-e820-4766-93b3-85732cb5a50a"
+                }
+              ],
+              "true13": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 745 → STAIR s_s_anne1_f_rooms → s_s_anne1_f (30,16)"
+                  },
+                  "id": "431096fe-c27f-4793-836a-d3cff0e7b50c"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                    "x": {
+                      "type": "number",
+                      "value": 30
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 16
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "69fc817b-5e31-4b1b-a58a-93b381c57a6b"
+                }
+              ],
+              "true14": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 746 → STAIR s_s_anne1_f → s_s_anne1_f_rooms (20,20)"
+                  },
+                  "id": "1015103e-5f1c-4482-876d-3907dc5c1d7e"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "e4bddfa6-6c52-46d0-a5e8-ba77f52be6e9",
+                    "x": {
+                      "type": "number",
+                      "value": 20
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 20
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "e86830e4-28a7-4971-a845-9b2e810177a5"
+                }
+              ],
+              "true15": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 747 → STAIR s_s_anne1_f_rooms → s_s_anne1_f (22,16)"
+                  },
+                  "id": "36a995a2-0f21-4ca8-9291-292288cd2eb7"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                    "x": {
+                      "type": "number",
+                      "value": 22
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 16
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "a0dfb218-fb5a-40aa-8622-6662b83a17bf"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "V0",
+                    "choices": 16,
+                    "__collapseElse": false,
+                    "value0": {
+                      "type": "number",
+                      "value": 748
+                    },
+                    "__collapseCase0": false,
+                    "value1": {
+                      "type": "number",
+                      "value": 749
+                    },
+                    "__collapseCase1": false,
+                    "value2": {
+                      "type": "number",
+                      "value": 750
+                    },
+                    "__collapseCase2": false,
+                    "value3": {
+                      "type": "number",
+                      "value": 751
+                    },
+                    "__collapseCase3": false,
+                    "value4": {
+                      "type": "number",
+                      "value": 752
+                    },
+                    "__collapseCase4": false,
+                    "value5": {
+                      "type": "number",
+                      "value": 753
+                    },
+                    "__collapseCase5": false,
+                    "value6": {
+                      "type": "number",
+                      "value": 754
+                    },
+                    "__collapseCase6": false,
+                    "value7": {
+                      "type": "number",
+                      "value": 755
+                    },
+                    "__collapseCase7": false,
+                    "value8": {
+                      "type": "number",
+                      "value": 756
+                    },
+                    "__collapseCase8": false,
+                    "value9": {
+                      "type": "number",
+                      "value": 757
+                    },
+                    "__collapseCase9": false,
+                    "value10": {
+                      "type": "number",
+                      "value": 758
+                    },
+                    "__collapseCase10": false,
+                    "value11": {
+                      "type": "number",
+                      "value": 759
+                    },
+                    "__collapseCase11": false,
+                    "value12": {
+                      "type": "number",
+                      "value": 760
+                    },
+                    "__collapseCase12": false,
+                    "value13": {
+                      "type": "number",
+                      "value": 761
+                    },
+                    "__collapseCase13": false,
+                    "value14": {
+                      "type": "number",
+                      "value": 762
+                    },
+                    "__collapseCase14": false,
+                    "value15": {
+                      "type": "number",
+                      "value": 763
+                    },
+                    "__collapseCase15": false
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 748 → STAIR s_s_anne1_f → s_s_anne1_f_rooms (40,20)"
+                        },
+                        "id": "fc0bf36a-36b1-46dd-8896-6419d245e106"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "e4bddfa6-6c52-46d0-a5e8-ba77f52be6e9",
+                          "x": {
+                            "type": "number",
+                            "value": 40
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 20
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "cefa3afb-6292-411e-a24f-20131cf044a3"
+                      }
+                    ],
+                    "true1": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 749 → STAIR s_s_anne1_f_rooms → s_s_anne1_f (14,16)"
+                        },
+                        "id": "fd160232-0aea-490b-b9b9-46dbd42a5623"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                          "x": {
+                            "type": "number",
+                            "value": 14
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 16
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "3c7b9529-f71c-4a62-83ba-106a9bc09426"
+                      }
+                    ],
+                    "true2": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 750 → STAIR s_s_anne1_f → s_s_anne2_f (4,8)"
+                        },
+                        "id": "af0491b0-87fb-4ef9-8b96-338e068943df"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                          "x": {
+                            "type": "number",
+                            "value": 4
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 8
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "3c809ffd-685f-4a85-abcd-343edc67f839"
+                      }
+                    ],
+                    "true3": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 751 → STAIR s_s_anne2_f → s_s_anne1_f (4,12)"
+                        },
+                        "id": "818b77d6-e94b-4245-b2bb-2dca49e535eb"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                          "x": {
+                            "type": "number",
+                            "value": 4
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 12
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "5e0edbf3-aa73-4293-bf14-3d2625110eb5"
+                      }
+                    ],
+                    "true4": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 752 → STAIR s_s_anne1_f → s_s_anne_b1_f (54,10)"
+                        },
+                        "id": "c5e7bde7-bd54-4581-827b-f2616e3b4a8c"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                          "x": {
+                            "type": "number",
+                            "value": 54
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 10
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "c626e4ce-9624-4aa6-9278-e3e9aa822b3f"
+                      }
+                    ],
+                    "true5": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 753 → STAIR s_s_anne_b1_f → s_s_anne1_f (74,30)"
+                        },
+                        "id": "b5bdeade-72fa-4417-aa95-30ffffe23e13"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                          "x": {
+                            "type": "number",
+                            "value": 74
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 30
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "715218b6-3ea9-4fa5-a032-b06c0fdad86e"
+                      }
+                    ],
+                    "true6": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 754 → STAIR s_s_anne1_f → s_s_anne_kitchen (12,0)"
+                        },
+                        "id": "4012f2da-fa5d-4497-99eb-c59c3bd49f8c"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "0bbe183e-0701-4448-bbf1-6c5f96160097",
+                          "x": {
+                            "type": "number",
+                            "value": 12
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 0
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "2d374623-7bea-41c0-b741-ed9efb2e6797"
+                      }
+                    ],
+                    "true7": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 755 → STAIR s_s_anne_kitchen → s_s_anne1_f (6,32)"
+                        },
+                        "id": "86c75ece-1a65-4f5d-942f-4ade2a80cdfa"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
+                          "x": {
+                            "type": "number",
+                            "value": 6
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 32
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "6fba402f-ebdf-423e-9985-480c7953bcc1"
+                      }
+                    ],
+                    "true8": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 756 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (4,10)"
+                        },
+                        "id": "7baf33d3-7aa8-478b-a807-9af0e0a315dd"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                          "x": {
+                            "type": "number",
+                            "value": 4
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 10
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "337ed7e1-e5aa-4cf0-a698-90a237018b59"
+                      }
+                    ],
+                    "true9": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 757 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (18,22)"
+                        },
+                        "id": "c942233d-06f2-42a9-8148-8228e1f5567e"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                          "x": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "e3a2159b-34d9-4533-ae88-5b56a04a1371"
+                      }
+                    ],
+                    "true10": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 758 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (24,10)"
+                        },
+                        "id": "ff8d42bf-a2ce-4aa4-a50f-44d3a1f16b63"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                          "x": {
+                            "type": "number",
+                            "value": 24
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 10
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "0aaa30d2-1119-4b66-ab67-06b432d1444d"
+                      }
+                    ],
+                    "true11": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 759 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (26,22)"
+                        },
+                        "id": "ab477420-6004-42d4-9721-9ad789d1f6b9"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                          "x": {
+                            "type": "number",
+                            "value": 26
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "1e527bf9-873d-490d-a5e6-81c32f12166d"
+                      }
+                    ],
+                    "true12": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 760 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (44,10)"
+                        },
+                        "id": "d6777ab8-8433-42b7-81ea-11ae99010ca8"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                          "x": {
+                            "type": "number",
+                            "value": 44
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 10
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "f532cd78-c8d3-41e7-adb9-90204dd0ef08"
+                      }
+                    ],
+                    "true13": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 761 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (34,22)"
+                        },
+                        "id": "80de2667-1bab-4d53-9451-2f144a757702"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                          "x": {
+                            "type": "number",
+                            "value": 34
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "28c40c2a-aceb-4b15-90b6-f7a5ae74ae37"
+                      }
+                    ],
+                    "true14": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 762 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (4,30)"
+                        },
+                        "id": "929ca076-7db7-41f1-b6ce-58d83c39d498"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                          "x": {
+                            "type": "number",
+                            "value": 4
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 30
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "f5883f66-f407-4cab-ad13-6260e73a2dfa"
+                      }
+                    ],
+                    "true15": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 763 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (42,22)"
+                        },
+                        "id": "699072f9-c709-43a1-b8b3-623c57bb9872"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                          "x": {
+                            "type": "number",
+                            "value": 42
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 22
+                          },
+                          "direction": "up",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "287c45ad-804e-4e63-952d-09ecb230632a"
+                      }
+                    ],
+                    "false": [
+                      {
+                        "command": "EVENT_SWITCH",
+                        "args": {
+                          "variable": "V0",
+                          "choices": 16,
+                          "__collapseElse": false,
+                          "value0": {
+                            "type": "number",
+                            "value": 764
+                          },
+                          "__collapseCase0": false,
+                          "value1": {
+                            "type": "number",
+                            "value": 765
+                          },
+                          "__collapseCase1": false,
+                          "value2": {
+                            "type": "number",
+                            "value": 766
+                          },
+                          "__collapseCase2": false,
+                          "value3": {
+                            "type": "number",
+                            "value": 767
+                          },
+                          "__collapseCase3": false,
+                          "value4": {
+                            "type": "number",
+                            "value": 768
+                          },
+                          "__collapseCase4": false,
+                          "value5": {
+                            "type": "number",
+                            "value": 769
+                          },
+                          "__collapseCase5": false,
+                          "value6": {
+                            "type": "number",
+                            "value": 770
+                          },
+                          "__collapseCase6": false,
+                          "value7": {
+                            "type": "number",
+                            "value": 771
+                          },
+                          "__collapseCase7": false,
+                          "value8": {
+                            "type": "number",
+                            "value": 772
+                          },
+                          "__collapseCase8": false,
+                          "value9": {
+                            "type": "number",
+                            "value": 773
+                          },
+                          "__collapseCase9": false,
+                          "value10": {
+                            "type": "number",
+                            "value": 774
+                          },
+                          "__collapseCase10": false,
+                          "value11": {
+                            "type": "number",
+                            "value": 775
+                          },
+                          "__collapseCase11": false,
+                          "value12": {
+                            "type": "number",
+                            "value": 776
+                          },
+                          "__collapseCase12": false,
+                          "value13": {
+                            "type": "number",
+                            "value": 777
+                          },
+                          "__collapseCase13": false,
+                          "value14": {
+                            "type": "number",
+                            "value": 778
+                          },
+                          "__collapseCase14": false,
+                          "value15": {
+                            "type": "number",
+                            "value": 779
+                          },
+                          "__collapseCase15": false
+                        },
+                        "children": {
+                          "true0": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 764 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (24,30)"
+                              },
+                              "id": "f55b9d77-ce80-4018-aaaa-876eae0b7486"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                                "x": {
+                                  "type": "number",
+                                  "value": 24
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 30
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "c05dfe59-326e-4f06-b62d-7a1c4e54e40e"
+                            }
+                          ],
+                          "true1": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 765 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (50,22)"
+                              },
+                              "id": "0f63f07d-65ac-4e54-8eb6-424998f194db"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                "x": {
+                                  "type": "number",
+                                  "value": 50
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 22
+                                },
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "3ce5f839-aac8-4652-ad4d-94403542c7f1"
+                            }
+                          ],
+                          "true2": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 766 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (44,30)"
+                              },
+                              "id": "1f71cdce-7023-495a-a9aa-a2be3b9a4194"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                                "x": {
+                                  "type": "number",
+                                  "value": 44
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 30
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "7d926de0-ecac-4ee1-9cad-6a84496b758f"
+                            }
+                          ],
+                          "true3": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 767 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (58,22)"
+                              },
+                              "id": "c896f8ce-c185-4585-97d3-df0ff57e5514"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                "x": {
+                                  "type": "number",
+                                  "value": 58
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 22
+                                },
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "89e59578-549f-40c6-ac8c-4f89f894cd74"
+                            }
+                          ],
+                          "true4": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 768 → STAIR s_s_anne2_f → s_s_anne3_f (38,6)"
+                              },
+                              "id": "cd4a035c-bd04-4439-99b7-dfc350e41ffc"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "ac4fdea0-e9b8-470e-9126-e4cbea89e95c",
+                                "x": {
+                                  "type": "number",
+                                  "value": 38
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 6
+                                },
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "f2a408ed-3923-4efe-92e1-104f8241503d"
+                            }
+                          ],
+                          "true5": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 769 → STAIR s_s_anne3_f → s_s_anne2_f (4,24)"
+                              },
+                              "id": "2ae42900-01f1-4b50-8c08-f6c27d0aec37"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                "x": {
+                                  "type": "number",
+                                  "value": 4
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 24
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "7f6a8bb1-f93d-4c5d-952b-29f71ee6bd22"
+                            }
+                          ],
+                          "true6": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 770 → STAIR s_s_anne2_f → s_s_anne_captains_room (0,14)"
+                              },
+                              "id": "3438b545-3124-445b-a9b7-4131a506b077"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "4f05c975-6539-4493-b9e5-8251e3f7ca1f",
+                                "x": {
+                                  "type": "number",
+                                  "value": 0
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 14
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "af9236cc-684d-46c7-b80e-eee2fe253ab6"
+                            }
+                          ],
+                          "true7": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 771 → STAIR s_s_anne_captains_room → s_s_anne2_f (72,8)"
+                              },
+                              "id": "f09058ae-adc8-442d-a910-2b219dc08790"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                "x": {
+                                  "type": "number",
+                                  "value": 72
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 8
+                                },
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "5caa2375-e80c-460e-a467-cc12f5c0bf74"
+                            }
+                          ],
+                          "true8": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 772 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (18,22)"
+                              },
+                              "id": "484bd535-cda5-4831-aa74-cceda73f3161"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                "x": {
+                                  "type": "number",
+                                  "value": 18
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 22
+                                },
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "55865130-0e82-4644-9fab-8b1cc4622a3b"
+                            }
+                          ],
+                          "true9": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 773 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (6,10)"
+                              },
+                              "id": "c082686e-29f9-4270-9af7-6c48ad24a6bd"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                                "x": {
+                                  "type": "number",
+                                  "value": 6
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 10
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "4371c9a0-6b6f-41db-8485-8a2cd41bad43"
+                            }
+                          ],
+                          "true10": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 774 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (26,22)"
+                              },
+                              "id": "de6410fe-c82e-42e6-b317-44492bfdf7d9"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                "x": {
+                                  "type": "number",
+                                  "value": 26
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 22
+                                },
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "0b465cae-5d94-47cb-bfa5-e75dc68014c5"
+                            }
+                          ],
+                          "true11": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 775 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (26,10)"
+                              },
+                              "id": "34db0609-f960-4d8d-82c2-b4404537f011"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                                "x": {
+                                  "type": "number",
+                                  "value": 26
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 10
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "5de79994-56d9-4a97-b398-d1cf0a3a485c"
+                            }
+                          ],
+                          "true12": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 776 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (34,22)"
+                              },
+                              "id": "599e8591-6e16-41e5-b36a-9215c33536c9"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                "x": {
+                                  "type": "number",
+                                  "value": 34
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 22
+                                },
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "44392826-ac6d-4508-9ee2-b11aaf3b1b8a"
+                            }
+                          ],
+                          "true13": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 777 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (46,10)"
+                              },
+                              "id": "9e977ecf-d4c3-49bf-8a45-7485e5ab5284"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                                "x": {
+                                  "type": "number",
+                                  "value": 46
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 10
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "a39e8817-8681-4038-af6f-ca3b91e55854"
+                            }
+                          ],
+                          "true14": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 778 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (42,22)"
+                              },
+                              "id": "2f80c128-2277-438e-8243-0206b02ac0c6"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                "x": {
+                                  "type": "number",
+                                  "value": 42
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 22
+                                },
+                                "direction": "up",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "f36b9e1f-0d08-4f7c-93cf-6d0bcb0591dd"
+                            }
+                          ],
+                          "true15": [
+                            {
+                              "command": "EVENT_COMMENT",
+                              "args": {
+                                "text": "WarpId 779 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (6,30)"
+                              },
+                              "id": "10d2475f-da6d-4e1f-b9d8-413d073039e7"
+                            },
+                            {
+                              "command": "EVENT_SWITCH_SCENE",
+                              "args": {
+                                "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                                "x": {
+                                  "type": "number",
+                                  "value": 6
+                                },
+                                "y": {
+                                  "type": "number",
+                                  "value": 30
+                                },
+                                "direction": "down",
+                                "fadeSpeed": "2"
+                              },
+                              "id": "e3b6b2ad-ec18-49a3-b5f0-cc9e79c13af2"
+                            }
+                          ],
+                          "false": [
+                            {
+                              "command": "EVENT_SWITCH",
+                              "args": {
+                                "variable": "V0",
+                                "choices": 16,
+                                "__collapseElse": false,
+                                "value0": {
+                                  "type": "number",
+                                  "value": 780
+                                },
+                                "__collapseCase0": false,
+                                "value1": {
+                                  "type": "number",
+                                  "value": 781
+                                },
+                                "__collapseCase1": false,
+                                "value2": {
+                                  "type": "number",
+                                  "value": 782
+                                },
+                                "__collapseCase2": false,
+                                "value3": {
+                                  "type": "number",
+                                  "value": 783
+                                },
+                                "__collapseCase3": false,
+                                "value4": {
+                                  "type": "number",
+                                  "value": 784
+                                },
+                                "__collapseCase4": false,
+                                "value5": {
+                                  "type": "number",
+                                  "value": 785
+                                },
+                                "__collapseCase5": false,
+                                "value6": {
+                                  "type": "number",
+                                  "value": 786
+                                },
+                                "__collapseCase6": false,
+                                "value7": {
+                                  "type": "number",
+                                  "value": 787
+                                },
+                                "__collapseCase7": false,
+                                "value8": {
+                                  "type": "number",
+                                  "value": 788
+                                },
+                                "__collapseCase8": false,
+                                "value9": {
+                                  "type": "number",
+                                  "value": 789
+                                },
+                                "__collapseCase9": false,
+                                "value10": {
+                                  "type": "number",
+                                  "value": 790
+                                },
+                                "__collapseCase10": false,
+                                "value11": {
+                                  "type": "number",
+                                  "value": 791
+                                },
+                                "__collapseCase11": false,
+                                "value12": {
+                                  "type": "number",
+                                  "value": 792
+                                },
+                                "__collapseCase12": false,
+                                "value13": {
+                                  "type": "number",
+                                  "value": 793
+                                },
+                                "__collapseCase13": false,
+                                "value14": {
+                                  "type": "number",
+                                  "value": 794
+                                },
+                                "__collapseCase14": false,
+                                "value15": {
+                                  "type": "number",
+                                  "value": 795
+                                },
+                                "__collapseCase15": false
+                              },
+                              "children": {
+                                "true0": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 780 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (50,22)"
+                                    },
+                                    "id": "3321eaad-b683-4bf9-873a-ccd810565459"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 50
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 22
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "56dbc594-89a5-46cc-a6bb-822d893dcf0c"
+                                  }
+                                ],
+                                "true1": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 781 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (26,30)"
+                                    },
+                                    "id": "da9a5bcb-46b2-401b-8974-1f935b03b0db"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 26
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 30
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "1f24596b-3e99-4026-96e1-a8daf71dc142"
+                                  }
+                                ],
+                                "true2": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 782 → STAIR s_s_anne2_f_rooms → s_s_anne2_f (58,22)"
+                                    },
+                                    "id": "bf564927-accd-4da6-8d83-bbd17b19a357"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "f8f14efe-bde7-49c0-90b5-ad66039a8b5d",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 58
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 22
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "53d3c98e-666e-42ba-8976-0b99f979d78c"
+                                  }
+                                ],
+                                "true3": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 783 → STAIR s_s_anne2_f → s_s_anne2_f_rooms (46,30)"
+                                    },
+                                    "id": "13cbe25d-3760-4b59-bf06-e2dfb2c8d83f"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "92c25ef7-3947-4f2f-bc1c-abca6a733da1",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 46
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 30
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "a8ac6bdf-77bd-43f7-b19e-782679f44117"
+                                  }
+                                ],
+                                "true4": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 784 → STAIR s_s_anne3_f → s_s_anne_bow (26,12)"
+                                    },
+                                    "id": "55865c8c-d1fb-4225-8271-e0fb763d77ba"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "0efff122-949e-42ca-bf9c-6d022d748cda",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 26
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 12
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "0f8a91a1-c3bb-4f89-8d79-ac018d0e20cb"
+                                  }
+                                ],
+                                "true5": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 785 → STAIR s_s_anne_bow → s_s_anne3_f (0,6)"
+                                    },
+                                    "id": "0e35f22a-7bb4-4b02-afde-0d6d24983c85"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "ac4fdea0-e9b8-470e-9126-e4cbea89e95c",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 0
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 6
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "ceebdcca-c1b8-4587-b040-115b5cd81681"
+                                  }
+                                ],
+                                "true6": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 786 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (24,30)"
+                                    },
+                                    "id": "01ba0e47-741e-4f46-aca9-5c365565475d"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 24
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 30
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "efde8960-c4f9-4a6b-95f1-82df2977be08"
+                                  }
+                                ],
+                                "true7": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 787 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (46,6)"
+                                    },
+                                    "id": "68eaabde-2fb9-4a4c-93de-dbe0ddf038f1"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 46
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 6
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "7a3484f7-9b53-44a5-a8d2-d58d2952a68d"
+                                  }
+                                ],
+                                "true8": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 788 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (4,30)"
+                                    },
+                                    "id": "94519c0f-3f46-4c4b-8a56-09b838018056"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 4
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 30
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "bef8cfb0-f8bb-4df2-8068-cadfef319bdd"
+                                  }
+                                ],
+                                "true9": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 789 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (38,6)"
+                                    },
+                                    "id": "d21cf7bc-2bca-4dba-a6a0-bed39b49d567"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 38
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 6
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "e9235e6c-4007-494f-b127-02c939ecd6f1"
+                                  }
+                                ],
+                                "true10": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 790 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (44,10)"
+                                    },
+                                    "id": "3949a448-a012-4891-8a0c-818ea948b1f4"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 44
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 10
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "6d9a9a29-30f9-48b7-8411-63ae4046e3fa"
+                                  }
+                                ],
+                                "true11": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 791 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (30,6)"
+                                    },
+                                    "id": "5a53c6ac-9f53-40ea-9da3-b3049b02df07"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 30
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 6
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "3af0cfef-dda1-496e-a15f-26f5963c3277"
+                                  }
+                                ],
+                                "true12": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 792 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (24,10)"
+                                    },
+                                    "id": "232b0d77-91e3-4cc6-a9cf-f86c85f72535"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 24
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 10
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "a095e18c-d78a-4ed7-b219-0e19928e1834"
+                                  }
+                                ],
+                                "true13": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 793 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (22,6)"
+                                    },
+                                    "id": "4e28adbb-cc99-44c9-8263-db6fe5b82b29"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 22
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 6
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "db2b4062-29b2-4d9d-bef7-78cae7b1ea7d"
+                                  }
+                                ],
+                                "true14": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 794 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (4,10)"
+                                    },
+                                    "id": "f723af06-d0aa-4b03-b526-26918eec26e7"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 4
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 10
+                                      },
+                                      "direction": "up",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "111efbc1-2dca-43b0-bdaf-662412e072b7"
+                                  }
+                                ],
+                                "true15": [
+                                  {
+                                    "command": "EVENT_COMMENT",
+                                    "args": {
+                                      "text": "WarpId 795 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (14,6)"
+                                    },
+                                    "id": "8f4ef4ac-2d3d-4420-a64f-a74949044bb2"
+                                  },
+                                  {
+                                    "command": "EVENT_SWITCH_SCENE",
+                                    "args": {
+                                      "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                      "x": {
+                                        "type": "number",
+                                        "value": 14
+                                      },
+                                      "y": {
+                                        "type": "number",
+                                        "value": 6
+                                      },
+                                      "direction": "down",
+                                      "fadeSpeed": "2"
+                                    },
+                                    "id": "1e7bd31c-6862-4cd4-adb3-0ff1ea8344d0"
+                                  }
+                                ],
+                                "false": [
+                                  {
+                                    "command": "EVENT_SWITCH",
+                                    "args": {
+                                      "variable": "V0",
+                                      "choices": 12,
+                                      "__collapseElse": true,
+                                      "value0": {
+                                        "type": "number",
+                                        "value": 796
+                                      },
+                                      "__collapseCase0": false,
+                                      "value1": {
+                                        "type": "number",
+                                        "value": 797
+                                      },
+                                      "__collapseCase1": false,
+                                      "value2": {
+                                        "type": "number",
+                                        "value": 798
+                                      },
+                                      "__collapseCase2": false,
+                                      "value3": {
+                                        "type": "number",
+                                        "value": 799
+                                      },
+                                      "__collapseCase3": false,
+                                      "value4": {
+                                        "type": "number",
+                                        "value": 800
+                                      },
+                                      "__collapseCase4": false,
+                                      "value5": {
+                                        "type": "number",
+                                        "value": 801
+                                      },
+                                      "__collapseCase5": false,
+                                      "value6": {
+                                        "type": "number",
+                                        "value": 802
+                                      },
+                                      "__collapseCase6": false,
+                                      "value7": {
+                                        "type": "number",
+                                        "value": 803
+                                      },
+                                      "__collapseCase7": false,
+                                      "value8": {
+                                        "type": "number",
+                                        "value": 804
+                                      },
+                                      "__collapseCase8": false,
+                                      "value9": {
+                                        "type": "number",
+                                        "value": 805
+                                      },
+                                      "__collapseCase9": false,
+                                      "value10": {
+                                        "type": "number",
+                                        "value": 806
+                                      },
+                                      "__collapseCase10": false,
+                                      "value11": {
+                                        "type": "number",
+                                        "value": 807
+                                      },
+                                      "__collapseCase11": false
+                                    },
+                                    "children": {
+                                      "true0": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 796 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (14,6)"
+                                          },
+                                          "id": "ccc9b5fb-2a6b-4018-b711-276b7739daa7"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 6
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "63a780df-6256-4acb-8719-2a8ca4c1891e"
+                                        }
+                                      ],
+                                      "true1": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 797 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (6,10)"
+                                          },
+                                          "id": "cf47e951-e621-4dca-abde-9371be3c59a4"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 6
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 10
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "65212f27-ba86-4d14-9934-a8b3c0b36432"
+                                        }
+                                      ],
+                                      "true2": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 798 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (22,6)"
+                                          },
+                                          "id": "12d0d0c9-804e-4729-98d5-b01d51789985"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 22
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 6
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "4ca4ea2c-5b7d-4bcd-9dc2-d117928597d5"
+                                        }
+                                      ],
+                                      "true3": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 799 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (26,10)"
+                                          },
+                                          "id": "55057882-1498-4b5e-92c8-35fd0d7e98d4"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 26
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 10
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "e6516de6-111a-4176-b748-81480e079fc4"
+                                        }
+                                      ],
+                                      "true4": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 800 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (30,6)"
+                                          },
+                                          "id": "5274aa72-bb61-4f41-80e7-a0967ad1be9c"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 30
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 6
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "04716b54-817f-435e-b55a-a5093606030f"
+                                        }
+                                      ],
+                                      "true5": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 801 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (46,10)"
+                                          },
+                                          "id": "942eab9e-7a47-44a4-9ac7-02bd3cee134f"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 46
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 10
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "c108f6f8-51e4-4f99-a4c5-8c3fdd1d0751"
+                                        }
+                                      ],
+                                      "true6": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 802 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (38,6)"
+                                          },
+                                          "id": "094de86e-d44f-4788-8d66-3d7729ec95ea"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 38
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 6
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "2dc9e08d-265c-4053-90fd-851cf5db4021"
+                                        }
+                                      ],
+                                      "true7": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 803 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (6,30)"
+                                          },
+                                          "id": "d4e2fe97-9eb8-45a7-a00d-17e4fc473c68"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 6
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 30
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "f473933b-e000-4002-a09c-a3332c36035d"
+                                        }
+                                      ],
+                                      "true8": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 804 → STAIR s_s_anne_b1_f_rooms → s_s_anne_b1_f (46,6)"
+                                          },
+                                          "id": "529095b5-4825-47f2-9321-e66c39c0e549"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 46
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 6
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "b7c9f13b-1b63-4254-85d4-bbca6cec6fcd"
+                                        }
+                                      ],
+                                      "true9": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 805 → STAIR s_s_anne_b1_f → s_s_anne_b1_f_rooms (26,30)"
+                                          },
+                                          "id": "9be81da5-5572-4440-b75a-88221d43ddd9"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 26
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 30
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "40f46169-d264-49cf-a885-699e9e978ba3"
+                                        }
+                                      ],
+                                      "true10": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 806 → STAIR s_s_anne_bow → s_s_anne3_f (0,6)"
+                                          },
+                                          "id": "3928b8ae-a26d-40a0-8035-e370b5ba2dc4"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "ac4fdea0-e9b8-470e-9126-e4cbea89e95c",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 0
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 6
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "f34cf06c-167b-4bde-931e-091de841f9cc"
+                                        }
+                                      ],
+                                      "true11": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 807 → STAIR s_s_anne3_f → s_s_anne_bow (26,14)"
+                                          },
+                                          "id": "a901914c-1a49-4e40-9376-531696a28ce9"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "0efff122-949e-42ca-bf9c-6d022d748cda",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 26
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "1d0f230f-0391-46d2-bdc5-07c126ebcade"
+                                        }
+                                      ]
+                                    },
+                                    "id": "4506b277-a570-4221-a5e7-6c989d842eeb"
+                                  }
+                                ]
+                              },
+                              "id": "800927e7-38ff-4fd4-b5ff-3a8115e2d106"
+                            }
+                          ]
+                        },
+                        "id": "6b3759ae-4316-4e33-883c-af6095890c54"
+                      }
+                    ]
+                  },
+                  "id": "1a7d4a0d-3517-4260-a65c-e6eadd8602a4"
+                }
+              ]
+            },
+            "id": "a7d2f51e-5fa3-4564-8789-2bb64710f601"
+          }
+        ],
+        "false": []
+      },
+      "id": "a091b9a3-41af-4370-bc0d-6c7ed04d8eb3"
+    }
+  ]
+}

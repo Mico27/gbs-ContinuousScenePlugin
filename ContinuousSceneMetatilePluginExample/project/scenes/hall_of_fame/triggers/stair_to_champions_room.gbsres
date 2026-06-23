@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "dbb53af5-6344-40e3-887a-00229054e92c",
+  "name": "Stair to champions_room",
+  "prefabId": "",
+  "x": 8,
+  "y": 14,
+  "symbol": "trigger_stair_to_champions_",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ed3ad6f2-d9d4-4ed4-8b63-a564aa907be5",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 433
+        }
+      },
+      "id": "dd0ef1e0-2656-4599-914e-6b7b4b7464e2"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

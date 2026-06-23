@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "d8ea1ec6-8488-4f0e-b4d6-6281bfa9d3d6",
+  "_index": 2,
+  "symbol": "npc_gentleman_00ee",
+  "prefabId": "",
+  "name": "gentleman",
+  "coordinateType": "tiles",
+  "x": 16,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "6a50df44-a80b-4d6c-8360-8ff8526102ea",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nSILPH CO. is very\n\nfamous. That's",
+          "\nwhy it attracted\n\nTEAM ROCKET!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "babceff0-3eb0-4b23-8ce6-0f59c800eec8"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

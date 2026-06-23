@@ -1,0 +1,62 @@
+{
+  "_resourceType": "actor",
+  "id": "84169b5b-e0d5-4633-9dcd-e8dde4ca9f7b",
+  "_index": 2,
+  "symbol": "npc_middle_aged_01e5",
+  "prefabId": "",
+  "name": "middle_aged_man",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "8b1af5cb-380c-4b2a-9beb-e3512ec78221",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nOur POKéMON's an\n\noutsider, so it's",
+          "\nhard to handle.",
+          "\nAn outsider is a\n\nPOKéMON that you",
+          "\nget in a trade.",
+          "\nIt grows fast, but\n\nit may ignore an",
+          "\nunskilled trainer\n\nin battle!",
+          "\nIf only we had\n\nsome BADGEs..."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "d15cbf63-a906-42d1-bedd-9065d037c1e0"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

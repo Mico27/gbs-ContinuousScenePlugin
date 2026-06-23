@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "d2d531f5-bf50-4475-9d93-a2bfaff5369d",
+  "_index": 1,
+  "symbol": "npc_safari_zone_0145",
+  "prefabId": "",
+  "name": "safari_zone_worker",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "4c44083a-6467-4af8-9031-9fae178fdd4d",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHi! Is it your\n\nfirst time here?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "ab419e66-236f-4c03-b990-db1bbc844f95"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

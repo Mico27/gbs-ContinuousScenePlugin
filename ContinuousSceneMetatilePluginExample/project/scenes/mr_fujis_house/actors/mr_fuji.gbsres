@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "ae3322c6-c9b1-4157-b49a-727f284f5d68",
+  "_index": 4,
+  "symbol": "npc_mr_fuji_01df",
+  "prefabId": "",
+  "name": "mr_fuji",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 3,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "4d8288f0-daa2-42e2-bc23-b8606db7869e",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMR.FUJI: RED.",
+          "\nYour POKéDEX quest\n\nmay fail without",
+          "\nlove for your\n\nPOKéMON.",
+          "\nI think this may\n\nhelp your quest."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "0c0dbf76-1c36-4130-be65-223c34048847"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

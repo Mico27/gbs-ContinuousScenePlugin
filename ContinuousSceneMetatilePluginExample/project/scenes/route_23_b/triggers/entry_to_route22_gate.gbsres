@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "b7d29ac2-33e7-4c96-8a80-f348bd348b76",
+  "name": "Entry to route22_gate",
+  "prefabId": "",
+  "x": 14,
+  "y": 134,
+  "symbol": "trigger_entry_to_route22_ga_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 330
+        }
+      },
+      "id": "2459ed3c-1272-4e97-9e97-70f478464abb"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "9720c8d8-7f47-403e-8536-2ccf4ebb87e9"
+      },
+      "id": "5f219f7b-06aa-4d1f-a742-1b8f7a1769aa"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "67280944-b8c2-45a0-aff9-529b9adb0aba"
+    }
+  ],
+  "_index": 0
+}

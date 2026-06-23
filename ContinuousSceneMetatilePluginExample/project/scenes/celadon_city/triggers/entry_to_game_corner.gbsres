@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "33612446-1758-4b8b-bf6d-facf93148717",
+  "name": "Entry to game_corner",
+  "prefabId": "",
+  "x": 56,
+  "y": 38,
+  "symbol": "trigger_entry_to_game_corne",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 134
+        }
+      },
+      "id": "b10dfe5f-99d5-4b13-858c-6cf13f2fb3ca"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 11
+}

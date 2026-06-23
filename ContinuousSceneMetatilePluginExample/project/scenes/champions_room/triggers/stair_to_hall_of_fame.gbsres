@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "e45eed64-94c3-461f-b1be-a19824df2612",
+  "name": "Stair to hall_of_fame",
+  "prefabId": "",
+  "x": 6,
+  "y": 0,
+  "symbol": "trigger_stair_to_hall_of_fa",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ed3ad6f2-d9d4-4ed4-8b63-a564aa907be5",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 430
+        }
+      },
+      "id": "c09734be-cda9-4b01-b261-482a33f5c590"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

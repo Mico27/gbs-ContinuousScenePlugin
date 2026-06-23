@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "cccb8308-5fc3-4d9c-acf4-0eddfeda2bfa",
+  "name": "Stair to victory_road3_f",
+  "prefabId": "",
+  "x": 2,
+  "y": 2,
+  "symbol": "trigger_stair_to_victory_ro_1",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70a121cf-0130-4e2b-9d1f-fc57d7c967ef",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 412
+        }
+      },
+      "id": "84c6fa84-07b2-4ee7-b29f-165372e254b1"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

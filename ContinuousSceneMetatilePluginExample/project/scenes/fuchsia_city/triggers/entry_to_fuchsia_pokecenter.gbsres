@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "a8377e41-b884-4c3b-8f64-469d40870576",
+  "name": "Entry to fuchsia_pokecenter",
+  "prefabId": "",
+  "x": 38,
+  "y": 54,
+  "symbol": "trigger_entry_to_fuchsia_po",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 178
+        }
+      },
+      "id": "8235f1ab-7115-4610-ae77-2df1581de0c3"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 6
+}

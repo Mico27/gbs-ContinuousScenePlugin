@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "ee090bd4-7b41-4771-b492-420e9ce708db",
+  "name": "Stair to lances_room",
+  "prefabId": "",
+  "x": 8,
+  "y": 0,
+  "symbol": "trigger_stair_to_lances_roo",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "9d5c801d-1b45-4e3d-a544-5630828b9cbf",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 418
+        }
+      },
+      "id": "c73c3a4b-8b72-4de8-8704-f26d05642f8d"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

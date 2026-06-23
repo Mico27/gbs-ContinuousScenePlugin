@@ -1,0 +1,63 @@
+{
+  "_resourceType": "actor",
+  "id": "232b64ee-858e-4fdd-80fa-58bc49b56ee8",
+  "_index": 2,
+  "symbol": "npc_scientist_015b",
+  "prefabId": "",
+  "name": "scientist",
+  "coordinateType": "tiles",
+  "x": 30,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "995270ad-1b0d-45ad-8184-253216f30349",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nSsh! I think that\n\nthis chunk of",
+          "\nAMBER contains\n\nPOKéMON DNA!",
+          "\nIt would be great\n\nif POKéMON could",
+          "\nbe resurrected\n\nfrom it!",
+          "\nBut, my colleagues\n\njust ignore me!",
+          "\nSo I have a favor\n\nto ask!",
+          "\nTake this to a\n\nPOKéMON LAB and",
+          "\nget it examined!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "68affe1e-689b-4657-873c-b57c4238b2a7"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

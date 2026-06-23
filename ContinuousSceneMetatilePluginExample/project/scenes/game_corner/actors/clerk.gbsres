@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "fdbff0ef-f60d-4bf7-9d4e-666e30775ded",
+  "_index": 1,
+  "symbol": "npc_clerk_0225",
+  "prefabId": "",
+  "name": "clerk",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "79a49ef6-bf0a-4f4d-93a5-92f6143bd3e2",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWelcome to ROCKET\n\nGAME CORNER!",
+          "\nDo you need some\n\ngame coins?",
+          "\nIt's ¥1000 for 50\n\ncoins. Would you",
+          "\nlike some?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "ad409b1e-d8b6-4194-85e4-e0a665b9876e"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

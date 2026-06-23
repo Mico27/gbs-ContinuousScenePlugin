@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "3a0925d6-d103-460c-8427-8ed88697991f",
+  "name": "Entry to viridian_nickname_house",
+  "prefabId": "",
+  "x": 42,
+  "y": 18,
+  "symbol": "trigger_entry_to_viridian_n",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 66
+        }
+      },
+      "id": "b6f5c87c-308f-4557-af04-43dc3cce63b6"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

@@ -1,0 +1,71 @@
+{
+  "_resourceType": "actor",
+  "id": "52bbcafa-3186-42ea-b41c-15045347abe3",
+  "_index": 0,
+  "symbol": "npc_waiter_0277",
+  "prefabId": "",
+  "name": "waiter",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 15,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "e7adce80-129c-49ab-b426-043a6e47426c",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThis ship, she is\n\na luxury liner",
+          "\nfor trainers!",
+          "\nAt every port, we\n\nhold parties with",
+          "\ninvited trainers!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "0c2dfc46-84f7-4e92-ae8e-6d21f04bd433"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "16a7bf62-27d4-4af9-8da8-980d74941bc6"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "0df3887b-ddf0-42f5-8ec1-6f7db3f2668d",
+  "name": "Exit to fuchsia_city",
+  "prefabId": "",
+  "x": 8,
+  "y": 14,
+  "symbol": "trigger_exit_to_fuchsia_cit_2",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 187
+        }
+      },
+      "id": "e8f39bfc-271d-4421-b651-bccbc8f645a7"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "8ce9f2d1-96a6-4ebd-8707-43a231f20897"
+      },
+      "id": "88ef370e-4830-47d2-9bd7-fb4560e36ad1"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "a42d162f-5bea-4e60-8e84-a195fb0b8882"
+    }
+  ],
+  "_index": 0
+}

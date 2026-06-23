@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "ac781c05-b9de-4b9c-9027-13f46b525e9c",
+  "name": "Exit to vermillion_city",
+  "prefabId": "",
+  "x": 6,
+  "y": 14,
+  "symbol": "trigger_exit_to_vermillion__4",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 109
+        }
+      },
+      "id": "dd062a07-ee23-4a58-ba8f-d558b6b22713"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a17eb4d8-8e36-4db9-bc2a-f00fcfda704d"
+      },
+      "id": "1e1f6d03-4bd8-4eed-a7b3-947fbbc3b102"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "f1bbdb49-9f8c-4787-8675-b3fe560b4c42"
+    }
+  ],
+  "_index": 0
+}

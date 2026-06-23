@@ -1,0 +1,70 @@
+{
+  "_resourceType": "actor",
+  "id": "68fe458b-c542-42d0-80bd-49b7ffc224cc",
+  "_index": 1,
+  "symbol": "npc_super_nerd_0235",
+  "prefabId": "",
+  "name": "super_nerd",
+  "coordinateType": "tiles",
+  "x": 20,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5639eede-6431-4bd5-b884-a9e9b61fde0b",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThat BILL!",
+          "\nI heard that\n\nhe'll do whatever",
+          "\nit takes to get\n\nrare POKéMON!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "554c5e36-c741-43db-93df-3c764f4eaea6"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "959087cd-7cda-48d6-a9cd-9c6fbabf02d6"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "30c274f1-b398-4fa6-8633-7e61312361f7",
+  "name": "Entry to fuchsia_gym",
+  "prefabId": "",
+  "x": 10,
+  "y": 54,
+  "symbol": "trigger_entry_to_fuchsia_gy",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 184
+        }
+      },
+      "id": "0529b6af-42df-464d-9552-ee631f1a8345"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

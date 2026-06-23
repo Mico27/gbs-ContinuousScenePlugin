@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "f44cae5b-f5c2-4ae1-b964-d981bee529cd",
+  "_index": 0,
+  "symbol": "npc_silph_worker_00fa",
+  "prefabId": "",
+  "name": "silph_worker_m",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "d10a65e6-c897-4e0f-8ff7-f5be832058f4",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nSssh! Can't you\n\nsee I'm hiding?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "4097828f-2474-43a9-b679-effca5d1da34"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

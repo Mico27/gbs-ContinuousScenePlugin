@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "4b452517-d39a-4160-9330-4c51ac5c99b4",
+  "_index": 1,
+  "symbol": "npc_gramps_0098",
+  "prefabId": "",
+  "name": "gramps",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5ae693e7-3e22-4f46-99bc-0adde32dbba3",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "..."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "089acd8f-6725-4f22-9769-ed22d6aa1ca9"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

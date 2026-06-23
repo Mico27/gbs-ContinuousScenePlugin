@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "fbdb4790-e274-438e-aa31-908663869452",
+  "_index": 1,
+  "symbol": "npc_little_girl_01dc",
+  "prefabId": "",
+  "name": "little_girl",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "e757094a-1b64-48d0-9def-829e5eb456a1",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThis is really\n\nMR.FUJI's house.",
+          "\nHe's really kind!",
+          "\nHe looks after\n\nabandoned and",
+          "\norphaned POKéMON!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "d3ba5f11-f077-48cb-9102-53e4f2bb95a0"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

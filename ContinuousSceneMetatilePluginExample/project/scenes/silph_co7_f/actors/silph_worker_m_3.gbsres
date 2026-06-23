@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "3f85b3fe-6741-4da4-94c9-5e8b7da0b327",
+  "_index": 2,
+  "symbol": "npc_silph_worker_0118",
+  "prefabId": "",
+  "name": "silph_worker_m",
+  "coordinateType": "tiles",
+  "x": 14,
+  "y": 21,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "d10a65e6-c897-4e0f-8ff7-f5be832058f4",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nIt would be bad\n\nif TEAM ROCKET",
+          "\ntook over SILPH\n\nor our POKéMON!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "c14eb2af-6c43-4da2-aec4-267200f5acbf"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

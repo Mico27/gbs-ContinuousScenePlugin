@@ -1,0 +1,62 @@
+{
+  "_resourceType": "actor",
+  "id": "f846e2e2-0b73-450a-b810-684a346b8266",
+  "_index": 3,
+  "symbol": "npc_gym_guide_018b",
+  "prefabId": "",
+  "name": "gym_guide",
+  "coordinateType": "tiles",
+  "x": 14,
+  "y": 21,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "6ae9759f-dcdd-46d2-bad1-47db2d5e6cc5",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYo! Champ in\n\nmaking!",
+          "\nHere's my advice!",
+          "\nThe LEADER, MISTY,\n\nis a pro who uses",
+          "\nwater POKéMON!",
+          "\nYou can drain all\n\ntheir water with",
+          "\nplant POKéMON!",
+          "\nOr, zap them with\n\nelectricity!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "46d60913-57be-425f-bd89-222c35996306"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

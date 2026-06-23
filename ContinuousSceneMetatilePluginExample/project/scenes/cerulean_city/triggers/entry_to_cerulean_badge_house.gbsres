@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "ab0a1ac0-d1a7-4011-b54e-5b2045e9ac05",
+  "name": "Entry to cerulean_badge_house",
+  "prefabId": "",
+  "x": 18,
+  "y": 22,
+  "symbol": "trigger_entry_to_cerulean_b",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 100
+        }
+      },
+      "id": "350aaea9-0f0c-4cdd-b082-1c9d78a6ad6d"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

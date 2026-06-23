@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "816335d7-986f-4ce5-902a-8adb8d9bc840",
+  "_index": 114,
+  "name": "Museum1 F",
+  "backgroundId": "f7dd54eb-f767-4f4b-8b07-3b21b410196f",
+  "tilesetId": "1248d090-8b07-47a1-987c-e73d01b9ea99",
+  "width": 40,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00280+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_museum_1f",
+  "x": 904,
+  "y": 16376,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "be091cf5-b232-41ad-a078-2666f17c821e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "435f84ac-330d-4295-9b17-3b776239c5ed"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000006"
+        }
+      },
+      "id": "3fa4d7a1-5594-46ca-b1b3-41903e128a81"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a407ad18-cd50-418d-8f5d-e844a1389f39"
+      },
+      "id": "d7357130-0c87-46d9-aa66-46923485b796"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "8644316b-2760-457f-8aa9-1faf92181910"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "2b976ade-af03-4c8f-b4d5-20758bf7341e"
+      },
+      "id": "ccf07a8e-a8a1-4c0c-991e-23f9e01e9001"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

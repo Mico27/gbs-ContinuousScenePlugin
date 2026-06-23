@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "d02570a3-a8bc-48c1-8af0-98bb01df6fae",
+  "name": "Exit to celadon_city",
+  "prefabId": "",
+  "x": 30,
+  "y": 34,
+  "symbol": "trigger_exit_to_celadon_cit_4",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 135
+        }
+      },
+      "id": "e733ec72-9e3e-4c0c-9ac9-22873de4438b"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "0bb0c54c-7994-42c8-8acf-dd188e135053"
+      },
+      "id": "b5b226e4-8d76-4c3a-99d4-b21bad4ece68"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "20840338-0a9e-4ade-a9bf-13edd643d408"
+    }
+  ],
+  "_index": 0
+}

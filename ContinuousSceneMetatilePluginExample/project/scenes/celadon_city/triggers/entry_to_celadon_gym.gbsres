@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "33a6418f-f471-48e7-b521-4156c56de655",
+  "name": "Entry to celadon_gym",
+  "prefabId": "",
+  "x": 24,
+  "y": 54,
+  "symbol": "trigger_entry_to_celadon_gy",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 132
+        }
+      },
+      "id": "b7f646eb-bb65-4919-b852-b71df3c1f5db"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

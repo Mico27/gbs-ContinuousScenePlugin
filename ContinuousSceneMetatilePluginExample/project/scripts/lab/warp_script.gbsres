@@ -1,0 +1,602 @@
+{
+  "_resourceType": "script",
+  "id": "e37d819b-c890-405c-a8c7-08998d4ce2e8",
+  "name": "Lab/Warp Script",
+  "description": "Source-type warp router for LAB scenes. Routes WarpId (V0) to its destination via chained EVENT_SWITCH (16 cases each). 17 case(s).",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "symbol": "script_warp_lab",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "constant",
+            "value": "b001-0000-0000-0000-000000000018"
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "constant",
+                "value": "b001-0000-0000-0000-000000000019"
+              }
+            },
+            "id": "76478d16-58ee-41b1-a7c4-b2d66897cf53"
+          },
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "V0",
+              "choices": 16,
+              "__collapseElse": false,
+              "value0": {
+                "type": "number",
+                "value": 181
+              },
+              "__collapseCase0": false,
+              "value1": {
+                "type": "number",
+                "value": 187
+              },
+              "__collapseCase1": false,
+              "value2": {
+                "type": "number",
+                "value": 197
+              },
+              "__collapseCase2": false,
+              "value3": {
+                "type": "number",
+                "value": 454
+              },
+              "__collapseCase3": false,
+              "value4": {
+                "type": "number",
+                "value": 455
+              },
+              "__collapseCase4": false,
+              "value5": {
+                "type": "number",
+                "value": 456
+              },
+              "__collapseCase5": false,
+              "value6": {
+                "type": "number",
+                "value": 457
+              },
+              "__collapseCase6": false,
+              "value7": {
+                "type": "number",
+                "value": 458
+              },
+              "__collapseCase7": false,
+              "value8": {
+                "type": "number",
+                "value": 459
+              },
+              "__collapseCase8": false,
+              "value9": {
+                "type": "number",
+                "value": 460
+              },
+              "__collapseCase9": false,
+              "value10": {
+                "type": "number",
+                "value": 461
+              },
+              "__collapseCase10": false,
+              "value11": {
+                "type": "number",
+                "value": 462
+              },
+              "__collapseCase11": false,
+              "value12": {
+                "type": "number",
+                "value": 463
+              },
+              "__collapseCase12": false,
+              "value13": {
+                "type": "number",
+                "value": 464
+              },
+              "__collapseCase13": false,
+              "value14": {
+                "type": "number",
+                "value": 465
+              },
+              "__collapseCase14": false,
+              "value15": {
+                "type": "number",
+                "value": 643
+              },
+              "__collapseCase15": false
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 181 → EXIT wardens_house → fuchsia_city (54,54)"
+                  },
+                  "id": "379693f7-fc43-42e4-817b-f70d5a135af2"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "10bcdc30-2c2a-4dd5-98a4-8a3f5b25e2e4",
+                    "x": {
+                      "type": "number",
+                      "value": 54
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 54
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "ec1495bc-6bed-4ae2-a7cd-cf7b36b9c050"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 187 → EXIT fuchsia_meeting_room → fuchsia_city (44,26)"
+                  },
+                  "id": "92a54d74-5b8a-4dc0-b68b-436aacf3a8ad"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "10bcdc30-2c2a-4dd5-98a4-8a3f5b25e2e4",
+                    "x": {
+                      "type": "number",
+                      "value": 44
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 26
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "d0f4b855-049c-4f2a-9ddf-5895d69558f5"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 197 → EXIT cinnabar_lab → cinabar_island (12,18)"
+                  },
+                  "id": "36abc099-f6f0-461c-8bc5-37ee19d05aed"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "6cf3d3c9-381b-448f-a1c5-9aacdbb24d17",
+                    "x": {
+                      "type": "number",
+                      "value": 12
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "ca71e962-bfd0-43a9-ac31-cffa0c21df83"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 454 → STAIR cinnabar_lab → cinnabar_lab_trade_room (4,14)"
+                  },
+                  "id": "9d9c1597-7671-4405-a95d-495eea492df1"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3113fd4c-154a-483c-8365-8c138811dd5c",
+                    "x": {
+                      "type": "number",
+                      "value": 4
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "edf03913-9b8c-453d-a697-c70968cc3c22"
+                }
+              ],
+              "true4": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 455 → STAIR cinnabar_lab_trade_room → cinnabar_lab (16,8)"
+                  },
+                  "id": "27c2c60a-e74b-4541-9987-99c0716d6f31"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3164c359-1eb2-470f-8c83-44f8ec0f690e",
+                    "x": {
+                      "type": "number",
+                      "value": 16
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "c6954826-051e-4eae-b76a-cf131c15bff7"
+                }
+              ],
+              "true5": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 456 → STAIR cinnabar_lab → cinnabar_lab_metronome_room (4,14)"
+                  },
+                  "id": "06d9d401-9f4f-4c6e-acf7-909c6db007e7"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "81effba6-71e3-42ad-bd04-6cc9b0eeda09",
+                    "x": {
+                      "type": "number",
+                      "value": 4
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "e2fadca2-6d1c-4734-9d2a-10a1e812c7f1"
+                }
+              ],
+              "true6": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 457 → STAIR cinnabar_lab_metronome_room → cinnabar_lab (24,8)"
+                  },
+                  "id": "08211fc4-7f88-4f88-b422-1e09abd188d3"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3164c359-1eb2-470f-8c83-44f8ec0f690e",
+                    "x": {
+                      "type": "number",
+                      "value": 24
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "59423d47-f763-47e8-8928-b0c3d4892b68"
+                }
+              ],
+              "true7": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 458 → STAIR cinnabar_lab → cinnabar_lab_fossil_room (4,14)"
+                  },
+                  "id": "b1d9a87d-b0cc-4949-b955-05040b1e75f5"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1b35a4a5-2c66-40fc-929a-3e4aa0c0d94b",
+                    "x": {
+                      "type": "number",
+                      "value": 4
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "016edecc-79c8-4c12-89a6-070ebef9d42f"
+                }
+              ],
+              "true8": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 459 → STAIR cinnabar_lab_fossil_room → cinnabar_lab (32,8)"
+                  },
+                  "id": "6f0c6b34-5076-4ada-8b37-2f7764135049"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3164c359-1eb2-470f-8c83-44f8ec0f690e",
+                    "x": {
+                      "type": "number",
+                      "value": 32
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "44dae3f4-5aec-4909-b3d4-d15c20c75d08"
+                }
+              ],
+              "true9": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 460 → STAIR cinnabar_lab_fossil_room → cinnabar_lab (32,8)"
+                  },
+                  "id": "1b61c9c5-484a-48a4-b2f0-88b857be045f"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3164c359-1eb2-470f-8c83-44f8ec0f690e",
+                    "x": {
+                      "type": "number",
+                      "value": 32
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "373a7a08-3462-4e32-b3e5-76a50f80446c"
+                }
+              ],
+              "true10": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 461 → STAIR cinnabar_lab → cinnabar_lab_fossil_room (6,14)"
+                  },
+                  "id": "1f805cc2-228d-41b7-8a4d-ec823ae65486"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1b35a4a5-2c66-40fc-929a-3e4aa0c0d94b",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "5c00b68c-cba0-46b3-b72d-1769defa466f"
+                }
+              ],
+              "true11": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 462 → STAIR cinnabar_lab_metronome_room → cinnabar_lab (24,8)"
+                  },
+                  "id": "9ab22a01-1b89-4c07-ba13-a8036555aac6"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3164c359-1eb2-470f-8c83-44f8ec0f690e",
+                    "x": {
+                      "type": "number",
+                      "value": 24
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "afdf630b-e146-4dcd-8d86-696a2c89c6eb"
+                }
+              ],
+              "true12": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 463 → STAIR cinnabar_lab → cinnabar_lab_metronome_room (6,14)"
+                  },
+                  "id": "436b169d-36dc-41d8-a09e-bf8ee27b3d9f"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "81effba6-71e3-42ad-bd04-6cc9b0eeda09",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "867c9772-7d0a-4820-aed6-9e885eb34f7c"
+                }
+              ],
+              "true13": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 464 → STAIR cinnabar_lab_trade_room → cinnabar_lab (16,8)"
+                  },
+                  "id": "b23fa4e9-d9bc-4e6d-855f-4b668040901c"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3164c359-1eb2-470f-8c83-44f8ec0f690e",
+                    "x": {
+                      "type": "number",
+                      "value": 16
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "527a70d4-3b99-45cf-afd7-9e6077bec88a"
+                }
+              ],
+              "true14": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 465 → STAIR cinnabar_lab → cinnabar_lab_trade_room (6,14)"
+                  },
+                  "id": "0ad503e4-1c12-4409-98af-bf877bab09cc"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3113fd4c-154a-483c-8365-8c138811dd5c",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "a94974ad-a3bc-485b-914e-63cbca3def5e"
+                }
+              ],
+              "true15": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 643 → STAIR safari_zone_secret_house → safari_zone_west (6,6)"
+                  },
+                  "id": "85da3c3b-5487-4529-ac7d-92a2f5e7a014"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "16a30039-95e8-4b11-ad80-ba3fe5b87f61",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "e11a024b-c511-4017-8e02-b6a3e5dafe3d"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "V0",
+                    "choices": 1,
+                    "__collapseElse": true,
+                    "value0": {
+                      "type": "number",
+                      "value": 654
+                    },
+                    "__collapseCase0": false
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 654 → STAIR safari_zone_secret_house → safari_zone_west (6,6)"
+                        },
+                        "id": "ac3d21ee-252b-40a7-be47-5b6ecba1fd97"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "16a30039-95e8-4b11-ad80-ba3fe5b87f61",
+                          "x": {
+                            "type": "number",
+                            "value": 6
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 6
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "3149ccf9-3364-4e63-b6f6-7d6bef5d6ef5"
+                      }
+                    ]
+                  },
+                  "id": "dfc183d2-6b90-4caf-9307-34d09c0774c2"
+                }
+              ]
+            },
+            "id": "5ceba54a-500c-4d41-bf22-161b4e1740f0"
+          }
+        ],
+        "false": []
+      },
+      "id": "e415f487-ce49-47bb-96e6-590d53c0a81e"
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "3235e65f-7a1f-4383-bbd5-a5da98b5af1c",
+  "name": "Stair to agathas_room",
+  "prefabId": "",
+  "x": 8,
+  "y": 0,
+  "symbol": "trigger_stair_to_agathas_ro",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ed3ad6f2-d9d4-4ed4-8b63-a564aa907be5",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 415
+        }
+      },
+      "id": "f3061b51-fd4c-4f4e-93a2-a1a3e4a143e4"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

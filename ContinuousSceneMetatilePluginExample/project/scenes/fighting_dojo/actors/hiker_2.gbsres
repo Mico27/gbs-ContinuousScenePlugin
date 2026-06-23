@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "c8583de6-0a35-44fe-bbc9-ea1f4e7d4984",
+  "_index": 1,
+  "symbol": "npc_hiker_018d",
+  "prefabId": "",
+  "name": "hiker",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "25f3792c-ae42-40aa-9f3e-711181665025",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHoargh! Take your\n\nshoes off!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "3b654870-ea79-4a0e-805b-fad1049a5744"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

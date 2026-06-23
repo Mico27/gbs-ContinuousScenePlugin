@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "867692c1-ce33-41d2-8a33-c10748633e08",
+  "name": "Entry to victory_road2_f",
+  "prefabId": "",
+  "x": 28,
+  "y": 62,
+  "symbol": "trigger_entry_to_victory_ro_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 328
+        }
+      },
+      "id": "6e5df25c-6df3-4fe6-ae8b-43353d74955c"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

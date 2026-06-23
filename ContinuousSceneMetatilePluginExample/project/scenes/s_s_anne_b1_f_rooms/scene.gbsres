@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "4f5838a4-7fde-4a31-8218-f0782c430ba2",
+  "_index": 237,
+  "name": "S S Anne B1 F Rooms",
+  "backgroundId": "3a3558fb-4dae-460a-8061-7e4899541961",
+  "tilesetId": "adf80f02-dae5-4ed5-a586-02346c3b8667",
+  "width": 48,
+  "height": 32,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00600+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_ss_anne_b1f_rooms",
+  "x": 2440,
+  "y": 19800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "a50510e8-6ce4-4e8b-b221-371d8f4563db",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "aaedf749-5236-4e91-a1b1-cee5a22af4f1"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000f"
+        }
+      },
+      "id": "27a80cfe-0477-489a-a8db-0065cd25f60f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fbe52389-1adf-4891-85d3-cf14a1baa771"
+      },
+      "id": "2767aae8-752c-4c63-9adb-c8cd8a689c53"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "c9e5411d-ab52-4ddc-926c-4e3bc8707d0c"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e97c26b9-7db4-49e4-b35b-ba6d0c293f49"
+      },
+      "id": "b861486c-8dc0-408c-961b-15a731c0affc"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

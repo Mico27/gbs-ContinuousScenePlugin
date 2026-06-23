@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "abb758ac-c600-4f50-a185-e1b1114cd09e",
+  "name": "Stair to s_s_anne1_f_rooms",
+  "prefabId": "",
+  "x": 38,
+  "y": 16,
+  "symbol": "trigger_stair_to_s_s_anne1__2",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b480b6f5-5ab8-4046-b156-b800b9af9bb1",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 742
+        }
+      },
+      "id": "8223658d-49c9-435f-a017-7b70061b27e9"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 5
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "0f66ce62-0b60-4d8e-b155-5e4f17f2540c",
+  "name": "Entry to daycare",
+  "prefabId": "",
+  "x": 20,
+  "y": 42,
+  "symbol": "trigger_entry_to_daycare",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 231
+        }
+      },
+      "id": "a43aa22a-e4bb-4aeb-af3c-1a22ac63defa"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "6cbaa7ef-f7ad-46dd-8253-71ac39f500ee",
+  "_index": 7,
+  "symbol": "npc_monster_028e",
+  "prefabId": "",
+  "name": "monster",
+  "coordinateType": "tiles",
+  "x": 22,
+  "y": 25,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "f2fc9824-95c5-4c18-981f-48f06c58c4b9",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMACHOKE: Gwoh!\n\nGoggoh!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "41a0345f-9e4e-41d1-a3a6-5756a8d54887"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "98bfb2cb-88a6-46d7-a22f-6b52b6f0e831",
+  "_index": 4,
+  "symbol": "npc_hiker_01b2",
+  "prefabId": "",
+  "name": "hiker",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 15,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "25f3792c-ae42-40aa-9f3e-711181665025",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nKarate is the\n\nultimate form of",
+          "\nmartial arts!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "0b3956b0-3088-4fef-99be-793d3088f5ea"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

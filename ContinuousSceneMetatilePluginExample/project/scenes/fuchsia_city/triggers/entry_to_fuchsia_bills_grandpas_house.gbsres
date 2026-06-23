@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "3ccc990a-181e-477d-aa56-ac71f212bf1e",
+  "name": "Entry to fuchsia_bills_grandpas_house",
+  "prefabId": "",
+  "x": 22,
+  "y": 54,
+  "symbol": "trigger_entry_to_fuchsia_bi",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 176
+        }
+      },
+      "id": "1bcb4827-a07d-4aa7-b364-1450fc2b2470"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

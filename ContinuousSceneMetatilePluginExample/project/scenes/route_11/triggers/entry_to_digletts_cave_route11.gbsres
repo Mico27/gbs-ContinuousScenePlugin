@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "f6ddf53d-2d53-4f0e-adce-77d538a9cd31",
+  "name": "Entry to digletts_cave_route11",
+  "prefabId": "",
+  "x": 8,
+  "y": 10,
+  "symbol": "trigger_entry_to_digletts_c_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 276
+        }
+      },
+      "id": "60ef41ca-7f88-4c36-bf3e-60e19567f3ff"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

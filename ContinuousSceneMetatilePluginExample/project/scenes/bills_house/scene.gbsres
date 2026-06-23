@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "a4d561dd-9657-4dd7-8850-c434ea61543c",
+  "_index": 177,
+  "name": "Bills House",
+  "backgroundId": "7ea04deb-8b3f-4a95-ba44-7f281fc61f05",
+  "tilesetId": "4ff200df-8bc7-4cb8-a2bb-b85993216ebf",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_bills_house",
+  "x": 536,
+  "y": 17720,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "815ea311-000a-4341-af48-577370bd6e84",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "2d2140ed-cf7c-4fee-8bef-e7560d4773b2"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000009"
+        }
+      },
+      "id": "b7f1865a-1bbb-4f40-b057-252939d5342d"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6687bcbc-0530-4d06-b185-6fac34ed1fac"
+      },
+      "id": "c3c2080c-c2b1-4391-95db-39e7334a42da"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "092affca-5891-4343-b5f6-218234647f3f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e5c481b4-8073-4f91-8099-1ba945cd8dd5"
+      },
+      "id": "7eba387a-80ab-463f-a985-e18701150443"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

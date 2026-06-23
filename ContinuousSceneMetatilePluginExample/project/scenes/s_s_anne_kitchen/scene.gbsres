@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "0bbe183e-0701-4448-bbf1-6c5f96160097",
+  "_index": 240,
+  "name": "S S Anne Kitchen",
+  "backgroundId": "697c59b7-c6f2-4b11-ad22-2f6d0732b5c4",
+  "tilesetId": "adf80f02-dae5-4ed5-a586-02346c3b8667",
+  "width": 28,
+  "height": 32,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00380+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_ss_anne_kitchen",
+  "x": 2872,
+  "y": 19800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "a50510e8-6ce4-4e8b-b221-371d8f4563db",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "022056b6-4472-4297-83ad-15f98ebaf505"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000f"
+        }
+      },
+      "id": "c2425aea-2120-47bc-9dfa-38877fe887fa"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fbe52389-1adf-4891-85d3-cf14a1baa771"
+      },
+      "id": "e31ff0cb-bf9f-48b8-b68e-92dddca09f34"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "fdc69898-f1ac-4f3e-93d0-3d991fd1b3b8"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e97c26b9-7db4-49e4-b35b-ba6d0c293f49"
+      },
+      "id": "ed04d9fa-9c71-4fed-8f96-325853a65814"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

@@ -1,0 +1,341 @@
+{
+  "_resourceType": "script",
+  "id": "e1000001-0000-4000-a000-000000000005",
+  "name": "Spinning Warp",
+  "description": "Spinner telepad departure animation: plays a 3-rotation spin (down→left→up→right × 3) and sets WarpType (var23)=1 to signal spinner arrival. The destination Warp Script is called AFTER this, sequentially in the spinner trigger — not from here.",
+  "variables": {},
+  "actors": {},
+  "symbol": "script_spinning_warp",
+  "script": [
+    {
+      "command": "EVENT_COMMENT",
+      "args": {
+        "text": "SPINNING WARP: 3-rotation departure spin"
+      },
+      "id": "fb790621-1fed-41c9-ba05-a0165307f90a"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "down"
+        }
+      },
+      "id": "d646f227-01f7-466f-965f-4828ceb93a3f"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "4b0a6acc-5d89-4719-8e9c-c9332bcc38fc"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "left"
+        }
+      },
+      "id": "750078dc-f7ae-497b-b711-6dd4010c5527"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "995b47cd-0598-4a9d-9393-c76bf47cbc5d"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "up"
+        }
+      },
+      "id": "0d22792a-402d-46a6-b420-67e904869e86"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "b7def593-ff9b-4fa8-9496-a9b03da71dff"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "right"
+        }
+      },
+      "id": "65f01f28-650e-4f0b-b759-24d395efe31f"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "0b17fdd4-75a3-4c23-b3b3-95991fe31f9f"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "down"
+        }
+      },
+      "id": "07f6e4ec-dac9-48f0-8083-ea7ca030b5c5"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "c25ec3eb-e9f9-4c45-a271-f919eebedd0c"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "left"
+        }
+      },
+      "id": "181959cd-3cff-4443-93c2-1e8f420cb479"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "b7502b22-f8c9-4d5a-b174-87b1c98ea631"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "up"
+        }
+      },
+      "id": "c3910f77-d974-456b-b058-4259c7e4f093"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "4451dff5-e564-47c7-b3a8-3c6b30fa5751"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "right"
+        }
+      },
+      "id": "f1e6bc0c-696d-4242-99a9-857c9cd9f49d"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "c76c9390-c23b-4f91-a771-9c48e5bdeb8e"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "down"
+        }
+      },
+      "id": "0101c7d6-31ea-4ed2-983e-69b73872a7ac"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "f4e32496-0cbd-4349-9d6f-eceb3c89df46"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "left"
+        }
+      },
+      "id": "0b54160f-07f2-4319-a92d-4efa021a32e0"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "46dbfe94-007c-408a-aad7-e120c74c3bc9"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "up"
+        }
+      },
+      "id": "d027aa5e-8d94-4ad0-a87b-81111dcc3c39"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "a92dd47c-59a5-4f7e-8227-3dea6e3f64c5"
+    },
+    {
+      "command": "EVENT_ACTOR_SET_DIRECTION",
+      "args": {
+        "actorId": "player",
+        "direction": {
+          "type": "direction",
+          "value": "right"
+        }
+      },
+      "id": "e0e8cffd-cec5-49c5-9d12-3ed43d6d530a"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 3
+        },
+        "units": "frames"
+      },
+      "id": "d418ef0a-525d-4bdc-b65f-ae040ddf054e"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "23",
+        "value": {
+          "type": "number",
+          "value": 1
+        }
+      },
+      "id": "8ad7236e-d686-44a9-8b23-c0a01cd5fb4d"
+    }
+  ]
+}

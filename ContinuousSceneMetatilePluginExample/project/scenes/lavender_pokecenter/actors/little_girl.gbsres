@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "b59c91bd-1927-4e28-a585-5afec92f4951",
+  "_index": 2,
+  "symbol": "npc_little_girl_0249",
+  "prefabId": "",
+  "name": "little_girl",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "e757094a-1b64-48d0-9def-829e5eb456a1",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI saw CUBONE's\n\nmother die trying",
+          "\nto escape from\n\nTEAM ROCKET!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "55fa8ad5-da9c-4940-8c43-eca3acc80144"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "5e8258e9-be41-4225-af1a-2848826212a9"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

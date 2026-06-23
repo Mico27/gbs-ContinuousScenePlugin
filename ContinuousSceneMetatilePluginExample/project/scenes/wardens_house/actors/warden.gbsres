@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "4687892b-57c6-4565-a66b-d3ba9c504e0b",
+  "_index": 0,
+  "symbol": "npc_warden_01f4",
+  "prefabId": "",
+  "name": "warden",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "6014b97b-f4d5-46a4-98e7-a5f5160fc501",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWARDEN: Hif fuff\n\nhefifoo!",
+          "\nHa lof ha feef ee\n\nhafahi ho. Heff",
+          "\nhee fwee!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "2fd03f6b-1ae1-4cab-a307-f6fdda4c7dab"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

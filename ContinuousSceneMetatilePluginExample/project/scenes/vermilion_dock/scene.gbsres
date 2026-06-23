@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "4cb949fd-0db0-47e4-9882-905a7e63eebd",
+  "_index": 241,
+  "name": "Vermilion Dock",
+  "backgroundId": "1ba93f66-b6f3-437a-8149-76746cebe933",
+  "tilesetId": "9b6c966e-cd09-4448-93fa-c80abab70563",
+  "width": 56,
+  "height": 24,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00540+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_vermilion_dock",
+  "x": 200,
+  "y": 20232,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "46ccfdee-0173-4e07-a99f-a19cd8c7f87e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "3fe38ca5-5e44-4ef1-a322-7208bdad1184"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000010"
+        }
+      },
+      "id": "ee09bb61-7edf-4e09-8b0b-d8043b6f4f6a"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3be35b2c-8a0f-439e-97d7-cac45c429f2a"
+      },
+      "id": "794a5086-cd14-4489-8ac4-5f9f4c3436e2"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "6ab0ec76-fea2-4f27-9524-043bad232013"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "20af00a9-ddc5-448a-9c0a-9f64d9a1e4a6"
+      },
+      "id": "8ca8c651-ca36-4759-9739-7277efc621d0"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

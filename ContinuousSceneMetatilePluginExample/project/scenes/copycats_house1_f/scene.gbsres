@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "ee64758b-fc1e-4337-901a-90554e088a05",
+  "_index": 225,
+  "name": "Copycats House1 F",
+  "backgroundId": "11967fd1-efe3-4b0b-9f7a-f5d88da1c540",
+  "tilesetId": "bcb67d92-d38a-43c3-bbb1-ea36dac38e32",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_copycats_house_1f",
+  "x": 200,
+  "y": 19528,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5488617e-a78e-48b3-9ea4-3144015066ee",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "c4638ea4-ee5d-430c-be44-4b6b58bedb17"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000e"
+        }
+      },
+      "id": "a744aa9d-edf9-4f50-8ca7-7ae7952b6986"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "8a2b02d0-c6f4-41b7-af0a-bab9aef71eab"
+      },
+      "id": "eee121d4-1c65-41d6-91a7-a07e2d64281d"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "bf464073-9ebb-4e17-b4e9-c02197e45ea4"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e3b065cf-d4c8-4a95-8867-2cae3b08b3ae"
+      },
+      "id": "eeacfc24-e343-4384-8e53-025db7cf46ce"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

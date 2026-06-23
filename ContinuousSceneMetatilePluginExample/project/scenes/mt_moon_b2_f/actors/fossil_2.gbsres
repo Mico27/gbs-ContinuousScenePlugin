@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "1a33574c-7639-4286-9985-1799f511e624",
+  "_index": 6,
+  "symbol": "npc_fossil_001e",
+  "prefabId": "",
+  "name": "fossil",
+  "coordinateType": "tiles",
+  "x": 26,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "4acedc66-387b-4d79-8064-6bd5aa68ad42",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYou want the\n\nHELIX FOSSIL?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "ceb4c162-dd33-4bbd-a0d4-0226f8cf73b4"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

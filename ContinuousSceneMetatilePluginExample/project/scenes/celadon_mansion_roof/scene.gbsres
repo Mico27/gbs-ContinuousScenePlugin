@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "c5d7c311-c2e4-4641-95d0-f3e72b0c1e72",
+  "_index": 203,
+  "name": "Celadon Mansion Roof",
+  "backgroundId": "af1bfdce-720b-4fc1-abfd-c0f0a3fb949c",
+  "tilesetId": "573ded98-2204-46e0-9d76-b950c4538f2b",
+  "width": 16,
+  "height": 24,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00180+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_celadon_mansion_roof",
+  "x": 728,
+  "y": 18856,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "e7fed2f5-572c-46f5-a451-bbe304a97119",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "ff7b975d-22a4-4d1b-b206-1299e4cb5178"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000c"
+        }
+      },
+      "id": "5e2e3967-00e6-47d1-a460-a2b146fc1b55"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "636c1da1-1d31-47b4-b438-670a75b4af8d"
+      },
+      "id": "1166a0ca-1656-4a4d-a946-168c8ce273d5"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "e5e5bc12-b029-4cbf-8708-7415049f8fd7"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "4a562452-c100-4f7f-8e8b-b3f2895c09c1"
+      },
+      "id": "5704feed-925c-4ed4-84e9-cfba68960e5c"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "53341073-d2f4-4c3b-a3cf-f44e8d458118",
+  "name": "Entry to vermilion_mart",
+  "prefabId": "",
+  "x": 46,
+  "y": 26,
+  "symbol": "trigger_entry_to_vermilion__2",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 108
+        }
+      },
+      "id": "cbe35464-dc04-4988-9c05-e2a6f5500b3a"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 4
+}

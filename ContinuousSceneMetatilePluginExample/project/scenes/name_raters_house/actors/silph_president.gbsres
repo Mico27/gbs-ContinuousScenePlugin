@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "7039cbb0-baa6-4b46-a6a9-6cf18b149ba2",
+  "_index": 0,
+  "symbol": "npc_silph_presid_01e2",
+  "prefabId": "",
+  "name": "silph_president",
+  "coordinateType": "tiles",
+  "x": 10,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "af88c27a-d4c0-4d57-83ef-4870048a48c5",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHello, hello!\n\nI am the official",
+          "\nNAME RATER!",
+          "\nWant me to rate\n\nthe nicknames of",
+          "\nyour POKéMON?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "0564c281-d2ae-4069-81a9-4908a2ae0207"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

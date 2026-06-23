@@ -1,0 +1,71 @@
+{
+  "_resourceType": "actor",
+  "id": "895f7678-e292-483f-befe-f05cd0e32675",
+  "_index": 8,
+  "symbol": "npc_girl_01a3",
+  "prefabId": "",
+  "name": "girl",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 19,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "c1839d6b-81d5-407e-ad6a-271415ad22a3",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nPROF.OAK is the\n\nauthority on",
+          "\nPOKéMON!",
+          "\nMany POKéMON\n\ntrainers hold him",
+          "\nin high regard!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "1ad91dc7-12c9-4949-ad43-310486601c8b"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "e8573075-5c48-45cd-a528-5f71d25ffaa8"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

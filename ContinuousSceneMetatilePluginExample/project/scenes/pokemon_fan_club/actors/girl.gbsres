@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "17e84cc6-8b14-4eb4-85ee-6475a5042747",
+  "_index": 1,
+  "symbol": "npc_girl_01f8",
+  "prefabId": "",
+  "name": "girl",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "c1839d6b-81d5-407e-ad6a-271415ad22a3",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI just love my\n\nSEEL!",
+          "\nIt squeals when I\n\nhug it!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "9765abc2-2f0d-410e-88ac-a0807d47cf01"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

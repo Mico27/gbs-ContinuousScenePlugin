@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "0d14b68c-b421-476f-b6f9-707069aac582",
+  "_index": 0,
+  "symbol": "npc_cooltrainer_0",
+  "prefabId": "",
+  "name": "cooltrainer_m",
+  "coordinateType": "tiles",
+  "x": 56,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "20eca12d-e3a0-4bcb-aaf1-1bd1945b7d18",
+  "paletteId": "",
+  "direction": "left",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI heard rumors of\n\na child prodigy!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "98bce018-3d58-432c-b733-7b67d2c10ad5"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

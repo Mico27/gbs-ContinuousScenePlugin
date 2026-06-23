@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "aceb4fcb-57c8-48a8-a811-0081e3e9be2d",
+  "_index": 228,
+  "name": "Reds House2 F",
+  "backgroundId": "6fb4d54b-2e54-4983-b9a5-b06872050a46",
+  "tilesetId": "bcb67d92-d38a-43c3-bbb1-ea36dac38e32",
+  "width": 16,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00100+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_reds_house_2f",
+  "x": 728,
+  "y": 19528,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5488617e-a78e-48b3-9ea4-3144015066ee",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "b5faa011-5005-4422-9cdf-7a58e8c556fe"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000e"
+        }
+      },
+      "id": "bb6a2afa-63fc-434a-9a34-e7ab92c40618"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "8a2b02d0-c6f4-41b7-af0a-bab9aef71eab"
+      },
+      "id": "6d4f1715-a415-4908-b5a4-c3f7763cb5d7"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "c60dd892-c3db-42bd-bd41-4e066e3d5e7f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e3b065cf-d4c8-4a95-8867-2cae3b08b3ae"
+      },
+      "id": "ac99364b-0daa-4103-ad75-4b5ec6db2c73"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

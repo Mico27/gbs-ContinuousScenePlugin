@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "0a9055fe-4424-46b0-9e27-ed88dbdc31e9",
+  "name": "Entry to celadon_pokecenter",
+  "prefabId": "",
+  "x": 82,
+  "y": 18,
+  "symbol": "trigger_entry_to_celadon_po",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 130
+        }
+      },
+      "id": "ba287da0-8d69-405a-9545-72f14a448211"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 10
+}

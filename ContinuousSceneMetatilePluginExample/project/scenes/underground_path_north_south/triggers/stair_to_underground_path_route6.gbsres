@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "2b9c6c48-c7b2-4adc-b0ec-9f7007dd3c0c",
+  "name": "Stair to underground_path_route6",
+  "prefabId": "",
+  "x": 4,
+  "y": 82,
+  "symbol": "trigger_stair_to_undergroun_4",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "94cd9db7-8c61-4e3f-a66c-17634bac59c0",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 687
+        }
+      },
+      "id": "e4aeba6e-c0cd-46f4-926a-6df271511190"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

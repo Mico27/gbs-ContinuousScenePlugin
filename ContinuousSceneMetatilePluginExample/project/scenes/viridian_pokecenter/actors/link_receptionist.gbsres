@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "eeee15e8-ce35-4e86-83d1-538828fe11bb",
+  "_index": 3,
+  "symbol": "npc_link_recepti_0269",
+  "prefabId": "",
+  "name": "link_receptionist",
+  "coordinateType": "tiles",
+  "x": 22,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "28023f57-1d6c-4201-ac9a-7dfc69a6e821",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "..."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "4b5cdefc-2e39-49fd-acaa-3024f57c65c3"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,68 @@
+{
+  "_resourceType": "actor",
+  "id": "75183a07-1dfe-4ff7-b867-42aeb33017f3",
+  "_index": 2,
+  "symbol": "npc_fairy_0207",
+  "prefabId": "",
+  "name": "fairy",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "355db989-362c-4408-bc00-648f398b71cd",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nCLEFAIRY: Pi\n\npippippi!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "4fd76d2a-84cc-4ce1-8493-7d369d72be46"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "4dc84bb0-702d-4448-97a0-45e1dcef6f34"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

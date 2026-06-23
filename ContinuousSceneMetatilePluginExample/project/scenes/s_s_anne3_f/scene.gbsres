@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "ac4fdea0-e9b8-470e-9126-e4cbea89e95c",
+  "_index": 235,
+  "name": "S S Anne3 F",
+  "backgroundId": "572db8e8-d5af-4973-8629-53a45ffe1194",
+  "tilesetId": "adf80f02-dae5-4ed5-a586-02346c3b8667",
+  "width": 40,
+  "height": 12,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "001e0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_ss_anne_3f",
+  "x": 4536,
+  "y": 19800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "a50510e8-6ce4-4e8b-b221-371d8f4563db",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "eaca6cc6-75f5-4095-8101-5036c29de98e"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000f"
+        }
+      },
+      "id": "b3adc16c-ab22-4288-9f09-9ddd092745f7"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fbe52389-1adf-4891-85d3-cf14a1baa771"
+      },
+      "id": "a9836d33-2022-4c55-8492-19c3b77008c2"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "d6589b2b-4593-49c8-aa5a-491c8e012abd"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e97c26b9-7db4-49e4-b35b-ba6d0c293f49"
+      },
+      "id": "d4f9a7eb-68bb-41a9-b27b-db767c9a9331"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

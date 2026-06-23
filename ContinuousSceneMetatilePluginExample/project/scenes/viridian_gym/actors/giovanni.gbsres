@@ -1,0 +1,63 @@
+{
+  "_resourceType": "actor",
+  "id": "667d8de6-9fe3-42c6-ad5a-9f1521bf296b",
+  "_index": 0,
+  "symbol": "npc_giovanni_01ae",
+  "prefabId": "",
+  "name": "giovanni",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 3,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5f885a00-79f7-485b-b2d5-601ba2a88583",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nFwahahaha! This is\n\nmy hideout!",
+          "\nI planned to\n\nresurrect TEAM",
+          "\nROCKET here!",
+          "\nBut, you have\n\ncaught me again!",
+          "\nSo be it! This\n\ntime, I'm not",
+          "\nholding back!",
+          "\nOnce more, you\n\nshall face",
+          "\nGIOVANNI, the\n\ngreatest trainer!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "dfb74594-dae0-4483-ba8b-10722789896a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

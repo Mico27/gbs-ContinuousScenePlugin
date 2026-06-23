@@ -1,0 +1,71 @@
+{
+  "_resourceType": "actor",
+  "id": "97539091-afa3-4432-93e2-a059546399d5",
+  "_index": 1,
+  "symbol": "npc_cooltrainer_0232",
+  "prefabId": "",
+  "name": "cooltrainer_m",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "20eca12d-e3a0-4bcb-aaf1-1bd1945b7d18",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nUse REPEL to keep\n\nbugs and weak",
+          "\nPOKéMON away.",
+          "\nPut your strongest\n\nPOKéMON at the",
+          "\ntop of the list\n\nfor best results!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "58e1734a-c8ee-4fef-9e88-21888092c6fd"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "c15bf0b2-675d-48d7-b9df-b804cf57ccb4"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

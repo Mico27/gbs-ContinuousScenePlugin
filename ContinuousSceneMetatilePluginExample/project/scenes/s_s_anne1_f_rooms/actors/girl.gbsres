@@ -1,0 +1,69 @@
+{
+  "_resourceType": "actor",
+  "id": "ea0f5102-b6be-469b-ba78-a80077f2faca",
+  "_index": 4,
+  "symbol": "npc_girl_0270",
+  "prefabId": "",
+  "name": "girl",
+  "coordinateType": "tiles",
+  "x": 44,
+  "y": 7,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "c1839d6b-81d5-407e-ad6a-271415ad22a3",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nWaiter, I would\n\nlike a cherry pie",
+          "\nplease!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "934c590a-9516-44db-9f64-088531616aa4"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "0e6dec8e-1462-40d3-ac41-2810d1e3ce6b"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

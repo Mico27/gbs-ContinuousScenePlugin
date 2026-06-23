@@ -1,0 +1,602 @@
+{
+  "_resourceType": "script",
+  "id": "9d5c801d-1b45-4e3d-a544-5630828b9cbf",
+  "name": "Cemetery/Warp Script",
+  "description": "Source-type warp router for CEMETERY scenes. Routes WarpId (V0) to its destination via chained EVENT_SWITCH (16 cases each). 17 case(s).",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "symbol": "script_warp_cemetery",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "constant",
+            "value": "b001-0000-0000-0000-000000000018"
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "constant",
+                "value": "b001-0000-0000-0000-000000000019"
+              }
+            },
+            "id": "f46a66f3-3a8d-4ce4-940c-c6ff20c68f98"
+          },
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "V0",
+              "choices": 16,
+              "__collapseElse": false,
+              "value0": {
+                "type": "number",
+                "value": 165
+              },
+              "__collapseCase0": false,
+              "value1": {
+                "type": "number",
+                "value": 414
+              },
+              "__collapseCase1": false,
+              "value2": {
+                "type": "number",
+                "value": 416
+              },
+              "__collapseCase2": false,
+              "value3": {
+                "type": "number",
+                "value": 418
+              },
+              "__collapseCase3": false,
+              "value4": {
+                "type": "number",
+                "value": 420
+              },
+              "__collapseCase4": false,
+              "value5": {
+                "type": "number",
+                "value": 442
+              },
+              "__collapseCase5": false,
+              "value6": {
+                "type": "number",
+                "value": 443
+              },
+              "__collapseCase6": false,
+              "value7": {
+                "type": "number",
+                "value": 444
+              },
+              "__collapseCase7": false,
+              "value8": {
+                "type": "number",
+                "value": 445
+              },
+              "__collapseCase8": false,
+              "value9": {
+                "type": "number",
+                "value": 446
+              },
+              "__collapseCase9": false,
+              "value10": {
+                "type": "number",
+                "value": 447
+              },
+              "__collapseCase10": false,
+              "value11": {
+                "type": "number",
+                "value": 448
+              },
+              "__collapseCase11": false,
+              "value12": {
+                "type": "number",
+                "value": 449
+              },
+              "__collapseCase12": false,
+              "value13": {
+                "type": "number",
+                "value": 450
+              },
+              "__collapseCase13": false,
+              "value14": {
+                "type": "number",
+                "value": 451
+              },
+              "__collapseCase14": false,
+              "value15": {
+                "type": "number",
+                "value": 452
+              },
+              "__collapseCase15": false
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 165 → EXIT pokemon_tower1_f → lavender_town (28,10)"
+                  },
+                  "id": "ab017d9a-c9be-48ff-8eeb-deda8b379feb"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "949e335d-4bbb-4f65-ad0b-544b5488bf9d",
+                    "x": {
+                      "type": "number",
+                      "value": 28
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 10
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "6054bd58-daa5-4515-af89-f85a5eeb6061"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 414 → STAIR agathas_room → brunos_room (8,0)"
+                  },
+                  "id": "0fe7330c-905c-4c2a-9ea7-8b64be01a55a"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "27d14783-d239-43d3-876b-ae89fd35f721",
+                    "x": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "1370c423-51d7-4a5a-9d4f-00435a3b8856"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 416 → STAIR agathas_room → brunos_room (10,0)"
+                  },
+                  "id": "24c3f802-5d88-4c4a-8223-de0d8e09e42d"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "27d14783-d239-43d3-876b-ae89fd35f721",
+                    "x": {
+                      "type": "number",
+                      "value": 10
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "933651f3-7e55-4c4e-8759-7285eae6a20c"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 418 → STAIR agathas_room → lances_room (48,32)"
+                  },
+                  "id": "aaaa8339-ffe6-4218-a602-fb24ee346b6e"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "0b622aa5-20ca-4517-a184-696d6527e413",
+                    "x": {
+                      "type": "number",
+                      "value": 48
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 32
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "fe15ab9c-e138-40aa-8552-aedfe9306f66"
+                }
+              ],
+              "true4": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 420 → STAIR agathas_room → lances_room (48,32)"
+                  },
+                  "id": "358e6203-ead4-42bb-bcf4-04c5aea43629"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "0b622aa5-20ca-4517-a184-696d6527e413",
+                    "x": {
+                      "type": "number",
+                      "value": 48
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 32
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "76326167-2d48-4060-a64b-79560bf435b1"
+                }
+              ],
+              "true5": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 442 → STAIR pokemon_tower1_f → pokemon_tower2_f (36,18)"
+                  },
+                  "id": "df07c123-c200-423c-8ed7-1c59b4dfae19"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3ecf1b55-1f10-45c9-8655-9d5c9912c2f7",
+                    "x": {
+                      "type": "number",
+                      "value": 36
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "dc95f993-7097-4a40-b678-6cf659e22f51"
+                }
+              ],
+              "true6": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 443 → STAIR pokemon_tower2_f → pokemon_tower1_f (36,18)"
+                  },
+                  "id": "4431a495-7378-4a43-b969-8668ef8aeb65"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "02e21bef-e383-491d-a840-dcb6c0d1c9e8",
+                    "x": {
+                      "type": "number",
+                      "value": 36
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "c4b341f9-93f1-4c2f-9bfd-87797459a1ca"
+                }
+              ],
+              "true7": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 444 → STAIR pokemon_tower2_f → pokemon_tower3_f (6,18)"
+                  },
+                  "id": "a3468bf0-984c-4fea-b59c-aec4cac17c3f"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "c66bb13a-e279-4fd3-84b4-a46c47d7fa23",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "be9bf587-ec18-4ebc-bb25-d6f5603425bc"
+                }
+              ],
+              "true8": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 445 → STAIR pokemon_tower3_f → pokemon_tower2_f (6,18)"
+                  },
+                  "id": "7d6dd541-971d-4f84-8cab-85a71c1bc782"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "3ecf1b55-1f10-45c9-8655-9d5c9912c2f7",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "b1dd827c-74d3-4858-9846-56f0678ddae7"
+                }
+              ],
+              "true9": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 446 → STAIR pokemon_tower3_f → pokemon_tower4_f (36,18)"
+                  },
+                  "id": "ab06892a-0484-4e42-b447-39bcccd2db7f"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1e9f5c3f-d32b-48c6-aeae-ae5830d4bc74",
+                    "x": {
+                      "type": "number",
+                      "value": 36
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "bc1e8663-d996-41eb-8db4-010be8f369fe"
+                }
+              ],
+              "true10": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 447 → STAIR pokemon_tower4_f → pokemon_tower3_f (36,18)"
+                  },
+                  "id": "a4ba392d-e316-4d4d-8d8b-332abe58f375"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "c66bb13a-e279-4fd3-84b4-a46c47d7fa23",
+                    "x": {
+                      "type": "number",
+                      "value": 36
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "371a01fa-09e0-48a9-8959-6964d73e16e3"
+                }
+              ],
+              "true11": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 448 → STAIR pokemon_tower4_f → pokemon_tower5_f (6,18)"
+                  },
+                  "id": "2795724f-9692-4feb-8543-9e92b9feda7d"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "ffc1353a-e452-43b2-83da-d3acc5e499af",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "3b3d0bf6-ff48-4b92-b046-ab0e7d976b0f"
+                }
+              ],
+              "true12": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 449 → STAIR pokemon_tower5_f → pokemon_tower4_f (6,18)"
+                  },
+                  "id": "d1f171f0-c15d-4c8c-a059-1244d15d2d1a"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1e9f5c3f-d32b-48c6-aeae-ae5830d4bc74",
+                    "x": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "7b72c5ed-4a69-414a-8e71-61a9149c874c"
+                }
+              ],
+              "true13": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 450 → STAIR pokemon_tower5_f → pokemon_tower6_f (36,18)"
+                  },
+                  "id": "8cd45887-c7ed-4c9a-a451-664a8a2ea3cc"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "f1ba17e8-b32c-49fd-9d9e-970ba9b7eeae",
+                    "x": {
+                      "type": "number",
+                      "value": 36
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "ce4e9589-9303-4818-8a1e-f0ac4f30d160"
+                }
+              ],
+              "true14": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 451 → STAIR pokemon_tower6_f → pokemon_tower5_f (36,18)"
+                  },
+                  "id": "933f3392-583b-41f3-addd-b76453a8d0eb"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "ffc1353a-e452-43b2-83da-d3acc5e499af",
+                    "x": {
+                      "type": "number",
+                      "value": 36
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "33328bd9-2805-4919-8336-0b606acb0b24"
+                }
+              ],
+              "true15": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 452 → STAIR pokemon_tower6_f → pokemon_tower7_f (18,32)"
+                  },
+                  "id": "e6fb172c-3ae5-4161-9cb8-c25008caf17a"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1712afbf-dea5-4e1e-b78f-62015524bbcf",
+                    "x": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 32
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "a5cf5f29-5b55-4c72-b2ba-ad4e1535b9c5"
+                }
+              ],
+              "false": [
+                {
+                  "command": "EVENT_SWITCH",
+                  "args": {
+                    "variable": "V0",
+                    "choices": 1,
+                    "__collapseElse": true,
+                    "value0": {
+                      "type": "number",
+                      "value": 453
+                    },
+                    "__collapseCase0": false
+                  },
+                  "children": {
+                    "true0": [
+                      {
+                        "command": "EVENT_COMMENT",
+                        "args": {
+                          "text": "WarpId 453 → STAIR pokemon_tower7_f → pokemon_tower6_f (18,32)"
+                        },
+                        "id": "9b68466f-1d1f-4c37-b76b-7695a19455bf"
+                      },
+                      {
+                        "command": "EVENT_SWITCH_SCENE",
+                        "args": {
+                          "sceneId": "f1ba17e8-b32c-49fd-9d9e-970ba9b7eeae",
+                          "x": {
+                            "type": "number",
+                            "value": 18
+                          },
+                          "y": {
+                            "type": "number",
+                            "value": 32
+                          },
+                          "direction": "down",
+                          "fadeSpeed": "2"
+                        },
+                        "id": "6fe4ae3f-5249-419e-8bad-c00ff60e64dd"
+                      }
+                    ]
+                  },
+                  "id": "0a76e6c4-ec1c-43cb-8720-80656748d83d"
+                }
+              ]
+            },
+            "id": "a4ca7af1-0834-46b7-a6aa-8611b23075d4"
+          }
+        ],
+        "false": []
+      },
+      "id": "8e3a8676-231b-46fa-9080-969d7587b625"
+    }
+  ]
+}

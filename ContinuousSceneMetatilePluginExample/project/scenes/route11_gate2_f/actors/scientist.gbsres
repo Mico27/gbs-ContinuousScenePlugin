@@ -1,0 +1,61 @@
+{
+  "_resourceType": "actor",
+  "id": "6c81b09f-5cf3-476a-813e-25eec6e24b8f",
+  "_index": 1,
+  "symbol": "npc_scientist_016c",
+  "prefabId": "",
+  "name": "scientist",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "995270ad-1b0d-45ad-8184-253216f30349",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThere are items on\n\nthe ground that",
+          "\ncan't be seen.",
+          "\nITEMFINDER will\n\ndetect an item",
+          "\nclose to you.",
+          "\nIt can't pinpoint\n\nit, so you have",
+          "\nto look yourself!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "8ca55679-198b-4f56-85a5-f5db52469598"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

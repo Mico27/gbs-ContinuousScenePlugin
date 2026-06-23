@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "65f830e4-8f97-4b58-bfb6-ea5f7300bc45",
+  "name": "Entry to cerulean_pokecenter",
+  "prefabId": "",
+  "x": 38,
+  "y": 34,
+  "symbol": "trigger_entry_to_cerulean_p",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 88
+        }
+      },
+      "id": "6f4d0657-e7db-4af4-ba63-16584f0eebe6"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 6
+}

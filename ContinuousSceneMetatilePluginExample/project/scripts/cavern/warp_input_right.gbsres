@@ -1,0 +1,147 @@
+{
+  "_resourceType": "script",
+  "id": "dea04d65-d035-4f19-baee-7c0c4e0a60ee",
+  "name": "Cavern/Warp Input Right",
+  "description": "EXIT trigger behavior for right exits. Unlocks the script, waits 4 frames, checks RIGHT input and player facing direction, then routes through this scene type's Warp Script (PendingWarpId → router) to switch scene. Also installs a persistent input handler for continuous detection.",
+  "variables": {},
+  "actors": {},
+  "symbol": "script_warp_input_right_cav",
+  "script": [
+    {
+      "command": "EVENT_SCRIPT_UNLOCK",
+      "args": {},
+      "id": "9b3c4e23-83a6-40c2-9556-7447c302c690"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 4
+        },
+        "units": "frames"
+      },
+      "id": "59b0ab4a-520f-4e8c-a23d-cdbe126fdac8"
+    },
+    {
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "right"
+        ],
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": "14",
+              "__collapse": true
+            },
+            "id": "3947caf5-e6c7-4ac1-80a0-d21ba8a06738"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "constant",
+                  "value": "b001-0000-0000-0000-000000000011"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "70a121cf-0130-4e2b-9d1f-fc57d7c967ef",
+                    "$variable[V0]$": {
+                      "type": "variable",
+                      "value": "17"
+                    }
+                  },
+                  "id": "b4ffe360-24aa-4db7-ab7c-346b62f6a798"
+                }
+              ],
+              "false": []
+            },
+            "id": "585049e7-7be5-4550-a338-a5b3ab7cfd1b"
+          }
+        ],
+        "false": []
+      },
+      "id": "30746c6f-2189-4f2d-8f17-ea946656ec9c"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "right"
+        ],
+        "override": false,
+        "__scriptTabs": "press"
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": "14",
+              "__collapse": true
+            },
+            "id": "7a608f36-a5e0-47f7-93f8-58fb4b6692fb"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "constant",
+                  "value": "b001-0000-0000-0000-000000000011"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "70a121cf-0130-4e2b-9d1f-fc57d7c967ef",
+                    "$variable[V0]$": {
+                      "type": "variable",
+                      "value": "17"
+                    }
+                  },
+                  "id": "67b41c37-934d-4dad-a88d-dfe81ab73e13"
+                }
+              ],
+              "false": []
+            },
+            "id": "c80fdc7c-5061-435a-920f-6476bfd7a77f"
+          }
+        ]
+      },
+      "id": "5ee1a850-1cd4-48ea-9019-7b479eeb2537"
+    }
+  ]
+}

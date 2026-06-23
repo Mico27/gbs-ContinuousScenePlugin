@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "9aa930c6-0bba-4519-9fcb-c5a33a449043",
+  "_index": 87,
+  "name": "Trade Center",
+  "backgroundId": "b280f818-c3c2-4013-9b7e-69ff5656c801",
+  "tilesetId": "513f2fd5-ca32-4dc6-88fb-653698e78ba4",
+  "width": 20,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00140+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_trade_center",
+  "x": 408,
+  "y": 13800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "7c56cd68-3a30-4d10-8013-9c2056532f68",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "5249ab04-f349-4735-8891-b87c192fd60e"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000003"
+        }
+      },
+      "id": "f8d04bb1-c63b-4e8e-be32-de22ca6d024f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "6a431eda-aa53-4b10-8809-6f30f1d400a0"
+      },
+      "id": "a6598e4c-c218-4fb7-b63c-8bcc74790644"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "34422968-c160-4a48-8b92-93e4a86d5d55"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e994a528-05de-478d-9e57-3a01374a3292"
+      },
+      "id": "7fc3518a-feac-4fe3-a043-84b9dd9589ff"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

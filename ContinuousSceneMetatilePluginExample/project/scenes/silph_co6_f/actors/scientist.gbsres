@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "dc592b5d-3300-4da6-9d01-808ceb76722e",
+  "_index": 6,
+  "symbol": "npc_scientist_0112",
+  "prefabId": "",
+  "name": "scientist",
+  "coordinateType": "tiles",
+  "x": 14,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "995270ad-1b0d-45ad-8184-253216f30349",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThat rotten\n\nPRESIDENT!",
+          "\nHe shouldn't have\n\nsent me to the",
+          "\nTIKSI BRANCH!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "8a072b33-87a5-4f7a-b360-3640765ace1c"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

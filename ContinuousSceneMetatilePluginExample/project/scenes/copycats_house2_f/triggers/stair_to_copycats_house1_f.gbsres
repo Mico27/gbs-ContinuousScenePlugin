@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "7c18b218-9343-4f55-ac99-8ded6b69c096",
+  "name": "Stair to copycats_house1_f",
+  "prefabId": "",
+  "x": 14,
+  "y": 2,
+  "symbol": "trigger_stair_to_copycats_h_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "20c84844-5a5e-4702-8bc4-86c6d2ce2b28",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 697
+        }
+      },
+      "id": "40c8d4e9-3fcf-4acb-9df8-443394a478f1"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

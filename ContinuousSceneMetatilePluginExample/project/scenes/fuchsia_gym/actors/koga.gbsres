@@ -1,0 +1,62 @@
+{
+  "_resourceType": "actor",
+  "id": "6e7b36e4-0083-46a2-86ec-66fd0b323311",
+  "_index": 0,
+  "symbol": "npc_koga_0193",
+  "prefabId": "",
+  "name": "koga",
+  "coordinateType": "tiles",
+  "x": 8,
+  "y": 21,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "8546b8e6-a182-4cb8-adad-479b3a341d82",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nKOGA: Fwahahaha!",
+          "\nA mere child like\n\nyou dares to",
+          "\nchallenge me?",
+          "\nVery well, I\n\nshall show you",
+          "\ntrue terror as a\n\nninja master!",
+          "\nYou shall feel\n\nthe despair of",
+          "\npoison and sleep\n\ntechniques!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "13427c76-d360-47f3-a3ee-d7f125d81a9a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

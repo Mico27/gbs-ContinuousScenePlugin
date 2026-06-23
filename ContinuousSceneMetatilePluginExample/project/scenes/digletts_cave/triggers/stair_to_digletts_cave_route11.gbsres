@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "2c84b190-c918-4c2a-af17-90d1b009872e",
+  "name": "Stair to digletts_cave_route11",
+  "prefabId": "",
+  "x": 74,
+  "y": 62,
+  "symbol": "trigger_stair_to_digletts_c_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70a121cf-0130-4e2b-9d1f-fc57d7c967ef",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 352
+        }
+      },
+      "id": "f9a60359-3468-4706-9e6e-36944e2183be"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

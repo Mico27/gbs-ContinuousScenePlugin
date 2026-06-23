@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "99b2868a-62c7-4ea1-99f3-a65a3d73ce3d",
+  "name": "Stair to mt_moon_b2_f",
+  "prefabId": "",
+  "x": 42,
+  "y": 34,
+  "symbol": "trigger_stair_to_mt_moon_b2_1",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70a121cf-0130-4e2b-9d1f-fc57d7c967ef",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 362
+        }
+      },
+      "id": "c9c787ee-7b85-48ac-8f32-c7ddc4dcd877"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

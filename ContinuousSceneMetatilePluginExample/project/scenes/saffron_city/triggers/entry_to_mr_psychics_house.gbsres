@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "2fa3f2b8-0473-4e41-984a-384cbe4cbc1f",
+  "name": "Entry to mr_psychics_house",
+  "prefabId": "",
+  "x": 58,
+  "y": 58,
+  "symbol": "trigger_entry_to_mr_psychic",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 160
+        }
+      },
+      "id": "5246acbd-1fb6-49d1-8ddd-4e90a21f1940"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

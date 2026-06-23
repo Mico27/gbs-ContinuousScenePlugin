@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "f84a5a4b-469f-4942-8fe3-38a2750c507c",
+  "_index": 2,
+  "symbol": "npc_middle_aged_0210",
+  "prefabId": "",
+  "name": "middle_aged_man",
+  "coordinateType": "tiles",
+  "x": 38,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "8b1af5cb-380c-4b2a-9beb-e3512ec78221",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nSUPER REPEL keeps\n\nweak POKéMON at",
+          "\nbay...",
+          "\nHmm, it's a more\n\npowerful REPEL!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "73f72ab9-6852-4aef-b496-2e1019d0559a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

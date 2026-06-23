@@ -1,0 +1,60 @@
+{
+  "_resourceType": "actor",
+  "id": "0530775f-0f80-45de-b2b3-f48dc2e73697",
+  "_index": 3,
+  "symbol": "npc_gameboy_kid_0215",
+  "prefabId": "",
+  "name": "gameboy_kid",
+  "coordinateType": "tiles",
+  "x": 16,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9022ab16-7c40-4ed7-a936-27d107b08085",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nCome on GRAVELER!",
+          "\nI love GRAVELER!\n\nI collect them!",
+          "\nHuh?",
+          "\nGRAVELER turned\n\ninto a different",
+          "\nPOKéMON!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "11090aa5-4954-4d33-8917-8c117690ebb5"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

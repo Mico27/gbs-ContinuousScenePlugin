@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "240ca848-1b44-42b5-b989-3baeb9f428a5",
+  "name": "Entry to mr_fujis_house",
+  "prefabId": "",
+  "x": 14,
+  "y": 18,
+  "symbol": "trigger_entry_to_mr_fujis_h",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 166
+        }
+      },
+      "id": "edd1d710-8d53-488c-b2fb-3f2b8d5f3266"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

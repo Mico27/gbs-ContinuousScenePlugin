@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "8cc7f32d-3db9-46ba-9937-c59dad30e119",
+  "_index": 236,
+  "name": "S S Anne B1 F",
+  "backgroundId": "c3e68b1c-4f8e-4d54-872d-6582c5058c2a",
+  "tilesetId": "adf80f02-dae5-4ed5-a586-02346c3b8667",
+  "width": 60,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "003c0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_ss_anne_b1f",
+  "x": 3512,
+  "y": 19800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "a50510e8-6ce4-4e8b-b221-371d8f4563db",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "b8182d37-7a1d-4248-bff9-dd52ac8a0528"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000f"
+        }
+      },
+      "id": "1ca6c005-d71c-4a76-84ef-ac8ebc3cb76a"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fbe52389-1adf-4891-85d3-cf14a1baa771"
+      },
+      "id": "518c3320-f7c8-4030-b496-33f70444ca2f"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "cc3cbab3-0b69-4d07-b319-e2a063fd0b3a"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e97c26b9-7db4-49e4-b35b-ba6d0c293f49"
+      },
+      "id": "ff60294e-9a81-4873-b4c9-64fc7edf785d"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

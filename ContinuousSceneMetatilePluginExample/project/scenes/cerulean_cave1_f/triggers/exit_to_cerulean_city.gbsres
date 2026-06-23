@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "0891ee8d-8da9-4130-8f6e-903abdbc79c3",
+  "name": "Exit to cerulean_city",
+  "prefabId": "",
+  "x": 48,
+  "y": 34,
+  "symbol": "trigger_exit_to_cerulean_ci",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 97
+        }
+      },
+      "id": "6ee5303e-13c7-4ae2-9260-d6b1d1f77ccc"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "94c7084e-bbd2-4dcd-b9e9-8ef558b9fcd0"
+      },
+      "id": "57b7c76a-8ba7-4d56-856b-9f38e8fbd8ab"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "ffe1c38b-678c-42bc-a4a0-1f97eedf279e"
+    }
+  ],
+  "_index": 0
+}

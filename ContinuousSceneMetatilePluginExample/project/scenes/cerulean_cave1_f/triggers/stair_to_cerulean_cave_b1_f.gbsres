@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "f107facc-6b3b-4d03-8014-157bce194445",
+  "name": "Stair to cerulean_cave_b1_f",
+  "prefabId": "",
+  "x": 0,
+  "y": 12,
+  "symbol": "trigger_stair_to_cerulean_c",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70a121cf-0130-4e2b-9d1f-fc57d7c967ef",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 348
+        }
+      },
+      "id": "2476203b-3a92-438b-97d3-409e87cb83d4"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

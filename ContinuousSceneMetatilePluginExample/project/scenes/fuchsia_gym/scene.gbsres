@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "f04f948f-207d-45a8-b320-e4a3f635deeb",
+  "_index": 148,
+  "name": "Fuchsia Gym",
+  "backgroundId": "12307b6a-f09e-49dd-9d05-23e63da503f2",
+  "tilesetId": "4b2c68cb-8f81-4e59-af87-8c52f72acd6f",
+  "width": 20,
+  "height": 36,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "002d0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_fuchsia_gym",
+  "x": 1240,
+  "y": 16888,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "6ba45848-b087-48c5-ae19-fb6dd62a7b25",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "697cdffb-5cd1-43e3-bb9b-0e9afe8b923b"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000007"
+        }
+      },
+      "id": "c7abf2e2-5863-4a3d-b531-029aa4f5983c"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c8f57e9b-f5bb-4285-819a-dd9a4ec826e4"
+      },
+      "id": "a6347915-ef34-4059-ad87-2a6e7dc34501"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "aad45307-529a-4106-8fc2-833f70860f4e"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3da4e714-53a4-4061-aff8-aeb6103c614b"
+      },
+      "id": "61252386-e8c0-4a07-8134-8635cac89dea"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

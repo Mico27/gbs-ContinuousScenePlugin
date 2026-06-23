@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "a6c672b3-c38c-4425-ae5b-b1635dd39795",
+  "_index": 3,
+  "symbol": "npc_poke_ball_00cd",
+  "prefabId": "",
+  "name": "poke_ball",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 25,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "1766d109-ee15-4501-b55b-463ae384207d",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nFound\n\nTM HORN DRILL!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "fe16f966-bc83-488c-b284-5566f0c8548b"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "43f8b605-7dae-40ca-b155-599ae36d7562",
+  "name": "Exit to palette_town",
+  "prefabId": "",
+  "x": 10,
+  "y": 22,
+  "symbol": "trigger_exit_to_palette_tow",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 59
+        }
+      },
+      "id": "051632c7-4f4a-421b-bd36-5c59628806bc"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "0ba2ec23-df10-43fd-bfba-d540941aa528"
+      },
+      "id": "1137ca50-5754-432a-b915-b0429a3916c7"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "23a97012-4a83-49f3-a4ad-c6bf1815b3ec"
+    }
+  ],
+  "_index": 0
+}

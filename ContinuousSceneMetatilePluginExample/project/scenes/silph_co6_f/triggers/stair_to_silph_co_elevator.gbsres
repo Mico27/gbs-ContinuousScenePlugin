@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "eb78a213-07bf-4cb7-8421-61f79dd9cc34",
+  "name": "Stair to silph_co_elevator",
+  "prefabId": "",
+  "x": 36,
+  "y": 0,
+  "symbol": "trigger_stair_to_silph_co_e_5",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e2000001-0000-4000-a000-000000000001",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 582
+        }
+      },
+      "id": "9b7762d7-618e-4b4b-b6d5-32586c51a0a6"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

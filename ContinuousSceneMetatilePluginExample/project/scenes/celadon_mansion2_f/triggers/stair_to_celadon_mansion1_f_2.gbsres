@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "2c7b1e7f-0d8e-4d60-9fad-2214fbf0cdd5",
+  "name": "Stair to celadon_mansion1_f",
+  "prefabId": "",
+  "x": 14,
+  "y": 2,
+  "symbol": "trigger_stair_to_celadon_ma_25",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "4b709aee-32a9-46c0-949f-147e3c535918",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 701
+        }
+      },
+      "id": "2c8e8d2d-bc1d-4632-9391-9bec219bc1bb"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

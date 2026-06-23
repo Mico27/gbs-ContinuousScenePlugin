@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "05bef83d-2804-44fc-a721-9e85d433b467",
+  "name": "Entry to route5_gate",
+  "prefabId": "",
+  "x": 20,
+  "y": 66,
+  "symbol": "trigger_entry_to_route5_gat_1",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 227
+        }
+      },
+      "id": "dd022b72-c018-4480-affa-9c1212b268bd"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

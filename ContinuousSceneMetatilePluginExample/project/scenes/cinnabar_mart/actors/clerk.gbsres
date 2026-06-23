@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "4fe1da9a-327d-41d9-a3d5-374a611d85cb",
+  "_index": 0,
+  "symbol": "npc_clerk_009a",
+  "prefabId": "",
+  "name": "clerk",
+  "coordinateType": "tiles",
+  "x": 0,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "79a49ef6-bf0a-4f4d-93a5-92f6143bd3e2",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "..."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "37558209-ad09-44ae-bd44-14dc5b5a03e7"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "7481e134-617d-4b96-a2d6-f40f7bca62a6",
+  "_index": 0,
+  "symbol": "npc_silph_worker_00f6",
+  "prefabId": "",
+  "name": "silph_worker_m",
+  "coordinateType": "tiles",
+  "x": 48,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "d10a65e6-c897-4e0f-8ff7-f5be832058f4",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI work for SILPH.\n\nWhat should I do?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "37eca20a-f2f2-42b8-b4a9-7eec66d05907"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

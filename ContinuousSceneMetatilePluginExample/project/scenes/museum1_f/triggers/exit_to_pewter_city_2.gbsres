@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "b59dac82-a18c-44ea-8544-719b29a5dbfe",
+  "name": "Exit to pewter_city",
+  "prefabId": "",
+  "x": 32,
+  "y": 14,
+  "symbol": "trigger_exit_to_pewter_city_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 73
+        }
+      },
+      "id": "dd843a33-8e62-48fc-9c6b-ea9991151c1d"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "07e5c1bd-ed5c-415b-a135-7c069bb948e4"
+      },
+      "id": "d1710a8a-abdc-48db-a623-1ffe363e56cc"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "ac87ff6f-6492-4253-a5d4-2e937c3cb84b"
+    }
+  ],
+  "_index": 1
+}

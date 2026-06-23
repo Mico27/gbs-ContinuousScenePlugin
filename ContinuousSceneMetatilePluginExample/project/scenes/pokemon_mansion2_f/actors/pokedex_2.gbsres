@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "18581add-540d-4090-bcee-a6494734bec0",
+  "_index": 3,
+  "symbol": "npc_pokedex_00a7",
+  "prefabId": "",
+  "name": "pokedex",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 45,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "bcc9d9d8-b977-495e-b834-8640bb4a9556",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nDiary: July 10\n\nWe christened the",
+          "\nnewly discovered\n\nPOKéMON, MEW."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "2e45e054-33fc-4886-b5e1-36097c0ec989"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

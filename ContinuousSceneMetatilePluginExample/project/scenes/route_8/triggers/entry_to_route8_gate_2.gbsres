@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "9d9488ef-97cd-4595-8aed-d90a0efa3804",
+  "name": "Entry to route8_gate",
+  "prefabId": "",
+  "x": 2,
+  "y": 20,
+  "symbol": "trigger_entry_to_route8_gat_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 252
+        }
+      },
+      "id": "830dbb62-a48e-463e-a77c-47d58949369e"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "bf57abcc-4882-400b-8d38-d05b842fd39f"
+      },
+      "id": "d9ec1514-bb73-4d46-a5fb-ec789e37bd61"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "right"
+        ]
+      },
+      "id": "458887e0-ae56-438c-ad2a-62f059faad88"
+    }
+  ],
+  "_index": 1
+}

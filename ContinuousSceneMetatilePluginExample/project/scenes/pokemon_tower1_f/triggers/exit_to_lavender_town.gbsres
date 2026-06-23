@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "1f53cfec-67a8-44f4-a32c-6026298f7600",
+  "name": "Exit to lavender_town",
+  "prefabId": "",
+  "x": 20,
+  "y": 34,
+  "symbol": "trigger_exit_to_lavender_to",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 165
+        }
+      },
+      "id": "fb8a4d8c-d27e-4f61-b619-2398bc8224c3"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "7bae094d-80e6-4646-884f-88c038ab3854"
+      },
+      "id": "88e2d854-6bb7-44b1-a5e7-4972a4a78a6c"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "334003ea-6229-4f46-8f95-abfc01ad4adc"
+    }
+  ],
+  "_index": 0
+}

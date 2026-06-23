@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "2f240a8a-4dc8-4b4e-883a-1ba60c1d5145",
+  "name": "Entry to museum1_f",
+  "prefabId": "",
+  "x": 28,
+  "y": 14,
+  "symbol": "trigger_entry_to_museum1_f",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 70
+        }
+      },
+      "id": "3a2b685e-83cd-4b97-979f-43578ef63c01"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

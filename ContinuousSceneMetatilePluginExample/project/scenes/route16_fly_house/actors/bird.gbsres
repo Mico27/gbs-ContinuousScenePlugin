@@ -1,0 +1,68 @@
+{
+  "_resourceType": "actor",
+  "id": "051b992c-9e3b-4470-b273-5a89dea57a6d",
+  "_index": 1,
+  "symbol": "npc_bird_017b",
+  "prefabId": "",
+  "name": "bird",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "8b24c62a-d7a7-4631-a4d2-a1a59316bc8e",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nFEAROW: Kyueen!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "72dbed0c-29a0-4286-a7fd-f3d49c85d7fc"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "feb1f86e-4415-406f-b517-570666632a28"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

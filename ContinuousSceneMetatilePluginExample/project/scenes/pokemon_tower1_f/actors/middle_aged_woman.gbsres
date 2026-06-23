@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "c1821408-cd57-400c-9075-b2b1020e414e",
+  "_index": 1,
+  "symbol": "npc_middle_aged_0065",
+  "prefabId": "",
+  "name": "middle_aged_woman",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 17,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "1c093c67-37e2-4943-ad7d-d91d2ee67586",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nDid you come to\n\npay respects?",
+          "\nBless you!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "de2235c6-9963-473d-9c5f-bbcffa47ee6f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

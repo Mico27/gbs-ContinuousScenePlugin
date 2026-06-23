@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "4f05c975-6539-4493-b9e5-8251e3f7ca1f",
+  "_index": 239,
+  "name": "S S Anne Captains Room",
+  "backgroundId": "530868d2-d046-4d2c-846f-65addf4e31dc",
+  "tilesetId": "adf80f02-dae5-4ed5-a586-02346c3b8667",
+  "width": 12,
+  "height": 16,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00c0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_ss_anne_captains_room",
+  "x": 4392,
+  "y": 19800,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "a50510e8-6ce4-4e8b-b221-371d8f4563db",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "a5e715e7-6cea-449b-b973-46eebdbe649f"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000f"
+        }
+      },
+      "id": "7ac42dbf-de33-4ef4-a8ad-5cee34135819"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fbe52389-1adf-4891-85d3-cf14a1baa771"
+      },
+      "id": "bab37f66-692a-4bb5-81a7-36f3eb757f69"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "74dde621-2295-4b5f-b7d4-6987c7c6ff31"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e97c26b9-7db4-49e4-b35b-ba6d0c293f49"
+      },
+      "id": "80c04fb4-53c9-4b40-9989-49ad7c6d528b"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

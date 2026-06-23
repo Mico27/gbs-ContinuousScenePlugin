@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "4ae4b141-aedc-4c3b-bc27-a62c468e74e6",
+  "name": "Stair to rock_tunnel_b1_f",
+  "prefabId": "",
+  "x": 34,
+  "y": 22,
+  "symbol": "trigger_stair_to_rock_tunne_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70a121cf-0130-4e2b-9d1f-fc57d7c967ef",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 372
+        }
+      },
+      "id": "5fc76cad-377d-48a6-b486-ce53cc92ef7e"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

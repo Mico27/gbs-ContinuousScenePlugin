@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "3e118093-998e-4ea6-9d16-cb081e0b41a4",
+  "name": "Stair to seafoam_islands1_f",
+  "prefabId": "",
+  "x": 50,
+  "y": 6,
+  "symbol": "trigger_stair_to_seafoam_is_8",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "70a121cf-0130-4e2b-9d1f-fc57d7c967ef",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 379
+        }
+      },
+      "id": "d82c8a72-6439-48f4-8916-15869e1efb6f"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 6
+}

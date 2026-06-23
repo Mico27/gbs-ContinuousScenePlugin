@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "e530fa41-0e48-4952-b852-26af12d3e8aa",
+  "name": "Entry to pewter_mart",
+  "prefabId": "",
+  "x": 46,
+  "y": 34,
+  "symbol": "trigger_entry_to_pewter_mar",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 78
+        }
+      },
+      "id": "b609ce48-8f9c-4ed2-8e88-22bb7278558d"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

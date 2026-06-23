@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "2d24f0a0-5c99-4050-8764-520bbd83dfe4",
+  "_index": 212,
+  "name": "Indigo Plateau Lobby",
+  "backgroundId": "070c86c3-e1ae-426b-aa08-47b350169647",
+  "tilesetId": "770e09aa-68e2-4660-a200-c3b158d3dfa3",
+  "width": 32,
+  "height": 24,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00300+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_indigo_plateau_lobby",
+  "x": 200,
+  "y": 19192,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "5e12ba29-a7fc-4631-be50-fff1e493f71c",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "a452cd6b-8e4b-45d5-ac71-f5c857456937"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f300000d"
+        }
+      },
+      "id": "0b6f8913-877f-4bd8-a3ef-ee600bf7527d"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f37155f0-14b5-4916-a17e-6c30c0873d9a"
+      },
+      "id": "cdca0409-0947-4360-b374-9d4500594182"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "7c11ca57-f8ba-4586-aa8f-7e3fd4fc7c53"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "fb34b23c-a04b-43c3-92bb-7485def21a19"
+      },
+      "id": "065345fb-9efe-48e4-901e-0de53e85c959"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

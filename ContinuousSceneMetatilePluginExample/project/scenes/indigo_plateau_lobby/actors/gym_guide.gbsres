@@ -1,0 +1,60 @@
+{
+  "_resourceType": "actor",
+  "id": "f07875a2-e9d8-4a9f-8f83-ea50251d23a0",
+  "_index": 1,
+  "symbol": "npc_gym_guide_0240",
+  "prefabId": "",
+  "name": "gym_guide",
+  "coordinateType": "tiles",
+  "x": 8,
+  "y": 19,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "6ae9759f-dcdd-46d2-bad1-47db2d5e6cc5",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYo! Champ in\n\nmaking!",
+          "\nAt POKéMON LEAGUE,\n\nyou have to face",
+          "\nthe ELITE FOUR in\n\nsuccession.",
+          "\nIf you lose, you\n\nhave to start all",
+          "\nover again! This\n\nis it! Go for it!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "e863eb87-a52e-4044-99b6-4770aa238fcb"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

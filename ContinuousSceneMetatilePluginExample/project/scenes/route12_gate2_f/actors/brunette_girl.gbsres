@@ -1,0 +1,71 @@
+{
+  "_resourceType": "actor",
+  "id": "e63ca5e8-c6f0-42bb-bc3f-afb4459b2a7c",
+  "_index": 0,
+  "symbol": "npc_brunette_gir_016e",
+  "prefabId": "",
+  "name": "brunette_girl",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "7c0e291e-25f1-49d9-aa4e-85458661f041",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMy POKéMON's\n\nashes are stored",
+          "\nin POKéMON TOWER.",
+          "\nYou can have this\n\nTM. I don't need",
+          "\nit any more..."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "3df2d5a8-110b-409e-934a-2837c4dc675f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c468dd94-f2e8-4583-ba29-de77bb527f50",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 0
+        }
+      },
+      "id": "64363a5f-d9e4-4f87-bc00-ab964590138d"
+    }
+  ],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

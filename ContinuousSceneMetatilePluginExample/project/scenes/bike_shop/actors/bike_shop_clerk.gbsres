@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "26d50a75-6a6b-4634-af57-ea22d12b4ed2",
+  "_index": 0,
+  "symbol": "npc_bike_shop_cl_0084",
+  "prefabId": "",
+  "name": "bike_shop_clerk",
+  "coordinateType": "tiles",
+  "x": 12,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "a78a645b-601d-4585-88a8-0b9a2cafc800",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nHow do you like\n\nyour new BICYCLE?",
+          "\nYou can take it\n\non CYCLING ROAD",
+          "\nand in caves!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "3ebbef87-b6a9-474e-aeaa-9de4e5514b29"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

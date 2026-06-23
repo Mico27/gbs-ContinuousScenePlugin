@@ -1,0 +1,62 @@
+{
+  "_resourceType": "actor",
+  "id": "33b242ad-8c03-4ad5-8f59-77ef6ec71b2b",
+  "_index": 9,
+  "symbol": "npc_gym_guide_01b7",
+  "prefabId": "",
+  "name": "gym_guide",
+  "coordinateType": "tiles",
+  "x": 32,
+  "y": 31,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "6ae9759f-dcdd-46d2-bad1-47db2d5e6cc5",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nYo! Champ in\n\nmaking!",
+          "\nEven I don't know\n\nVIRIDIAN LEADER's",
+          "\nidentity!",
+          "\nThis will be the\n\ntoughest of all",
+          "\nthe GYM LEADERs!",
+          "\nI heard that the\n\ntrainers here",
+          "\nlike ground-type\n\nPOKéMON!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "979ba0a8-940a-43ff-9705-612646a9021b"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

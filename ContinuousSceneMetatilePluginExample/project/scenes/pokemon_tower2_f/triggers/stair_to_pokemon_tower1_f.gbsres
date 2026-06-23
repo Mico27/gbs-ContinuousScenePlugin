@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "9291b9b9-cd37-485b-8e64-ca8d18aff3f5",
+  "name": "Stair to pokemon_tower1_f",
+  "prefabId": "",
+  "x": 36,
+  "y": 18,
+  "symbol": "trigger_stair_to_pokemon_to_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "9d5c801d-1b45-4e3d-a544-5630828b9cbf",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 443
+        }
+      },
+      "id": "3165bd5a-84f5-44a3-9f6b-fc9ce1d4f928"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

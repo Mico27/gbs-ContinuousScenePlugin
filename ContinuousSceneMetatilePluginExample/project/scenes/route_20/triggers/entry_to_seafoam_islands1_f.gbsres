@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "c37d41bf-1527-418c-9581-ea9ae52c31ea",
+  "name": "Entry to seafoam_islands1_f",
+  "prefabId": "",
+  "x": 96,
+  "y": 10,
+  "symbol": "trigger_entry_to_seafoam_is",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 320
+        }
+      },
+      "id": "05735a05-2acf-4322-92b0-43374284e8ce"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

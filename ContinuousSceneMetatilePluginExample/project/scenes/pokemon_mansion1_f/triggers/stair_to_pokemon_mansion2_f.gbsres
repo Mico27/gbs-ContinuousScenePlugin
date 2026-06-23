@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "810489ce-553e-413c-8eeb-f17478650e41",
+  "name": "Stair to pokemon_mansion2_f",
+  "prefabId": "",
+  "x": 10,
+  "y": 20,
+  "symbol": "trigger_stair_to_pokemon_ma_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e2000001-0000-4000-a000-000000000001",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 466
+        }
+      },
+      "id": "c620fa76-1d68-4439-bcff-114f25362a9f"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 2
+}

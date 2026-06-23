@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "47d49434-7061-48cc-a270-a0697ff8032f",
+  "name": "Stair to rocket_hideout_b2_f",
+  "prefabId": "",
+  "x": 50,
+  "y": 12,
+  "symbol": "trigger_stair_to_rocket_hid_8",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e2000001-0000-4000-a000-000000000001",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 487
+        }
+      },
+      "id": "5db62546-7e2b-463a-a8f7-eeda8cc0af21"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

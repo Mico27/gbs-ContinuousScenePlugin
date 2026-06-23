@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "5ff350e1-d677-47fd-a662-b25a3ed4dbe0",
+  "name": "Stair to route18_gate1_f",
+  "prefabId": "",
+  "x": 14,
+  "y": 14,
+  "symbol": "trigger_stair_to_route18_ga_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 683
+        }
+      },
+      "id": "227756bb-7845-402d-af1b-d268c255b7d8"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

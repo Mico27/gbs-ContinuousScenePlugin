@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "1f070f1f-53a7-4518-b9ac-4d64dba7338c",
+  "_index": 0,
+  "symbol": "npc_nurse_024b",
+  "prefabId": "",
+  "name": "nurse",
+  "coordinateType": "tiles",
+  "x": 6,
+  "y": 3,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "813eb822-407f-4bf7-8808-28b9ffc53c7e",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "..."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "21d8846d-0680-4828-b112-a72e33763f8a"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

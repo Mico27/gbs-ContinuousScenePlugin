@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "85a13d3f-6f60-4806-b423-28c79c24b1f3",
+  "_index": 2,
+  "symbol": "npc_poke_ball_00aa",
+  "prefabId": "",
+  "name": "poke_ball",
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 33,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "1766d109-ee15-4501-b55b-463ae384207d",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nFound\n\nMAX POTION!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "6b0cfeef-2863-4844-995d-1bfb76e48569"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

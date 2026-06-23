@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "1ce6acdd-f424-4527-8573-a342ddab0730",
+  "name": "Entry to fighting_dojo",
+  "prefabId": "",
+  "x": 52,
+  "y": 6,
+  "symbol": "trigger_entry_to_fighting_d",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 148
+        }
+      },
+      "id": "9e554a24-d8bc-43cb-8cfc-579e200bf234"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

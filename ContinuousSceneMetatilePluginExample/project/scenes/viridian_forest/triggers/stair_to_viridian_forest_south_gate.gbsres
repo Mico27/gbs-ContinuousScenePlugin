@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "b35aaf00-50a9-489a-8b9f-8c3c0aa0eadc",
+  "name": "Stair to viridian_forest_south_gate",
+  "prefabId": "",
+  "x": 30,
+  "y": 94,
+  "symbol": "trigger_stair_to_viridian_f_1",
+  "prefabScriptOverrides": {},
+  "width": 8,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "5d7fe336-487c-4927-8348-892305f289ac",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 660
+        }
+      },
+      "id": "f7548836-b6f1-4dba-ba68-5934971c799d"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

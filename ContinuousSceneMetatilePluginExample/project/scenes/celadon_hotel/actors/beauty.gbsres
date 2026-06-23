@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "88772fc2-c40c-41de-bc83-c6be5c2c7ad7",
+  "_index": 1,
+  "symbol": "npc_beauty_0203",
+  "prefabId": "",
+  "name": "beauty",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "9010ea9e-eb00-404a-a06c-c76b286c75dc",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI'm on vacation\n\nwith my brother",
+          "\nand boy friend.",
+          "\nCELADON is such a\n\npretty city!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "0db1af62-8059-440f-bd64-b16c6e145573"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

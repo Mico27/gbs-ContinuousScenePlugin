@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "589c457c-6385-4227-96ff-e640b7e4169a",
+  "_index": 242,
+  "name": "Underground Path North South",
+  "backgroundId": "f1ca487d-8294-43e8-a58e-f6008711715c",
+  "tilesetId": "c14ebb6f-343e-4362-b658-4f350fc09562",
+  "width": 16,
+  "height": 96,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00600+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_underground_path_north",
+  "x": 200,
+  "y": 20568,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "b85dfc90-df6b-4e5c-8949-a6abae5d9d1e",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "572a1874-aa87-4ad4-a584-8a624c35d0c7"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000011"
+        }
+      },
+      "id": "aa7b6c94-8bb9-4e10-b6d2-da8eaac18c97"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a653d841-6cc9-4b13-a610-0ab7b0f72d77"
+      },
+      "id": "e87d5e2b-089d-4b64-abd9-e57699ca68cc"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "e481c5fa-2a3a-4073-9f35-cf781a1fac37"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "9b7edbb0-b655-4304-a554-0ca5ea215b43"
+      },
+      "id": "aa0c5a7c-4af0-4b15-bbc8-94650e373d20"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

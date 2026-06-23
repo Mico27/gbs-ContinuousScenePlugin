@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "f83afa5f-3ccb-4fcd-8631-7321c7ef5a84",
+  "_index": 10,
+  "symbol": "npc_clipboard_010b",
+  "prefabId": "",
+  "name": "clipboard",
+  "coordinateType": "tiles",
+  "x": 48,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "36a4f1db-df62-4cca-be07-b504984f967a",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nIt's a POKéMON\n\nREPORT!",
+          "\n4 POKéMON evolve\n\nonly when traded",
+          "\nby link-cable."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "02c2a1b5-3508-46cd-a2e8-58e1bc666b9f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

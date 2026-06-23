@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "7d41e932-5944-44f4-b5bd-2331fffc4c3d",
+  "_index": 94,
+  "name": "Rocket Hideout B1 F",
+  "backgroundId": "9d70d323-06f7-433a-8754-201480047b0e",
+  "tilesetId": "8a3072cf-93c2-4233-96e1-a0720b8095d7",
+  "width": 60,
+  "height": 56,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00d20+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_rocket_hideout_b1f",
+  "x": 2472,
+  "y": 14072,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "3dcfb78d-8aab-46c5-8e14-2bd8712142bf",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "60b57ebb-ba42-4710-9da6-9401b4b8971d"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000004"
+        }
+      },
+      "id": "e6e9e701-2c74-4a35-8828-0894d9add1a9"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "30144e86-fe72-4905-80fc-f21aae506fff"
+      },
+      "id": "70c67aec-7f92-481d-9a83-e5c454846b66"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "c08a505e-af72-4fa7-ae1d-28940e1fcbe7"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ce205ce4-e874-466c-8207-1b96134ae0c3"
+      },
+      "id": "689ca9e5-8a38-40b3-8b36-3c37cf00dc45"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

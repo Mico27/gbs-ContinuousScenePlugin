@@ -1,0 +1,57 @@
+{
+  "_resourceType": "actor",
+  "id": "3eb7413a-8db6-477e-bd73-02476ac2752c",
+  "_index": 4,
+  "symbol": "npc_hiker_002c",
+  "prefabId": "",
+  "name": "hiker",
+  "coordinateType": "tiles",
+  "x": 60,
+  "y": 21,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "25f3792c-ae42-40aa-9f3e-711181665025",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nMy POKéMON\n\ntechniques will",
+          "\nleave you crying!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "f083f139-d067-434b-af94-6e9101591acc"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

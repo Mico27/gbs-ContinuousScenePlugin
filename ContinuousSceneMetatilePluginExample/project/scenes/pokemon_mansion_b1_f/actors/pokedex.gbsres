@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "29a10471-f7d9-4754-80f5-f244c8ba0f46",
+  "_index": 6,
+  "symbol": "npc_pokedex_00b3",
+  "prefabId": "",
+  "name": "pokedex",
+  "coordinateType": "tiles",
+  "x": 32,
+  "y": 41,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "bcc9d9d8-b977-495e-b834-8640bb4a9556",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nDiary; Sept. 1\n\nMEWTWO is far too",
+          "\npowerful.",
+          "\nWe have failed to\n\ncurb its vicious",
+          "\ntendencies..."
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "4f3327bf-9662-48de-8449-1514f8756a03"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

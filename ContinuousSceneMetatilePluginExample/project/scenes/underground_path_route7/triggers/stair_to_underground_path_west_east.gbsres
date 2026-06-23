@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "ba881acd-a18f-48d0-9258-b5a56f506925",
+  "name": "Stair to underground_path_west_east",
+  "prefabId": "",
+  "x": 8,
+  "y": 8,
+  "symbol": "trigger_stair_to_undergroun_1",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 688
+        }
+      },
+      "id": "4b8a7667-6212-49ae-8219-04581c36f9b2"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

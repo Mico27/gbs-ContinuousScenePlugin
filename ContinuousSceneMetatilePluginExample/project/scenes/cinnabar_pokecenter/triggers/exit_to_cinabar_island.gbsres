@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "e7751b03-1160-484b-a88b-cf50a0bc0c30",
+  "name": "Exit to cinabar_island",
+  "prefabId": "",
+  "x": 6,
+  "y": 14,
+  "symbol": "trigger_exit_to_cinabar_isl_3",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 199
+        }
+      },
+      "id": "b45c8dbe-f573-4f47-8e36-37a414445caa"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "a17eb4d8-8e36-4db9-bc2a-f00fcfda704d"
+      },
+      "id": "45adeafb-fdd8-4638-bc6d-a69b837d6a8a"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "down"
+        ]
+      },
+      "id": "1e18a3f0-afec-4e31-b52f-ff4701833e5a"
+    }
+  ],
+  "_index": 0
+}

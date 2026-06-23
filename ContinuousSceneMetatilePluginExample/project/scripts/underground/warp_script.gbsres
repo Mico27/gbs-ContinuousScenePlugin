@@ -1,0 +1,186 @@
+{
+  "_resourceType": "script",
+  "id": "94cd9db7-8c61-4e3f-a66c-17634bac59c0",
+  "name": "Underground/Warp Script",
+  "description": "Source-type warp router for UNDERGROUND scenes. Routes WarpId (V0) to its destination via chained EVENT_SWITCH (16 cases each). 4 case(s).",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "symbol": "script_warp_underground",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "constant",
+            "value": "b001-0000-0000-0000-000000000018"
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "constant",
+                "value": "b001-0000-0000-0000-000000000019"
+              }
+            },
+            "id": "b7c38e80-c615-4920-bb9a-4b13eeba0016"
+          },
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "V0",
+              "choices": 4,
+              "__collapseElse": true,
+              "value0": {
+                "type": "number",
+                "value": 685
+              },
+              "__collapseCase0": false,
+              "value1": {
+                "type": "number",
+                "value": 687
+              },
+              "__collapseCase1": false,
+              "value2": {
+                "type": "number",
+                "value": 689
+              },
+              "__collapseCase2": false,
+              "value3": {
+                "type": "number",
+                "value": 691
+              },
+              "__collapseCase3": false
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 685 → STAIR underground_path_north_south → underground_path_route5 (8,8)"
+                  },
+                  "id": "c9217e56-aa32-4cba-b75d-a2f45e01a91a"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "c3918ac1-e8cd-41e8-a507-8020870f341a",
+                    "x": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "164a90ed-b127-42d7-9b5e-46b210f73357"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 687 → STAIR underground_path_north_south → underground_path_route6 (8,8)"
+                  },
+                  "id": "e086bdc0-130f-45c1-9bf8-635a8bee9eb6"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "fba9a864-4a5b-4db9-b7eb-86b9812646ee",
+                    "x": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "a5491a9d-0d14-4679-9928-e2ad2daa3a13"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 689 → STAIR underground_path_west_east → underground_path_route7 (8,8)"
+                  },
+                  "id": "3ba109c0-9842-4d29-be5e-e9decdc67bd1"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "1028217c-939e-4c70-8c77-29755483967d",
+                    "x": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "4f66b753-7445-4f97-b966-e35baaf9a21e"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 691 → STAIR underground_path_west_east → underground_path_route8 (8,8)"
+                  },
+                  "id": "6b9ce3d6-ee99-4e39-83bf-b6d3e379a383"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "67347673-4c0b-45f6-ac25-34ceeccbf07b",
+                    "x": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "c339bd16-9e82-4aef-89d9-d7912788b108"
+                }
+              ]
+            },
+            "id": "6703e11a-94c5-474c-a271-dc9597d9dc5b"
+          }
+        ],
+        "false": []
+      },
+      "id": "06b0be8a-6eca-416a-9aed-a95f9fe109d6"
+    }
+  ]
+}

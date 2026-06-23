@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "ceb26470-3ffe-4ea4-afbb-e83e5cc8f4bd",
+  "name": "Entry to lavender_mart",
+  "prefabId": "",
+  "x": 30,
+  "y": 26,
+  "symbol": "trigger_entry_to_lavender_m",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 168
+        }
+      },
+      "id": "4cf7dd8a-95bd-48a6-bab7-e068ee184008"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "63e99616-3d9c-4ca8-99a9-b8313e298a0c",
+  "name": "Stair to reds_house2_f",
+  "prefabId": "",
+  "x": 14,
+  "y": 2,
+  "symbol": "trigger_stair_to_reds_house",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "20c84844-5a5e-4702-8bc4-86c6d2ce2b28",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 698
+        }
+      },
+      "id": "9198b2f5-8513-4a62-a32f-a711ca07a9a7"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

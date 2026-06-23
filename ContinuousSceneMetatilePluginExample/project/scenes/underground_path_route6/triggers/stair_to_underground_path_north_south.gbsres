@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "e40995e6-eadb-460b-821e-00b26eeb9b04",
+  "name": "Stair to underground_path_north_south",
+  "prefabId": "",
+  "x": 8,
+  "y": 8,
+  "symbol": "trigger_stair_to_undergroun_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 686
+        }
+      },
+      "id": "446ac23b-f97c-4a9d-9742-e8b312dd3f35"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}

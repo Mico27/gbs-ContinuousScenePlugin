@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "4a7be72f-78cf-478a-909a-0ecbb00853a8",
+  "name": "Stair to s_s_anne1_f",
+  "prefabId": "",
+  "x": 54,
+  "y": 10,
+  "symbol": "trigger_stair_to_s_s_anne1__12",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "b480b6f5-5ab8-4046-b156-b800b9af9bb1",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 753
+        }
+      },
+      "id": "75fd9a73-2795-4481-83b7-db18e52f75b7"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 5
+}

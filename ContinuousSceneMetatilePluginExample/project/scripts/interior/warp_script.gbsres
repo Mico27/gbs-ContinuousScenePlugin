@@ -1,0 +1,217 @@
+{
+  "_resourceType": "script",
+  "id": "64b32084-5773-4330-a047-a33a278b9704",
+  "name": "Interior/Warp Script",
+  "description": "Source-type warp router for INTERIOR scenes. Routes WarpId (V0) to its destination via chained EVENT_SWITCH (16 cases each). 5 case(s).",
+  "variables": {
+    "V0": {
+      "id": "V0",
+      "name": "WarpId",
+      "passByReference": false
+    }
+  },
+  "actors": {},
+  "symbol": "script_warp_interior",
+  "script": [
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "eq",
+          "valueA": {
+            "type": "variable",
+            "value": "20"
+          },
+          "valueB": {
+            "type": "constant",
+            "value": "b001-0000-0000-0000-000000000018"
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "20",
+              "value": {
+                "type": "constant",
+                "value": "b001-0000-0000-0000-000000000019"
+              }
+            },
+            "id": "6e8cfda3-04e1-4034-bfce-32c921fb6544"
+          },
+          {
+            "command": "EVENT_SWITCH",
+            "args": {
+              "variable": "V0",
+              "choices": 5,
+              "__collapseElse": true,
+              "value0": {
+                "type": "number",
+                "value": 107
+              },
+              "__collapseCase0": false,
+              "value1": {
+                "type": "number",
+                "value": 335
+              },
+              "__collapseCase1": false,
+              "value2": {
+                "type": "number",
+                "value": 589
+              },
+              "__collapseCase2": false,
+              "value3": {
+                "type": "number",
+                "value": 601
+              },
+              "__collapseCase3": false,
+              "value4": {
+                "type": "number",
+                "value": 604
+              },
+              "__collapseCase4": false
+            },
+            "children": {
+              "true0": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 107 → EXIT pokemon_fan_club → vermillion_city (18,26)"
+                  },
+                  "id": "5649cd6e-06dc-4507-a286-4d5f17cb5994"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "076f289b-e6d7-4d3a-84a5-ed876a4cb899",
+                    "x": {
+                      "type": "number",
+                      "value": 18
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 26
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "eaca2475-c2a8-4a08-9b44-ca6b540c0a70"
+                }
+              ],
+              "true1": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 335 → EXIT bills_house → route_25 (90,6)"
+                  },
+                  "id": "5c668e1c-fbd8-4359-9641-bd84cb520914"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "fad3b4a4-7e3c-471b-b661-de3b61a8e4a9",
+                    "x": {
+                      "type": "number",
+                      "value": 90
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "4cd9286c-57cb-4f57-ad77-eab9a49d1dad"
+                }
+              ],
+              "true2": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 589 → STAIR silph_co11_f → silph_co7_f (10,14)"
+                  },
+                  "id": "48da9656-36ec-4299-9910-67eefcf5fbb8"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "20bd447a-546f-48da-a1d6-1312e7495bd7",
+                    "x": {
+                      "type": "number",
+                      "value": 10
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "f12d522b-ffe9-4cdd-a6cb-cda377de4641"
+                }
+              ],
+              "true3": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 601 → STAIR silph_co11_f → silph_co10_f (20,0)"
+                  },
+                  "id": "bed8ff5f-a885-4f47-a297-c780b10f0b03"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "99d87b49-e5e2-468a-9f17-818f0be9d3e8",
+                    "x": {
+                      "type": "number",
+                      "value": 20
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 0
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "fd9542e0-4b3d-42b8-aed3-421a84d05d6e"
+                }
+              ],
+              "true4": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 604 → STAIR silph_co11_f → silph_co_elevator (2,6)"
+                  },
+                  "id": "f359ab8b-c7e3-4ce9-a6c9-882d6533554e"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "0ca6a01e-ae4a-456e-a57a-14432fe5660e",
+                    "x": {
+                      "type": "number",
+                      "value": 2
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 6
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "54b81abe-2b52-4248-95ee-23dfb4715d0a"
+                }
+              ]
+            },
+            "id": "f97f2d38-f858-439c-9dac-4b52067574f7"
+          }
+        ],
+        "false": []
+      },
+      "id": "99050101-5632-4a25-a99a-43dcea0ea228"
+    }
+  ]
+}

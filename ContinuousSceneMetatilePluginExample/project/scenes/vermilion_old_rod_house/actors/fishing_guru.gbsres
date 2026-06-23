@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "1d709698-b2ba-461b-a893-e7a71715a9a9",
+  "_index": 0,
+  "symbol": "npc_fishing_guru_01e9",
+  "prefabId": "",
+  "name": "fishing_guru",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 9,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5d007b5b-aa29-4f7e-9d96-684ba77dbc4b",
+  "paletteId": "",
+  "direction": "right",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nI'm the FISHING\n\nGURU!",
+          "\nI simply Looove\n\nfishing!",
+          "\nDo you like to\n\nfish?"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "b8d2ce5f-4842-4469-ba2d-6cef4ef04070"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

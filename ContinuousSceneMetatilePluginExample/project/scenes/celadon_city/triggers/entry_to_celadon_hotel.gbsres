@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "5b6b8487-e339-48b7-ba03-d7098a53afa6",
+  "name": "Entry to celadon_hotel",
+  "prefabId": "",
+  "x": 86,
+  "y": 54,
+  "symbol": "trigger_entry_to_celadon_ho",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 144
+        }
+      },
+      "id": "ba6c51e0-485a-418f-9666-f5180a33ee7d"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

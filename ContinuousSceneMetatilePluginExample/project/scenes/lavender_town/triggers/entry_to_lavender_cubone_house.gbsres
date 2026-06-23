@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "2aa1ec93-1df3-415f-8db5-48f6c7378349",
+  "name": "Entry to lavender_cubone_house",
+  "prefabId": "",
+  "x": 6,
+  "y": 26,
+  "symbol": "trigger_entry_to_lavender_c",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 170
+        }
+      },
+      "id": "fa89e91b-89f7-45c1-a282-4b5ccb5668db"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

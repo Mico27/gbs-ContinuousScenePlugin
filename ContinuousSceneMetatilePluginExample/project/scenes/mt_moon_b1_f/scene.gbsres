@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "c4113fbb-1e1d-406b-845d-6c9b0421e208",
+  "_index": 65,
+  "name": "Mt Moon B1 F",
+  "backgroundId": "9f8835cf-948b-4505-b776-990c698f88b0",
+  "tilesetId": "117777a9-9bed-4ebe-939f-a4d2be64e6f3",
+  "width": 56,
+  "height": 56,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "00c40+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_mt_moon_b1f",
+  "x": 3640,
+  "y": 12312,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "944389bf-6266-4090-aa70-8c361cf3a874",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "ad149a86-3add-442f-9928-8476c05e794a"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000001"
+        }
+      },
+      "id": "1aa905ae-e5e5-450e-b1ed-83600f3acfdc"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "5af4349c-f65f-4a2e-b71a-8a925dfe6698"
+      },
+      "id": "57433727-cfdd-40bd-9509-d84d6c084e1c"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "9ac973f4-fee4-4b1b-9152-24771bf6a7ad"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "72e91277-100b-4db5-91d9-4cd857c178b5"
+      },
+      "id": "fa97e387-7eff-4a39-8d04-70d30f814034"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

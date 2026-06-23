@@ -1,0 +1,44 @@
+{
+  "_resourceType": "trigger",
+  "id": "dee3354a-9703-4f5c-b35f-e1d563231e28",
+  "name": "Entry to viridian_forest_north_gate",
+  "prefabId": "",
+  "x": 6,
+  "y": 22,
+  "symbol": "trigger_entry_to_viridian_f",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "17",
+        "value": {
+          "type": "number",
+          "value": 207
+        }
+      },
+      "id": "eeacc1a6-ba69-42b8-ae83-bd97c008ebb8"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "9720c8d8-7f47-403e-8536-2ccf4ebb87e9"
+      },
+      "id": "c3d33525-aa6a-4b6c-9bd5-dc0ed6a768ad"
+    }
+  ],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "up"
+        ]
+      },
+      "id": "1def4d6d-b35c-4922-8d84-a32fbb4827ef"
+    }
+  ],
+  "_index": 4
+}

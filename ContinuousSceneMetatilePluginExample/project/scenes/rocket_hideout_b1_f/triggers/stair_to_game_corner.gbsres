@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "5a49f96e-a115-47e8-98a8-90b80d4aa881",
+  "name": "Stair to game_corner",
+  "prefabId": "",
+  "x": 42,
+  "y": 4,
+  "symbol": "trigger_stair_to_game_corne",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "e2000001-0000-4000-a000-000000000001",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 478
+        }
+      },
+      "id": "d0a463ff-c83e-4e4b-9685-306460ab83fc"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 0
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "6f8906ec-f926-46cb-87e9-3763e8c685e9",
+  "name": "Stair to loreleis_room",
+  "prefabId": "",
+  "x": 10,
+  "y": 22,
+  "symbol": "trigger_stair_to_loreleis_r_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "ed3ad6f2-d9d4-4ed4-8b63-a564aa907be5",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 424
+        }
+      },
+      "id": "bb5e60f1-b9cf-45b9-962f-aac74d1d8690"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 3
+}

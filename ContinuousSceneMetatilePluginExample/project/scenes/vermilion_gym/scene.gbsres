@@ -1,0 +1,66 @@
+{
+  "_resourceType": "scene",
+  "id": "b308ddbe-b786-4b24-8f7f-1c87319eca21",
+  "_index": 154,
+  "name": "Vermilion Gym",
+  "backgroundId": "1b61c1c8-2669-49a0-9b1d-daec2a1d81f1",
+  "tilesetId": "4b2c68cb-8f81-4e59-af87-8c52f72acd6f",
+  "width": 20,
+  "height": 36,
+  "type": "TOPDOWN",
+  "colorModeOverride": "none",
+  "paletteIds": [],
+  "spritePaletteIds": [],
+  "collisions": "002d0+",
+  "autoFadeSpeed": null,
+  "symbol": "pkmn_vermilion_gym",
+  "x": 1448,
+  "y": 16888,
+  "script": [
+    {
+      "command": "EVENT_LOAD_META_TILES",
+      "args": {
+        "sceneId": "6ba45848-b087-48c5-ae19-fb6dd62a7b25",
+        "matchColor": false,
+        "matchCollision": false,
+        "__comment": false
+      },
+      "id": "54114b4e-de7b-4a1e-882d-cb028a070b72"
+    },
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "21",
+        "value": {
+          "type": "constant",
+          "value": "b001-0000-0000-0000-0000f3000007"
+        }
+      },
+      "id": "9a72343c-1112-4ac5-8d34-577ae2034412"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "c8f57e9b-f5bb-4285-819a-dd9a4ec826e4"
+      },
+      "id": "cd121147-2740-4994-b7ed-45ac879be8d7"
+    },
+    {
+      "command": "EVENT_FADE_IN",
+      "args": {
+        "speed": "2"
+      },
+      "id": "d41d9bb1-16b1-4e68-a3c8-8e593fe51972"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "3da4e714-53a4-4061-aff8-aeb6103c614b"
+      },
+      "id": "ab561412-5ffb-4020-ae4e-dc4a98562bfd"
+    }
+  ],
+  "playerHit1Script": [],
+  "playerHit2Script": [],
+  "playerHit3Script": []
+}

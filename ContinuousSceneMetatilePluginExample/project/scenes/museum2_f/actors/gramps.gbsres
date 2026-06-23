@@ -1,0 +1,58 @@
+{
+  "_resourceType": "actor",
+  "id": "0edcb2eb-27fa-4c96-9a78-44798b2d7337",
+  "_index": 1,
+  "symbol": "npc_gramps_015f",
+  "prefabId": "",
+  "name": "gramps",
+  "coordinateType": "tiles",
+  "x": 0,
+  "y": 11,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5ae693e7-3e22-4f46-99bc-0adde32dbba3",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nJuly 20, 1969!",
+          "\nThe 1st lunar\n\nlanding!",
+          "\nI bought a color\n\nTV to watch it!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "3f9dbffd-4d82-4433-b1cd-4e2e6c80b57b"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

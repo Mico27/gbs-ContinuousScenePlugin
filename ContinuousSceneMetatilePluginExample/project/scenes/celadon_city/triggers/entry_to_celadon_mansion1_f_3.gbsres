@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "0b8812c8-4a45-4e8b-8c69-9f5cf7c431ae",
+  "name": "Entry to celadon_mansion1_f",
+  "prefabId": "",
+  "x": 50,
+  "y": 6,
+  "symbol": "trigger_entry_to_celadon_ma_1",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 129
+        }
+      },
+      "id": "e050ebcd-a63d-49cb-9666-a5f076d2e6a9"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 6
+}

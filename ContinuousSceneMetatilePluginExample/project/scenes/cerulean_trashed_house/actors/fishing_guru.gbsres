@@ -1,0 +1,60 @@
+{
+  "_resourceType": "actor",
+  "id": "bb6d2e5e-075e-4720-9333-e4c6b6fbd53b",
+  "_index": 0,
+  "symbol": "npc_fishing_guru_01c7",
+  "prefabId": "",
+  "name": "fishing_guru",
+  "coordinateType": "tiles",
+  "x": 4,
+  "y": 3,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "5d007b5b-aa29-4f7e-9d96-684ba77dbc4b",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThose miserable\n\nROCKETs!",
+          "\nLook what they\n\ndid here!",
+          "\nThey stole a TM\n\nfor teaching",
+          "\nPOKéMON how to\n\nDIG holes!",
+          "\nThat cost me a\n\nbundle, it did!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "6fd7f88b-aecc-4d5b-b288-8f5422b6eaa6"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

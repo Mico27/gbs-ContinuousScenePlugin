@@ -1,0 +1,59 @@
+{
+  "_resourceType": "actor",
+  "id": "3c5796ea-4a37-493d-b63f-6392aa04e5cb",
+  "_index": 1,
+  "symbol": "npc_safari_zone_01d7",
+  "prefabId": "",
+  "name": "safari_zone_worker",
+  "coordinateType": "tiles",
+  "x": 0,
+  "y": 5,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "4c44083a-6467-4af8-9031-9fae178fdd4d",
+  "paletteId": "",
+  "direction": "up",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nSLOWPOKE is very\n\nknowledgeable",
+          "\nabout POKéMON!",
+          "\nHe even has some\n\nfossils of rare,",
+          "\nextinct POKéMON!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "ce03ea41-8dc8-4028-9cbd-3ec2a6cc14c8"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,56 @@
+{
+  "_resourceType": "actor",
+  "id": "42d33287-e553-431b-a00d-997692fed5c7",
+  "_index": 4,
+  "symbol": "npc_boulder_003a",
+  "prefabId": "",
+  "name": "boulder",
+  "coordinateType": "tiles",
+  "x": 36,
+  "y": 13,
+  "frame": 0,
+  "animate": true,
+  "spriteSheetId": "e6ef8c04-8d0b-4a9e-a060-a5cb4a685900",
+  "paletteId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "script": [
+    {
+      "command": "EVENT_TEXT",
+      "args": {
+        "__presetId": "b5f85a5b-5f40-4355-9e63-db5ce2bfe0bc",
+        "text": [
+          "\nThis requires\n\nSTRENGTH to move!"
+        ],
+        "__section": "presets",
+        "avatarId": "",
+        "minHeight": 6,
+        "maxHeight": 6,
+        "textX": 1,
+        "textY": 1,
+        "textHeight": 4,
+        "position": "bottom",
+        "clearPrevious": true,
+        "showFrame": "true",
+        "speedIn": -3,
+        "speedOut": -3,
+        "closeWhen": "key",
+        "closeButton": "a",
+        "closeDelayTime": 0.5,
+        "closeDelayFrames": 30
+      },
+      "id": "9d9186aa-5cb6-468b-a9a2-8cae91d02955"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": []
+}

@@ -1,0 +1,27 @@
+{
+  "_resourceType": "trigger",
+  "id": "a6be75a0-f7be-4315-8fbc-19286b050203",
+  "name": "Entry to indigo_plateau_lobby",
+  "prefabId": "",
+  "x": 20,
+  "y": 10,
+  "symbol": "trigger_entry_to_indigo_pla_0",
+  "prefabScriptOverrides": {},
+  "width": 2,
+  "height": 2,
+  "script": [
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 204
+        }
+      },
+      "id": "2f44b49d-6359-41fd-ba4a-ffdbd2af4b60"
+    }
+  ],
+  "leaveScript": [],
+  "_index": 1
+}
