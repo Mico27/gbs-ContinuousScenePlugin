@@ -83,10 +83,18 @@
         "frames": 30,
         "__scriptTabs": "end",
         "units": "frames",
-        "__collapse": true
+        "__collapse": false,
+        "__comment": false
       },
       "children": {
         "script": [
+          {
+            "command": "EVENT_IDLE",
+            "args": {
+              "__collapse": true
+            },
+            "id": "3d2312f9-5470-414c-a7e6-e243b5cff13e"
+          },
           {
             "command": "EVENT_IF",
             "args": {
@@ -94,11 +102,18 @@
                 "type": "expression",
                 "value": "($09$ & 4)"
               },
-              "__collapseElse": false,
+              "__collapseElse": true,
               "__collapse": true
             },
             "children": {
               "true": [
+                {
+                  "command": "EVENT_IDLE",
+                  "args": {
+                    "__collapse": true
+                  },
+                  "id": "389ab7ba-81f6-4132-8cfc-bdbebf25bf97"
+                },
                 {
                   "command": "EVENT_SET_VALUE",
                   "args": {
@@ -113,6 +128,13 @@
                 }
               ],
               "false": [
+                {
+                  "command": "EVENT_IDLE",
+                  "args": {
+                    "__collapse": true
+                  },
+                  "id": "7baf223c-9ed7-469d-ab6f-5cb247dab0ab"
+                },
                 {
                   "command": "EVENT_SET_VALUE",
                   "args": {
@@ -173,6 +195,13 @@
             "id": "d973af4c-5135-4f98-8c21-1141cc80db8a"
           },
           {
+            "command": "EVENT_IDLE",
+            "args": {
+              "__collapse": true
+            },
+            "id": "fbed7f23-e137-49ea-bbf8-c34afd598ea6"
+          },
+          {
             "command": "EVENT_IF",
             "args": {
               "condition": {
@@ -184,6 +213,13 @@
             },
             "children": {
               "true": [
+                {
+                  "command": "EVENT_IDLE",
+                  "args": {
+                    "__collapse": true
+                  },
+                  "id": "aa59521e-0008-4b7b-be07-2ab3424571a3"
+                },
                 {
                   "command": "EVENT_SET_VALUE",
                   "args": {
@@ -253,7 +289,7 @@
       "args": {
         "metatile_event": "0",
         "__scriptTabs": "scriptinput",
-        "__collapse": true
+        "__collapse": false
       },
       "children": {
         "script": [
@@ -298,7 +334,7 @@
                       }
                     },
                     "__collapseElse": true,
-                    "__collapse": true
+                    "__collapse": false
                   },
                   "children": {
                     "true": [
@@ -436,7 +472,7 @@
                       }
                     },
                     "__collapseElse": false,
-                    "__collapse": true
+                    "__collapse": false
                   },
                   "children": {
                     "true": [

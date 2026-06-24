@@ -7,19 +7,26 @@
   "y": 14,
   "symbol": "trigger_stair_to_viridian_f_5",
   "prefabScriptOverrides": {},
-  "width": 2,
+  "width": 4,
   "height": 2,
   "script": [
     {
-      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "command": "EVENT_SET_VALUE",
       "args": {
-        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
-        "$variable[V0]$": {
+        "variable": "17",
+        "value": {
           "type": "number",
           "value": 657
         }
       },
-      "id": "210ab34c-c36f-4eed-a394-3e7f9f31e811"
+      "id": "167bf8c6-53a5-4623-9d8e-1c46cfb7408f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "07e5c1bd-ed5c-415b-a135-7c069bb948e4"
+      },
+      "id": "4220bfa2-5511-4c89-9686-788d6868d56a"
     }
   ],
   "leaveScript": [],

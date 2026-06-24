@@ -1,13 +1,13 @@
 {
   "_resourceType": "trigger",
-  "id": "d1b11d6c-0216-4c84-86d1-79049f3100f7",
+  "id": "f19edf9b-9d5f-4a07-a724-aeee8adb6ad1",
   "name": "Exit to route_12",
   "prefabId": "",
-  "x": 10,
-  "y": 0,
-  "symbol": "trigger_exit_to_route_13",
+  "x": 8,
+  "y": 14,
+  "symbol": "trigger_exit_to_route_14",
   "prefabScriptOverrides": {},
-  "width": 2,
+  "width": 4,
   "height": 2,
   "script": [
     {
@@ -16,17 +16,17 @@
         "variable": "17",
         "value": {
           "type": "number",
-          "value": 281
+          "value": 283
         }
       },
-      "id": "1aead489-1101-4abe-98b7-aed469e03383"
+      "id": "ef575d23-cf66-42c4-b8ae-ae90eb1d9d16"
     },
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "07e5c1bd-ed5c-415b-a135-7c069bb948e4"
       },
-      "id": "aa07a46b-990a-4205-9a37-61a93ee00f5d"
+      "id": "4bef87d1-1429-4390-8006-9e3de964c218"
     }
   ],
   "leaveScript": [
@@ -37,7 +37,7 @@
           "down"
         ]
       },
-      "id": "4dd18ea7-4605-48cc-94b5-da03c7c52f02"
+      "id": "9aa5e120-f9e8-43f7-82a8-c2fd625f64a5"
     }
   ],
   "_index": 1

@@ -11,20 +11,13 @@
   "height": 2,
   "script": [
     {
-      "command": "EVENT_SET_VALUE",
+      "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "variable": "17",
-        "value": {
+        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
+        "$variable[V0]$": {
           "type": "number",
           "value": 212
         }
-      },
-      "id": "55719502-16a7-46b7-8fa2-936da9dbd36e"
-    },
-    {
-      "command": "EVENT_CALL_CUSTOM_EVENT",
-      "args": {
-        "customEventId": "07e5c1bd-ed5c-415b-a135-7c069bb948e4"
       },
       "id": "453024f1-722f-47ed-96bf-d16c884d8179"
     }

@@ -7,19 +7,26 @@
   "y": 14,
   "symbol": "trigger_stair_to_safari_zon_36",
   "prefabScriptOverrides": {},
-  "width": 2,
+  "width": 4,
   "height": 2,
   "script": [
     {
-      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "command": "EVENT_SET_VALUE",
       "args": {
-        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
-        "$variable[V0]$": {
+        "variable": "17",
+        "value": {
           "type": "number",
           "value": 641
         }
       },
-      "id": "585421bf-06b6-4630-a4fb-72d564170008"
+      "id": "f6a477b9-26db-4f63-98e4-17f59af62d09"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "07e5c1bd-ed5c-415b-a135-7c069bb948e4"
+      },
+      "id": "4efa1217-35ea-4318-b856-296f57a13777"
     }
   ],
   "leaveScript": [],

@@ -7,7 +7,7 @@
   "y": 0,
   "symbol": "trigger_exit_to_route_36",
   "prefabScriptOverrides": {},
-  "width": 2,
+  "width": 4,
   "height": 2,
   "script": [
     {
@@ -24,7 +24,7 @@
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "customEventId": "07e5c1bd-ed5c-415b-a135-7c069bb948e4"
+        "customEventId": "7aa1dbad-0328-4136-ad0c-c33d3d36b2dd"
       },
       "id": "fa2232a3-d244-4512-bfe3-cd0f9fa5002e"
     }
@@ -34,7 +34,7 @@
       "command": "EVENT_REMOVE_INPUT_SCRIPT",
       "args": {
         "input": [
-          "down"
+          "up"
         ]
       },
       "id": "14878eab-7002-4cb1-9f45-5475bcd91e86"

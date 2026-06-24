@@ -130,32 +130,26 @@ static UBYTE get_metatile_id_from_pos(UBYTE x, UBYTE y) {
     }
     UBYTE direction;
     if (x > SCREEN_OOB_LEFT) {
-        script_memory[1] = 1;
         // Left neighbour: local x counts back from the right edge of that scene.
         direction = DIRECTION_LEFT;
         x = continuous_scenes[DIRECTION_LEFT].tile_width + x;
         y = y + continuous_scenes[DIRECTION_LEFT].offset;
     } else if (x >= image_tile_width) {
-        script_memory[1] = 2;
         // Right neighbour.
         direction = DIRECTION_RIGHT;
         x = x - image_tile_width;
         y = y + continuous_scenes[DIRECTION_RIGHT].offset;
     } else if (y > SCREEN_OOB_TOP) {
-        script_memory[1] = 3;
         // Top neighbour: local y counts back from the bottom edge of that scene.
         direction = DIRECTION_TOP;
         x = x + continuous_scenes[DIRECTION_TOP].offset;
         y = continuous_scenes[DIRECTION_TOP].tile_height + y;
     } else {
-        script_memory[1] = 4;
         // Bottom neighbour.
         direction = DIRECTION_BOTTOM;
         x = x + continuous_scenes[DIRECTION_BOTTOM].offset;
         y = y - image_tile_height;
     }
-    script_memory[2] = x;
-    script_memory[3] = y;
     continuous_scene_t* cs = &continuous_scenes[direction];
     
     if (!cs->tilemap.ptr || x > SCREEN_OOB_LEFT || y > SCREEN_OOB_TOP ||

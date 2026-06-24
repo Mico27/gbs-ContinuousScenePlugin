@@ -21,14 +21,16 @@
     {
       "command": "EVENT_COMMENT",
       "args": {
-        "text": "MOVE NPC RANDOM"
+        "text": "MOVE NPC RANDOM",
+        "__collapse": true
       },
       "id": "comment-0094-0000-0000-0000-000000000000"
     },
     {
       "command": "EVENT_COMMENT",
       "args": {
-        "text": "Pick a random direction (0=down, 1=right, 2=up, 3=left), check metatile collision at the target tile, and move only if collision matches the mask."
+        "text": "Pick a random direction (0=down, 1=right, 2=up, 3=left), check metatile collision at the target tile, and move only if collision matches the mask.",
+        "__collapse": true
       },
       "id": "comment-0095-0000-0000-0000-000000000000"
     },
@@ -45,9 +47,22 @@
       }
     },
     {
+      "id": "a325ec5b-ecdb-4d8d-9982-7b5db893267c",
+      "command": "EVENT_WAIT",
+      "args": {
+        "frames": {
+          "type": "variable",
+          "value": "15"
+        },
+        "units": "frames",
+        "__collapse": true
+      }
+    },
+    {
       "command": "EVENT_COMMENT",
       "args": {
-        "text": "Switch on random direction value stored in NpcDir (var 15)."
+        "text": "Switch on random direction value stored in NpcDir (var 15).",
+        "__collapse": true
       },
       "id": "comment-0104-0000-0000-0000-000000000000"
     },
@@ -97,6 +112,13 @@
             "id": "comment-0097-0000-0000-0000-000000000000"
           },
           {
+            "command": "EVENT_IDLE",
+            "args": {
+              "__collapse": true
+            },
+            "id": "b9f58cfb-22e9-4f0f-8f5d-2d8b0e650b70"
+          },
+          {
             "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
             "args": {
               "x": {
@@ -140,6 +162,13 @@
             "children": {
               "true": [
                 {
+                  "command": "EVENT_IDLE",
+                  "args": {
+                    "__collapse": true
+                  },
+                  "id": "e81934fd-59ce-44a7-8bdf-1719b4986bfc"
+                },
+                {
                   "id": "1fedc7b6-89fa-44c1-ac4e-d11c09998748",
                   "command": "EVENT_ACTOR_MOVE_RELATIVE",
                   "args": {
@@ -181,6 +210,13 @@
               "text": "Check metatile collision at target position → MetatileCollision (var 18). Move only if it equals CollisionMask (V0)."
             },
             "id": "comment-0099-0000-0000-0000-000000000000"
+          },
+          {
+            "command": "EVENT_IDLE",
+            "args": {
+              "__collapse": true
+            },
+            "id": "d50d47bf-8d2f-4a43-a077-ff6b72bec467"
           },
           {
             "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
@@ -226,6 +262,13 @@
             "children": {
               "true": [
                 {
+                  "command": "EVENT_IDLE",
+                  "args": {
+                    "__collapse": true
+                  },
+                  "id": "713b5b8a-2e2d-4b51-9c6a-44723caab899"
+                },
+                {
                   "id": "8a6df886-a240-4e81-9cd0-16301eed072e",
                   "command": "EVENT_ACTOR_MOVE_RELATIVE",
                   "args": {
@@ -267,6 +310,13 @@
               "text": "Check metatile collision at target position → MetatileCollision (var 18). Move only if it equals CollisionMask (V0)."
             },
             "id": "comment-0101-0000-0000-0000-000000000000"
+          },
+          {
+            "command": "EVENT_IDLE",
+            "args": {
+              "__collapse": true
+            },
+            "id": "74220a9b-6d41-4384-880f-17950a37da4c"
           },
           {
             "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
@@ -312,6 +362,13 @@
             "children": {
               "true": [
                 {
+                  "command": "EVENT_IDLE",
+                  "args": {
+                    "__collapse": true
+                  },
+                  "id": "ec702fc8-1bac-451d-928e-16168ec793fa"
+                },
+                {
                   "id": "609accf5-156e-4184-a039-7be151a4d09e",
                   "command": "EVENT_ACTOR_MOVE_RELATIVE",
                   "args": {
@@ -353,6 +410,13 @@
               "text": "Check metatile collision at target position → MetatileCollision (var 18). Move only if it equals CollisionMask (V0)."
             },
             "id": "comment-0103-0000-0000-0000-000000000000"
+          },
+          {
+            "command": "EVENT_IDLE",
+            "args": {
+              "__collapse": true
+            },
+            "id": "c1bcc86a-7ae4-488c-8e5b-2ef54425858b"
           },
           {
             "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
@@ -398,6 +462,13 @@
             "children": {
               "true": [
                 {
+                  "command": "EVENT_IDLE",
+                  "args": {
+                    "__collapse": true
+                  },
+                  "id": "be3155b0-2cc6-496e-8423-2239ce7d0a37"
+                },
+                {
                   "id": "0c3894b2-f4a4-4775-afd0-de423f9870fc",
                   "command": "EVENT_ACTOR_MOVE_RELATIVE",
                   "args": {
@@ -431,7 +502,7 @@
     {
       "command": "EVENT_COMMENT",
       "args": {
-        "text": "Pause 30 frames (~0.5 s) between movement steps."
+        "text": "Pause 60 frames (~1 s) between movement steps."
       },
       "id": "comment-0105-0000-0000-0000-000000000000"
     },
@@ -441,7 +512,7 @@
       "args": {
         "frames": {
           "type": "number",
-          "value": 30
+          "value": 60
         },
         "units": "frames"
       }

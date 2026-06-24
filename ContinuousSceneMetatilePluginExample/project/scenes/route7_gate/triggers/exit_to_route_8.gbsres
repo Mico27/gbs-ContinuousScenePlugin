@@ -1,14 +1,14 @@
 {
   "_resourceType": "trigger",
-  "id": "87e78090-cc08-4939-921c-1a26dce360e7",
+  "id": "a75410f4-9f0e-42d2-8316-951abca30d77",
   "name": "Exit to route_7",
   "prefabId": "",
-  "x": 0,
-  "y": 8,
-  "symbol": "trigger_exit_to_route_41",
+  "x": 10,
+  "y": 6,
+  "symbol": "trigger_exit_to_route_42",
   "prefabScriptOverrides": {},
   "width": 2,
-  "height": 2,
+  "height": 4,
   "script": [
     {
       "command": "EVENT_SET_VALUE",
@@ -16,17 +16,17 @@
         "variable": "17",
         "value": {
           "type": "number",
-          "value": 247
+          "value": 241
         }
       },
-      "id": "60f8714f-2260-4ece-a6fb-504b4c44c1ad"
+      "id": "3e59fc9d-97d1-4444-ada9-fa92f599aa72"
     },
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "customEventId": "1d287aa5-ae0e-40e7-83a5-5beadef555be"
+        "customEventId": "f99b9a53-2c52-47b6-b455-01169385fc79"
       },
-      "id": "da9be522-2c88-4277-a519-49348316d438"
+      "id": "ac20ca4a-4d3b-4245-bdc6-dbc03606f07e"
     }
   ],
   "leaveScript": [
@@ -34,10 +34,10 @@
       "command": "EVENT_REMOVE_INPUT_SCRIPT",
       "args": {
         "input": [
-          "left"
+          "right"
         ]
       },
-      "id": "7e06d56b-7ea9-44d0-a965-a3ea8a15b811"
+      "id": "7ccb8a2b-3c7b-46b6-8bd9-8da09909fe72"
     }
   ],
   "_index": 1
