@@ -5,11 +5,22 @@
   "prefabId": "",
   "x": 48,
   "y": 30,
-  "symbol": "trigger_stair_to_rocket_hid_11",
+  "symbol": "trigger_stair_to_rocket_hid_9",
   "prefabScriptOverrides": {},
   "width": 4,
   "height": 2,
   "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "28",
+        "value": {
+          "type": "number",
+          "value": 3
+        }
+      },
+      "id": "3fbd3983-0a11-4ce2-9ef5-38e3a2e4c6b2"
+    },
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {

@@ -5,11 +5,22 @@
   "prefabId": "",
   "x": 2,
   "y": 2,
-  "symbol": "trigger_stair_to_celadon_ma_12",
+  "symbol": "trigger_stair_to_celadon_ma_11",
   "prefabScriptOverrides": {},
   "width": 2,
   "height": 2,
   "script": [
+    {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "28",
+        "value": {
+          "type": "number",
+          "value": 5
+        }
+      },
+      "id": "bc80939a-0b52-4093-9d68-3f62030bffdd"
+    },
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {

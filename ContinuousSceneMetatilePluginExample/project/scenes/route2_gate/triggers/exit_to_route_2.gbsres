@@ -11,15 +11,22 @@
   "height": 2,
   "script": [
     {
-      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "command": "EVENT_SET_VALUE",
       "args": {
-        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
-        "$variable[V0]$": {
+        "variable": "17",
+        "value": {
           "type": "number",
           "value": 212
         }
       },
-      "id": "453024f1-722f-47ed-96bf-d16c884d8179"
+      "id": "d3c77da3-cd65-4bd6-92eb-7a3eb82aae40"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "7aa1dbad-0328-4136-ad0c-c33d3d36b2dd"
+      },
+      "id": "c0c71df1-dc1f-4dc0-aa8b-536fa9dafaa4"
     }
   ],
   "leaveScript": [
@@ -27,10 +34,10 @@
       "command": "EVENT_REMOVE_INPUT_SCRIPT",
       "args": {
         "input": [
-          "down"
+          "up"
         ]
       },
-      "id": "749d0bd9-7229-45d1-84db-a4911caf238f"
+      "id": "a0368ce8-a0db-4914-8e92-531af5bd4145"
     }
   ],
   "_index": 0

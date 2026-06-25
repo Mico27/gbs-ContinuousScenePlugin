@@ -1,0 +1,110 @@
+{
+  "_resourceType": "actor",
+  "id": "d209c28d-e4bf-412e-9be2-e6eca80a2881",
+  "name": "ElevatorPad",
+  "frame": 0,
+  "animate": false,
+  "spriteSheetId": "164c12bf-7cb8-430e-b23e-b98c1bb32b5f",
+  "prefabId": "",
+  "direction": "down",
+  "moveSpeed": 1,
+  "animSpeed": 15,
+  "paletteId": "",
+  "isPinned": false,
+  "persistent": false,
+  "collisionGroup": "",
+  "collisionExtraFlags": [],
+  "prefabScriptOverrides": {},
+  "symbol": "actor_0",
+  "script": [
+    {
+      "command": "EVENT_MENU",
+      "args": {
+        "variable": "T0",
+        "items": 4,
+        "option1": "B1",
+        "option2": "B2",
+        "option3": "B4",
+        "option4": "Cancel",
+        "option5": "",
+        "option6": "",
+        "option7": "",
+        "option8": "",
+        "cancelOnB": true,
+        "layout": "menu",
+        "cancelOnLastOption": true
+      },
+      "id": "8fd1a895-f869-4586-b435-5f1493ae54de"
+    },
+    {
+      "command": "EVENT_IF",
+      "args": {
+        "condition": {
+          "type": "and",
+          "valueA": {
+            "type": "ne",
+            "valueA": {
+              "type": "variable",
+              "value": "T0"
+            },
+            "valueB": {
+              "type": "number",
+              "value": 0
+            }
+          },
+          "valueB": {
+            "type": "ne",
+            "valueA": {
+              "type": "variable",
+              "value": "T0"
+            },
+            "valueB": {
+              "type": "variable",
+              "value": "28"
+            }
+          }
+        },
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_SET_VALUE",
+            "args": {
+              "variable": "28",
+              "value": {
+                "type": "variable",
+                "value": "T0"
+              }
+            },
+            "id": "6664ec0c-e449-43ec-9ba7-5f5d8fb9cd34"
+          },
+          {
+            "command": "EVENT_CAMERA_SHAKE",
+            "args": {
+              "time": 1,
+              "frames": 30,
+              "shakeDirection": "vertical",
+              "magnitude": {
+                "type": "number",
+                "value": 4
+              }
+            },
+            "id": "f2fcc11b-9996-4bd7-8747-bdc8aa8fbd2d"
+          }
+        ],
+        "false": []
+      },
+      "id": "f81c3b26-11de-412a-b39c-bb82e4cf7a9f"
+    }
+  ],
+  "startScript": [],
+  "updateScript": [],
+  "hit1Script": [],
+  "hit2Script": [],
+  "hit3Script": [],
+  "coordinateType": "tiles",
+  "x": 2,
+  "y": 3,
+  "_index": 0
+}

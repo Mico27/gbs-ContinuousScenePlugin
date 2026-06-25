@@ -1,14 +1,14 @@
 {
   "_resourceType": "trigger",
-  "id": "fa63caba-b137-4217-8864-7bf0d4c3c4e2",
+  "id": "092698a3-8e45-4fe8-8d7a-16490c3af8ae",
   "name": "Entry to route7_gate",
   "prefabId": "",
-  "x": 36,
-  "y": 20,
+  "x": 22,
+  "y": 18,
   "symbol": "trigger_entry_to_route7_gat_0",
   "prefabScriptOverrides": {},
   "width": 2,
-  "height": 2,
+  "height": 4,
   "script": [
     {
       "command": "EVENT_SET_VALUE",
@@ -16,17 +16,17 @@
         "variable": "17",
         "value": {
           "type": "number",
-          "value": 242
+          "value": 244
         }
       },
-      "id": "298be369-2ba2-450f-af0c-c6e28a7cf0c4"
+      "id": "cc86838b-2229-488f-b2bb-7c335b89e4d8"
     },
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "customEventId": "42b78479-43dd-4401-859d-f35d5ea1565c"
+        "customEventId": "bf57abcc-4882-400b-8d38-d05b842fd39f"
       },
-      "id": "34f6fd5c-69dc-4a1b-94bc-9d16082ee208"
+      "id": "0995b590-d00d-41bc-820b-77471ba93145"
     }
   ],
   "leaveScript": [
@@ -34,10 +34,10 @@
       "command": "EVENT_REMOVE_INPUT_SCRIPT",
       "args": {
         "input": [
-          "left"
+          "right"
         ]
       },
-      "id": "fc5f1614-7db5-4117-92c3-a71b2743ea56"
+      "id": "e5a1ecb0-abb3-42c0-8d06-08f3e9c7abba"
     }
   ],
   "_index": 1

@@ -551,7 +551,7 @@
                   "command": "EVENT_SWITCH",
                   "args": {
                     "variable": "V0",
-                    "choices": 7,
+                    "choices": 6,
                     "__collapseElse": true,
                     "value0": {
                       "type": "number",
@@ -582,12 +582,7 @@
                       "type": "number",
                       "value": 692
                     },
-                    "__collapseCase5": false,
-                    "value6": {
-                      "type": "number",
-                      "value": 694
-                    },
-                    "__collapseCase6": false
+                    "__collapseCase5": false
                   },
                   "children": {
                     "true0": [
@@ -745,39 +740,13 @@
                         },
                         "id": "85f84d0f-324f-453a-bd93-4982e0c62076"
                       }
-                    ],
-                    "true6": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 694 → STAIR celadon_mansion_roof_house → celadon_mansion_roof (4,14)"
-                        },
-                        "id": "62307401-a71e-4115-bbc3-1400135d8c9f"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "c5d7c311-c2e4-4641-95d0-f3e72b0c1e72",
-                          "x": {
-                            "type": "number",
-                            "value": 4
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 14
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "fa5a2a07-b833-4082-b21b-a5a080b430fb"
-                      }
                     ]
                   },
-                  "id": "bb8bc8ee-058c-4733-ab20-a8a52840dd5a"
+                  "id": "0c8e7428-12df-40d8-8aa0-d65a30b82a66"
                 }
               ]
             },
-            "id": "7d55dccf-5a38-451f-b39d-b5f7c5f2ac4f"
+            "id": "5545bb6e-4cca-4112-b656-567d74fc6dcf"
           }
         ],
         "false": []

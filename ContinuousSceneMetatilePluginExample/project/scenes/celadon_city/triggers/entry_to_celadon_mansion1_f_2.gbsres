@@ -7,19 +7,26 @@
   "y": 6,
   "symbol": "trigger_entry_to_celadon_ma_0",
   "prefabScriptOverrides": {},
-  "width": 2,
+  "width": 4,
   "height": 2,
   "script": [
     {
-      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "command": "EVENT_SET_VALUE",
       "args": {
-        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
-        "$variable[V0]$": {
+        "variable": "17",
+        "value": {
           "type": "number",
           "value": 127
         }
       },
-      "id": "a7b0fe88-8b2e-48fd-8611-4074e39871f1"
+      "id": "41e1e9cc-6280-454a-aafc-e622519e8c1c"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "9720c8d8-7f47-403e-8536-2ccf4ebb87e9"
+      },
+      "id": "6eb83e9c-82e0-48f4-9a05-2a8d53ca4b8e"
     }
   ],
   "leaveScript": [],

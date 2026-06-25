@@ -47,7 +47,7 @@
             "args": {
               "variable": "V0",
               "choices": 16,
-              "__collapseElse": false,
+              "__collapseElse": true,
               "value0": {
                 "type": "number",
                 "value": 126
@@ -65,67 +65,67 @@
               "__collapseCase2": false,
               "value3": {
                 "type": "number",
-                "value": 693
+                "value": 695
               },
               "__collapseCase3": false,
               "value4": {
                 "type": "number",
-                "value": 695
+                "value": 700
               },
               "__collapseCase4": false,
               "value5": {
                 "type": "number",
-                "value": 700
+                "value": 701
               },
               "__collapseCase5": false,
               "value6": {
                 "type": "number",
-                "value": 701
+                "value": 702
               },
               "__collapseCase6": false,
               "value7": {
                 "type": "number",
-                "value": 702
+                "value": 703
               },
               "__collapseCase7": false,
               "value8": {
                 "type": "number",
-                "value": 703
+                "value": 704
               },
               "__collapseCase8": false,
               "value9": {
                 "type": "number",
-                "value": 704
+                "value": 705
               },
               "__collapseCase9": false,
               "value10": {
                 "type": "number",
-                "value": 705
+                "value": 706
               },
               "__collapseCase10": false,
               "value11": {
                 "type": "number",
-                "value": 706
+                "value": 707
               },
               "__collapseCase11": false,
               "value12": {
                 "type": "number",
-                "value": 707
+                "value": 708
               },
               "__collapseCase12": false,
               "value13": {
                 "type": "number",
-                "value": 708
+                "value": 709
               },
               "__collapseCase13": false,
               "value14": {
                 "type": "number",
-                "value": 709
+                "value": 710
               },
               "__collapseCase14": false,
               "value15": {
                 "type": "number",
-                "value": 710
+                "value": 711
               },
               "__collapseCase15": false
             },
@@ -212,32 +212,6 @@
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
-                    "text": "WarpId 693 → STAIR celadon_mansion_roof → celadon_mansion_roof_house (4,14)"
-                  },
-                  "id": "761bb425-50eb-4d0c-a2bf-c27843a3c9ac"
-                },
-                {
-                  "command": "EVENT_SWITCH_SCENE",
-                  "args": {
-                    "sceneId": "e96b2e0e-a444-4125-83fd-04828da88ae0",
-                    "x": {
-                      "type": "number",
-                      "value": 4
-                    },
-                    "y": {
-                      "type": "number",
-                      "value": 14
-                    },
-                    "direction": "up",
-                    "fadeSpeed": "2"
-                  },
-                  "id": "1be2f176-5f1c-4b07-9bd7-82ed82373a56"
-                }
-              ],
-              "true4": [
-                {
-                  "command": "EVENT_COMMENT",
-                  "args": {
                     "text": "WarpId 695 → STAIR celadon_mansion_roof → celadon_mansion_roof_house (6,14)"
                   },
                   "id": "0b7cb16a-c992-487f-be34-454e82ab5c9d"
@@ -260,7 +234,7 @@
                   "id": "0e9d4055-4396-4b93-8acd-4f504353ffcb"
                 }
               ],
-              "true5": [
+              "true4": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -286,7 +260,7 @@
                   "id": "3ce198e9-c886-428b-b17e-92241aa4beb3"
                 }
               ],
-              "true6": [
+              "true5": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -312,7 +286,7 @@
                   "id": "1fb7f8d7-b03b-4656-9d91-2f22fb9c4538"
                 }
               ],
-              "true7": [
+              "true6": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -338,7 +312,7 @@
                   "id": "3d5fa2bf-06d5-4a8a-a6da-31c6288fec03"
                 }
               ],
-              "true8": [
+              "true7": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -364,7 +338,7 @@
                   "id": "01e97e1e-7597-4f2d-8bcf-ad946ec36f4a"
                 }
               ],
-              "true9": [
+              "true8": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -390,7 +364,7 @@
                   "id": "9c951aa7-7531-4508-b834-c248a7dee93d"
                 }
               ],
-              "true10": [
+              "true9": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -416,7 +390,7 @@
                   "id": "9c44a259-513d-44b9-aff5-f3cef7b379e0"
                 }
               ],
-              "true11": [
+              "true10": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -442,7 +416,7 @@
                   "id": "4c4d0644-d20b-465a-8c44-16bc26827302"
                 }
               ],
-              "true12": [
+              "true11": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -468,7 +442,7 @@
                   "id": "b666f2c0-7cc1-4e1d-b95c-0357755c4ced"
                 }
               ],
-              "true13": [
+              "true12": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -494,7 +468,7 @@
                   "id": "9e255fb9-5bec-4f79-80db-d06039342c26"
                 }
               ],
-              "true14": [
+              "true13": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -520,7 +494,7 @@
                   "id": "6551b6a1-6dba-4dcb-b9a8-7a123521a6f4"
                 }
               ],
-              "true15": [
+              "true14": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -546,52 +520,34 @@
                   "id": "4b28e68c-c0fd-4c8a-a236-f617c1e41117"
                 }
               ],
-              "false": [
+              "true15": [
                 {
-                  "command": "EVENT_SWITCH",
+                  "command": "EVENT_COMMENT",
                   "args": {
-                    "variable": "V0",
-                    "choices": 1,
-                    "__collapseElse": true,
-                    "value0": {
+                    "text": "WarpId 711 → STAIR celadon_mansion_roof → celadon_mansion3_f (4,2)"
+                  },
+                  "id": "308befa2-c095-4a9c-b777-b676ab8382f4"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "8d064c4e-176b-44f1-adb9-44c07f813b60",
+                    "x": {
                       "type": "number",
-                      "value": 711
+                      "value": 4
                     },
-                    "__collapseCase0": false
+                    "y": {
+                      "type": "number",
+                      "value": 2
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
                   },
-                  "children": {
-                    "true0": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 711 → STAIR celadon_mansion_roof → celadon_mansion3_f (4,2)"
-                        },
-                        "id": "308befa2-c095-4a9c-b777-b676ab8382f4"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "8d064c4e-176b-44f1-adb9-44c07f813b60",
-                          "x": {
-                            "type": "number",
-                            "value": 4
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 2
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "05280384-7178-4aa1-ad57-d55d9387258e"
-                      }
-                    ]
-                  },
-                  "id": "d1326334-751f-4619-ad96-1178041ebf12"
+                  "id": "05280384-7178-4aa1-ad57-d55d9387258e"
                 }
               ]
             },
-            "id": "52c4de7f-4fbd-47e5-9f56-2d846dabc92e"
+            "id": "9749c0b8-22fc-4cb2-a3a9-845d88df23eb"
           }
         ],
         "false": []

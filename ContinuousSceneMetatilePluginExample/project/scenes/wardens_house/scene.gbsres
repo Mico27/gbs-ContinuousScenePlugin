@@ -39,6 +39,17 @@
       "id": "16d61435-8f5b-4af5-96c1-9475296ca333"
     },
     {
+      "command": "EVENT_ENGINE_FIELD_SET",
+      "args": {
+        "engineFieldKey": "fill_tile_id",
+        "value": {
+          "type": "constant",
+          "value": "8ae4d177-73fd-4210-933d-d7105aef49cb"
+        }
+      },
+      "id": "506aa230-e4de-4231-94a9-44c280e8a49a"
+    },
+    {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "6c89a5f1-b3f7-4954-a344-2a811e3aa6b7"

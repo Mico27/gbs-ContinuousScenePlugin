@@ -11,6 +11,17 @@
   "height": 2,
   "script": [
     {
+      "command": "EVENT_SET_VALUE",
+      "args": {
+        "variable": "28",
+        "value": {
+          "type": "number",
+          "value": 9
+        }
+      },
+      "id": "3820b2b0-ad6a-4bf7-a4fe-476e20c104e4"
+    },
+    {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "e2000001-0000-4000-a000-000000000001",

@@ -46,8 +46,8 @@
             "command": "EVENT_SWITCH",
             "args": {
               "variable": "V0",
-              "choices": 16,
-              "__collapseElse": false,
+              "choices": 15,
+              "__collapseElse": true,
               "value0": {
                 "type": "number",
                 "value": 165
@@ -60,74 +60,69 @@
               "__collapseCase1": false,
               "value2": {
                 "type": "number",
-                "value": 416
+                "value": 418
               },
               "__collapseCase2": false,
               "value3": {
                 "type": "number",
-                "value": 418
+                "value": 442
               },
               "__collapseCase3": false,
               "value4": {
                 "type": "number",
-                "value": 420
+                "value": 443
               },
               "__collapseCase4": false,
               "value5": {
                 "type": "number",
-                "value": 442
+                "value": 444
               },
               "__collapseCase5": false,
               "value6": {
                 "type": "number",
-                "value": 443
+                "value": 445
               },
               "__collapseCase6": false,
               "value7": {
                 "type": "number",
-                "value": 444
+                "value": 446
               },
               "__collapseCase7": false,
               "value8": {
                 "type": "number",
-                "value": 445
+                "value": 447
               },
               "__collapseCase8": false,
               "value9": {
                 "type": "number",
-                "value": 446
+                "value": 448
               },
               "__collapseCase9": false,
               "value10": {
                 "type": "number",
-                "value": 447
+                "value": 449
               },
               "__collapseCase10": false,
               "value11": {
                 "type": "number",
-                "value": 448
+                "value": 450
               },
               "__collapseCase11": false,
               "value12": {
                 "type": "number",
-                "value": 449
+                "value": 451
               },
               "__collapseCase12": false,
               "value13": {
                 "type": "number",
-                "value": 450
+                "value": 452
               },
               "__collapseCase13": false,
               "value14": {
                 "type": "number",
-                "value": 451
+                "value": 453
               },
-              "__collapseCase14": false,
-              "value15": {
-                "type": "number",
-                "value": 452
-              },
-              "__collapseCase15": false
+              "__collapseCase14": false
             },
             "children": {
               "true0": [
@@ -186,32 +181,6 @@
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
-                    "text": "WarpId 416 → STAIR agathas_room → brunos_room (10,0)"
-                  },
-                  "id": "24c3f802-5d88-4c4a-8223-de0d8e09e42d"
-                },
-                {
-                  "command": "EVENT_SWITCH_SCENE",
-                  "args": {
-                    "sceneId": "27d14783-d239-43d3-876b-ae89fd35f721",
-                    "x": {
-                      "type": "number",
-                      "value": 10
-                    },
-                    "y": {
-                      "type": "number",
-                      "value": 0
-                    },
-                    "direction": "down",
-                    "fadeSpeed": "2"
-                  },
-                  "id": "933651f3-7e55-4c4e-8759-7285eae6a20c"
-                }
-              ],
-              "true3": [
-                {
-                  "command": "EVENT_COMMENT",
-                  "args": {
                     "text": "WarpId 418 → STAIR agathas_room → lances_room (48,32)"
                   },
                   "id": "aaaa8339-ffe6-4218-a602-fb24ee346b6e"
@@ -234,33 +203,7 @@
                   "id": "fe15ab9c-e138-40aa-8552-aedfe9306f66"
                 }
               ],
-              "true4": [
-                {
-                  "command": "EVENT_COMMENT",
-                  "args": {
-                    "text": "WarpId 420 → STAIR agathas_room → lances_room (48,32)"
-                  },
-                  "id": "358e6203-ead4-42bb-bcf4-04c5aea43629"
-                },
-                {
-                  "command": "EVENT_SWITCH_SCENE",
-                  "args": {
-                    "sceneId": "0b622aa5-20ca-4517-a184-696d6527e413",
-                    "x": {
-                      "type": "number",
-                      "value": 48
-                    },
-                    "y": {
-                      "type": "number",
-                      "value": 32
-                    },
-                    "direction": "down",
-                    "fadeSpeed": "2"
-                  },
-                  "id": "76326167-2d48-4060-a64b-79560bf435b1"
-                }
-              ],
-              "true5": [
+              "true3": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -286,7 +229,7 @@
                   "id": "dc95f993-7097-4a40-b678-6cf659e22f51"
                 }
               ],
-              "true6": [
+              "true4": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -312,7 +255,7 @@
                   "id": "c4b341f9-93f1-4c2f-9bfd-87797459a1ca"
                 }
               ],
-              "true7": [
+              "true5": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -338,7 +281,7 @@
                   "id": "be9bf587-ec18-4ebc-bb25-d6f5603425bc"
                 }
               ],
-              "true8": [
+              "true6": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -364,7 +307,7 @@
                   "id": "b1dd827c-74d3-4858-9846-56f0678ddae7"
                 }
               ],
-              "true9": [
+              "true7": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -390,7 +333,7 @@
                   "id": "bc1e8663-d996-41eb-8db4-010be8f369fe"
                 }
               ],
-              "true10": [
+              "true8": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -416,7 +359,7 @@
                   "id": "371a01fa-09e0-48a9-8959-6964d73e16e3"
                 }
               ],
-              "true11": [
+              "true9": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -442,7 +385,7 @@
                   "id": "3b3d0bf6-ff48-4b92-b046-ab0e7d976b0f"
                 }
               ],
-              "true12": [
+              "true10": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -468,7 +411,7 @@
                   "id": "7b72c5ed-4a69-414a-8e71-61a9149c874c"
                 }
               ],
-              "true13": [
+              "true11": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -494,7 +437,7 @@
                   "id": "ce4e9589-9303-4818-8a1e-f0ac4f30d160"
                 }
               ],
-              "true14": [
+              "true12": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -520,7 +463,7 @@
                   "id": "33328bd9-2805-4919-8336-0b606acb0b24"
                 }
               ],
-              "true15": [
+              "true13": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -546,52 +489,34 @@
                   "id": "a5cf5f29-5b55-4c72-b2ba-ad4e1535b9c5"
                 }
               ],
-              "false": [
+              "true14": [
                 {
-                  "command": "EVENT_SWITCH",
+                  "command": "EVENT_COMMENT",
                   "args": {
-                    "variable": "V0",
-                    "choices": 1,
-                    "__collapseElse": true,
-                    "value0": {
+                    "text": "WarpId 453 → STAIR pokemon_tower7_f → pokemon_tower6_f (18,32)"
+                  },
+                  "id": "9b68466f-1d1f-4c37-b76b-7695a19455bf"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "f1ba17e8-b32c-49fd-9d9e-970ba9b7eeae",
+                    "x": {
                       "type": "number",
-                      "value": 453
+                      "value": 18
                     },
-                    "__collapseCase0": false
+                    "y": {
+                      "type": "number",
+                      "value": 32
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
                   },
-                  "children": {
-                    "true0": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 453 → STAIR pokemon_tower7_f → pokemon_tower6_f (18,32)"
-                        },
-                        "id": "9b68466f-1d1f-4c37-b76b-7695a19455bf"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "f1ba17e8-b32c-49fd-9d9e-970ba9b7eeae",
-                          "x": {
-                            "type": "number",
-                            "value": 18
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 32
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "6fe4ae3f-5249-419e-8bad-c00ff60e64dd"
-                      }
-                    ]
-                  },
-                  "id": "0a76e6c4-ec1c-43cb-8720-80656748d83d"
+                  "id": "6fe4ae3f-5249-419e-8bad-c00ff60e64dd"
                 }
               ]
             },
-            "id": "a4ca7af1-0834-46b7-a6aa-8611b23075d4"
+            "id": "ce56581e-ae34-4ed2-b570-2952bb65d1c4"
           }
         ],
         "false": []

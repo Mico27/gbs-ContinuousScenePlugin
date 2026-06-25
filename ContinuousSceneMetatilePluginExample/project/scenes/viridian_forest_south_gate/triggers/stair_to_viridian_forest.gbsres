@@ -5,23 +5,40 @@
   "prefabId": "",
   "x": 10,
   "y": 0,
-  "symbol": "trigger_stair_to_viridian_f_8",
+  "symbol": "trigger_stair_to_viridian_f_2",
   "prefabScriptOverrides": {},
   "width": 2,
   "height": 2,
   "script": [
     {
-      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "command": "EVENT_SET_VALUE",
       "args": {
-        "customEventId": "3adfbfbc-5b84-4fc8-9799-6546c3184922",
-        "$variable[V0]$": {
+        "variable": "17",
+        "value": {
           "type": "number",
           "value": 667
         }
       },
-      "id": "81e0418a-fb45-4e63-b50a-4fcad41ded72"
+      "id": "7060e8e6-a96e-4299-869b-8ddbc2d3858f"
+    },
+    {
+      "command": "EVENT_CALL_CUSTOM_EVENT",
+      "args": {
+        "customEventId": "7aa1dbad-0328-4136-ad0c-c33d3d36b2dd"
+      },
+      "id": "a2edab07-7760-4b4a-a470-eb95d235af1a"
     }
   ],
-  "leaveScript": [],
+  "leaveScript": [
+    {
+      "command": "EVENT_REMOVE_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "up"
+        ]
+      },
+      "id": "70bcf1a0-7956-4e6c-a8bf-66adb312bd95"
+    }
+  ],
   "_index": 1
 }

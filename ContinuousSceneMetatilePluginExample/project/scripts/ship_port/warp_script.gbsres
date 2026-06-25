@@ -46,7 +46,7 @@
             "command": "EVENT_SWITCH",
             "args": {
               "variable": "V0",
-              "choices": 3,
+              "choices": 2,
               "__collapseElse": true,
               "value0": {
                 "type": "number",
@@ -55,14 +55,9 @@
               "__collapseCase0": false,
               "value1": {
                 "type": "number",
-                "value": 735
-              },
-              "__collapseCase1": false,
-              "value2": {
-                "type": "number",
                 "value": 737
               },
-              "__collapseCase2": false
+              "__collapseCase1": false
             },
             "children": {
               "true0": [
@@ -95,32 +90,6 @@
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
-                    "text": "WarpId 735 → STAIR vermilion_dock → s_s_anne1_f (52,0)"
-                  },
-                  "id": "969e8980-d0bd-4c03-aa86-50a70820d24f"
-                },
-                {
-                  "command": "EVENT_SWITCH_SCENE",
-                  "args": {
-                    "sceneId": "f1e84f90-53c5-4bff-91e6-65d5930f13d9",
-                    "x": {
-                      "type": "number",
-                      "value": 52
-                    },
-                    "y": {
-                      "type": "number",
-                      "value": 0
-                    },
-                    "direction": "up",
-                    "fadeSpeed": "2"
-                  },
-                  "id": "ef47a88d-c35f-4ad8-b128-d8dc88cb4acd"
-                }
-              ],
-              "true2": [
-                {
-                  "command": "EVENT_COMMENT",
-                  "args": {
                     "text": "WarpId 737 → STAIR vermilion_dock → s_s_anne1_f (54,0)"
                   },
                   "id": "343209bd-fce2-4cbf-9a76-f2a1ce4a5ae6"
@@ -144,7 +113,7 @@
                 }
               ]
             },
-            "id": "fadc250f-674d-4180-803f-706e327d2c82"
+            "id": "f0786d55-edfd-4e3a-b2b2-204c8254173b"
           }
         ],
         "false": []

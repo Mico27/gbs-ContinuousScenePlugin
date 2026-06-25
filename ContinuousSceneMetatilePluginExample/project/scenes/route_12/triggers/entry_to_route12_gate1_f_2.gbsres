@@ -1,44 +1,27 @@
 {
   "_resourceType": "trigger",
-  "id": "7356b062-8c73-43d2-af92-f77cab41ac84",
+  "id": "8c8d1f13-95bc-4298-becb-fcb4b55064dc",
   "name": "Entry to route12_gate1_f",
   "prefabId": "",
-  "x": 22,
-  "y": 30,
+  "x": 20,
+  "y": 42,
   "symbol": "trigger_entry_to_route12_ga_0",
   "prefabScriptOverrides": {},
   "width": 2,
   "height": 2,
   "script": [
     {
-      "command": "EVENT_SET_VALUE",
-      "args": {
-        "variable": "17",
-        "value": {
-          "type": "number",
-          "value": 280
-        }
-      },
-      "id": "450a0505-3739-4a2a-b153-21aba4bd0e54"
-    },
-    {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
-        "customEventId": "9720c8d8-7f47-403e-8536-2ccf4ebb87e9"
+        "customEventId": "f7a1e2d3-4b5c-6d7e-8f9a-0b1c2d3e4f5a",
+        "$variable[V0]$": {
+          "type": "number",
+          "value": 282
+        }
       },
-      "id": "2b77a015-11f4-4a1e-ba50-d3f71cc08b5f"
+      "id": "05ed2a7e-352b-46e8-b62c-7b084636d160"
     }
   ],
-  "leaveScript": [
-    {
-      "command": "EVENT_REMOVE_INPUT_SCRIPT",
-      "args": {
-        "input": [
-          "down"
-        ]
-      },
-      "id": "a92d9d42-2d53-41fd-8314-89defcc2af1d"
-    }
-  ],
+  "leaveScript": [],
   "_index": 1
 }

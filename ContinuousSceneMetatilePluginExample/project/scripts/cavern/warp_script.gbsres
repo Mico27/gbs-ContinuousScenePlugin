@@ -2135,17 +2135,17 @@
                                       "__collapseCase12": false,
                                       "value13": {
                                         "type": "number",
-                                        "value": 402
+                                        "value": 404
                                       },
                                       "__collapseCase13": false,
                                       "value14": {
                                         "type": "number",
-                                        "value": 403
+                                        "value": 405
                                       },
                                       "__collapseCase14": false,
                                       "value15": {
                                         "type": "number",
-                                        "value": 404
+                                        "value": 406
                                       },
                                       "__collapseCase15": false
                                     },
@@ -2492,58 +2492,6 @@
                                         {
                                           "command": "EVENT_COMMENT",
                                           "args": {
-                                            "text": "WarpId 402 → STAIR seafoam_islands_b3_f → seafoam_islands_b4_f (42,34)"
-                                          },
-                                          "id": "aa9032f8-6390-4646-9e17-baa21939da1a"
-                                        },
-                                        {
-                                          "command": "EVENT_SWITCH_SCENE",
-                                          "args": {
-                                            "sceneId": "fb1adab2-f82a-43c8-8b79-cd93c41aa71c",
-                                            "x": {
-                                              "type": "number",
-                                              "value": 42
-                                            },
-                                            "y": {
-                                              "type": "number",
-                                              "value": 34
-                                            },
-                                            "direction": "down",
-                                            "fadeSpeed": "2"
-                                          },
-                                          "id": "631305f9-0c00-4bf2-a447-4987c840dbaa"
-                                        }
-                                      ],
-                                      "true14": [
-                                        {
-                                          "command": "EVENT_COMMENT",
-                                          "args": {
-                                            "text": "WarpId 403 → STAIR seafoam_islands_b4_f → seafoam_islands_b3_f (42,34)"
-                                          },
-                                          "id": "f5861ece-cf6c-435f-97d7-d8e61a9bded9"
-                                        },
-                                        {
-                                          "command": "EVENT_SWITCH_SCENE",
-                                          "args": {
-                                            "sceneId": "c853f33b-6352-441f-99d6-b3ab35b34e6f",
-                                            "x": {
-                                              "type": "number",
-                                              "value": 42
-                                            },
-                                            "y": {
-                                              "type": "number",
-                                              "value": 34
-                                            },
-                                            "direction": "up",
-                                            "fadeSpeed": "2"
-                                          },
-                                          "id": "c795770e-68b3-44e6-8f54-1c97583efca5"
-                                        }
-                                      ],
-                                      "true15": [
-                                        {
-                                          "command": "EVENT_COMMENT",
-                                          "args": {
                                             "text": "WarpId 404 → STAIR victory_road1_f → victory_road2_f (0,16)"
                                           },
                                           "id": "9706360e-28a8-463c-81ab-7228fea19178"
@@ -2566,113 +2514,103 @@
                                           "id": "277fc0b5-6759-436e-b4cb-b186d78229ad"
                                         }
                                       ],
+                                      "true14": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 405 → STAIR victory_road2_f → victory_road1_f (2,2)"
+                                          },
+                                          "id": "db9c040b-9d66-47f7-a02d-5b9af15bf1cb"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "f24b5e3a-6a5d-4cc5-8db4-63bd939a4238",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 2
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 2
+                                            },
+                                            "direction": "down",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "836151ee-aa67-40ee-8ad8-9c963760915f"
+                                        }
+                                      ],
+                                      "true15": [
+                                        {
+                                          "command": "EVENT_COMMENT",
+                                          "args": {
+                                            "text": "WarpId 406 → STAIR victory_road2_f → victory_road3_f (46,14)"
+                                          },
+                                          "id": "2bc42b0d-238b-4acc-b78d-fe0fc9f69eca"
+                                        },
+                                        {
+                                          "command": "EVENT_SWITCH_SCENE",
+                                          "args": {
+                                            "sceneId": "63c6f734-04a2-4434-9960-ab0823b0716a",
+                                            "x": {
+                                              "type": "number",
+                                              "value": 46
+                                            },
+                                            "y": {
+                                              "type": "number",
+                                              "value": 14
+                                            },
+                                            "direction": "up",
+                                            "fadeSpeed": "2"
+                                          },
+                                          "id": "bc12a9ee-99b6-4459-8a27-f91e80dd8c5b"
+                                        }
+                                      ],
                                       "false": [
                                         {
                                           "command": "EVENT_SWITCH",
                                           "args": {
                                             "variable": "V0",
-                                            "choices": 9,
+                                            "choices": 7,
                                             "__collapseElse": true,
                                             "value0": {
                                               "type": "number",
-                                              "value": 405
+                                              "value": 407
                                             },
                                             "__collapseCase0": false,
                                             "value1": {
                                               "type": "number",
-                                              "value": 406
+                                              "value": 408
                                             },
                                             "__collapseCase1": false,
                                             "value2": {
                                               "type": "number",
-                                              "value": 407
+                                              "value": 409
                                             },
                                             "__collapseCase2": false,
                                             "value3": {
                                               "type": "number",
-                                              "value": 408
+                                              "value": 410
                                             },
                                             "__collapseCase3": false,
                                             "value4": {
                                               "type": "number",
-                                              "value": 409
+                                              "value": 411
                                             },
                                             "__collapseCase4": false,
                                             "value5": {
                                               "type": "number",
-                                              "value": 410
+                                              "value": 412
                                             },
                                             "__collapseCase5": false,
                                             "value6": {
                                               "type": "number",
-                                              "value": 411
-                                            },
-                                            "__collapseCase6": false,
-                                            "value7": {
-                                              "type": "number",
-                                              "value": 412
-                                            },
-                                            "__collapseCase7": false,
-                                            "value8": {
-                                              "type": "number",
                                               "value": 413
                                             },
-                                            "__collapseCase8": false
+                                            "__collapseCase6": false
                                           },
                                           "children": {
                                             "true0": [
-                                              {
-                                                "command": "EVENT_COMMENT",
-                                                "args": {
-                                                  "text": "WarpId 405 → STAIR victory_road2_f → victory_road1_f (2,2)"
-                                                },
-                                                "id": "db9c040b-9d66-47f7-a02d-5b9af15bf1cb"
-                                              },
-                                              {
-                                                "command": "EVENT_SWITCH_SCENE",
-                                                "args": {
-                                                  "sceneId": "f24b5e3a-6a5d-4cc5-8db4-63bd939a4238",
-                                                  "x": {
-                                                    "type": "number",
-                                                    "value": 2
-                                                  },
-                                                  "y": {
-                                                    "type": "number",
-                                                    "value": 2
-                                                  },
-                                                  "direction": "down",
-                                                  "fadeSpeed": "2"
-                                                },
-                                                "id": "836151ee-aa67-40ee-8ad8-9c963760915f"
-                                              }
-                                            ],
-                                            "true1": [
-                                              {
-                                                "command": "EVENT_COMMENT",
-                                                "args": {
-                                                  "text": "WarpId 406 → STAIR victory_road2_f → victory_road3_f (46,14)"
-                                                },
-                                                "id": "2bc42b0d-238b-4acc-b78d-fe0fc9f69eca"
-                                              },
-                                              {
-                                                "command": "EVENT_SWITCH_SCENE",
-                                                "args": {
-                                                  "sceneId": "63c6f734-04a2-4434-9960-ab0823b0716a",
-                                                  "x": {
-                                                    "type": "number",
-                                                    "value": 46
-                                                  },
-                                                  "y": {
-                                                    "type": "number",
-                                                    "value": 14
-                                                  },
-                                                  "direction": "up",
-                                                  "fadeSpeed": "2"
-                                                },
-                                                "id": "bc12a9ee-99b6-4459-8a27-f91e80dd8c5b"
-                                              }
-                                            ],
-                                            "true2": [
                                               {
                                                 "command": "EVENT_COMMENT",
                                                 "args": {
@@ -2698,7 +2636,7 @@
                                                 "id": "a7b9f17a-79f5-4e72-b5d3-c47a77e1df78"
                                               }
                                             ],
-                                            "true3": [
+                                            "true1": [
                                               {
                                                 "command": "EVENT_COMMENT",
                                                 "args": {
@@ -2724,7 +2662,7 @@
                                                 "id": "70c67f4e-43c0-43f9-a702-de8451f6ddd8"
                                               }
                                             ],
-                                            "true4": [
+                                            "true2": [
                                               {
                                                 "command": "EVENT_COMMENT",
                                                 "args": {
@@ -2750,7 +2688,7 @@
                                                 "id": "d7907788-42f7-4b49-98b5-120777bf9524"
                                               }
                                             ],
-                                            "true5": [
+                                            "true3": [
                                               {
                                                 "command": "EVENT_COMMENT",
                                                 "args": {
@@ -2776,7 +2714,7 @@
                                                 "id": "3707cee7-3453-43b7-b989-251f6fdc73a0"
                                               }
                                             ],
-                                            "true6": [
+                                            "true4": [
                                               {
                                                 "command": "EVENT_COMMENT",
                                                 "args": {
@@ -2802,7 +2740,7 @@
                                                 "id": "cd6b2fa6-055d-40d3-9445-67496fd6a73d"
                                               }
                                             ],
-                                            "true7": [
+                                            "true5": [
                                               {
                                                 "command": "EVENT_COMMENT",
                                                 "args": {
@@ -2828,7 +2766,7 @@
                                                 "id": "85289513-7612-4091-8935-a5f490a9ff45"
                                               }
                                             ],
-                                            "true8": [
+                                            "true6": [
                                               {
                                                 "command": "EVENT_COMMENT",
                                                 "args": {
@@ -2855,27 +2793,27 @@
                                               }
                                             ]
                                           },
-                                          "id": "fa6d403c-ab11-41e9-b6ba-7700a0996b00"
+                                          "id": "f172304d-c9ad-48a7-a0bb-8b7a1e2452cf"
                                         }
                                       ]
                                     },
-                                    "id": "960e272a-c5a4-414a-8a0e-9c5a1cc04baa"
+                                    "id": "fe1b6a93-7e91-4bd9-94e4-ea7ae7ffe613"
                                   }
                                 ]
                               },
-                              "id": "d72b61b4-19c3-42b0-bf05-8588e265521b"
+                              "id": "795b3405-b994-4430-9021-b9c57713cd68"
                             }
                           ]
                         },
-                        "id": "4d297acb-f349-4de8-8b84-6f8397531588"
+                        "id": "5dad11e4-34b2-412a-aaf3-9b1a054c39fa"
                       }
                     ]
                   },
-                  "id": "a1764000-f0a1-4700-84e8-0470012b208f"
+                  "id": "e5503878-45a5-47e2-94a4-839e99afed01"
                 }
               ]
             },
-            "id": "419ac417-5937-4d92-84ea-6e5ca5af4962"
+            "id": "f9783578-74e6-4da2-b59b-6d1688871ec0"
           }
         ],
         "false": []

@@ -95,37 +95,37 @@
               "__collapseCase8": false,
               "value9": {
                 "type": "number",
-                "value": 417
+                "value": 421
               },
               "__collapseCase9": false,
               "value10": {
                 "type": "number",
-                "value": 419
+                "value": 422
               },
               "__collapseCase10": false,
               "value11": {
                 "type": "number",
-                "value": 421
+                "value": 423
               },
               "__collapseCase11": false,
               "value12": {
                 "type": "number",
-                "value": 422
+                "value": 427
               },
               "__collapseCase12": false,
               "value13": {
                 "type": "number",
-                "value": 423
+                "value": 430
               },
               "__collapseCase13": false,
               "value14": {
                 "type": "number",
-                "value": 424
+                "value": 433
               },
               "__collapseCase14": false,
               "value15": {
                 "type": "number",
-                "value": 425
+                "value": 435
               },
               "__collapseCase15": false
             },
@@ -368,58 +368,6 @@
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
-                    "text": "WarpId 417 → STAIR brunos_room → agathas_room (10,22)"
-                  },
-                  "id": "9acf9a54-d8aa-4f67-8d95-9cfc9e4bf792"
-                },
-                {
-                  "command": "EVENT_SWITCH_SCENE",
-                  "args": {
-                    "sceneId": "73b68ca4-2c07-452e-a873-867d7e888d7e",
-                    "x": {
-                      "type": "number",
-                      "value": 10
-                    },
-                    "y": {
-                      "type": "number",
-                      "value": 22
-                    },
-                    "direction": "up",
-                    "fadeSpeed": "2"
-                  },
-                  "id": "9163da5a-6d38-4c9a-acb2-0d2c4862dd6a"
-                }
-              ],
-              "true10": [
-                {
-                  "command": "EVENT_COMMENT",
-                  "args": {
-                    "text": "WarpId 419 → STAIR lances_room → agathas_room (8,0)"
-                  },
-                  "id": "6c4ba738-3979-4d60-bef2-004751de0365"
-                },
-                {
-                  "command": "EVENT_SWITCH_SCENE",
-                  "args": {
-                    "sceneId": "73b68ca4-2c07-452e-a873-867d7e888d7e",
-                    "x": {
-                      "type": "number",
-                      "value": 8
-                    },
-                    "y": {
-                      "type": "number",
-                      "value": 0
-                    },
-                    "direction": "up",
-                    "fadeSpeed": "2"
-                  },
-                  "id": "d204e15b-2388-4c55-96ce-4ece35dbedf6"
-                }
-              ],
-              "true11": [
-                {
-                  "command": "EVENT_COMMENT",
-                  "args": {
                     "text": "WarpId 421 → STAIR lances_room → agathas_room (10,0)"
                   },
                   "id": "5914c00f-d1b9-49a8-9416-f8c4f52d20d0"
@@ -442,7 +390,7 @@
                   "id": "5d080db5-8a6f-4112-ab30-dffec5f743ab"
                 }
               ],
-              "true12": [
+              "true10": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -468,7 +416,7 @@
                   "id": "e08f40eb-e033-4835-8ec8-4709e1899edd"
                 }
               ],
-              "true13": [
+              "true11": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
@@ -494,56 +442,108 @@
                   "id": "42cba48e-68e0-47b6-86f2-35e8f8106bb1"
                 }
               ],
-              "true14": [
+              "true12": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
-                    "text": "WarpId 424 → STAIR brunos_room → loreleis_room (10,0)"
+                    "text": "WarpId 427 → STAIR lances_room → champions_room (6,14)"
                   },
-                  "id": "625495dc-c67b-413e-b02d-e04fe278016e"
+                  "id": "802c6c93-4abb-4856-999a-ee806599ef33"
                 },
                 {
                   "command": "EVENT_SWITCH_SCENE",
                   "args": {
-                    "sceneId": "8461310e-ddf3-4ab5-8d64-70ed8c46ba05",
+                    "sceneId": "d6c779c9-0d03-4fcb-bb3b-1cd841d1efb5",
                     "x": {
                       "type": "number",
-                      "value": 10
+                      "value": 6
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "up",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "f00caedb-77f7-429e-87ca-bce190dabfbb"
+                }
+              ],
+              "true13": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 430 → STAIR champions_room → hall_of_fame (8,14)"
+                  },
+                  "id": "b76aae8f-976e-4239-af50-98d1239ada85"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "e269d7f9-1063-46b3-a345-370f09f90f51",
+                    "x": {
+                      "type": "number",
+                      "value": 8
+                    },
+                    "y": {
+                      "type": "number",
+                      "value": 14
+                    },
+                    "direction": "down",
+                    "fadeSpeed": "2"
+                  },
+                  "id": "3bbf10f6-6cb7-4d6d-878c-bd0818cb7bd4"
+                }
+              ],
+              "true14": [
+                {
+                  "command": "EVENT_COMMENT",
+                  "args": {
+                    "text": "WarpId 433 → STAIR hall_of_fame → champions_room (8,0)"
+                  },
+                  "id": "23751c14-a55c-4233-834c-54c3b6077d23"
+                },
+                {
+                  "command": "EVENT_SWITCH_SCENE",
+                  "args": {
+                    "sceneId": "d6c779c9-0d03-4fcb-bb3b-1cd841d1efb5",
+                    "x": {
+                      "type": "number",
+                      "value": 8
                     },
                     "y": {
                       "type": "number",
                       "value": 0
                     },
-                    "direction": "down",
+                    "direction": "up",
                     "fadeSpeed": "2"
                   },
-                  "id": "5c2387ba-a57c-4939-8350-7137cad79e3b"
+                  "id": "af1840c0-9e42-4f91-a85f-20ba063b4fe4"
                 }
               ],
               "true15": [
                 {
                   "command": "EVENT_COMMENT",
                   "args": {
-                    "text": "WarpId 425 → STAIR loreleis_room → brunos_room (10,22)"
+                    "text": "WarpId 435 → STAIR champions_room → lances_room (12,0)"
                   },
-                  "id": "ae6766d2-577d-4314-ac4c-c2ae7ac06db0"
+                  "id": "e70aee48-8136-4bfb-89a2-a337578fe0ea"
                 },
                 {
                   "command": "EVENT_SWITCH_SCENE",
                   "args": {
-                    "sceneId": "27d14783-d239-43d3-876b-ae89fd35f721",
+                    "sceneId": "0b622aa5-20ca-4517-a184-696d6527e413",
                     "x": {
                       "type": "number",
-                      "value": 10
+                      "value": 12
                     },
                     "y": {
                       "type": "number",
-                      "value": 22
+                      "value": 0
                     },
                     "direction": "up",
                     "fadeSpeed": "2"
                   },
-                  "id": "88e26e77-f414-4c2d-b8a4-2222ae775086"
+                  "id": "6fb856cd-90c0-43b1-b7cc-3fc7bed86ba9"
                 }
               ],
               "false": [
@@ -551,341 +551,16 @@
                   "command": "EVENT_SWITCH",
                   "args": {
                     "variable": "V0",
-                    "choices": 14,
+                    "choices": 1,
                     "__collapseElse": true,
                     "value0": {
                       "type": "number",
-                      "value": 426
-                    },
-                    "__collapseCase0": false,
-                    "value1": {
-                      "type": "number",
-                      "value": 427
-                    },
-                    "__collapseCase1": false,
-                    "value2": {
-                      "type": "number",
-                      "value": 428
-                    },
-                    "__collapseCase2": false,
-                    "value3": {
-                      "type": "number",
-                      "value": 429
-                    },
-                    "__collapseCase3": false,
-                    "value4": {
-                      "type": "number",
-                      "value": 430
-                    },
-                    "__collapseCase4": false,
-                    "value5": {
-                      "type": "number",
-                      "value": 431
-                    },
-                    "__collapseCase5": false,
-                    "value6": {
-                      "type": "number",
-                      "value": 432
-                    },
-                    "__collapseCase6": false,
-                    "value7": {
-                      "type": "number",
-                      "value": 433
-                    },
-                    "__collapseCase7": false,
-                    "value8": {
-                      "type": "number",
-                      "value": 434
-                    },
-                    "__collapseCase8": false,
-                    "value9": {
-                      "type": "number",
-                      "value": 435
-                    },
-                    "__collapseCase9": false,
-                    "value10": {
-                      "type": "number",
                       "value": 436
                     },
-                    "__collapseCase10": false,
-                    "value11": {
-                      "type": "number",
-                      "value": 438
-                    },
-                    "__collapseCase11": false,
-                    "value12": {
-                      "type": "number",
-                      "value": 440
-                    },
-                    "__collapseCase12": false,
-                    "value13": {
-                      "type": "number",
-                      "value": 441
-                    },
-                    "__collapseCase13": false
+                    "__collapseCase0": false
                   },
                   "children": {
                     "true0": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 426 → STAIR champions_room → lances_room (10,0)"
-                        },
-                        "id": "ae0689b7-4fc4-4db3-9041-03d7b167861b"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "0b622aa5-20ca-4517-a184-696d6527e413",
-                          "x": {
-                            "type": "number",
-                            "value": 10
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 0
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "652163be-a580-4126-a3e1-98e44926ad42"
-                      }
-                    ],
-                    "true1": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 427 → STAIR lances_room → champions_room (6,14)"
-                        },
-                        "id": "802c6c93-4abb-4856-999a-ee806599ef33"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "d6c779c9-0d03-4fcb-bb3b-1cd841d1efb5",
-                          "x": {
-                            "type": "number",
-                            "value": 6
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 14
-                          },
-                          "direction": "up",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "f00caedb-77f7-429e-87ca-bce190dabfbb"
-                      }
-                    ],
-                    "true2": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 428 → STAIR champions_room → lances_room (12,0)"
-                        },
-                        "id": "7fc66738-1691-49f7-b081-2b8938f9fab6"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "0b622aa5-20ca-4517-a184-696d6527e413",
-                          "x": {
-                            "type": "number",
-                            "value": 12
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 0
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "04cf6bb0-a913-49a0-a216-b2a8def48884"
-                      }
-                    ],
-                    "true3": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 429 → STAIR lances_room → champions_room (8,14)"
-                        },
-                        "id": "69cb57eb-dea1-4157-9898-6d419a49b0b8"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "d6c779c9-0d03-4fcb-bb3b-1cd841d1efb5",
-                          "x": {
-                            "type": "number",
-                            "value": 8
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 14
-                          },
-                          "direction": "up",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "be369fb4-e421-44a6-8774-59e2fa8f386b"
-                      }
-                    ],
-                    "true4": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 430 → STAIR champions_room → hall_of_fame (8,14)"
-                        },
-                        "id": "b76aae8f-976e-4239-af50-98d1239ada85"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "e269d7f9-1063-46b3-a345-370f09f90f51",
-                          "x": {
-                            "type": "number",
-                            "value": 8
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 14
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "3bbf10f6-6cb7-4d6d-878c-bd0818cb7bd4"
-                      }
-                    ],
-                    "true5": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 431 → STAIR hall_of_fame → champions_room (6,0)"
-                        },
-                        "id": "fe754a7e-c325-470e-82a9-ecedf86c89eb"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "d6c779c9-0d03-4fcb-bb3b-1cd841d1efb5",
-                          "x": {
-                            "type": "number",
-                            "value": 6
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 0
-                          },
-                          "direction": "up",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "c7b6a0d0-140f-445b-afcd-bdb96c5f994e"
-                      }
-                    ],
-                    "true6": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 432 → STAIR champions_room → hall_of_fame (8,14)"
-                        },
-                        "id": "23bb41c4-5dcf-4660-aabb-91494fd4c844"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "e269d7f9-1063-46b3-a345-370f09f90f51",
-                          "x": {
-                            "type": "number",
-                            "value": 8
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 14
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "ce483478-1104-4f3b-90c2-d7dd073a6cec"
-                      }
-                    ],
-                    "true7": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 433 → STAIR hall_of_fame → champions_room (8,0)"
-                        },
-                        "id": "23751c14-a55c-4233-834c-54c3b6077d23"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "d6c779c9-0d03-4fcb-bb3b-1cd841d1efb5",
-                          "x": {
-                            "type": "number",
-                            "value": 8
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 0
-                          },
-                          "direction": "up",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "af1840c0-9e42-4f91-a85f-20ba063b4fe4"
-                      }
-                    ],
-                    "true8": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 434 → STAIR lances_room → champions_room (6,14)"
-                        },
-                        "id": "af662c04-af71-4ed2-82c6-ee539daaf89d"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "d6c779c9-0d03-4fcb-bb3b-1cd841d1efb5",
-                          "x": {
-                            "type": "number",
-                            "value": 6
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 14
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "ecbf94c7-624c-430d-8a9d-8920c62653e0"
-                      }
-                    ],
-                    "true9": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 435 → STAIR champions_room → lances_room (12,0)"
-                        },
-                        "id": "e70aee48-8136-4bfb-89a2-a337578fe0ea"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "0b622aa5-20ca-4517-a184-696d6527e413",
-                          "x": {
-                            "type": "number",
-                            "value": 12
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 0
-                          },
-                          "direction": "up",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "6fb856cd-90c0-43b1-b7cc-3fc7bed86ba9"
-                      }
-                    ],
-                    "true10": [
                       {
                         "command": "EVENT_COMMENT",
                         "args": {
@@ -910,91 +585,13 @@
                         },
                         "id": "22f540dd-0ee3-43d8-867a-4cfa5fc4abc5"
                       }
-                    ],
-                    "true11": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 438 → STAIR loreleis_room → indigo_plateau_lobby (16,0)"
-                        },
-                        "id": "1a83fc6c-af9e-4f6f-a1db-83df4f1c920e"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "2d24f0a0-5c99-4050-8764-520bbd83dfe4",
-                          "x": {
-                            "type": "number",
-                            "value": 16
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 0
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "8bbbe3ac-89fe-4c87-95a6-7cf4c299f3a3"
-                      }
-                    ],
-                    "true12": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 440 → STAIR hall_of_fame → champions_room (8,0)"
-                        },
-                        "id": "8283557f-1ef9-4ad5-9ff2-23fe7ccf2596"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "d6c779c9-0d03-4fcb-bb3b-1cd841d1efb5",
-                          "x": {
-                            "type": "number",
-                            "value": 8
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 0
-                          },
-                          "direction": "down",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "9b807276-94e6-41cb-9315-fef13a45e17f"
-                      }
-                    ],
-                    "true13": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
-                          "text": "WarpId 441 → STAIR champions_room → hall_of_fame (10,14)"
-                        },
-                        "id": "17b9cc0e-c133-4c70-8f7f-76a5017c217f"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "e269d7f9-1063-46b3-a345-370f09f90f51",
-                          "x": {
-                            "type": "number",
-                            "value": 10
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 14
-                          },
-                          "direction": "up",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "ba69e2b9-f129-44d8-9d4e-073df0821248"
-                      }
                     ]
                   },
-                  "id": "85087be2-7c18-4bd8-8020-4c08c40677ce"
+                  "id": "1b3a3b69-4dd6-4c6d-b602-897f53bb051f"
                 }
               ]
             },
-            "id": "7d9362ac-d773-4d61-93eb-66aff799081c"
+            "id": "3add7615-95e2-4fc6-8b1c-381066545aaf"
           }
         ],
         "false": []

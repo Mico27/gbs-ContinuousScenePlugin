@@ -551,7 +551,7 @@
                   "command": "EVENT_SWITCH",
                   "args": {
                     "variable": "V0",
-                    "choices": 7,
+                    "choices": 6,
                     "__collapseElse": true,
                     "value0": {
                       "type": "number",
@@ -580,14 +580,9 @@
                     "__collapseCase4": false,
                     "value5": {
                       "type": "number",
-                      "value": 437
-                    },
-                    "__collapseCase5": false,
-                    "value6": {
-                      "type": "number",
                       "value": 439
                     },
-                    "__collapseCase6": false
+                    "__collapseCase5": false
                   },
                   "children": {
                     "true0": [
@@ -724,32 +719,6 @@
                       {
                         "command": "EVENT_COMMENT",
                         "args": {
-                          "text": "WarpId 437 → STAIR indigo_plateau_lobby → loreleis_room (8,22)"
-                        },
-                        "id": "85642461-52ec-411e-a05a-55e834cafca9"
-                      },
-                      {
-                        "command": "EVENT_SWITCH_SCENE",
-                        "args": {
-                          "sceneId": "8461310e-ddf3-4ab5-8d64-70ed8c46ba05",
-                          "x": {
-                            "type": "number",
-                            "value": 8
-                          },
-                          "y": {
-                            "type": "number",
-                            "value": 22
-                          },
-                          "direction": "up",
-                          "fadeSpeed": "2"
-                        },
-                        "id": "b65bb16e-772c-4bb7-aa96-2752ae967483"
-                      }
-                    ],
-                    "true6": [
-                      {
-                        "command": "EVENT_COMMENT",
-                        "args": {
                           "text": "WarpId 439 → STAIR indigo_plateau_lobby → loreleis_room (10,22)"
                         },
                         "id": "b05184ae-9665-49b8-a8b6-5a1f4a2b17b4"
@@ -773,11 +742,11 @@
                       }
                     ]
                   },
-                  "id": "078efd2c-e716-446d-a8f3-b5b64a90bc99"
+                  "id": "9977f5d6-c749-44bf-a141-554e1cb9fb10"
                 }
               ]
             },
-            "id": "327ef240-1a0f-4bc1-ab62-dda707a77f73"
+            "id": "576518a9-beaa-467d-8545-6d0f7a4213fd"
           }
         ],
         "false": []

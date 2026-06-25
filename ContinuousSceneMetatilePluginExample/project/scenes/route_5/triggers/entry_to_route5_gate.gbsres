@@ -1,13 +1,13 @@
 {
   "_resourceType": "trigger",
-  "id": "393acbb4-e764-4217-9134-49ddcf450064",
+  "id": "781d242b-179c-4696-a813-3c89c5a3e54b",
   "name": "Entry to route5_gate",
   "prefabId": "",
-  "x": 20,
+  "x": 18,
   "y": 58,
   "symbol": "trigger_entry_to_route5_gat",
   "prefabScriptOverrides": {},
-  "width": 2,
+  "width": 4,
   "height": 2,
   "script": [
     {
@@ -16,17 +16,17 @@
         "variable": "17",
         "value": {
           "type": "number",
-          "value": 223
+          "value": 225
         }
       },
-      "id": "65825ba3-f170-4c1b-bde3-9ee4d97fb691"
+      "id": "83192f04-1662-49e9-8ba5-cfa95bddb11f"
     },
     {
       "command": "EVENT_CALL_CUSTOM_EVENT",
       "args": {
         "customEventId": "9720c8d8-7f47-403e-8536-2ccf4ebb87e9"
       },
-      "id": "3cd0ac4e-4514-430f-aad8-4370509eb5fb"
+      "id": "5938cb62-bf6e-441d-a924-02e6d64250ce"
     }
   ],
   "leaveScript": [
@@ -37,7 +37,7 @@
           "down"
         ]
       },
-      "id": "f360f70e-9942-4caf-95a8-ef0d2460afe2"
+      "id": "da684a35-5cbe-4bea-98e0-08942b73e378"
     }
   ],
   "_index": 1
