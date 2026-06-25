@@ -167,39 +167,45 @@
       "value": 97
     },
     {
+      "id": "b001-0000-0000-0000-000000000002",
+      "name": "METATILEIDS/OVERWORLD/WATER",
+      "symbol": "const_metatileids_overworld_2",
+      "value": 98
+    },
+    {
       "id": "b001-0000-0000-0000-000000000004",
       "name": "METATILEIDS/OVERWORLD/LEDGE_SOUTH_MAX",
-      "symbol": "const_metatileids_overworld_2",
+      "symbol": "const_metatileids_overworld_3",
       "value": 110
     },
     {
       "id": "b001-0000-0000-0000-000000000005",
       "name": "METATILEIDS/OVERWORLD/LEDGE_EAST",
-      "symbol": "const_metatileids_overworld_3",
+      "symbol": "const_metatileids_overworld_4",
       "value": 113
     },
     {
       "id": "b001-0000-0000-0000-000000000006",
       "name": "METATILEIDS/OVERWORLD/LEDGE_WEST_A",
-      "symbol": "const_metatileids_overworld_4",
+      "symbol": "const_metatileids_overworld_5",
       "value": 114
     },
     {
       "id": "b001-0000-0000-0000-000000000007",
       "name": "METATILEIDS/OVERWORLD/LEDGE_WEST_B",
-      "symbol": "const_metatileids_overworld_5",
+      "symbol": "const_metatileids_overworld_6",
       "value": 115
     },
     {
       "id": "b001-0000-0000-0000-000000000008",
       "name": "METATILEIDS/OVERWORLD/CAVE",
-      "symbol": "const_metatileids_overworld_6",
+      "symbol": "const_metatileids_overworld_7",
       "value": 95
     },
     {
       "id": "b001-0000-0000-0000-000000000009",
       "name": "METATILEIDS/OVERWORLD/DOOR",
-      "symbol": "const_metatileids_overworld_7",
+      "symbol": "const_metatileids_overworld_8",
       "value": 96
     },
     {
@@ -265,13 +271,13 @@
     {
       "id": "b001-0000-0000-0000-000000000020",
       "name": "METATILEIDS/OVERWORLD/STONE_FLOOR",
-      "symbol": "const_metatileids_overworld_8",
+      "symbol": "const_metatileids_overworld_9",
       "value": 29
     },
     {
       "id": "b001-0000-0000-0000-000000000021",
       "name": "METATILEIDS/OVERWORLD/HEDGE",
-      "symbol": "const_metatileids_overworld_9",
+      "symbol": "const_metatileids_overworld_10",
       "value": 52
     },
     {
@@ -289,7 +295,7 @@
     {
       "id": "edef1b1d-4243-4a9f-897b-b3b3b45c1a87",
       "name": "METATILEIDS/OVERWORLD/SIGN",
-      "symbol": "const_metatileids_overworld_10",
+      "symbol": "const_metatileids_overworld_11",
       "value": 94
     },
     {
@@ -445,7 +451,7 @@
     {
       "id": "e0ad4350-ba1b-401b-ad6f-d67309dd8b08",
       "name": "METATILEIDS/OVERWORLD/LEDGE_SOUTH_MIN",
-      "symbol": "const_metatileids_overworld_11",
+      "symbol": "const_metatileids_overworld_12",
       "value": 107
     },
     {
@@ -608,7 +614,7 @@
       "id": "89fe0ffd-bd6d-4eb8-8870-3620eb6ea6bd",
       "name": "METATILEIDS/FOREST/SIGN",
       "symbol": "const_mt_forest_sg0",
-      "value": 54
+      "value": 41
     },
     {
       "id": "8bff84db-d674-465f-b2ee-dc47a5bbbe11",
@@ -1017,6 +1023,84 @@
       "name": "METATILEIDS/UNDERGROUND/OOB",
       "symbol": "const_mt_underground_oob",
       "value": 6
+    },
+    {
+      "id": "2346bcdc-a708-4c73-9798-ec46ad019d6c",
+      "name": "METATILEIDS/CAVERN/SIGN",
+      "symbol": "const_metatileids_cavern_si",
+      "value": 20
+    },
+    {
+      "id": "b9844a37-2d22-4066-b100-5b6bcc14d11e",
+      "name": "METATILEIDS/GATE/SIGN",
+      "symbol": "const_metatileids_gate_sign",
+      "value": 31
+    },
+    {
+      "id": "c5d00993-04e7-4268-9714-f47a4d7ddf9a",
+      "name": "METATILEIDS/GATE/SIGN_END",
+      "symbol": "const_metatileids_gate_sign_0",
+      "value": 37
+    },
+    {
+      "id": "4be2d0e2-efca-42a8-bc2a-d5d6078cb64c",
+      "name": "METATILEIDS/HOUSE/SIGN",
+      "symbol": "const_metatileids_house_sig",
+      "value": 39
+    },
+    {
+      "id": "2cad06d4-4d3e-4390-989e-cc6cab154e13",
+      "name": "METATILEIDS/INTERIOR/SIGN",
+      "symbol": "const_metatileids_interior_",
+      "value": 24
+    },
+    {
+      "id": "858e2a64-e713-4287-950b-8b4e1b7d8c0c",
+      "name": "METATILEIDS/LOBBY/SIGN",
+      "symbol": "const_metatileids_lobby_sig",
+      "value": 12
+    },
+    {
+      "id": "d59d5ca9-a51e-436f-bbd9-17921d1ce642",
+      "name": "METATILEIDS/LOBBY/SIGN_END",
+      "symbol": "const_metatileids_lobby_sig_0",
+      "value": 47
+    },
+    {
+      "id": "6389c400-a962-4e25-a118-96100ae4ee83",
+      "name": "METATILEIDS/MANSION/SIGN",
+      "symbol": "const_metatileids_mansion_s",
+      "value": 8
+    },
+    {
+      "id": "0f064477-e499-4b0c-a691-a2dc77657578",
+      "name": "METATILEIDS/MANSION/SIGN_END",
+      "symbol": "const_metatileids_mansion_s_0",
+      "value": 40
+    },
+    {
+      "id": "d8281766-45e4-49e7-aed3-95c4621a58d6",
+      "name": "METATILEIDS/REDS_HOUSE/SIGN",
+      "symbol": "const_metatileids_reds_hous",
+      "value": 5
+    },
+    {
+      "id": "d7470502-d426-44dc-8deb-008ef6350ea1",
+      "name": "METATILEIDS/REDS_HOUSE/SIGN_END",
+      "symbol": "const_metatileids_reds_hous_0",
+      "value": 13
+    },
+    {
+      "id": "7deb399f-261f-4fa5-946f-dbbc70a316e0",
+      "name": "METATILEIDS/LAB/SIGN_MIN",
+      "symbol": "const_metatileids_lab_sign_",
+      "value": 8
+    },
+    {
+      "id": "984bb638-60f0-4775-ace1-90399e870708",
+      "name": "METATILEIDS/SHIP/SIGN_MIN",
+      "symbol": "const_metatileids_ship_sign",
+      "value": 53
     }
   ]
 }

@@ -424,28 +424,14 @@
       "command": "EVENT_IF",
       "args": {
         "condition": {
-          "type": "and",
+          "type": "eq",
           "valueA": {
-            "type": "gte",
-            "valueA": {
-              "type": "variable",
-              "value": "0"
-            },
-            "valueB": {
-              "type": "constant",
-              "value": "6ecfdcd5-8c21-40ab-a82d-1f42a9735d91"
-            }
+            "type": "variable",
+            "value": "0"
           },
           "valueB": {
-            "type": "lte",
-            "valueA": {
-              "type": "variable",
-              "value": "0"
-            },
-            "valueB": {
-              "type": "constant",
-              "value": "ff10d9bf-0f91-4b05-b8f8-c4926aaa93cc"
-            }
+            "type": "constant",
+            "value": "6ecfdcd5-8c21-40ab-a82d-1f42a9735d91"
           }
         },
         "__collapseElse": true

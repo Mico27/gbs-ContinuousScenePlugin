@@ -158,7 +158,85 @@
                 }
               ],
               "true1": [],
-              "true2": [],
+              "true2": [
+                {
+                  "command": "EVENT_GET_META_TILE_COLLISION_AT_POS",
+                  "args": {
+                    "x": {
+                      "type": "engineField",
+                      "value": "overlap_metatile_x"
+                    },
+                    "y": {
+                      "type": "engineField",
+                      "value": "overlap_metatile_y"
+                    },
+                    "output": "18",
+                    "__collapse": true
+                  },
+                  "id": "ac130bce-b732-421d-9810-0541005f5f35"
+                },
+                {
+                  "command": "EVENT_IF",
+                  "args": {
+                    "condition": {
+                      "type": "ne",
+                      "valueA": {
+                        "type": "variable",
+                        "value": "18"
+                      },
+                      "valueB": {
+                        "type": "constant",
+                        "value": "bfdc8e1f-6bd8-4d1b-bc6f-49279a9bc0ba"
+                      }
+                    },
+                    "__collapseElse": true,
+                    "__collapse": true
+                  },
+                  "children": {
+                    "true": [
+                      {
+                        "command": "EVENT_GBVM_SCRIPT",
+                        "args": {
+                          "script": "VM_SET_CONST_UINT8 _player_collision_group, 16"
+                        },
+                        "id": "f329abd5-143b-4a79-9225-ffb54fc04a63"
+                      },
+                      {
+                        "command": "EVENT_ACTOR_SET_STATE",
+                        "args": {
+                          "actorId": "$self$",
+                          "spriteStateId": "",
+                          "loopAnim": true,
+                          "__collapse": true
+                        },
+                        "id": "888f22b5-5476-42d2-acf1-baa03d3160f7"
+                      },
+                      {
+                        "command": "EVENT_PLAYER_SET_SPRITE",
+                        "args": {
+                          "spriteSheetId": "3ab82b4e-f708-4d23-9114-e77cc5eeec22",
+                          "__collapse": true
+                        },
+                        "id": "64d7fb32-6860-45c5-af34-c72da1d6d0a1"
+                      },
+                      {
+                        "command": "EVENT_SET_VALUE",
+                        "args": {
+                          "variable": "11",
+                          "value": {
+                            "type": "constant",
+                            "value": "b001-0000-0000-0000-000000000014"
+                          },
+                          "__collapse": true
+                        },
+                        "id": "5036b040-3b32-4344-bb7d-1612de83400d"
+                      }
+                    ],
+                    "false": []
+                  },
+                  "id": "41391711-251c-4454-9eb5-98e537b5af31"
+                }
+              ],
               "true3": [],
               "true4": [],
               "true5": [],
@@ -247,7 +325,7 @@
         ],
         "override": false,
         "__scriptTabs": "press",
-        "__collapse": true
+        "__collapse": false
       },
       "id": "827b68e6-e01a-4622-ae99-0b3547dc02b8",
       "children": {
@@ -407,7 +485,7 @@
                 }
               },
               "__collapseElse": true,
-              "__collapse": true
+              "__collapse": false
             },
             "id": "76fc90a4-1fa3-490f-9c55-2cd8d93148b3",
             "children": {
@@ -415,7 +493,7 @@
                 {
                   "command": "EVENT_CALL_CUSTOM_EVENT",
                   "args": {
-                    "customEventId": "f0a1b2c3-d4e5-4f60-8a1b-2c3d4e5f6071",
+                    "customEventId": "f1a2b3c4-d5e6-7f80-9a1b-2c3d4e5f6075",
                     "__collapse": true
                   },
                   "id": "f33085ae-66e8-4e2e-a8c5-eda971f52a7d"

@@ -1,0 +1,147 @@
+{
+  "_resourceType": "script",
+  "id": "617cb809-30dd-4fdc-a70c-82febb875237",
+  "name": "Ship Port/Warp Input Up",
+  "description": "",
+  "variables": {},
+  "actors": {},
+  "symbol": "script_96",
+  "script": [
+    {
+      "command": "EVENT_SCRIPT_UNLOCK",
+      "args": {},
+      "id": "e2aecdbe-54aa-4faa-bbf0-e0906e555a29"
+    },
+    {
+      "command": "EVENT_WAIT",
+      "args": {
+        "time": {
+          "type": "number",
+          "value": 0.5
+        },
+        "frames": {
+          "type": "number",
+          "value": 4
+        },
+        "units": "frames"
+      },
+      "id": "40e30c73-68de-4c0e-8c23-50315ae77419"
+    },
+    {
+      "command": "EVENT_IF_INPUT",
+      "args": {
+        "input": [
+          "up"
+        ],
+        "__collapseElse": true
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": "14",
+              "__collapse": true
+            },
+            "id": "186c6cc3-fcf2-4543-a4b7-002d4fefb652"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "constant",
+                  "value": "b001-0000-0000-0000-000000000012"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "8e01aa86-4141-49f5-9945-ef4e80f2061a",
+                    "$variable[V0]$": {
+                      "type": "variable",
+                      "value": "17"
+                    }
+                  },
+                  "id": "52526016-15c1-43dc-80b1-75588acde41d"
+                }
+              ],
+              "false": []
+            },
+            "id": "6c479f01-9814-4ad2-b17f-a0ed71e7934d"
+          }
+        ],
+        "false": []
+      },
+      "id": "2a163e86-1dc1-476d-8029-144a5480ac6c"
+    },
+    {
+      "command": "EVENT_SET_INPUT_SCRIPT",
+      "args": {
+        "input": [
+          "up"
+        ],
+        "override": false,
+        "__scriptTabs": "press"
+      },
+      "children": {
+        "true": [
+          {
+            "command": "EVENT_ACTOR_GET_DIRECTION",
+            "args": {
+              "actorId": "player",
+              "direction": "14",
+              "__collapse": true
+            },
+            "id": "8dd00e00-c4df-49e4-9952-2475c61e62f0"
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "14"
+                },
+                "valueB": {
+                  "type": "constant",
+                  "value": "b001-0000-0000-0000-000000000012"
+                }
+              },
+              "__collapseElse": true
+            },
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "8e01aa86-4141-49f5-9945-ef4e80f2061a",
+                    "$variable[V0]$": {
+                      "type": "variable",
+                      "value": "17"
+                    }
+                  },
+                  "id": "74925aa1-7227-4085-87c6-ee6f963c79b4"
+                }
+              ],
+              "false": []
+            },
+            "id": "d2b08aab-876d-472a-9e3e-40cd12ae5fbb"
+          }
+        ]
+      },
+      "id": "99ec656e-c324-4b6b-a866-aacf240c65ed"
+    }
+  ]
+}

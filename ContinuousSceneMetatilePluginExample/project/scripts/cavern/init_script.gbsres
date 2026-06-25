@@ -218,6 +218,38 @@
             "command": "EVENT_IF",
             "args": {
               "condition": {
+                "type": "eq",
+                "valueA": {
+                  "type": "variable",
+                  "value": "0"
+                },
+                "valueB": {
+                  "type": "constant",
+                  "value": "2346bcdc-a708-4c73-9798-ec46ad019d6c"
+                }
+              },
+              "__collapseElse": true,
+              "__collapse": true
+            },
+            "id": "b4010c1f-db48-4318-b935-85632be41738",
+            "children": {
+              "true": [
+                {
+                  "command": "EVENT_CALL_CUSTOM_EVENT",
+                  "args": {
+                    "customEventId": "f1a2b3c4-d5e6-7f80-9a1b-2c3d4e5f6073",
+                    "__collapse": true
+                  },
+                  "id": "5fae84b4-500c-4b4c-ac81-f4f718c813af"
+                }
+              ],
+              "false": []
+            }
+          },
+          {
+            "command": "EVENT_IF",
+            "args": {
+              "condition": {
                 "type": "ne",
                 "valueA": {
                   "type": "variable",
