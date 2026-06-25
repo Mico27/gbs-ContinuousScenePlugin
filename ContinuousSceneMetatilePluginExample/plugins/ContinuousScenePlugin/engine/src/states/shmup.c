@@ -14,6 +14,7 @@
 #include "trigger.h"
 #include "vm.h"
 #include "meta_tiles.h"
+#include "continuous_scene.h"
 
 // Feature Flags --------------------------------------------------------------
 // Optional feature flags, set in 'state_defines.h'
@@ -481,6 +482,10 @@ void shmup_update(void) BANKED {
 #endif
 
     if (IS_FRAME_ODD) {
+         //Check scene transition
+        if (check_transition_to_scene_collision()) {
+            return;
+        }
         // Check for trigger collisions on odd frames
 #if SHOOTER_TRIGGER_ACTIVATION == ON_PLAYER_COLLISION
         if (trigger_activate_at_intersection(&PLAYER.bounds, &PLAYER.pos, FALSE)) {

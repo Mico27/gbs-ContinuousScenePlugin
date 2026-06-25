@@ -12,6 +12,7 @@
 #include "trigger.h"
 #include "vm.h"
 #include "meta_tiles.h"
+#include "continuous_scene.h"
 
 #ifndef POINT_N_CLICK_CAMERA_DEADZONE
 #define POINT_N_CLICK_CAMERA_DEADZONE 24
@@ -79,7 +80,10 @@ void pointnclick_update(void) BANKED {
             PLAYER.pos.y = image_height_subpx - EXCLUSIVE_OFFSET(PLAYER.bounds.bottom);
         }
     }
-
+    //Check scene transition
+    if (check_transition_to_scene_collision()) {
+        return;
+    }
     // Check for trigger collisions
     hit_trigger = trigger_at_intersection(&PLAYER.bounds, &PLAYER.pos);
 #ifdef ENABLE_POINTNCLICK_ENTER_METATILE

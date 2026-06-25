@@ -840,6 +840,11 @@ static void move_and_collide(UBYTE mask)
             }
         }
     }
+    
+    //Check scene transition
+    if (check_transition_to_scene_collision()) {
+        return;
+    }
 
     if (mask & COL_CHECK_TRIGGERS)
     {

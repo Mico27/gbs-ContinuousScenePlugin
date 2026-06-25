@@ -161,21 +161,21 @@ UBYTE scroll_viewport(parallax_row_t * port) {
         if (current_col == (UBYTE)(new_col - 1)) {
             // Queue right column
             UBYTE x = new_col - SCREEN_PAD_LEFT + SCREEN_TILE_REFRES_W - 1;
-            UBYTE y = (scene_LCD_type == LCD_parallax)? port->start_tile : (new_row - SCREEN_PAD_TOP);;
-            UBYTE full_y = (new_row - SCREEN_PAD_TOP);
-            UBYTE clamped_x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
-            UBYTE clamped_y = (full_y >= SCREEN_OOB_TOP) ? 0 : full_y;
+            UBYTE y = (scene_LCD_type == LCD_parallax)? port->start_tile : (new_row - SCREEN_PAD_TOP);
             scroll_queue_col(x, y);
-            activate_actors_in_col(clamped_x, clamped_y);
+            x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
+            y = (new_row - SCREEN_PAD_TOP);
+            y = (y >= SCREEN_OOB_TOP) ? 0 : y;
+            activate_actors_in_col(x, y);
         } else if (current_col == (UBYTE)(new_col + 1)) {
             // Queue left column
             UBYTE x = new_col - SCREEN_PAD_LEFT;
             UBYTE y = (scene_LCD_type == LCD_parallax)? port->start_tile : (new_row - SCREEN_PAD_TOP);
-            UBYTE full_y = (new_row - SCREEN_PAD_TOP);
-            UBYTE clamped_x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
-            UBYTE clamped_y = (full_y >= SCREEN_OOB_TOP) ? 0 : full_y;
             scroll_queue_col(x, y);
-            activate_actors_in_col(clamped_x, clamped_y);
+            x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
+            y = (new_row - SCREEN_PAD_TOP);
+            y = (y >= SCREEN_OOB_TOP) ? 0 : y;
+            activate_actors_in_col(x, y);
         } else if (current_col != new_col) {
             // If column differs by more than 1 render entire screen
             scroll_render_rows(draw_scroll_x, draw_scroll_y, ((scene_LCD_type == LCD_parallax) ? port->start_tile : -SCREEN_PAD_TOP), SCREEN_TILE_REFRES_H);
@@ -189,18 +189,18 @@ UBYTE scroll_viewport(parallax_row_t * port) {
             // Queue bottom row
             UBYTE x = new_col - SCREEN_PAD_LEFT;
             UBYTE y = new_row - SCREEN_PAD_TOP + SCREEN_TILE_REFRES_H - 1;
-            UBYTE clamped_x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
-            UBYTE clamped_y = (y >= SCREEN_OOB_TOP) ? 0 : y;
             scroll_queue_row(x, y);
-            activate_actors_in_row(clamped_x, clamped_y);
+            x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
+            y = (y >= SCREEN_OOB_TOP) ? 0 : y;     
+            activate_actors_in_row(x, y);
         } else if (current_row == (UBYTE)(new_row + 1)) {
             // Queue top row
             UBYTE x = new_col - SCREEN_PAD_LEFT;
             UBYTE y = (scene_LCD_type == LCD_parallax) ? port->start_tile : (new_row - SCREEN_PAD_TOP);
-            UBYTE clamped_x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
-            UBYTE clamped_y = (y >= SCREEN_OOB_TOP) ? 0 : y;
             scroll_queue_row(x, y);
-            activate_actors_in_row(clamped_x, clamped_y);
+            x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
+            y = (y >= SCREEN_OOB_TOP) ? 0 : y;
+            activate_actors_in_row(x, y);
         } else if (current_row != new_row) {
             // If row differs by more than 1 render entire screen
             scroll_render_rows(draw_scroll_x, draw_scroll_y, ((scene_LCD_type == LCD_parallax) ? port->start_tile : -SCREEN_PAD_TOP), SCREEN_TILE_REFRES_H);
@@ -227,15 +227,13 @@ void scroll_render_rows(INT16 scroll_x, INT16 scroll_y, BYTE row_offset, BYTE n_
 
     UBYTE x = PX_TO_TILE(scroll_x) - SCREEN_PAD_LEFT;
     UBYTE y = PX_TO_TILE(scroll_y) + row_offset;
-    UBYTE clamped_x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
-    UBYTE clamped_y = (y >= SCREEN_OOB_TOP) ? 0 : y;
     if (scene_LCD_type == LCD_parallax) {
         n_rows = MIN(n_rows, image_tile_height - y);
     }
 
-    for (BYTE i = 0; i != n_rows; ++i, y++, clamped_y++) {
+    for (BYTE i = 0; i != n_rows; ++i, y++) {
         scroll_load_row(x, y);
-        activate_actors_in_row(clamped_x, clamped_y);
+        activate_actors_in_row(((x >= SCREEN_OOB_LEFT) ? 0 : x), ((y >= SCREEN_OOB_TOP) ? 0 : y));
     }
 }
 
@@ -248,13 +246,11 @@ void scroll_render_cols(INT16 scroll_x, INT16 scroll_y, BYTE col_offset, BYTE n_
 
     UBYTE x = PX_TO_TILE(scroll_x) + col_offset;
     UBYTE y = PX_TO_TILE(scroll_y) - SCREEN_PAD_TOP;
-    UBYTE clamped_x = (x >= SCREEN_OOB_LEFT) ? 0 : x;
-    UBYTE clamped_y = (y >= SCREEN_OOB_TOP) ? 0 : y;
     UBYTE height = (scene_LCD_type == LCD_parallax) ? MIN(SCREEN_TILE_REFRES_H, image_tile_height - y) : SCREEN_TILE_REFRES_H;
 
-    for (BYTE i = 0; i != n_cols; ++i, x++, clamped_x++) {
+    for (BYTE i = 0; i != n_cols; ++i, x++) {
         scroll_load_col(x, y, height);
-        activate_actors_in_col(clamped_x, clamped_y);
+        activate_actors_in_col(((x >= SCREEN_OOB_LEFT) ? 0 : x), ((y >= SCREEN_OOB_TOP) ? 0 : y));
     }
 }
 

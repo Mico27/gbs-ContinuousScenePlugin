@@ -17,6 +17,7 @@
 #include "vm.h"
 #include "macro.h"
 #include "meta_tiles.h"
+#include "continuous_scene.h"
 
 // Feature Flags --------------------------------------------------------------
 // Optional feature flags, set in 'state_defines.h'
@@ -1483,6 +1484,11 @@ finally_check_actor_col:
                 did_interact_actor = TRUE;
             }
         }
+    }
+
+    //Check scene transition
+    if (check_transition_to_scene_collision()) {
+        return;
     }
 
     if (mask & COL_CHECK_TRIGGERS)

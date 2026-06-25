@@ -13,7 +13,7 @@
     "fbb0a9c6-6a43-4e85-8ea5-299db21db78f"
   ],
   "spritePaletteIds": [],
-  "collisions": "005a0+",
+  "collisions": "006+0f2+00a+0f2+004+0f2+00a+0f2+008+0f2+00a+0f2+004+0f2+00a+0f2+002+0f14+004+0f24+004+0f12+0024+0f4+0024+0f4+006+0f8+008+0f8+006+0f4+006+0f8+008+0f8+006+0f4+006+0f8+008+0f8+006+0f4+006+0f8+008+0f8+006+0f4+004+0f4+002+0f4+006+0f4+002+0f4+006+0f4+004+0f4+002+0f4+006+0f4+002+0f4+006+0f4+0024+0f4+0024+0f4+0024+0f4+0024+0f4+0012+0fc+006+0f4+0012+0fc+006+0f4+006+0f8+004+0fc+006+0f4+006+0f8+004+0fc+006+0f4+0012+0fc+006+0f4+0012+0fc+006+0f4+0012+0f4+002+0f6+006+0f4+0012+0f4+002+0f6+006+0f4+0024+0f4+0024+0f4+0012+0fc+006+0f4+0012+0fc+006+0f4+0024+0f4+0024+0f4+0024+0f4+0024+0f4+0024+0f4+0024+0f6+00c+0f1c+00c+0f18+",
   "autoFadeSpeed": 1,
   "symbol": "pkmn_overworld_palette_town",
   "x": 2096,
@@ -23,7 +23,7 @@
       "command": "EVENT_GBVM_SCRIPT",
       "args": {
         "references": [],
-        "script": "VM_SET_CONST_UINT8 _fill_tile_id, 82\nVM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 0"
+        "script": "VM_SET_CONST_UINT8 _fill_tile_id, 78\nVM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 0"
       },
       "id": "d1a98820-1285-432d-82db-fea3344c2ada"
     }
