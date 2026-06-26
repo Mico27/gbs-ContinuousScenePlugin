@@ -2,9 +2,11 @@
 
 **Version 4.3.0 — Requires GB Studio ≥ 4.3.0**
 
-A GB Studio engine plugin that enables seamless scrolling transitions between adjacent scenes, making it possible to build large continuous worlds split across multiple scenes. When the player walks off the edge of a scene, the screen scrolls in that direction and loads the neighbouring scene without a fade. Scenes can be arranged in any rectangular grid with optional connection offsets; diagonal corners are also supported. The world can optionally wrap horizontally and/or vertically.
+A GB Studio engine plugin that stitches multiple scenes into a single seamless world. The camera always stays centered on the player, scroll limits are lifted, and as the player approaches a scene edge the plugin pulls tile data from the registered neighbour scene directly into VRAM — so the neighbouring map is already visible on screen before the player crosses. When the player reaches the boundary, the scene load happens instantly and invisibly: coordinates are rebased so the new scene aligns perfectly with where the player already is. No fade, no transition animation — the world simply keeps scrolling.
 
-All supported scene types (Top-Down, Platformer, Adventure, Point & Click, SHMUP) work with the plugin. Four events are added to the **Scene** group: **Set Continuous Scene**, **Auto Connect Continuous Scene**, **Remove Continuous Scene**, and **Assign current scene scroll offset to Variable**.
+Scenes can be arranged in any rectangular grid with optional connection offsets, diagonal corners are supported, and the world can optionally wrap horizontally and/or vertically. All supported scene types (Top-Down, Platformer, Adventure, Point & Click, SHMUP) work with the plugin.
+
+Four events are added to the **Scene** group: **Set Continuous Scene**, **Auto Connect Continuous Scene**, **Remove Continuous Scene**, and **Assign current scene scroll offset to Variable**.
 
 Continuous pokemon red overworld example (with map connection offsets):
 
@@ -31,15 +33,17 @@ https://github.com/user-attachments/assets/76cedc32-d258-475c-a235-4a8ffa2a8946
 
 ## Concepts
 
-### How the Scroll Transition Works
+### Continuous Tile Rendering
 
-GB Studio normally resets the viewport and tilemap when changing scenes. This plugin sidesteps that reset by keeping `bkg_offset_x`/`bkg_offset_y` accumulators alive across scene loads and by managing the camera and player positions manually during the transition. The screen content slides continuously in one direction while the new scene's tiles load row-by-row or column-by-column into the off-screen portion of the VRAM background map.
+GB Studio normally clamps the camera to the current scene's boundaries. This plugin removes that clamp. The camera is always centered on the player and can scroll freely past a scene edge. As the camera moves, `load_tile_row_continuous` / `load_tile_col_continuous` intercept every VRAM tile write and route out-of-bounds coordinates to the registered neighbour scene's tilemap. The result is that the neighbour scene's tiles appear on screen progressively as the player walks toward the edge — exactly as if the two scenes were one large map.
 
 ### The VRAM Tilemap as a Ring Buffer
 
-The GB hardware background tilemap is 32×32 tiles but only 20×18 tiles are visible at once. The plugin exploits this by treating the map as a wrap-around ring buffer: when scrolling right, the new scene's column data is written into the left edge of the VRAM map (which is off-screen on the right side thanks to the SCX register), so no visual pop occurs.
+The GB hardware background tilemap is 32×32 tiles but only 20×18 tiles are visible at once. The plugin exploits this by treating the map as a wrap-around ring buffer. `bkg_offset_x` and `bkg_offset_y` accumulate the total tile displacement across all scene crossings and are used as an additive offset when computing VRAM write addresses. This keeps the ring-buffer position coherent between scenes so tile data written for one scene and tile data written for a neighbour always land in the correct VRAM slots regardless of how many crossings have occurred.
 
-The `bkg_offset_x` and `bkg_offset_y` fields accumulate the total tile displacement across all transitions. They are masked to 5 bits (`& 31`) to stay within the 32-tile VRAM map dimension.
+### Invisible Scene Load
+
+When the player's position actually crosses a scene boundary, `transition_to_scene_modal` fires. It temporarily disables tile rendering, rebases the player position, camera, scroll values, and `bkg_offset` so that the new scene's coordinate system matches the player's current on-screen position, then calls `load_scene`. Because the coordinates are pre-adjusted before the load and `is_transitioning_scene` prevents `scroll_reset` from clearing the offsets, the VRAM ring buffer stays intact. After the new scene's init scripts finish, rendering resumes — and since the tiles were already visible, nothing on screen changes.
 
 ### Connection Offsets
 
@@ -115,13 +119,13 @@ The dimension along the shared edge must overlap between the two connecting scen
 
 Mismatched edges produce a seam or missing tiles at the boundary.
 
-### Scripts Are Reset on Transition
+### Scripts Are Reset on Boundary Crossing
 
-When a transition begins, all running script contexts in the current scene are terminated (variables are preserved). Timers, input events, and music events are also reset. The new scene's init scripts run after the scene loads.
+When the player crosses a scene boundary, all running script contexts in the current scene are terminated (variables are preserved). Timers, input events, and music events are also reset. The new scene's init scripts run after the scene loads, while tile rendering is still disabled, and the game loop resumes only once they finish.
 
-### Camera Is Unlocked During Transition
+### The Camera Always Follows the Player
 
-The camera lock flag is cleared at transition start and restored once both the camera and player have reached their target positions in the new scene. During the transition the camera is driven by the step-interpolation function (`transition_camera_to`) rather than the standard camera logic.
+There is no transition animation and no camera lock during the scene load. The camera is centered on the player at all times. The `DISABLE_SCROLL_LIMITS` define (enabled by default) removes the per-scene scroll clamp so the camera can freely follow the player past scene boundaries, revealing neighbour tiles as it goes.
 
 ### Out-of-Bounds Areas
 
@@ -229,34 +233,26 @@ These are read-only engine fields accessible via **Engine Field Value** in scrip
 
 ### Boundary Detection (`check_transition_to_scene_collision`)
 
-Each frame, the state update loop calls `check_transition_to_scene_collision` when `continuous_scene_enabled` is set and no transition is already in progress. It compares the player's position against eight direction slots. Each cardinal direction has a threshold in sub-pixels (256 sub-pixels = 1 tile = 8 px):
+Each frame the state update loop calls `check_transition_to_scene_collision` when `continuous_scene_enabled` is set and no transition is already in progress. It detects when the player's coordinates have wrapped past the scene's edge using UBYTE wrapping arithmetic:
 
-- **Top**: `PLAYER.pos.y < SCROLL_CAM_Y` (≈9 tiles from the top)
-- **Bottom**: `PLAYER.pos.y > TILE_TO_SUBPX(image_tile_height) − SCROLL_CAM_Y`
-- **Left**: `PLAYER.pos.x < SCROLL_CAM_X` (≈10 tiles from the left)
-- **Right**: `PLAYER.pos.x > TILE_TO_SUBPX(image_tile_width) − SCROLL_CAM_X`
+- **Top**: `PLAYER.pos.y > TILE_TO_SUBPX(SCREEN_OOB_TOP)` — Y has wrapped below zero (negative in sub-pixels stored as unsigned)
+- **Bottom**: `PLAYER.pos.y >= image_height_subpx` — Y has reached or passed the scene's bottom
+- **Left**: `PLAYER.pos.x > TILE_TO_SUBPX(SCREEN_OOB_LEFT)` — X has wrapped below zero
+- **Right**: `PLAYER.pos.x >= image_width_subpx` — X has reached or passed the scene's right edge
 
-Diagonal directions are detected by simultaneous crossing of both their component axes. A position-change guard prevents the same crossing from triggering on multiple consecutive frames.
+A position-change guard (`transitioning_player_pos_x/y != PLAYER.pos.x/y`) prevents the same crossing from triggering on multiple consecutive frames.
 
-### Scene Load Phase (`transition_load_scene`)
+### Invisible Scene Load (`transition_load_scene` / `transition_to_scene_modal`)
 
-Before loading the new scene this function:
+`transition_to_scene_modal` sets `is_transitioning_scene = 1` and `scroll_render_disabled = 1`, then calls `transition_load_scene`:
 
-1. Hides all active actors (except the player) and clears all active projectiles.
-2. Adjusts `camera_x`/`camera_y`, `PLAYER.pos`, and `bkg_offset_x`/`bkg_offset_y` for the scroll direction. For a right scroll, for example, the camera jumps left by one screen width, the player X is decremented by the scene width, and `bkg_offset_x` is incremented by the scene tile width.
-3. Applies the connection **offset**: the player and camera are shifted along the perpendicular axis to compensate for scenes that are not edge-aligned.
-4. Kills all running scripts and resets timers and event handlers.
-5. Calls `load_scene` for the new scene. Because `is_transitioning_scene` is set and the tile offsets were pre-adjusted, the scroll init skips clearing `scroll_x/y` and `bkg_offset_x/y`, preserving cross-scene continuity.
+1. Active actors (except the player) are hidden and projectiles are cleared. A final OAM frame is pushed so sprites disappear cleanly before the remap.
+2. For **Right** and **Bottom** crossings, coordinates are remapped *before* `load_scene`: the player position and camera are decremented by the full scene size, `bkg_offset` is incremented by the scene tile size, and the scroll is adjusted accordingly. For **Left** and **Top** crossings, `load_scene` runs first, then coordinates are incremented by the new scene's size and `bkg_offset` is decremented.
+3. The offset is applied: player/camera/scroll are shifted along the perpendicular axis by `continuous_scene->offset` tiles so that scenes which are not edge-aligned stitch correctly.
+4. All running scripts are killed (variables preserved), timers, input events, and music events are reset.
+5. `load_scene` loads the new scene. Because `is_transitioning_scene` is non-zero, `scroll_reset` inside `scroll_init` skips clearing `scroll_x/y` and `bkg_offset_x/y`, keeping the VRAM ring buffer coherent.
 
-### Scroll Animation Phase (`transition_to_scene_modal`)
-
-After `transition_load_scene` returns, the function enters a per-frame loop:
-
-1. `script_runner_update` ticks the new scene's init scripts.
-2. `transition_camera_to` steps `camera_x`/`camera_y` toward the target by up to `SCROLL_CAM_SPEED` sub-pixels per frame.
-3. `transition_player_to` steps the player's position toward the target by up to `SCROLL_PLAYER_SPEED` sub-pixels per frame.
-4. The normal game-loop updates (`scroll_update`, `actors_update`, OAM, VBlank) all run. Because `is_transitioning_scene` is non-zero, `camera_update` is bypassed and `scroll_update` skips its per-scene scroll clamp logic for the transition axis.
-5. When both camera and player reach their targets, the camera lock flag is restored and `is_transitioning_scene` is cleared, returning control to the standard game loop.
+After `transition_load_scene` returns, init scripts are ticked (`script_runner_update`) until the VM is no longer locked. Then `is_transitioning_scene` and `scroll_render_disabled` are cleared and the standard game loop resumes. Because the tiles were already rendered into VRAM before the crossing and the coordinate remap is invisible, nothing on screen changes during this entire sequence.
 
 ### Compile-Time Connection Table (Auto Connect)
 
