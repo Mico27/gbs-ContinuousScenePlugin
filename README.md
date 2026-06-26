@@ -4,7 +4,7 @@
 
 A GB Studio engine plugin that stitches multiple scenes into a single seamless world. The camera always stays centered on the player, scroll limits are lifted, and as the player approaches a scene edge the plugin pulls tile data from the registered neighbour scene directly into VRAM — so the neighbouring map is already visible on screen before the player crosses. When the player reaches the boundary, the scene load happens instantly and invisibly: coordinates are rebased so the new scene aligns perfectly with where the player already is. No fade, no transition animation — the world simply keeps scrolling.
 
-Scenes can be arranged in any rectangular grid with optional connection offsets, diagonal corners are supported, and the world can optionally wrap horizontally and/or vertically. All supported scene types (Top-Down, Platformer, Adventure, Point & Click, SHMUP) work with the plugin.
+Scenes can be arranged in any rectangular grid with optional connection offsets, diagonal corners are supported, and the world can optionally wrap horizontally and/or vertically. All supported scene types (Top-Down, Platformer, Adventure, Point & Click, SHMUP) work with the plugin, however it was designed with Top-Down in mind and require more processing than the default rendering method, so it is best to avoid having too much going on in continuous scenes.
 
 > **Incompatibility:** this plugin is not compatible with **gbs-ScreenScrollPlugin**. Do not use both in the same project.
 
