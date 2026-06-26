@@ -78,9 +78,13 @@ For large grids of uniformly named scenes, the **Auto Connect Continuous Scene**
 
 > To force a scene to be the first scene of the project: close the project, open `project/scenes/<SceneName>/scene.gbres` in a text editor, and set the `"_index"` field to `-1`. Save the file, reload the project in GB Studio, then save the project — GB Studio will reposition that scene as the first one.
 
-1. Give all the scenes you want connected a common **GBVM symbol prefix** (set via *Settings → Game Boy → Custom Engine Fields → symbol* for each scene, or enforce a naming convention that becomes the symbol).
+1. Give all the scenes you want connected a common **GBVM symbol prefix** (set via *View GBVM symbol* for each scene, or enforce a naming convention that becomes the symbol).
 2. Place **Auto Connect Continuous Scene** in the On Init script of your first scene and set **Scene data symbol prefix** to that prefix.
 3. Enable **Loop Horizontally** and/or **Loop Vertically** if the world should wrap.
+
+<img width="892" height="274" alt="image" src="https://github.com/user-attachments/assets/36714b5a-e7cc-43b3-ba4e-af7d1fd4d3d7" />
+<img width="290" height="159" alt="image" src="https://github.com/user-attachments/assets/557a25e6-d78b-4ed9-8e20-6c534fba9bfc" />
+<img width="285" height="141" alt="image" src="https://github.com/user-attachments/assets/9242132f-a294-4b8c-ad54-fed1babc5bd5" />
 
 Auto Connect only detects connections where scene boundaries **touch exactly** in the world map — if two scenes' edges do not perfectly align, no connection is created between them. Use [Option A](#option-a--manual-setup-with-set-continuous-scene) for those connections, or adjust scene positions in the world map so the edges meet.
 
