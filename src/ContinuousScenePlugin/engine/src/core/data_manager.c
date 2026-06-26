@@ -61,8 +61,8 @@ void load_init(void) BANKED {
 }
 
 void load_bkg_tileset(const tileset_t* tiles, UBYTE bank) BANKED {
-	#ifdef DISABLE_TILESET_LOAD_ON_TRANSITION
-        if (((!bank) && (!tiles)) || is_transitioning_scene) return;    
+    #ifdef DISABLE_TILESET_LOAD_ON_TRANSITION
+        if (((!bank) && (!tiles)) || is_transitioning_scene) return;
     #else
         if ((!bank) && (!tiles)) return;
     #endif

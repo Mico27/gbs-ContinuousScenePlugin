@@ -94,7 +94,7 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
     while (actor) {
         if (actor != &PLAYER){
             SET_FLAG(actor->flags, ACTOR_FLAG_HIDDEN);
-        }		
+        }
         actor = actor->prev;
     }
     UBYTE tmp_show_actors_on_overlay = show_actors_on_overlay;
@@ -140,7 +140,7 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
             }
         break;
     }
-    // kill all threads, but don't clear variables 
+    // kill all threads, but don't clear variables
     script_runner_init(FALSE);
     // reset timers on scene change
     timers_init(FALSE);
@@ -148,9 +148,9 @@ void transition_load_scene(continuous_scene_t* continuous_scene, UBYTE direction
     events_init(FALSE);
     // reset music events
     music_init_events(FALSE);
-    
+
     load_scene(continuous_scene->scene.ptr, continuous_scene->scene.bank, TRUE);
-    
+
     switch (direction){
         case DIRECTION_LEFT:
             camera_x += image_width_subpx;
@@ -190,7 +190,7 @@ void set_continuous_scene(SCRIPT_CTX * THIS) OLDCALL BANKED {
     int8_t offset = *(int8_t *)VM_REF_TO_PTR(FN_ARG3);
     far_ptr_t background_col_ptr;
     ReadBankedFarPtr(&background_col_ptr, (void *)&(scene_ptr->background), scene_bank);
-	background_t bkg;
+    background_t bkg;
     MemcpyBanked(&bkg, background_col_ptr.ptr, sizeof(bkg), background_col_ptr.bank);
     ReadBankedFarPtr(&background_col_ptr, (void *)&(scene_ptr->collisions), scene_bank);
     continuous_scene_enabled |= DIRECTION_BIT(direction);
@@ -209,7 +209,7 @@ void set_continuous_scene(SCRIPT_CTX * THIS) OLDCALL BANKED {
 }
 
 void remove_continuous_scene(SCRIPT_CTX * THIS) OLDCALL BANKED {
-    uint8_t direction = *(uint8_t *)VM_REF_TO_PTR(FN_ARG0);    
+    uint8_t direction = *(uint8_t *)VM_REF_TO_PTR(FN_ARG0);
     continuous_scene_enabled &= ~DIRECTION_BIT(direction);
     continuous_scenes[direction].scene.bank = 0;
     continuous_scenes[direction].scene.ptr = NULL;
@@ -229,13 +229,13 @@ void load_scene_connections(SCRIPT_CTX * THIS) OLDCALL BANKED {
     uint8_t scene_connection_bank = *(uint8_t *) VM_REF_TO_PTR(FN_ARG0);
     const scene_connection_t* scene_connection_ptr = *(scene_connection_t**)VM_REF_TO_PTR(FN_ARG1);
     uint16_t connections_index = *(uint16_t *)VM_REF_TO_PTR(FN_ARG2) << 3; // multiply by number of directions which is 8
-    scene_connection_t connection; 
-    far_ptr_t background_col_ptr;   
+    scene_connection_t connection;
+    far_ptr_t background_col_ptr;
     background_t bkg;
-    for (uint8_t i = 0; i < 8; i++){        
+    for (uint8_t i = 0; i < 8; i++){
         MemcpyBanked(&connection, (scene_connection_ptr + (connections_index + (UWORD)i)), sizeof(scene_connection_t), scene_connection_bank);
-        if (connection.scene.ptr && connection.scene.bank){  
-            ReadBankedFarPtr(&background_col_ptr, (void *)&(((const scene_t *)connection.scene.ptr)->background), connection.scene.bank);	        
+        if (connection.scene.ptr && connection.scene.bank){
+            ReadBankedFarPtr(&background_col_ptr, (void *)&(((const scene_t *)connection.scene.ptr)->background), connection.scene.bank);
             MemcpyBanked(&bkg, background_col_ptr.ptr, sizeof(bkg), background_col_ptr.bank);
             ReadBankedFarPtr(&background_col_ptr, (void *)&(((const scene_t *)connection.scene.ptr)->collisions), connection.scene.bank);
             continuous_scene_enabled |= DIRECTION_BIT(i);

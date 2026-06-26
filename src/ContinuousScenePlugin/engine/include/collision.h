@@ -61,7 +61,7 @@ inline UBYTE bb_contains(rect16_t *bb, upoint16_t *offset, upoint16_t *point) {
  */
 inline UBYTE bb_intersects(rect16_t *bb_a, upoint16_t *offset_a, rect16_t *bb_b, upoint16_t *offset_b) {
     if ((offset_b->x + bb_b->left   > offset_a->x + bb_a->right) ||
-        (offset_b->x + bb_b->right  < offset_a->x + bb_a->left)) return FALSE;    
+        (offset_b->x + bb_b->right  < offset_a->x + bb_a->left)) return FALSE;
     if ((offset_b->y + bb_b->top    > offset_a->y + bb_a->bottom) ||
         (offset_b->y + bb_b->bottom < offset_a->y + bb_a->top)) return FALSE;
     return TRUE;
@@ -83,7 +83,7 @@ inline UBYTE tile_at(UBYTE tx, UBYTE ty) {
 /**
  * Test for a tile matching mask in a vertical range from ty_start to ty_end at column tx.
  * Updates globals tile_hit_x and tile_hit_y which can be read afterwards to determine which tile matched
- * 
+ *
  * @param tile_mask Tile bitmask to match
  * @param tx Tile x-coordinate
  * @param ty_start Starting tile y-coordinate

@@ -215,7 +215,7 @@ void topdown_update(void) BANKED {
 
     if (player_moving) {
         point_translate_dir(&PLAYER.pos, PLAYER.dir, PLAYER.move_speed);
-        
+
         // Clamp to grid
         if (PLAYER.dir == DIR_RIGHT) {
             if (PLAYER.pos.x > max_pos && (PLAYER.pos.x - max_pos) < PLAYER.move_speed) {
@@ -234,6 +234,6 @@ void topdown_update(void) BANKED {
                 PLAYER.pos.y = max_pos;
             }
         }
-        
+
     }
 }
