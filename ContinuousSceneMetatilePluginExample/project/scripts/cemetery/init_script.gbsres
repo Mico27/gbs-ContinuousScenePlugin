@@ -25,7 +25,7 @@
           }
         ],
         "script": "VM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 8",
-        "__collapse": true
+        "__collapse": false
       },
       "id": "96072499-25d6-4f4a-b1e3-933309a2a1c6"
     },
@@ -44,7 +44,7 @@
           }
         },
         "__collapseElse": true,
-        "__collapse": true
+        "__collapse": false
       },
       "id": "71307c50-533e-4667-a12e-e068ca1625d5",
       "children": {

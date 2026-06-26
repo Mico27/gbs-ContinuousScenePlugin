@@ -8,6 +8,28 @@
   "symbol": "script_mt_gate_init",
   "script": [
     {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "references": [
+          {
+            "type": "variable",
+            "id": "0"
+          },
+          {
+            "type": "variable",
+            "id": "1"
+          },
+          {
+            "type": "variable",
+            "id": "3"
+          }
+        ],
+        "script": "VM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 8",
+        "__collapse": false
+      },
+      "id": "5a50973e-7fc7-4edc-a8d4-f576c86f9ad3"
+    },
+    {
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -44,7 +66,7 @@
                   "id": "3"
                 }
               ],
-              "script": "VM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 8\nVM_SET_CONST_UINT8 _player_collision_group, 16",
+              "script": "VM_SET_CONST_UINT8 _player_collision_group, 16",
               "__collapse": false
             },
             "id": "fa31ca8d-c664-4a2c-984a-b41b74f54c9f"

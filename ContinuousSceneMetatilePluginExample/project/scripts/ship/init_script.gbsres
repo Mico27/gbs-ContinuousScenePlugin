@@ -8,6 +8,28 @@
   "symbol": "script_mt_ship_init",
   "script": [
     {
+      "command": "EVENT_GBVM_SCRIPT",
+      "args": {
+        "references": [
+          {
+            "type": "variable",
+            "id": "0"
+          },
+          {
+            "type": "variable",
+            "id": "1"
+          },
+          {
+            "type": "variable",
+            "id": "3"
+          }
+        ],
+        "script": "VM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 8",
+        "__collapse": false
+      },
+      "id": "f473ef8c-e759-406f-a309-f18f204eb78e"
+    },
+    {
       "command": "EVENT_IF",
       "args": {
         "condition": {
@@ -44,7 +66,7 @@
                   "id": "3"
                 }
               ],
-              "script": "VM_SET_CONST_INT8 _camera_deadzone_x, 0\nVM_SET_CONST_INT8 _camera_deadzone_y, 0\nVM_SET_CONST_INT8 _camera_offset_x, -8\nVM_SET_CONST_INT8 _camera_offset_y, 8\nVM_SET_CONST_UINT8 _player_collision_group, 16",
+              "script": "VM_SET_CONST_UINT8 _player_collision_group, 16",
               "__collapse": false
             },
             "id": "aeb1de8e-5d82-45ed-b70d-38984ec9e15f"
