@@ -6,6 +6,8 @@ A GB Studio engine plugin that stitches multiple scenes into a single seamless w
 
 Scenes can be arranged in any rectangular grid with optional connection offsets, diagonal corners are supported, and the world can optionally wrap horizontally and/or vertically. All supported scene types (Top-Down, Platformer, Adventure, Point & Click, SHMUP) work with the plugin.
 
+> **Incompatibility:** this plugin is not compatible with **gbs-ScreenScrollPlugin**. Do not use both in the same project.
+
 Four events are added to the **Scene** group: **Set Continuous Scene**, **Auto Connect Continuous Scene**, **Remove Continuous Scene**, and **Assign current scene scroll offset to Variable**.
 
 Continuous pokemon red overworld example (with map connection offsets):
@@ -70,11 +72,17 @@ Repeat for every scene and every direction. There is no need to place triggers o
 
 ### Option B — Automatic Setup with Auto Connect Continuous Scene
 
-For large grids of uniformly named scenes, the **Auto Connect Continuous Scene** event derives all connections automatically from the scenes' positions in the GB Studio world map. Place this event in a special init scene (such as a `compilermap` scene that runs once at startup) or in a shared custom event called from every scene's On Init.
+For large grids of uniformly named scenes, the **Auto Connect Continuous Scene** event derives all connections automatically from the scenes' positions in the GB Studio world map.
+
+**Important:** this event must be placed in the **On Init** script of the **very first scene** of the project. GBS injects the connection setup code into the init scripts of all matching scenes at compile time, and requires the event to be processed before any of those scenes are compiled.
+
+> To force a scene to be the first scene of the project: close the project, open `project/scenes/<SceneName>/scene.gbres` in a text editor, and set the `"_index"` field to `-1`. Save the file, reload the project in GB Studio, then save the project — GB Studio will reposition that scene as the first one.
 
 1. Give all the scenes you want connected a common **GBVM symbol prefix** (set via *Settings → Game Boy → Custom Engine Fields → symbol* for each scene, or enforce a naming convention that becomes the symbol).
-2. Add **Auto Connect Continuous Scene** anywhere in the project and set **Scene data symbol prefix** to that prefix.
+2. Place **Auto Connect Continuous Scene** in the On Init script of your first scene and set **Scene data symbol prefix** to that prefix.
 3. Enable **Loop Horizontally** and/or **Loop Vertically** if the world should wrap.
+
+Auto Connect only detects connections where scene boundaries **touch exactly** in the world map — if two scenes' edges do not perfectly align, no connection is created between them. Use [Option A](#option-a--manual-setup-with-set-continuous-scene) for those connections, or adjust scene positions in the world map so the edges meet.
 
 The event runs entirely at **compile time**: it reads scene positions from the project, builds a connection table, and injects a `load_scene_connections` native call at the top of each matching scene's init script. No runtime overhead for the detection pass; connections are baked into ROM.
 
@@ -109,15 +117,6 @@ Due to the ring-buffer nature of the VRAM tilemap, the usable scene dimensions a
 ### Common Tileset Is Required
 
 All scenes that scroll into each other must share the same **common tileset**. Click the puzzle-piece icon on each scene in GB Studio and assign the same common tileset asset. This ensures tile indices are consistent across scene boundaries so that the visual join is seamless.
-
-### Matching Edge Dimensions
-
-The dimension along the shared edge must overlap between the two connecting scenes:
-
-- A scene to the left/right of another must have overlapping **height** ranges.
-- A scene above/below another must have overlapping **width** ranges.
-
-Mismatched edges produce a seam or missing tiles at the boundary.
 
 ### Scripts Are Reset on Boundary Crossing
 
@@ -158,6 +157,10 @@ Registers a scene as the neighbour in a given direction and enables boundary-cro
 **`EVENT_AUTO_CONNECT_CONTINUOUS_SCENE`**
 
 Compile-time event that reads scene positions from the world map and automatically generates all **Set Continuous Scene** calls for every scene whose GBVM symbol starts with the given prefix. The connection table is written to a ROM asset and injected into each scene's init script at compile time.
+
+**Must be placed in the On Init script of the very first scene of the project.** Only connections where two scene boundaries touch exactly in the world map are created; scenes whose edges do not perfectly align will not be auto-connected (use **Set Continuous Scene** for those).
+
+> To force a scene to be the first scene of the project: close the project, open `project/scenes/<SceneName>/scene.gbres` in a text editor, and set the `"_index"` field to `-1`. Save the file, reload the project in GB Studio, then save the project again.
 
 | Field | Description |
 |-------|-------------|
