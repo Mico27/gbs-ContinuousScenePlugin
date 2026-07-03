@@ -30,6 +30,7 @@ https://github.com/user-attachments/assets/76cedc32-d258-475c-a235-4a8ffa2a8946
 6. [Events Reference](#events-reference)
 7. [Engine Fields and Settings](#engine-fields-and-settings)
 8. [Inner Workings](#inner-workings)
+9. [Memory Footprint](#memory-footprint)
 
 ---
 
@@ -280,3 +281,19 @@ bkg_scroll_y = draw_scroll_y + TILE_TO_PX(bkg_offset_y)
 ```
 
 The `bkg_offset` values shift the VRAM map origin so that tile data written into a specific ring-buffer slot always appears at the correct screen position, regardless of how many transitions have occurred. Without this accumulation, consecutive scroll transitions in the same direction would progressively misalign the background.
+
+---
+
+## Memory Footprint
+
+Measured against the stock GB Studio **4.3.0-e1** engine (per-file SDCC compile with GB Studio's build flags, default engine settings). Values are the plugin's *delta* versus the stock engine; DMG build, with CGB noted where it differs. ROM cost lands in banked ROM (GB Studio's autobanker spreads it across switchable banks); using the plugin's events additionally compiles a few bytes of GBVM script per call into your project's script banks.
+
+| | Cost |
+|---|---|
+| WRAM | +133 bytes |
+| ROM | +8,580 bytes (DMG) / +12,927 bytes (CGB) |
+
+- **WRAM:** 133 bytes, almost all streaming state and row/column buffers in `continuous_scene.c` (+128).
+- **ROM (CGB):** the extra ~4.3 KiB on Color builds is the attribute/palette-aware streaming path in the reworked `scroll.c`.
+- **Engine WRAM headroom:** the stock GB Studio 4.3.0 engine leaves about **854 bytes** of WRAM free (usable engine WRAM is 7,776 bytes at 0xC0A0–0xDF00; the stock engine uses 6,922 bytes). With this plugin installed roughly **721 bytes** remain. This figure does not depend on how many global variables your project defines: the script memory array has a fixed size of VM_HEAP_SIZE + (VM_MAX_CONTEXTS × VM_CONTEXT_STACK_SIZE) words — 768 + 16 × 64 = 1,792 words (3,584 bytes) with stock engine settings.
+- **SRAM:** not used.
