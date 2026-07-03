@@ -4,7 +4,7 @@
 
 A GB Studio engine plugin that stitches multiple scenes into a single seamless world. The camera always stays centered on the player, scroll limits are lifted, and as the player approaches a scene edge the plugin pulls tile data from the registered neighbour scene directly into VRAM — so the neighbouring map is already visible on screen before the player crosses. When the player reaches the boundary, the scene load happens instantly and invisibly: coordinates are rebased so the new scene aligns perfectly with where the player already is. No fade, no transition animation — the world simply keeps scrolling.
 
-Scenes can be arranged in any rectangular grid with optional connection offsets, diagonal corners are supported, and the world can optionally wrap horizontally and/or vertically. All supported scene types (Top-Down, Platformer, Adventure, Point & Click, SHMUP) work with the plugin.
+Scenes can be arranged in any rectangular grid with optional connection offsets, diagonal corners are supported, and the world can optionally wrap horizontally and/or vertically. All supported scene types (Top-Down, Platformer, Adventure, Point & Click, SHMUP) work with the plugin, however it was designed with Top-Down in mind and require more processing than the default rendering method, so it is best to avoid having too much going on in continuous scenes.
 
 > **Incompatibility:** this plugin is not compatible with **gbs-ScreenScrollPlugin**. Do not use both in the same project.
 
@@ -79,7 +79,12 @@ For large grids of uniformly named scenes, the **Auto Connect Continuous Scene**
 
 > To force a scene to be the first scene of the project: close the project, open `project/scenes/<SceneName>/scene.gbres` in a text editor, and set the `"_index"` field to `-1`. Save the file, reload the project in GB Studio, then save the project — GB Studio will reposition that scene as the first one.
 
-1. Give all the scenes you want connected a common **GBVM symbol prefix** (set via *Settings → Game Boy → Custom Engine Fields → symbol* for each scene, or enforce a naming convention that becomes the symbol).
+1. Give all the scenes you want connected a common **GBVM symbol prefix** (set via *View GBVM symbol* for each scene, or enforce a naming convention that becomes the symbol).
+
+<img width="892" height="274" alt="image" src="https://github.com/user-attachments/assets/36714b5a-e7cc-43b3-ba4e-af7d1fd4d3d7" />
+<img width="290" height="159" alt="image" src="https://github.com/user-attachments/assets/557a25e6-d78b-4ed9-8e20-6c534fba9bfc" />
+<img width="285" height="141" alt="image" src="https://github.com/user-attachments/assets/9242132f-a294-4b8c-ad54-fed1babc5bd5" />
+
 2. Place **Auto Connect Continuous Scene** in the On Init script of your first scene and set **Scene data symbol prefix** to that prefix.
 3. Enable **Loop Horizontally** and/or **Loop Vertically** if the world should wrap.
 
