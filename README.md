@@ -24,13 +24,10 @@ https://github.com/user-attachments/assets/76cedc32-d258-475c-a235-4a8ffa2a8946
 
 1. [Concepts](#concepts)
 2. [Project Setup](#project-setup)
-3. [Connection Offsets](#connection-offsets)
-4. [World Looping](#world-looping)
-5. [Technicalities and Restrictions](#technicalities-and-restrictions)
-6. [Events Reference](#events-reference)
-7. [Engine Fields and Settings](#engine-fields-and-settings)
-8. [Inner Workings](#inner-workings)
-9. [Memory Footprint](#memory-footprint)
+3. [Size Limits and Restrictions](#size-limits-and-restrictions)
+4. [Events Reference](#events-reference)
+5. [Engine Settings](#engine-settings)
+6. [Memory Footprint](#memory-footprint)
 
 ---
 
@@ -94,7 +91,7 @@ The event runs entirely at **compile time**: it reads scene positions from the p
 
 ---
 
-## Connection Offsets
+### Connection Offsets
 
 When two horizontally adjacent scenes have different heights or are vertically misaligned, set **Offset of Scene** to `(current scene top) − (neighbour scene top)` in tiles. A positive offset means the neighbour starts lower; a negative offset means it starts higher.
 
@@ -102,7 +99,7 @@ The Auto Connect event computes this automatically from world-map positions: `of
 
 ---
 
-## World Looping
+### World Looping
 
 Enable **Loop Horizontally** or **Loop Vertically** in the **Auto Connect Continuous Scene** event to wrap the world edges:
 
@@ -114,7 +111,7 @@ The offsets for wrap-around connections are computed by the same formula as regu
 
 ---
 
-## Technicalities and Restrictions
+## Size Limits and Restrictions
 
 ### Maximum Scene Size is Halved
 
@@ -201,7 +198,7 @@ Reads the current accumulated background offset (`bkg_offset_x`, `bkg_offset_y`)
 
 ---
 
-## Engine Fields and Settings
+## Engine Settings
 
 These settings are found under **Settings → Engine Fields → Continuous Scene**.
 
@@ -238,57 +235,6 @@ These are read-only engine fields accessible via **Engine Field Value** in scrip
 
 ---
 
-## Inner Workings
-
-### Boundary Detection (`check_transition_to_scene_collision`)
-
-Each frame the state update loop calls `check_transition_to_scene_collision` when `continuous_scene_enabled` is set and no transition is already in progress. It detects when the player's coordinates have wrapped past the scene's edge using UBYTE wrapping arithmetic:
-
-- **Top**: `PLAYER.pos.y > TILE_TO_SUBPX(SCREEN_OOB_TOP)` — Y has wrapped below zero (negative in sub-pixels stored as unsigned)
-- **Bottom**: `PLAYER.pos.y >= image_height_subpx` — Y has reached or passed the scene's bottom
-- **Left**: `PLAYER.pos.x > TILE_TO_SUBPX(SCREEN_OOB_LEFT)` — X has wrapped below zero
-- **Right**: `PLAYER.pos.x >= image_width_subpx` — X has reached or passed the scene's right edge
-
-A position-change guard (`transitioning_player_pos_x/y != PLAYER.pos.x/y`) prevents the same crossing from triggering on multiple consecutive frames.
-
-### Invisible Scene Load (`transition_load_scene` / `transition_to_scene_modal`)
-
-`transition_to_scene_modal` sets `is_transitioning_scene = 1` and `scroll_render_disabled = 1`, then calls `transition_load_scene`:
-
-1. Active actors (except the player) are hidden and projectiles are cleared. A final OAM frame is pushed so sprites disappear cleanly before the remap.
-2. For **Right** and **Bottom** crossings, coordinates are remapped *before* `load_scene`: the player position and camera are decremented by the full scene size, `bkg_offset` is incremented by the scene tile size, and the scroll is adjusted accordingly. For **Left** and **Top** crossings, `load_scene` runs first, then coordinates are incremented by the new scene's size and `bkg_offset` is decremented.
-3. The offset is applied: player/camera/scroll are shifted along the perpendicular axis by `continuous_scene->offset` tiles so that scenes which are not edge-aligned stitch correctly.
-4. All running scripts are killed (variables preserved), timers, input events, and music events are reset.
-5. `load_scene` loads the new scene. Because `is_transitioning_scene` is non-zero, `scroll_reset` inside `scroll_init` skips clearing `scroll_x/y` and `bkg_offset_x/y`, keeping the VRAM ring buffer coherent.
-
-After `transition_load_scene` returns, init scripts are ticked (`script_runner_update`) until the VM is no longer locked. Then `is_transitioning_scene` and `scroll_render_disabled` are cleared and the standard game loop resumes. Because the tiles were already rendered into VRAM before the crossing and the coordinate remap is invisible, nothing on screen changes during this entire sequence.
-
-### Compile-Time Connection Table (Auto Connect)
-
-The **Auto Connect Continuous Scene** event runs entirely at compile time inside `compile()`. It:
-
-1. Filters the project's scene list to those whose GBVM symbol matches the prefix.
-2. Derives left/right/top/bottom world extents from scene bounding boxes.
-3. For each scene pair, checks all eight adjacency conditions (edge equality + overlap) and records a `{ scene_symbol, direction, offset }` connection.
-4. If looping is enabled, additionally connects edge scenes to their opposite-edge counterparts.
-5. Writes two ROM assets — a `scene_connections_symbol.c` array and matching `.h` header — containing one `scene_connection_t[8]` entry per scene.
-6. Injects a `VM_CALL_NATIVE load_scene_connections` GBVM event at the top of each scene's init script, passing the scene's index into the connection table.
-
-At runtime `load_scene_connections` reads the prebuilt array and calls `set_continuous_scene` for each non-null slot, replacing what would otherwise be eight manual **Set Continuous Scene** events per scene.
-
-### `bkg_offset` and Tile Alignment
-
-`bkg_scroll_x` and `bkg_scroll_y` (the actual SCX/SCY values written to hardware) are computed each frame as:
-
-```
-bkg_scroll_x = draw_scroll_x + TILE_TO_PX(bkg_offset_x)
-bkg_scroll_y = draw_scroll_y + TILE_TO_PX(bkg_offset_y)
-```
-
-The `bkg_offset` values shift the VRAM map origin so that tile data written into a specific ring-buffer slot always appears at the correct screen position, regardless of how many transitions have occurred. Without this accumulation, consecutive scroll transitions in the same direction would progressively misalign the background.
-
----
-
 ## Memory Footprint
 
 Measured against the stock GB Studio **4.3.0-e1** engine (per-file SDCC compile with GB Studio's build flags, default engine settings). Values are the plugin's *delta* versus the stock engine; DMG build, with CGB noted where it differs. ROM cost lands in banked ROM (GB Studio's autobanker spreads it across switchable banks); using the plugin's events additionally compiles a few bytes of GBVM script per call into your project's script banks.
@@ -298,8 +244,8 @@ Measured against the stock GB Studio **4.3.0-e1** engine (per-file SDCC compile 
 | WRAM | +133 bytes |
 | ROM | +8,580 bytes (DMG) / +12,927 bytes (CGB) |
 
-- **WRAM:** 133 bytes, almost all streaming state and row/column buffers in `continuous_scene.c` (+128).
-- **ROM (CGB):** the extra ~4.3 KiB on Color builds is the attribute/palette-aware streaming path in the reworked `scroll.c`.
+- **WRAM:** 133 bytes, almost all of it streaming state and row/column buffers.
+- **ROM (CGB):** the extra ~4.3 KiB on Color builds is the attribute- and palette-aware streaming path.
 - **Engine WRAM headroom:** the stock GB Studio 4.3.0 engine leaves about **854 bytes** of WRAM free (usable engine WRAM is 7,776 bytes at 0xC0A0–0xDF00; the stock engine uses 6,922 bytes). With this plugin installed roughly **721 bytes** remain. This figure does not depend on how many global variables your project defines: the script memory array has a fixed size of VM_HEAP_SIZE + (VM_MAX_CONTEXTS × VM_CONTEXT_STACK_SIZE) words — 768 + 16 × 64 = 1,792 words (3,584 bytes) with stock engine settings.
 - **SRAM:** not used.
 
