@@ -2,7 +2,7 @@ const l10n = require("../helpers/l10n").default;
 
 export const id = "EVENT_GET_TILE_COLLISION";
 export const name = "Get tile collision";
-export const groups = ["EVENT_GROUP_ACTOR"];
+export const groups = ["Collision Ex"];
 
 export const autoLabel = (fetchArg) => {
   return `Get tile collision`;
@@ -32,14 +32,15 @@ export const fields = [
   {
     key: "variable",
     label: l10n("FIELD_VARIABLE"),
-    description: "Variable to store tile collision value",
+    description:
+      "Variable to store the tile's raw collision byte in. Out of bounds coordinates report 15 (solid on every side), the same as the engine's own tile tests.",
     type: "variable",
     defaultValue: "LAST_VARIABLE",
   },
 ];
 
 export const compile = (input, helpers) => {
-  const __engineFieldOn = (key) => {
+  const engineFieldOn = (key) => {
     const fv =
       helpers.engineFieldValues &&
       helpers.engineFieldValues.find((s) => s.id === key);
@@ -47,15 +48,23 @@ export const compile = (input, helpers) => {
     const def = helpers.engineFields && helpers.engineFields[key];
     return def ? !!def.defaultValue : true;
   };
-  const __requireEngineField = (key, label) => {
-    if (!__engineFieldOn(key)) {
-      throw new Error(
-        `This event requires the "${label}" engine setting to be enabled (Settings → Engine fields → Dynamic actor).`
-      );
-    }
-  };
-  __requireEngineField("DYNAMIC_ACTOR_ENABLE_VM_GET_TILE_COLLISION", "Tools: Get tile collision");
-  const { _callNative, _stackPop, _addComment, getVariableAlias, _stackPushConst, _stackPushScriptValue, _isIndirectVariable, _setInd, _declareLocal } = helpers;
+  if (!engineFieldOn("COLLISION_EX_ENABLE_GET_TILE_COLLISION")) {
+    throw new Error(
+      `This event requires the "Enable event: Get tile collision" engine setting to be enabled (Settings → Engine → Collision Ex).`
+    );
+  }
+
+  const {
+    _callNative,
+    _stackPop,
+    _addComment,
+    getVariableAlias,
+    _stackPushConst,
+    _stackPushScriptValue,
+    _isIndirectVariable,
+    _setInd,
+    _declareLocal,
+  } = helpers;
 
   const variableAlias = getVariableAlias(input.variable);
   let dest = variableAlias;

@@ -30,13 +30,7 @@ Index: src/states/shmup.c
      UBYTE tile_start, tile_end;
      direction_e new_dir = DIR_NONE;
      UBYTE angle;
-@@ -265,22 +268,26 @@
-             tile_start = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
-             tile_end   = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
-             if (angle > ANGLE_90DEG && angle < ANGLE_270DEG) { // Moving down
-                 UBYTE tile_y = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
--                tile = tile_col_test_range_x(COLLISION_TOP, tile_y, tile_start, tile_end);
-+                tile = tile_col_test_range_x(PLAYER_TILE_COL(COLLISION_TOP), tile_y, tile_start, tile_end);
+@@ -270,8 +273,10 @@
                  if (tile) {
                      PLAYER.pos.y = TILE_TO_SUBPX(tile_y) - EXCLUSIVE_OFFSET(PLAYER.bounds.bottom);
  #ifdef ENABLE_DOWN_COLLISION_METATILE
@@ -47,8 +41,7 @@ Index: src/states/shmup.c
                  }
              } else { // Moving up
                  UBYTE tile_y = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
--                tile = tile_col_test_range_x(COLLISION_BOTTOM, tile_y, tile_start, tile_end);
-+                tile = tile_col_test_range_x(PLAYER_TILE_COL(COLLISION_BOTTOM), tile_y, tile_start, tile_end);
+@@ -279,8 +284,10 @@
                  if (tile) {
                      PLAYER.pos.y = TILE_TO_SUBPX(tile_y + 1) - PLAYER.bounds.top;
  #ifdef ENABLE_UP_COLLISION_METATILE
@@ -59,13 +52,7 @@ Index: src/states/shmup.c
                  }
              }
          }
-@@ -290,22 +297,26 @@
-             tile_start = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
-             tile_end   = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
-             if (angle > ANGLE_0DEG && angle < ANGLE_180DEG) { // Moving right
-                 UBYTE tile_x = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
--                tile = tile_col_test_range_y(COLLISION_LEFT, tile_x, tile_start, tile_end);
-+                tile = tile_col_test_range_y(PLAYER_TILE_COL(COLLISION_LEFT), tile_x, tile_start, tile_end);
+@@ -295,8 +302,10 @@
                  if (tile) {
                      PLAYER.pos.x = TILE_TO_SUBPX(tile_x) - EXCLUSIVE_OFFSET(PLAYER.bounds.right);
  #ifdef ENABLE_RIGHT_COLLISION_METATILE
@@ -76,8 +63,7 @@ Index: src/states/shmup.c
                  }
              } else { // Moving left
                  UBYTE tile_x = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
--                tile = tile_col_test_range_y(COLLISION_RIGHT, tile_x, tile_start, tile_end);
-+                tile = tile_col_test_range_y(PLAYER_TILE_COL(COLLISION_RIGHT), tile_x, tile_start, tile_end);
+@@ -304,8 +313,10 @@
                  if (tile) {
                      PLAYER.pos.x = TILE_TO_SUBPX(tile_x + 1) - PLAYER.bounds.left;
  #ifdef ENABLE_LEFT_COLLISION_METATILE
@@ -88,17 +74,7 @@ Index: src/states/shmup.c
                  }
              }
          }
-@@ -379,60 +390,68 @@
-             tile_start = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
-             tile_end   = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
-             if (shooter_direction == DIR_RIGHT) {
-                 UBYTE tile_x = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
--                tile = tile_col_test_range_y(COLLISION_LEFT, tile_x, tile_start, tile_end);
-+                tile = tile_col_test_range_y(PLAYER_TILE_COL(COLLISION_LEFT), tile_x, tile_start, tile_end);
-                 IF_FREE_MOVEMENT({
-                     if (tile) {
-                         PLAYER.pos.x = TILE_TO_SUBPX(tile_x) - EXCLUSIVE_OFFSET(PLAYER.bounds.right);
-                     }
+@@ -388,8 +399,10 @@
                  })
  #ifdef ENABLE_SHMUP_RIGHT_COLLISION_METATILE
                  if (tile) {
@@ -109,12 +85,7 @@ Index: src/states/shmup.c
  #endif
              } else { // DIR_LEFT
                  UBYTE tile_x = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
--                tile = tile_col_test_range_y(COLLISION_RIGHT, tile_x, tile_start, tile_end);
-+                tile = tile_col_test_range_y(PLAYER_TILE_COL(COLLISION_RIGHT), tile_x, tile_start, tile_end);
-                 IF_FREE_MOVEMENT({
-                     if (tile) {
-                         PLAYER.pos.x = TILE_TO_SUBPX(tile_x + 1) - PLAYER.bounds.left;
-                     }
+@@ -401,8 +414,10 @@
                  })
  #ifdef ENABLE_SHMUP_LEFT_COLLISION_METATILE
                  if (tile) {
@@ -125,16 +96,7 @@ Index: src/states/shmup.c
  #endif
              }
          } else {
-             tile_start = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
-             tile_end   = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
-             if (shooter_direction == DIR_DOWN) {
-                 UBYTE tile_y = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
--                tile = tile_col_test_range_x(COLLISION_TOP, tile_y, tile_start, tile_end);
-+                tile = tile_col_test_range_x(PLAYER_TILE_COL(COLLISION_TOP), tile_y, tile_start, tile_end);
-                 IF_FREE_MOVEMENT({
-                     if (tile) {
-                         PLAYER.pos.y = TILE_TO_SUBPX(tile_y) - EXCLUSIVE_OFFSET(PLAYER.bounds.bottom);
-                     }
+@@ -418,8 +433,10 @@
                  })
  #ifdef ENABLE_SHMUP_DOWN_COLLISION_METATILE
                  if (tile) {
@@ -145,12 +107,7 @@ Index: src/states/shmup.c
  #endif
              } else { // DIR_UP
                  UBYTE tile_y = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
--                tile = tile_col_test_range_x(COLLISION_BOTTOM, tile_y, tile_start, tile_end);
-+                tile = tile_col_test_range_x(PLAYER_TILE_COL(COLLISION_BOTTOM), tile_y, tile_start, tile_end);
-                 IF_FREE_MOVEMENT({
-                     if (tile) {
-                         PLAYER.pos.y = TILE_TO_SUBPX(tile_y + 1) - PLAYER.bounds.top;
-                     }
+@@ -431,8 +448,10 @@
                  })
  #ifdef ENABLE_SHMUP_UP_COLLISION_METATILE
                  if (tile) {
