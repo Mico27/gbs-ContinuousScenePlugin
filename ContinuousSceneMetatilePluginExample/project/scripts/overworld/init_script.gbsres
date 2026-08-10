@@ -63,26 +63,15 @@
       "children": {
         "true": [
           {
-            "command": "EVENT_GBVM_SCRIPT",
+            "command": "EVENT_ENGINE_FIELD_SET",
             "args": {
-              "references": [
-                {
-                  "type": "variable",
-                  "id": "0"
-                },
-                {
-                  "type": "variable",
-                  "id": "1"
-                },
-                {
-                  "type": "variable",
-                  "id": "3"
-                }
-              ],
-              "script": "VM_SET_CONST_UINT8 _player_collision_group, 16",
-              "__collapse": true
+              "engineFieldKey": "player_xor_tile_collision",
+              "value": {
+                "type": "number",
+                "value": 16
+              }
             },
-            "id": "838d9911-0f34-48e6-93d1-f1bbb03caddb"
+            "id": "ad2d6e2b-42e4-4bed-9cf2-270d9bbced5a"
           },
           {
             "command": "EVENT_INC_VALUE",
@@ -423,11 +412,15 @@
                   "children": {
                     "true": [
                       {
-                        "command": "EVENT_GBVM_SCRIPT",
+                        "command": "EVENT_ENGINE_FIELD_SET",
                         "args": {
-                          "script": "VM_SET_CONST_UINT8 _player_collision_group, 16"
+                          "engineFieldKey": "player_xor_tile_collision",
+                          "value": {
+                            "type": "number",
+                            "value": 16
+                          }
                         },
-                        "id": "c4b2b8b1-60c3-4db1-ae51-f558d4a6e5d7"
+                        "id": "6124a712-0b0a-4ae8-9cea-a24bf68d8bed"
                       },
                       {
                         "command": "EVENT_ACTOR_SET_STATE",
@@ -917,7 +910,7 @@
         ],
         "override": false,
         "__scriptTabs": "press",
-        "__collapse": true
+        "__collapse": false
       },
       "children": {
         "true": [
@@ -1272,12 +1265,15 @@
                               "id": "b525d519-95e4-4b18-babb-8a865ffe7abd"
                             },
                             {
-                              "command": "EVENT_GBVM_SCRIPT",
+                              "command": "EVENT_ENGINE_FIELD_SET",
                               "args": {
-                                "script": "VM_SET_CONST_UINT8 _player_collision_group, 0",
-                                "__collapse": true
+                                "engineFieldKey": "player_xor_tile_collision",
+                                "value": {
+                                  "type": "number",
+                                  "value": 0
+                                }
                               },
-                              "id": "6ff5df0b-9cfb-4530-a020-c213ca8edf74"
+                              "id": "f0122525-a7bf-47b1-8a1f-ecdb41036770"
                             },
                             {
                               "command": "EVENT_SWITCH",

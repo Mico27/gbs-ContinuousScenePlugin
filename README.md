@@ -222,9 +222,20 @@ These settings are found under **Settings → Engine Fields → Continuous Scene
 
 ### Top-Down Extra Collision
 
-| Setting | Type | Default | Description |
-|---------|------|---------|-------------|
-| **Player extra collision group** (`player_collision_group`) | Number | 0 | Additional tile collision flags OR'd into every player movement check in Top-Down scenes. Set to `16` (`0x10`) to enable water-surface collision for surfing. |
+**Removed.** The *Player extra collision group* field (`player_collision_group`), which
+OR'd extra tile bits into every player movement check in Top-Down scenes, is gone in
+favour of **DynamicActorPlugin**'s *Player tile collision mask XOR*
+(`player_xor_tile_collision`) — the same job, but in every scene type rather than only
+Top-Down, and for actors and projectiles as well as the player.
+
+Migrating is a symbol swap. The masks the old field was OR'd into are direction bits
+only, so for a tile property bit such as `16` (`0x10`, the water surface) XOR'ing it in
+produces exactly the same mask. Replace every
+`VM_SET_CONST_UINT8 _player_collision_group, n` with
+`VM_SET_CONST_UINT8 _player_xor_tile_collision, n`, install DynamicActorPlugin, and tick
+its **Enable tile collision mask XOR** engine setting — without that setting the field is
+compiled out and ignored, and the extra collision silently stops applying. The
+Continuous Scene + Metatile example does exactly this.
 
 ### Runtime-Only Fields
 
@@ -337,6 +348,13 @@ Grouped by the date each change was merged into the official
 
 Only bug fixes, new features and feature changes are listed. Engine version
 bumps, patch regeneration, packaging fixes and documentation edits are omitted.
+
+### 2026-08-09
+
+- **Removed the Top-Down `player_collision_group` engine field.** Its job is covered by
+  DynamicActorPlugin's `player_xor_tile_collision`, which applies in every scene type
+  rather than only Top-Down. See [Top-Down Extra Collision](#top-down-extra-collision)
+  for the one-line migration.
 
 ### 2026-06-28
 

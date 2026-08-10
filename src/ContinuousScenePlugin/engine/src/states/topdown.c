@@ -19,7 +19,6 @@
 #endif
 
 UBYTE topdown_grid;
-UBYTE player_collision_group;
 
 void topdown_init(void) BANKED {
     camera_offset_x = 0;
@@ -70,7 +69,7 @@ void topdown_update(void) BANKED {
             tile_start = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
             tile_end   = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
             UBYTE tile_x = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
-            if (tile_col_test_range_y(COLLISION_RIGHT | player_collision_group, tile_x - 1, tile_start, tile_end)) {
+            if (tile_col_test_range_y(COLLISION_RIGHT, tile_x - 1, tile_start, tile_end)) {
                 player_moving = FALSE;
             }
         } else if (INPUT_RECENT_RIGHT) {
@@ -81,7 +80,7 @@ void topdown_update(void) BANKED {
             tile_start = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
             tile_end   = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
             UBYTE tile_x = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
-            if (tile_col_test_range_y(COLLISION_LEFT | player_collision_group, tile_x + 1, tile_start, tile_end)) {
+            if (tile_col_test_range_y(COLLISION_LEFT, tile_x + 1, tile_start, tile_end)) {
                 player_moving = FALSE;
             }
         } else if (INPUT_RECENT_UP) {
@@ -92,7 +91,7 @@ void topdown_update(void) BANKED {
             tile_start = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
             tile_end   = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
             UBYTE tile_y = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.top);
-            if (tile_col_test_range_x(COLLISION_BOTTOM | player_collision_group, tile_y - 1, tile_start, tile_end)) {
+            if (tile_col_test_range_x(COLLISION_BOTTOM, tile_y - 1, tile_start, tile_end)) {
                 player_moving = FALSE;
             }
         } else if (INPUT_RECENT_DOWN) {
@@ -103,7 +102,7 @@ void topdown_update(void) BANKED {
             tile_start = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.left);
             tile_end   = SUBPX_TO_TILE(PLAYER.pos.x + PLAYER.bounds.right);
             UBYTE tile_y = SUBPX_TO_TILE(PLAYER.pos.y + PLAYER.bounds.bottom);
-            if (tile_col_test_range_x(COLLISION_TOP | player_collision_group, tile_y + 1, tile_start, tile_end)) {
+            if (tile_col_test_range_x(COLLISION_TOP, tile_y + 1, tile_start, tile_end)) {
                 player_moving = FALSE;
             }
         }
