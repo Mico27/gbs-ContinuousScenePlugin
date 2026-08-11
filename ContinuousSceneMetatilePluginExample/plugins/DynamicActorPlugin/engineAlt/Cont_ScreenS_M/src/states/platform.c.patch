@@ -35,49 +35,7 @@ Index: src/states/platform.c
  
  static void player_set_jump_anim(void)
  {
-@@ -1197,9 +1199,19 @@
- #ifdef ENABLE_PLAT_LEFT_COLLISION_METATILE
-                 on_player_metatile_collision(tile_hit_x, tile_hit_y, DIR_LEFT);
- #endif
-             }
-+        } else {
-+            if (moving_right){
-+#ifdef ENABLE_PLAT_RIGHT_COLLISION_METATILE
-+                reset_collision_cache(DIR_RIGHT);
- #endif
-+            } else {
-+#ifdef ENABLE_PLAT_LEFT_COLLISION_METATILE
-+                reset_collision_cache(DIR_LEFT);
-+#endif
-+            }
-+#endif
-         }
- 
-     finally_update_x:
-         PLAYER.pos.x = new_x;
-@@ -1342,8 +1354,10 @@
- #endif
-                 plat_grounded = TRUE;
- #ifdef ENABLE_PLAT_DOWN_COLLISION_METATILE
-                 on_player_metatile_collision(tile_hit_x, tile_hit_y, DIR_DOWN);
-+            } else {
-+                reset_collision_cache(DIR_DOWN);
- #endif
-             }
-         finally_update_y:
-             if (plat_grounded && (plat_state != DASH_STATE)) {
-@@ -1377,8 +1391,10 @@
- #endif
-                 plat_next_state = FALL_STATE;
- #ifdef ENABLE_PLAT_UP_COLLISION_METATILE
-                 on_player_metatile_collision(tile_hit_x, tile_hit_y, DIR_UP);
-+            } else {
-+                reset_collision_cache(DIR_UP);
- #endif
-             }
-             PLAYER.pos.y = new_y;
-         }
-@@ -1485,13 +1501,8 @@
+@@ -1485,13 +1487,8 @@
              }
          }
      }
