@@ -65,10 +65,10 @@
           {
             "command": "EVENT_ENGINE_FIELD_SET",
             "args": {
-              "engineFieldKey": "player_xor_tile_collision",
+              "engineFieldKey": "player_override_tile_collision",
               "value": {
                 "type": "number",
-                "value": 16
+                "value": 31
               }
             },
             "id": "ad2d6e2b-42e4-4bed-9cf2-270d9bbced5a"
@@ -414,10 +414,10 @@
                       {
                         "command": "EVENT_ENGINE_FIELD_SET",
                         "args": {
-                          "engineFieldKey": "player_xor_tile_collision",
+                          "engineFieldKey": "player_override_tile_collision",
                           "value": {
                             "type": "number",
-                            "value": 16
+                            "value": 31
                           }
                         },
                         "id": "6124a712-0b0a-4ae8-9cea-a24bf68d8bed"
@@ -1267,11 +1267,7 @@
                             {
                               "command": "EVENT_ENGINE_FIELD_SET",
                               "args": {
-                                "engineFieldKey": "player_xor_tile_collision",
-                                "value": {
-                                  "type": "number",
-                                  "value": 0
-                                }
+                                "engineFieldKey": "player_override_tile_collision"
                               },
                               "id": "f0122525-a7bf-47b1-8a1f-ecdb41036770"
                             },

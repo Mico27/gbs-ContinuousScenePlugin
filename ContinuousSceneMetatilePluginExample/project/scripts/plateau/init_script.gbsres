@@ -65,7 +65,7 @@
                   "id": "3"
                 }
               ],
-              "script": "VM_SET_CONST_UINT8 _player_xor_tile_collision, 16",
+              "script": "VM_SET_CONST_UINT8 _player_override_tile_collision, 16",
               "__collapse": false
             },
             "id": "b3ccaa21-895b-4632-ab13-68eb3c4b41c4"
@@ -304,7 +304,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_SET_CONST_UINT8 _player_xor_tile_collision, 16",
+                          "script": "VM_SET_CONST_UINT8 _player_override_tile_collision, 16",
                           "__collapse": true
                         },
                         "id": "b4636d76-ac8a-43a1-9762-ab0b36c7646b"
@@ -659,7 +659,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_SET_CONST_UINT8 _player_xor_tile_collision, 0",
+                          "script": "VM_SET_CONST_UINT8 _player_override_tile_collision, 0",
                           "__collapse": true
                         },
                         "id": "ddc76323-f5b9-4e45-b076-bb44e5206cab"

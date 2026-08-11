@@ -66,7 +66,7 @@
                   "id": "3"
                 }
               ],
-              "script": "VM_SET_CONST_UINT8 _player_xor_tile_collision, 16",
+              "script": "VM_SET_CONST_UINT8 _player_override_tile_collision, 16",
               "__collapse": false
             },
             "id": "abe41e60-a6f9-404b-8a1f-d5ef99db45f0"
@@ -300,7 +300,7 @@
                       {
                         "command": "EVENT_GBVM_SCRIPT",
                         "args": {
-                          "script": "VM_SET_CONST_UINT8 _player_xor_tile_collision, 0",
+                          "script": "VM_SET_CONST_UINT8 _player_override_tile_collision, 0",
                           "__collapse": true
                         },
                         "id": "39cc310d-fb1a-4f6d-8320-5c8dfe52a993"
