@@ -119,7 +119,7 @@ UBYTE tile_col_test_range_y(UBYTE tile_mask, UBYTE tx, UBYTE ty_start, UBYTE ty_
     tile_hit_x = tx;
     tile_hit_y = ty_start;
 
-    // OOB: tile is outside current scene — check neighbor or treat as wall
+    // Outside the current scene: check the neighbour or treat it as a wall
     if (tile_hit_x >= image_tile_width || tile_hit_y >= image_tile_height) {
         if (continuous_scene_enabled) {
             continuous_scene_t* cs = NULL;
@@ -151,7 +151,7 @@ UBYTE tile_col_test_range_x(UBYTE tile_mask, UBYTE ty, UBYTE tx_start, UBYTE tx_
     tile_hit_x = tx_start;
     tile_hit_y = ty;
 
-    // OOB: tile is outside current scene — check neighbor or treat as wall
+    // Outside the current scene: check the neighbour or treat it as a wall
     if (tile_hit_x >= image_tile_width || tile_hit_y >= image_tile_height) {
         if (continuous_scene_enabled) {
             continuous_scene_t* cs = NULL;

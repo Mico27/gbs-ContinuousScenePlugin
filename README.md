@@ -1,10 +1,12 @@
 # gbs-ContinuousScenePlugin
 
-**Version 4.3.0 — Requires GB Studio ≥ 4.3.0**
+**Version 4.3.0. Requires GB Studio 4.3.0 or newer.**
 
-A GB Studio engine plugin that stitches multiple scenes into a single seamless world. The camera always stays centered on the player, scroll limits are lifted, and as the player approaches a scene edge the plugin pulls tile data from the registered neighbour scene directly into VRAM — so the neighbouring map is already visible on screen before the player crosses. When the player reaches the boundary, the scene load happens instantly and invisibly: coordinates are rebased so the new scene aligns perfectly with where the player already is. No fade, no transition animation — the world simply keeps scrolling.
+Joins your scenes into one continuous world. The camera stays on the player, the scroll limits are gone, and as the player nears an edge the next scene's tiles are already drawn on screen. Crossing the boundary loads the new scene without anything visible happening at all. No fade, no pause, no transition. The world just keeps scrolling.
 
-Scenes can be arranged in any rectangular grid with optional connection offsets, diagonal corners are supported, and the world can optionally wrap horizontally and/or vertically. All supported scene types (Top-Down, Platformer, Adventure, Point & Click, SHMUP) work with the plugin, however it was designed with Top-Down in mind and require more processing than the default rendering method, so it is best to avoid having too much going on in continuous scenes.
+That is what a Pokémon or Final Fantasy overworld needs: one map made of many scenes, with towns and routes joining without a seam.
+
+Scenes go in any rectangular grid, neighbours can be offset along a shared edge, corners where four scenes meet are handled, and the world can wrap around horizontally, vertically or both. Top-Down, Platformer, Adventure, Point and Click and Shmup scenes all work, though it was built with Top-Down in mind. It costs more processing time than normal scene drawing, so keep continuous scenes light on other work.
 
 > **Incompatibility:** this plugin is not compatible with **gbs-ScreenScrollPlugin**. Do not use both in the same project.
 
@@ -27,9 +29,10 @@ https://github.com/user-attachments/assets/76cedc32-d258-475c-a235-4a8ffa2a8946
 3. [Size Limits and Restrictions](#size-limits-and-restrictions)
 4. [Events Reference](#events-reference)
 5. [Engine Settings](#engine-settings)
-6. [Memory Footprint](#memory-footprint)
-7. [Bank 0 (HOME) Usage](#bank-0-home-usage)
-8. [Changelog](#changelog)
+6. [FAQ](#faq)
+7. [Memory Footprint](#memory-footprint)
+8. [Bank 0 (HOME) Usage](#bank-0-home-usage)
+9. [Changelog](#changelog)
 
 ---
 
@@ -37,48 +40,48 @@ https://github.com/user-attachments/assets/76cedc32-d258-475c-a235-4a8ffa2a8946
 
 ### Continuous Tile Rendering
 
-GB Studio normally clamps the camera to the current scene's boundaries. This plugin removes that clamp. The camera is always centered on the player and can scroll freely past a scene edge. As the camera moves, `load_tile_row_continuous` / `load_tile_col_continuous` intercept every VRAM tile write and route out-of-bounds coordinates to the registered neighbour scene's tilemap. The result is that the neighbour scene's tiles appear on screen progressively as the player walks toward the edge — exactly as if the two scenes were one large map.
+GB Studio normally holds the camera inside the current scene. This plugin removes that limit, so the camera stays on the player and can travel past an edge. As it moves, tiles that fall outside the current scene are taken from the neighbour you registered in that direction. The neighbour's tiles appear on screen as the player walks towards the edge, exactly as if the two scenes were one map.
 
 ### The VRAM Tilemap as a Ring Buffer
 
-The GB hardware background tilemap is 32×32 tiles but only 20×18 tiles are visible at once. The plugin exploits this by treating the map as a wrap-around ring buffer. `bkg_offset_x` and `bkg_offset_y` accumulate the total tile displacement across all scene crossings and are used as an additive offset when computing VRAM write addresses. This keeps the ring-buffer position coherent between scenes so tile data written for one scene and tile data written for a neighbour always land in the correct VRAM slots regardless of how many crossings have occurred.
+The hardware background is 32 by 32 tiles and only 20 by 18 are on screen. The plugin uses the rest, wrapping around as it goes. **Scroll offset X** and **Scroll offset Y** track how far the view has moved in total across every crossing, and everything the plugin writes is placed relative to them. That keeps tiles from the current scene and tiles from its neighbour landing in the right places however many boundaries the player has crossed.
 
 ### Invisible Scene Load
 
-When the player's position actually crosses a scene boundary, `transition_to_scene_modal` fires. It temporarily disables tile rendering, rebases the player position, camera, scroll values, and `bkg_offset` so that the new scene's coordinate system matches the player's current on-screen position, then calls `load_scene`. Because the coordinates are pre-adjusted before the load and `is_transitioning_scene` prevents `scroll_reset` from clearing the offsets, the VRAM ring buffer stays intact. After the new scene's init scripts finish, rendering resumes — and since the tiles were already visible, nothing on screen changes.
+When the player actually crosses a boundary, the plugin stops drawing tiles for a moment, moves the player, the camera and the scroll position into the new scene's coordinates so they land exactly where the player already is on screen, and loads the scene. The scroll offsets are protected from the reset a scene load normally does. Drawing resumes once the new scene's init scripts finish, and because the tiles were already on screen, nothing changes visually.
 
 ### Connection Offsets
 
-Scenes connected along a shared edge do not need to have perfectly aligned top or left edges. An **offset** value specifies how many tiles the neighbour scene is shifted relative to the current scene along the shared edge. This allows building overworld maps where, for example, two horizontally adjacent scenes start at different vertical positions — the tile data is correctly stitched at the seam regardless of the offset.
+Two scenes joined along an edge do not need to line up. An **offset** says how many tiles the neighbour sits along the shared edge relative to the current scene. That is how a route can join a town whose map starts higher or lower, which is how real overworlds are laid out. The tiles are stitched correctly at the join whatever the offset.
 
 ### Diagonal Corners
 
-When four scenes share a corner point, the plugin can also register diagonal neighbours (Top-Left, Top-Right, Bottom-Left, Bottom-Right). This ensures that the corner pixel of the VRAM ring buffer is filled correctly and prevents a single blank or corrupt tile appearing at the junction when scrolling diagonally.
+Where four scenes meet at a point, register the diagonal neighbours too: Top-Left, Top-Right, Bottom-Left and Bottom-Right. Without them, a single blank or wrong tile appears at the junction when the player walks diagonally through it.
 
 ---
 
 ## Project Setup
 
-### Option A — Manual Setup with Set Continuous Scene
+### Option A: manual setup with Set Continuous Scene
 
-For small maps or non-uniform grids, wire each connection by hand in the **On Init** script of every scene:
+For a small map, or one that is not a regular grid, connect each scene by hand in its **On Init** script:
 
 1. In the **On Init** script of a scene, add a **Set Continuous Scene** event for each direction that has a neighbour.
 2. Set **Scene** to the neighbour scene in that direction.
 3. Set **Direction of Scene** (Top, Right, Bottom, Left, or a diagonal).
 4. Set **Offset of Scene** if the neighbour is shifted along the shared edge (see [Connection Offsets](#connection-offsets)).
 
-Repeat for every scene and every direction. There is no need to place triggers on scene edges — the plugin detects boundary crossing automatically.
+Repeat for every scene and every direction. No triggers are needed on the edges, because the plugin notices the crossing itself.
 
-### Option B — Automatic Setup with Auto Connect Continuous Scene
+### Option B: automatic setup with Auto Connect Continuous Scene
 
-For large grids of uniformly named scenes, the **Auto Connect Continuous Scene** event derives all connections automatically from the scenes' positions in the GB Studio world map.
+For a large grid, **Auto Connect Continuous Scene** works out every connection from where the scenes sit in the world map. Drag your map into place and it does the rest.
 
-**Important:** this event must be placed in the **On Init** script of the **very first scene** of the project. GBS injects the connection setup code into the init scripts of all matching scenes at compile time, and requires the event to be processed before any of those scenes are compiled.
+**Important:** it must go in the **On Init** script of the **very first scene** of the project. It writes the connections into the other scenes during the build, so it has to run before any of them are built.
 
-> To force a scene to be the first scene of the project: close the project, open `project/scenes/<SceneName>/scene.gbres` in a text editor, and set the `"_index"` field to `-1`. Save the file, reload the project in GB Studio, then save the project — GB Studio will reposition that scene as the first one.
+> To make a scene first: close the project, open `project/scenes/<SceneName>/scene.gbres` in a text editor, set its `"_index"` to `-1`, save, reload the project in GB Studio and save again. GB Studio moves that scene to the front.
 
-1. Give all the scenes you want connected a common **GBVM symbol prefix** (set via *View GBVM symbol* for each scene, or enforce a naming convention that becomes the symbol).
+1. Give every scene you want connected the same **symbol prefix**, set through **View GBVM symbol** on each scene.
 
 <img width="892" height="274" alt="image" src="https://github.com/user-attachments/assets/36714b5a-e7cc-43b3-ba4e-af7d1fd4d3d7" />
 <img width="290" height="159" alt="image" src="https://github.com/user-attachments/assets/557a25e6-d78b-4ed9-8e20-6c534fba9bfc" />
@@ -87,17 +90,17 @@ For large grids of uniformly named scenes, the **Auto Connect Continuous Scene**
 2. Place **Auto Connect Continuous Scene** in the On Init script of your first scene and set **Scene data symbol prefix** to that prefix.
 3. Enable **Loop Horizontally** and/or **Loop Vertically** if the world should wrap.
 
-Auto Connect only detects connections where scene boundaries **touch exactly** in the world map — if two scenes' edges do not perfectly align, no connection is created between them. Use [Option A](#option-a--manual-setup-with-set-continuous-scene) for those connections, or adjust scene positions in the world map so the edges meet.
+Auto Connect only finds connections where scene edges **touch exactly** in the world map. Edges that do not meet are not connected. Use [Option A](#option-a-manual-setup-with-set-continuous-scene) for those, or move the scenes so their edges meet.
 
-The event runs entirely at **compile time**: it reads scene positions from the project, builds a connection table, and injects a `load_scene_connections` native call at the top of each matching scene's init script. No runtime overhead for the detection pass; connections are baked into ROM.
+The event runs entirely during the build. It reads the scene positions, builds the table of connections, and adds the setup to the top of each matching scene's init script. Nothing is worked out while the game runs.
 
 ---
 
 ### Connection Offsets
 
-When two horizontally adjacent scenes have different heights or are vertically misaligned, set **Offset of Scene** to `(current scene top) − (neighbour scene top)` in tiles. A positive offset means the neighbour starts lower; a negative offset means it starts higher.
+When two side by side scenes have different heights, or sit at different vertical positions, set **Offset of Scene** to the current scene's top edge minus the neighbour's top edge, in tiles. A positive number means the neighbour starts lower and a negative one means it starts higher.
 
-The Auto Connect event computes this automatically from world-map positions: `offset = scene_top − other_scene_top` for left/right connections and `offset = scene_left − other_scene_left` for top/bottom connections.
+Auto Connect works this out from the world map positions, using top edges for side by side connections and left edges for stacked ones.
 
 ---
 
@@ -117,23 +120,23 @@ The offsets for wrap-around connections are computed by the same formula as regu
 
 ### Maximum Scene Size is Halved
 
-Due to the ring-buffer nature of the VRAM tilemap, the usable scene dimensions are limited to **128 tiles wide and 128 tiles tall** (half of the standard GB Studio maximum of 256×256). Exceeding this causes visual wrap-around corruption during transitions.
+Because the background wraps, scenes can be at most **128 tiles wide and 128 tall**, half the usual GB Studio maximum. Going beyond that makes the picture wrap onto itself during a crossing.
 
 ### Common Tileset Is Required
 
-All scenes that scroll into each other must share the same **common tileset**. Click the puzzle-piece icon on each scene in GB Studio and assign the same common tileset asset. This ensures tile indices are consistent across scene boundaries so that the visual join is seamless.
+Every scene that joins another must share one **common tileset**. Click the puzzle-piece icon on each scene and pick the same one. That keeps the tiles in the same places on both sides of the join, which is what makes it seamless.
 
 ### Scripts Are Reset on Boundary Crossing
 
-When the player crosses a scene boundary, all running script contexts in the current scene are terminated (variables are preserved). Timers, input events, and music events are also reset. The new scene's init scripts run after the scene loads, while tile rendering is still disabled, and the game loop resumes only once they finish.
+Every running script in the leaving scene is stopped when the player crosses. Variables are kept. Timers, input events and music events are reset. The new scene's init scripts run before drawing resumes, so keep them short.
 
 ### The Camera Always Follows the Player
 
-There is no transition animation and no camera lock during the scene load. The camera is centered on the player at all times. The `DISABLE_SCROLL_LIMITS` define (enabled by default) removes the per-scene scroll clamp so the camera can freely follow the player past scene boundaries, revealing neighbour tiles as it goes.
+There is no transition animation and no camera lock during the load. The camera stays on the player throughout. The **Disable scroll limits** setting, on by default, removes the per-scene limit so the camera can follow the player past an edge and reveal the neighbour's tiles. It is a runtime field, so a script can turn the limits back on with **Engine Field Update** whenever you want the camera clamped to the current scene again.
 
 ### Out-of-Bounds Areas
 
-While a scene is scrolling, tiles that fall outside any registered neighbour are filled with the tile specified by **Out of bounds tile Id** (`fill_tile_id`). Set this engine field to a solid-colour or water tile appropriate to your world's border. The corresponding **Out of bounds tile attribute** (`fill_tile_attr`) sets the CGB palette attribute for the fill tile.
+Tiles that fall outside every registered neighbour are filled with **Out of bounds tile Id**. Set it to a solid colour, or to a water tile at the edge of a world map. **Out of bounds tile attribute** sets the palette and flip for that tile on Game Boy Color.
 
 ---
 
@@ -145,31 +148,27 @@ All events are in the **Scene** group.
 
 ### Set Continuous Scene
 
-**`EVENT_SET_CONTINUOUS_SCENE`**
-
-Registers a scene as the neighbour in a given direction and enables boundary-crossing detection for the current scene. Must be called in the scene's **On Init** script. Can be called up to eight times (once per direction) to register all neighbours, including diagonals.
+Names the scene that lies in a given direction and switches on edge detection for the current scene. Put it in the scene's **On Init** script, once per direction with a neighbour, up to eight including the diagonals.
 
 | Field | Description |
 |-------|-------------|
 | Scene | The scene to scroll to when the player exits in the chosen direction. |
 | Direction of Scene | Top, Right, Bottom, Left, Top-Left, Top-Right, Bottom-Right, or Bottom-Left. |
-| Offset of Scene | Tile offset of the neighbour scene along the shared edge (positive = neighbour is shifted down/right). |
+| Offset of Scene | How far the neighbour sits along the shared edge, in tiles. A positive number shifts it down or right. |
 
 ---
 
 ### Auto Connect Continuous Scene
 
-**`EVENT_AUTO_CONNECT_CONTINUOUS_SCENE`**
+Reads the scene positions from the world map during the build and makes every connection for you, for each scene whose symbol starts with the prefix you give.
 
-Compile-time event that reads scene positions from the world map and automatically generates all **Set Continuous Scene** calls for every scene whose GBVM symbol starts with the given prefix. The connection table is written to a ROM asset and injected into each scene's init script at compile time.
+**It must go in the On Init script of the very first scene of the project.** Only edges that touch exactly are connected. Scenes whose edges do not meet need **Set Continuous Scene** instead.
 
-**Must be placed in the On Init script of the very first scene of the project.** Only connections where two scene boundaries touch exactly in the world map are created; scenes whose edges do not perfectly align will not be auto-connected (use **Set Continuous Scene** for those).
-
-> To force a scene to be the first scene of the project: close the project, open `project/scenes/<SceneName>/scene.gbres` in a text editor, and set the `"_index"` field to `-1`. Save the file, reload the project in GB Studio, then save the project again.
+> To make a scene first: close the project, open `project/scenes/<SceneName>/scene.gbres` in a text editor, set its `"_index"` to `-1`, save, reload the project in GB Studio and save again.
 
 | Field | Description |
 |-------|-------------|
-| Scene data symbol prefix | GBVM symbol prefix shared by all scenes to connect (e.g. `overworld_`). Only scenes whose symbol starts with this prefix are included. |
+| Scene data symbol prefix | The symbol prefix shared by the scenes to connect, such as `overworld_`. Only scenes whose symbol starts with it are included. |
 | Loop Horizontally | Connect left-edge scenes to right-edge scenes so the world wraps horizontally. |
 | Loop Vertically | Connect top-edge scenes to bottom-edge scenes so the world wraps vertically. |
 
@@ -177,9 +176,7 @@ Compile-time event that reads scene positions from the world map and automatical
 
 ### Remove Continuous Scene
 
-**`EVENT_REMOVE_CONTINUOUS_SCENE`**
-
-Removes the registered neighbour for a given direction at runtime. Use this to dynamically block a connection — for example, to prevent crossing into a scene that has not yet been unlocked in the game.
+Removes the neighbour in a given direction while the game runs. Use it to block a route the player has not unlocked yet, or to close a bridge after a story event.
 
 | Field | Description |
 |-------|-------------|
@@ -189,115 +186,167 @@ Removes the registered neighbour for a given direction at runtime. Use this to d
 
 ### Assign current scene scroll offset to Variable
 
-**`EVENT_GET_SCROLL_OFFSET`**
-
-Reads the current accumulated background offset (`bkg_offset_x`, `bkg_offset_y`), masks each to 0–31, and stores the values into two variables. Useful for scripts that need to compensate for the viewport shift when drawing to fixed screen positions (e.g. placing overlay elements that must align with world tiles).
+Puts how far the view has scrolled, from 0 to 31 on each axis, into two variables. Scripts that draw at fixed screen positions need it to line up with world tiles.
 
 | Field | Description |
 |-------|-------------|
-| X Offset Variable | Destination variable for the horizontal tile offset (0–31). |
-| Y Offset Variable | Destination variable for the vertical tile offset (0–31). |
+| X Offset Variable | Receives the horizontal offset, 0 to 31. |
+| Y Offset Variable | Receives the vertical offset, 0 to 31. |
 
 ---
 
 ## Engine Settings
 
-These settings are found under **Settings → Engine Fields → Continuous Scene**.
+Found under **Settings**, then **Engine**, then **Continuous Scene**.
 
 ### Performance Flags
 
 | Setting | Default | Description |
 |---------|---------|-------------|
-| **Disable player sprite loading on scene scroll** | Enabled | Skips re-uploading the player sprite VRAM data on scroll transitions. Safe when the player sprite is unchanged between scenes. |
-| **Disable tileset loading on scene scroll** | Disabled | Skips the full tileset VRAM reload on scroll transitions. Only enable if all connected scenes use an identical common tileset. |
-| **Disable loading UI tileset on scene load** | Disabled | Skips the UI tileset reload on every scene load. Enable if the UI tiles are baked into the common tileset. |
-| **Disable scroll limits** | Enabled | Removes the engine's normal per-scene scroll clamps so the viewport can travel freely across scene boundaries during a transition. |
+| **Disable player sprite loading on scene scroll** | Enabled | Skips reloading the player sprite during a crossing. Safe when the sprite is the same in both scenes. |
+| **Disable tileset loading on scene scroll** | Disabled | Skips the tileset reload during a crossing. Only turn it on when every connected scene uses exactly the same common tileset. |
+| **Disable loading UI tileset on scene load** | Disabled | Skips the interface tileset reload on every scene load. Turn it on when the interface tiles are part of the common tileset. |
+| **Disable scroll limits** | Enabled | Removes the per-scene limit so the view can travel across boundaries. Runtime field: set it from a script with **Engine Field Update** (non-zero disables the limits, `0` restores them). |
 
 ### Out-of-Bounds Fill
 
 | Setting | Type | Default | Description |
 |---------|------|---------|-------------|
-| **Out of bounds tile Id** (`fill_tile_id`) | Number | 0 | Tile index used to fill areas that fall outside all registered neighbour scenes during a scroll transition. |
-| **Out of bounds tile attribute** (`fill_tile_attr`) | Number | 0 | CGB tile attribute applied to the fill tile (palette, bank, flip flags). |
+| **Out of bounds tile Id** | Number | 0 | The tile used where there is no registered neighbour. |
+| **Out of bounds tile attribute** | Number | 0 | Its palette, tile bank and flip settings on Game Boy Color. |
 
 ### Top-Down Extra Collision
 
-**Removed.** The *Player extra collision group* field (`player_collision_group`), which
-OR'd extra tile bits into every player movement check in Top-Down scenes, is gone in
-favour of **CollisionExPlugin**'s *Player tile collision mask XOR*
-(`player_xor_tile_collision`) — the same job, but in every scene type rather than only
-Top-Down.
+**Removed.** The old **Player extra collision group** setting, which added extra tile
+values to the player's movement checks in Top-Down scenes, is gone. Its job is now done by
+**CollisionExPlugin**'s **Player tile collision override**, which works in every scene type
+rather than Top-Down alone.
 
-Migrating is a symbol swap. The masks the old field was OR'd into are direction bits
-only, so for a tile property bit such as `16` (`0x10`, the water surface) XOR'ing it in
-produces exactly the same mask. Replace every
-`VM_SET_CONST_UINT8 _player_collision_group, n` with
-`VM_SET_CONST_UINT8 _player_xor_tile_collision, n` and install CollisionExPlugin, whose
-**Enable player tile collision mask XOR** setting is on by default — with it off the field
-is compiled out and ignored, and the extra collision silently stops applying. The
-Continuous Scene + Metatile example does exactly this.
+To migrate, install CollisionExPlugin, leave its **Enable player tile collision override**
+setting on, and set **Player tile collision override** where you used to set the old field.
+With the setting off, the override is left out of the build and the extra collision quietly
+stops applying. The Continuous Scene and Metatile example does exactly this.
 
-### Runtime-Only Fields
+### Values scripts can read
 
-These are read-only engine fields accessible via **Engine Field Value** in scripts.
+These are read-only and available through **Engine Field Value**.
 
 | Field | Description |
 |-------|-------------|
-| `bkg_offset_x` | Accumulated horizontal tile offset of the viewport (0–31). Updated on every transition. |
-| `bkg_offset_y` | Accumulated vertical tile offset of the viewport (0–31). Updated on every transition. |
+| **Scroll offset X** | How far the view has scrolled horizontally, 0 to 31. |
+| **Scroll offset Y** | How far the view has scrolled vertically, 0 to 31. |
+
+---
+
+## FAQ
+
+**How do I build a Pokémon style overworld out of separate scenes?**
+Give every scene the same common tileset, lay them out in the world map so their edges touch, then
+put **Auto Connect Continuous Scene** in the first scene of the project with your scene symbol
+prefix. The whole map is wired up during the build.
+
+**What is the difference between this and the ScreenScroll plugin?**
+ScreenScroll slides the screen across when the player leaves a scene, one screen at a time. This
+plugin has no transition at all: the neighbour is already drawn and the player walks straight into
+it. Do not install both in the same project.
+
+**Can two connected scenes be different sizes?**
+Yes, and they can sit at different heights along the shared edge. Set **Offset of Scene** to the
+difference in tiles, or let Auto Connect work it out from the world map.
+
+**How do I make the world wrap around, like a Final Fantasy world map?**
+Tick **Loop Horizontally** and **Loop Vertically** on the auto-connect event. Scenes at opposite
+edges connect to each other, including the four corners.
+
+**My auto-connect did nothing.**
+The scene holding the event is not the first scene of the project, or the scene symbols do not
+start with the prefix. Edges also have to touch exactly in the world map.
+
+**There is a broken tile where four scenes meet.**
+The diagonal neighbours are missing. Register Top-Left, Top-Right, Bottom-Left and Bottom-Right
+with **Set Continuous Scene**, or let Auto Connect handle it.
+
+**My neighbouring scene shows garbled tiles.**
+The two scenes are not sharing one common tileset. Nothing is reloaded while scrolling, so every
+connected scene has to draw from the same set.
+
+**How do I block a route until the player has an item?**
+Use **Remove Continuous Scene** on that direction, and add the connection back with **Set
+Continuous Scene** once the item is obtained.
+
+**What appears past the edge of my world?**
+Whatever you set **Out of bounds tile Id** to. Water suits a world map, and a solid dark tile suits
+an interior.
+
+**Can my scenes be bigger than 128 by 128 tiles?**
+No. That is the limit while this plugin is installed, half the usual maximum.
+
+**My game slows down in continuous scenes.**
+Drawing two scenes' worth of tiles costs more than a normal scene. Keep the number of actors and
+the amount of script work down in continuous scenes.
+
+**My scripts stop when the player crosses a boundary.**
+Every running script in the leaving scene is stopped. Variables survive. Move anything that must
+continue into the new scene's On Init, and keep those scripts short, since drawing waits for them.
+
+**My overlay drawing lands on the wrong tiles after a few crossings.**
+The view has moved. Read **Assign current scene scroll offset to Variable** and add the offset to
+your positions.
+
+**Does it work with the MetaTile plugin?**
+Yes, and the two are often used together for large overworlds. A compatibility variant ships with
+it.
 
 ---
 
 <!-- SETTINGCOST:BEGIN -->
 ### What each engine setting costs
 
-Every setting here changes what gets compiled. Figures are what you **get back by
-turning the setting off**; rows marked *off by default* show what turning it **on**
-costs instead, and sliders show the cost per step. A dash means that budget does not
-move.
+Each setting changes what gets compiled. Figures are what you **get back by turning
+the setting off**. Rows marked *off by default* show what turning it **on** costs, and
+sliders show the cost per step. "none" means that budget does not move.
 
 | Setting | Bank 0 | WRAM | Banked ROM |
 |---|---|---|---|
-| Disable player sprite loading on scene scroll | — | — | **16 B** |
-| Disable tileset loading on scene scroll *(off by default — cost of turning it on)* | — | — | +7 B |
-| Disable loading ui tileset on scene load *(off by default — cost of turning it on)* | — | — | −8 B |
-| Disable scroll limits | — | — | **147 B** |
+| Disable player sprite loading on scene scroll | none | none | **16 B** |
+| Disable tileset loading on scene scroll *(off by default, so this is the cost of turning it on)* | none | none | +7 B |
+| Disable loading ui tileset on scene load *(off by default, so this is the cost of turning it on)* | none | none | -8 B |
+| Disable scroll limits *(runtime field, so the limit check is always compiled)* | none | 1 B | none |
 
-Turning off every on-by-default switch above frees **131 B** of banked ROM — the full
-span between this plugin at its fullest and stripped to nothing. Treat it as a
-ceiling rather than a recipe: you keep whatever your game actually uses.
+Turning off the remaining on-by-default switch above frees **16 B** of banked ROM.
+Disable scroll limits no longer appears in that span: it became a runtime field, so its
+code is always compiled and it costs 1 B of WRAM instead. You keep whatever your game
+actually uses.
 
 <details><summary>How these were measured</summary>
 
-GB Studio 4.3.0-e1. This plugin's `engine/src/**/*.c` was compiled with the
-toolchain and flags GB Studio itself uses (`lcc -msm83:gb -Wf--max-allocs-per-node 3000
--DHUGE_TRACKER -DRUMBLE_ENABLE=0x08u`) against a merged include tree, and the SDCC object
-files' area records were read: `_HOME` is bank 0, `_DATA`/`_INITIALIZED`/`_BSS` are WRAM,
-and `_CODE*`/`_CONST`/`_LIT`/`_INITIALIZER` are banked ROM.
+GB Studio 4.3.0-e1. This plugin's engine code was compiled with the toolchain and
+flags GB Studio itself uses, and the size of each part of the result was read back and
+sorted into the three budgets: the fixed bank 0, work RAM, and switchable ROM banks.
 
 Two caveats. Only this plugin's own engine sources are measured, so a setting that also
-changes a struct shared with stock engine files can move a few more bytes in files the
-plugin does not ship. And each setting is toggled on its own: a handful measure slightly
-*negative* because enabling their code lets the compiler drop a fallback path elsewhere,
-and settings that gate other settings only show their own contribution.
+changes a shared data structure can move a few more bytes elsewhere. And each setting is
+toggled on its own, so a few measure slightly *negative* when enabling their code lets
+the compiler drop a fallback path, and a setting that gates other settings shows only
+its own contribution.
 
 </details>
 <!-- SETTINGCOST:END -->
 
 ## Memory Footprint
 
-Measured against the stock GB Studio **4.3.0-e1** engine by `measure_plugin_memory.js` (per-file SDCC compile with GB Studio's own build flags, at default engine settings; report of 2026-08-13). Figures are this plugin's *delta* versus stock — a file that replaces a stock engine file counts only the difference, which is why a plugin can come out negative. Using the plugin's events additionally compiles a few bytes of GBVM script per call into your project's script banks, on top of the fixed cost below.
+Measured against the stock GB Studio **4.3.0-e1** engine at default engine settings, report of 2026-08-13. Figures are the difference against a stock project: a file that replaces a stock engine file counts only the change, which is why a plugin can come out negative. Each event you use also compiles a few bytes of script into your project, on top of the fixed cost below.
 
 | Budget | Cost |
 |---|---|
-| Bank 0 (HOME) | −164 bytes |
+| Bank 0 (HOME) | -164 bytes |
 | WRAM | +132 bytes |
 | Banked ROM | +8,791 bytes |
 
-- **Bank 0:** the plugin *gives back* 164 bytes — its replacements for stock engine files compile smaller than the originals. See [Bank 0 (HOME) Usage](#bank-0-home-usage).
-- **WRAM:** 132 bytes, almost all of it scroll/streaming state and the row and column buffers.
-- **Banked ROM:** 8,791 bytes, 70 of which land in stock engine files the plugin does not ship but which recompile differently because it overrides ten engine headers. It replaces fourteen stock engine files, so the figure is a net one — the stock code it displaces was being paid for anyway.
-- **Engine WRAM headroom:** a stock GB Studio 4.3.0 project leaves about **854 bytes** of WRAM free (usable engine WRAM is 7,776 bytes at 0xC0A0–0xDF00; the stock engine uses 6,922). With this plugin installed roughly **722 bytes** remain. That does not change with the number of global variables your project defines: the script memory array is a fixed 3,584 bytes at stock engine settings (VM_HEAP_SIZE + VM_MAX_CONTEXTS × VM_CONTEXT_STACK_SIZE = 768 + 16 × 64 words).
+- **Bank 0:** the plugin *gives back* 164 bytes, because its replacements for stock engine files compile smaller than the originals. See [Bank 0 (HOME) Usage](#bank-0-home-usage).
+- **WRAM:** 132 bytes, almost all of it scrolling state and the row and column buffers.
+- **Banked ROM:** 8,791 bytes. 70 of those land in stock engine files the plugin does not ship, which compile slightly differently once it is installed. It replaces fourteen stock engine files, so the figure is what is left after subtracting the stock code it displaces.
+- **Engine WRAM headroom:** a stock GB Studio 4.3.0 project leaves about **854 bytes** of WRAM free (the engine has 7,776 bytes to work with and uses 6,922 of them). With this plugin installed roughly **722 bytes** remain. Adding more global variables to your project does not change that figure, because script memory is a fixed 3,584 byte block at stock engine settings.
 - **SRAM:** not used.
 
 ---
@@ -305,14 +354,13 @@ Measured against the stock GB Studio **4.3.0-e1** engine by `measure_plugin_memo
 <!-- BANK0:BEGIN -->
 ## Bank 0 (HOME) Usage
 
-Bank 0 is the 16 KB non-switchable ROM bank that the GB Studio engine core,
-the interrupt handlers and the GBDK runtime all share. Banked ROM is cheap
-(add another bank), bank 0 is not, so it is usually the first thing a project
-runs out of.
+Bank 0 is the 16 KB fixed ROM bank shared by the GB Studio engine core, the
+interrupt handlers and the GBDK runtime. Extra banked ROM is cheap to add,
+bank 0 is not, so bank 0 is usually the first thing a project runs out of.
 
 | | Bytes |
 |---|---|
-| Bank 0 used by this plugin | **−164** |
+| Bank 0 used by this plugin | **-164** |
 | Bank 0 free with this plugin installed | **1,615** of 16,384 (90% used) |
 
 **This plugin gives bank 0 space back.** Its replacements for stock engine
@@ -320,23 +368,23 @@ files compile smaller than the originals, freeing 164 bytes.
 
 | Module | This plugin | Stock engine | Bank 0 cost |
 |---|---|---|---|
-| `core/scroll.c` | 386 | 286 | +100 |
-| `core/actor.c` | 669 | 871 | −202 |
-| `core/collision.c` | 339 | 401 | −62 |
+| Scrolling | 386 | 286 | +100 |
+| Actor handling | 669 | 871 | -202 |
+| Collision | 339 | 401 | -62 |
 
-Modules that replace or patch a stock engine file only cost the *difference*:
+A module that replaces a stock engine file costs only the *difference*, because
 the stock version's bank 0 bytes were being spent anyway.
 
 <details><summary>How this was measured</summary>
 
-GB Studio 4.3.0-e1, default engine settings. Each module is compiled with the
-toolchain and flags GB Studio itself uses, and the `A _HOME size` record SDCC
-writes into the resulting `.rel` object is read back; the stock column is the
-same compile of the engine file this module replaces.
+GB Studio 4.3.0-e1, default engine settings. Each module was compiled with the
+toolchain and flags GB Studio itself uses, and the bank 0 size the compiler
+recorded was read back. The stock column is the same compile of the engine file
+the module replaces.
 
-The "free" figure is a stock project with this plugin and nothing else. Your
-own number will differ: other plugins, and any engine settings that change what
-the core compiles, move it independently of this plugin.
+The "free" figure assumes a stock project with this plugin and nothing else.
+Your own number will differ, because other plugins and any engine settings that
+change what the core compiles move it too.
 
 </details>
 <!-- BANK0:END -->
@@ -351,10 +399,9 @@ bumps, patch regeneration, packaging fixes and documentation edits are omitted.
 
 ### 2026-08-09
 
-- **Removed the Top-Down `player_collision_group` engine field.** Its job is covered by
-  CollisionExPlugin's `player_xor_tile_collision`, which applies in every scene type
-  rather than only Top-Down. See [Top-Down Extra Collision](#top-down-extra-collision)
-  for the one-line migration.
+- **Removed the Top-Down extra collision setting.** Its job is covered by CollisionExPlugin's
+  **Player tile collision override**, which works in every scene type rather than Top-Down
+  alone. See [Top-Down Extra Collision](#top-down-extra-collision) for how to migrate.
 
 ### 2026-06-28
 

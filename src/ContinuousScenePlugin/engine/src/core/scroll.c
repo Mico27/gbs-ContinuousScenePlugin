@@ -42,6 +42,7 @@ UBYTE bkg_scroll_x;
 UBYTE bkg_scroll_y;
 BYTE scroll_offset_x;
 BYTE scroll_offset_y;
+UBYTE DISABLE_SCROLL_LIMITS;
 BYTE bkg_offset_x;
 BYTE bkg_offset_y;
 UBYTE pending_h_x, pending_h_y;
@@ -92,18 +93,18 @@ void scroll_update(void) BANKED {
     x = SUBPX_TO_PX((UWORD)camera_x) - (SCREENWIDTH >> 1);
     y = SUBPX_TO_PX((UWORD)camera_y) - (SCREENHEIGHT >> 1);
 
-#ifndef DISABLE_SCROLL_LIMITS
-    if (!(continuous_scene_enabled & DIRECTION_LEFT_FLAG) && (((UWORD)x > SCREEN_OOB_LEFT_PX) || (x < scroll_x_min))) {
-        x = scroll_x_min;
-    } else if (!(continuous_scene_enabled & DIRECTION_RIGHT_FLAG) && (((UWORD)x < SCREEN_OOB_LEFT_PX) && (x > scroll_x_max))) {
-        x = scroll_x_max;
+    if (!DISABLE_SCROLL_LIMITS) {
+        if (!(continuous_scene_enabled & DIRECTION_LEFT_FLAG) && (((UWORD)x > SCREEN_OOB_LEFT_PX) || (x < scroll_x_min))) {
+            x = scroll_x_min;
+        } else if (!(continuous_scene_enabled & DIRECTION_RIGHT_FLAG) && (((UWORD)x < SCREEN_OOB_LEFT_PX) && (x > scroll_x_max))) {
+            x = scroll_x_max;
+        }
+        if (!(continuous_scene_enabled & DIRECTION_TOP_FLAG) && (((UWORD)y > SCREEN_OOB_TOP_PX) || (y < scroll_y_min))) {
+            y = scroll_y_min;
+        } else if (!(continuous_scene_enabled & DIRECTION_BOTTOM_FLAG) && (((UWORD)y < SCREEN_OOB_TOP_PX) && (y > scroll_y_max))) {
+            y = scroll_y_max;
+        }
     }
-    if (!(continuous_scene_enabled & DIRECTION_TOP_FLAG) && (((UWORD)y > SCREEN_OOB_TOP_PX) || (y < scroll_y_min))) {
-        y = scroll_y_min;
-    } else if (!(continuous_scene_enabled & DIRECTION_BOTTOM_FLAG) && (((UWORD)y < SCREEN_OOB_TOP_PX) && (y > scroll_y_max))) {
-        y = scroll_y_max;
-    }
-#endif
 
     current_col = PX_TO_TILE(scroll_x);
     current_row = PX_TO_TILE(scroll_y);
