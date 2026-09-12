@@ -397,6 +397,18 @@ Grouped by the date each change was merged into the official
 Only bug fixes, new features and feature changes are listed. Engine version
 bumps, patch regeneration, packaging fixes and documentation edits are omitted.
 
+### 2026-08-28
+
+- **Disable scroll limits** is now a runtime value rather than a compile-time switch, so a
+  script can turn it on and off with the **Engine Field Update** event.
+
+### 2026-08-14
+
+- Fixed background text wrapping. A row of the hardware tilemap is 32 cells wide and wraps onto
+  itself, so the pen now steps within the row it is drawing on, worked out from its own address.
+  The old test compared the pen's row against the row the text started on, which got the wrap
+  wrong for right-to-left text and drifted further off as variable-width glyphs moved the pen.
+
 ### 2026-08-09
 
 - **Removed the Top-Down extra collision setting.** Its job is covered by CollisionExPlugin's
